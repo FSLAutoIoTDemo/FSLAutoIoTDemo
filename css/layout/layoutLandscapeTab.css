@@ -1,0 +1,8 @@
+.singleTile{
+	float: left;
+	width: 200px;
+}
+
+#heartRate{
+	background-color: green;
+}

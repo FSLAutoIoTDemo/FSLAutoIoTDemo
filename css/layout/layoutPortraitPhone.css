@@ -1,0 +1,9 @@
+.singleTile{
+	float: left;
+	width: 80%;
+}
+
+
+#heartRate{
+	background-color: red;
+}

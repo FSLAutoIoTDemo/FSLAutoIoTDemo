@@ -1,0 +1,15 @@
+
+body{
+	background-color:yellow;
+}
+
+
+#roadView{
+	background-color: green;
+}
+
+#roadView img{
+
+	width:20%;
+	height: 20%;
+}

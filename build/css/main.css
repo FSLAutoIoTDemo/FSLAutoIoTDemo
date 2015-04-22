@@ -4,27 +4,31 @@
 /* - centres to screen			    	   */
 /*******************************************/
 .container {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .clearfix:after {
   content: "";
   visibility: hidden;
   display: block;
   height: 0;
-  clear: both; }
+  clear: both;
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
 /*******************************************/
 .nav {
-  margin: 5px 5px 5px 5px; }
+  margin: 5px 5px 5px 5px;
+}
 
 /*******************************************/
 /* The box that contains all the tiles of  */
 /* content 								   */
 /*******************************************/
 .content {
-  float: left; }
+  float: left;
+}
 
 /*
 .clearfix:after { 
@@ -44,7 +48,8 @@
   width: 100%;
   max-width: 260px;
   height: 260px;
-  margin: 5px 5px 5px 5px; }
+  margin: 5px 5px 5px 5px;
+}
 
 /*******************************************/
 /* Used to get the Width:Height ratio of   */
@@ -65,11 +70,14 @@
 .doubleTile {
   float: left;
   margin: 5px 5px 5px 5px;
-  height: 260px; }
-  @media only screen and (min-width: 540px) {
-    .doubleTile {
-      width: 100%;
-      max-width: 530px; } }
+  height: 260px;
+}
+@media only screen and (min-width: 540px) {
+  .doubleTile {
+    width: 100%;
+    max-width: 530px;
+  }
+}
 
 /*******************************************/
 /* Used to get the Width:Height ratio of   */
@@ -92,7 +100,9 @@
 /*******************************************/
 @media only screen and (max-width: 540px) {
   .container {
-    max-width: 270px; } }
+    max-width: 270px;
+  }
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
@@ -100,7 +110,9 @@
 @media only screen and (max-width: 540px) {
   .nav {
     max-width: 260px;
-    height: 50px; } }
+    height: 50px;
+  }
+}
 
 /*******************************************/
 /* The box that contains all the tiles of  */
@@ -108,7 +120,9 @@
 /*******************************************/
 @media only screen and (max-width: 540px) {
   .content {
-    max-width: 270px; } }
+    max-width: 270px;
+  }
+}
 
 /*******************************************/
 /* The container for the double width tile */
@@ -117,7 +131,9 @@
 @media only screen and (max-width: 540px) {
   .doubleTile {
     width: 100%;
-    max-width: 260px; } }
+    max-width: 260px;
+  }
+}
 
 /*******************************************/
 /* Container for content + nav bar 		   */
@@ -126,7 +142,9 @@
 /*******************************************/
 @media only screen and (min-width: 540px) and (max-width: 1079px) {
   .container {
-    width: 540px; } }
+    width: 540px;
+  }
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
@@ -134,7 +152,9 @@
 @media only screen and (min-width: 540px) and (max-width: 1079px) {
   .nav {
     max-width: 530px;
-    height: 50px; } }
+    height: 50px;
+  }
+}
 
 /*******************************************/
 /* The box that contains all the tiles of  */
@@ -142,7 +162,9 @@
 /*******************************************/
 @media only screen and (min-width: 540px) and (max-width: 1079px) {
   .content {
-    width: 540px; } }
+    width: 540px;
+  }
+}
 
 /*******************************************/
 /* Container for content + nav bar 		   */
@@ -151,7 +173,9 @@
 /*******************************************/
 @media only screen and (min-width: 1080px) and (max-width: 1823px) {
   .container {
-    width: 1080px; } }
+    width: 1080px;
+  }
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
@@ -159,7 +183,9 @@
 @media only screen and (min-width: 1080px) and (max-width: 1823px) {
   .nav {
     max-width: 1070px;
-    height: 50px; } }
+    height: 50px;
+  }
+}
 
 /*******************************************/
 /* The box that contains all the tiles of  */
@@ -167,7 +193,9 @@
 /*******************************************/
 @media only screen and (min-width: 1080px) and (max-width: 1823px) {
   .content {
-    width: 1080px; } }
+    width: 1080px;
+  }
+}
 
 /*******************************************/
 /* Container for content + nav bar 		   */
@@ -176,7 +204,9 @@
 /*******************************************/
 @media only screen and (min-width: 1824px) {
   .container {
-    width: 1350px; } }
+    width: 1350px;
+  }
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
@@ -185,7 +215,9 @@
   .nav {
     float: right;
     width: 260px;
-    height: 530px; } }
+    height: 530px;
+  }
+}
 
 /*******************************************/
 /* The box that contains all the tiles of  */
@@ -193,41 +225,53 @@
 /*******************************************/
 @media only screen and (min-width: 1824px) {
   .content {
-    width: 1080px; } }
+    width: 1080px;
+  }
+}
 
 /*******************************************/
 /* Colors to assist debugging non-visual   */
 /* elements - uncomment to enable		   */
 /*******************************************/
 .container {
-  background-color: yellow; }
+  background-color: yellow;
+}
 
 .content {
-  background-color: purple; }
+  background-color: purple;
+}
 
 @media only screen and (max-width: 540px) {
   #heartRate {
-    background-color: red; } }
+    background-color: red;
+  }
+}
 @media only screen and (min-width: 540px) and (max-width: 1079px) {
   #heartRate {
-    background-color: green; } }
+    background-color: green;
+  }
+}
 @media only screen and (min-width: 1080px) and (max-width: 1823px) {
   #heartRate {
-    background-color: blue; } }
+    background-color: blue;
+  }
+}
 @media only screen and (min-width: 1824px) {
   #heartRate {
-    background-color: pink; } }
+    background-color: pink;
+  }
+}
 
 /*******************************************/
 /* The container for the parent nav menu   */
 /*******************************************/
 .nav {
-  background-color: #666666; }
+  background-color: #666666;
+}
 
 /*******************************************/
 /* Tile color & font schemes			   */
 /*******************************************/
 #roadView {
-  background-color: green; }
-
-/*# sourceMappingURL=main.css.map */
+  background-color: green;
+}

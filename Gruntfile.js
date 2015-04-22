@@ -31,8 +31,21 @@ module.exports = function(grunt){
 		            'head-script-disabled': true,
 		            'style-disabled': true
 		        },
-		        src: ['index.html']
+		        src: ['assets/html/index.html']
 		    }
+		},
+
+		htmlmin: {
+			build: {
+				options:{
+					'removeComments': true
+				},
+				files: {
+					'assets/html/index.html' : 'build/index.html'
+				}
+
+			}
+
 		},
 
 		uglify: {
@@ -52,22 +65,27 @@ module.exports = function(grunt){
 		            consolidateMediaQueries:    true
 		        },
 		        files: {
-		            'build/css/main.css': 'build/css/main.css'
+		            '<%= project.css %>': '<%= project.scss %>'
 		        }
 		    }
 		},
 
 		cssmin: {
 		    build: {
-		        src: 'build/css/main.css',
-		        dest: 'build/css/main.css'
+		        src: '<%= project.css %>',
+		        dest: '<%= project.scss %>'
 		    }
 		},
 
 		sass: {
 		    build: {
+		    	options: {
+			    	sourcemap: 'none',
+			    	trace: true,
+			    	style: 'expanded'
+			    },
 		        files: {
-		            'build/css/main.css' : 'assets/sass/main.scss'
+		            '<%= project.css %>' : '<%= project.scss %>'
 		        }
 		    }
 		},
@@ -93,8 +111,15 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('default', []);
-    grunt.registerTask('buildcss-prod',  ['sass', 'cssc', 'cssmin']);
-    grunt.registerTask('buildcss-dev',  ['sass']);
+    
+    grunt.registerTask('buildhtml-prod',  ['htmlmin']);
+    grunt.registerTask('buildhtml-dev',  ['htmlhint']);
+	
+	grunt.registerTask('buildjs-prod',  ['uglify']);
+    grunt.registerTask('buildjs-dev',  ['uglify']);
+    
+    grunt.registerTask('buildcss-prod',  ['sass:build', 'cssc', 'cssmin']);
+    grunt.registerTask('buildcss-dev',  ['sass:build']);
 
 };
 

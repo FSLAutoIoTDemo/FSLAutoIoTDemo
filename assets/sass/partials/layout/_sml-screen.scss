@@ -1,0 +1,43 @@
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+.container{
+	@media #{$sml-screen}{
+		max-width: $container-width-sml;
+	}
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav{
+	@media #{$sml-screen}{
+		max-width: $nav-width-sml;
+		height: $nav-height-landscape;
+	}
+}
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+.content{
+	@media #{$sml-screen}{
+		max-width: $content-width-sml;
+	}
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* for sml screen size. 				   */
+/*******************************************/
+.doubleTile{
+	@media #{$sml-screen}{
+
+		width:100%;
+		max-width: $double-tile-width-compact;
+	}
+}
+

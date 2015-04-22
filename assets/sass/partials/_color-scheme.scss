@@ -1,0 +1,28 @@
+/*******************************************/
+/* Colors to assist debugging non-visual   */
+/* elements - uncomment to enable		   */
+/*******************************************/
+//##### DEBUG ########################
+.container{ background-color: yellow;}	
+.content{background-color:purple;}		
+#heartRate{
+	@media #{$sml-screen}{background-color: red;}
+	@media #{$med-screen}{background-color: green;}
+	@media #{$large-screen}{background-color: blue;}
+	@media #{$xlarge-screen}{background-color: pink;}
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav{
+	background-color: $fsl-gray;
+}
+
+/*******************************************/
+/* Tile color & font schemes			   */
+/*******************************************/
+#roadView{
+	background-color: green;
+}
+

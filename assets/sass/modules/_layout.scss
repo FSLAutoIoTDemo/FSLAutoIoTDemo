@@ -1,0 +1,43 @@
+// Screen break for media queries
+$break-sml: 540px;				//e.g. Phone
+$break-med: 540px;				//e.g. Tablet
+$break-large: 1080px;			//e.g. Monitor
+$break-xlarge: 1824px;			//e.g. HD Monitor/TV
+
+// Media query variables
+$sml-screen: "only screen and (max-width: " + $break-sml + ")";
+$med-screen: "only screen and (min-width: " + $break-med + ") and (max-width:" + ($break-large - 1px) + ")";
+$large-screen: "only screen and (min-width: " + $break-large + ")  and (max-width:" + ($break-xlarge - 1px) + ")";
+$xlarge-screen: "only screen and (min-width: "+ $break-xlarge + ")";
+$notsml-screen: "only screen and (min-width: " + $break-med + ")";
+
+// Tile layout
+$single-tile-margin: 5px;
+$single-tile-width: 260px;
+$single-tile-height: $single-tile-width;
+
+$double-tile-margin: $single-tile-margin;
+$double-tile-width-full: ($single-tile-width * 2) + ($single-tile-margin * 2);
+$double-tile-width-compact: $single-tile-width;
+$double-tile-height: $single-tile-height;
+
+// Nav layout
+$nav-margin: 5px;
+$nav-width-sml: $single-tile-width;
+$nav-width-med: $break-med - ($nav-margin * 2);
+$nav-width-large: $break-large - ($nav-margin * 2);
+$nav-width-xlarge: $single-tile-width;
+$nav-height-landscape: 50px;
+$nav-height-portrait: ($single-tile-height * 2) + ($single-tile-margin * 2);
+
+// Content layout
+$content-width-sml: $single-tile-width + ($single-tile-margin * 2);
+$content-width-med: ($single-tile-width * 2) + ($single-tile-margin * 4);
+$content-width-xl-large: ($single-tile-width * 4) + ($single-tile-margin * 8);
+
+
+// Container layout
+$container-width-sml: $single-tile-width + ($single-tile-margin * 2);
+$container-width-med: ($single-tile-width * 2) + ($single-tile-margin * 4);
+$container-width-large: ($single-tile-width * 4) + ($single-tile-margin * 8);
+$container-width-xlarge: ($single-tile-width * 4) + ($single-tile-margin * 8) + $nav-width-xlarge + ($nav-margin * 2);

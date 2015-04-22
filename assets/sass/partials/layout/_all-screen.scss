@@ -3,38 +3,9 @@
 /* - Used to keep tile layout in order 	   */
 /* - centres to screen			    	   */
 /*******************************************/
-#container{
-
-	background-color: cyan;
-
+.container{
 	margin:0 auto;
-	max-width: 270px;
-
 }
-
-
-/*******************************************/
-/* The container for the parent nav menu   */
-/*******************************************/
-.nav{
-	max-width: 260px;
-	height: 50px;
-	margin: 5px 5px 5px 5px;
-
-	background-color: orange;
-}
-
-/*******************************************/
-/* The box that contains all the tiles of  */
-/* content 								   */
-/*******************************************/
-#content{
-	background-color: purple;
-	
-	float: left;
-	max-width: 270px;
-}
-
 
 .clearfix:after { 
    content: ""; 
@@ -45,42 +16,75 @@
 }
 
 /*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav{
+	margin: $nav-margin $nav-margin $nav-margin $nav-margin;
+}
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+.content{
+	float: left;
+}
+
+/*
+.clearfix:after { 
+   content: ""; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+*/
+
+/*******************************************/
 /* The container for the single width tile */
 /* - Defines float & width characteristics */
 /*******************************************/
 .singleTile{
 	float: left;
-	
-	width:100%;
-	max-width: 260px;
 
-	margin: 5px 5px 5px 5px;
+	width: 100%;
+	max-width: $single-tile-width;
+	
+	height: $single-tile-height;
+
+	margin: $single-tile-margin $single-tile-margin $single-tile-margin $single-tile-margin;
 }
+
 
 /*******************************************/
 /* Used to get the Width:Height ratio of   */
 /* a single width tile.      			   */
 /* - Change padding-top for different ratio*/
 /*******************************************/
+/*
 .singleTile:before{
 	content: "";
 	float:left;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
+	padding-top: 100%; 	// initial ratio of 1:1
 }
+*/
+
 
 /*******************************************/
 /* The container for the double width tile */
-/* for Xs screen size. Changes to same size*/
-/* as a singleTile.						   */
-/* - Defines float & width characteristics */
+/* for all screen size. 				   */
 /*******************************************/
 .doubleTile{
 	float: left;
-	
-	width:100%;
-	max-width: 260px;
 
-	margin: 5px 5px 5px 5px;
+	margin: $double-tile-margin $double-tile-margin $double-tile-margin $double-tile-margin;
+
+	@media #{$notsml-screen}{
+		width:100%;
+		max-width: $double-tile-width-full;
+	}
+
+	height: $double-tile-height;
 }
 
 /*******************************************/
@@ -90,14 +94,10 @@
 /* http://www.mademyday.de/css-height-equal*/
 /* s-width-with-pure-css.html			   */
 /*******************************************/
+/*
 .doubleTile:before{
 	content: "";
 	float:left;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
+	padding-top: 100%; 	// initial ratio of 1:1
 }
-
-
-
-#heartRate{
-	background-color: red;
-}
+*/

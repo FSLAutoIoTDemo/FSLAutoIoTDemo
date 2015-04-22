@@ -1,0 +1,233 @@
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+.container {
+  margin: 0 auto; }
+
+.clearfix:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav {
+  margin: 5px 5px 5px 5px; }
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+.content {
+  float: left; }
+
+/*
+.clearfix:after { 
+   content: ""; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+*/
+/*******************************************/
+/* The container for the single width tile */
+/* - Defines float & width characteristics */
+/*******************************************/
+.singleTile {
+  float: left;
+  width: 100%;
+  max-width: 260px;
+  height: 260px;
+  margin: 5px 5px 5px 5px; }
+
+/*******************************************/
+/* Used to get the Width:Height ratio of   */
+/* a single width tile.      			   */
+/* - Change padding-top for different ratio*/
+/*******************************************/
+/*
+.singleTile:before{
+	content: "";
+	float:left;
+	padding-top: 100%; 	// initial ratio of 1:1
+}
+*/
+/*******************************************/
+/* The container for the double width tile */
+/* for all screen size. 				   */
+/*******************************************/
+.doubleTile {
+  float: left;
+  margin: 5px 5px 5px 5px;
+  height: 260px; }
+  @media only screen and (min-width: 540px) {
+    .doubleTile {
+      width: 100%;
+      max-width: 530px; } }
+
+/*******************************************/
+/* Used to get the Width:Height ratio of   */
+/* a single width tile.      			   */
+/* - Change padding-top for different ratio*/
+/* http://www.mademyday.de/css-height-equal*/
+/* s-width-with-pure-css.html			   */
+/*******************************************/
+/*
+.doubleTile:before{
+	content: "";
+	float:left;
+	padding-top: 100%; 	// initial ratio of 1:1
+}
+*/
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+@media only screen and (max-width: 540px) {
+  .container {
+    max-width: 270px; } }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+@media only screen and (max-width: 540px) {
+  .nav {
+    max-width: 260px;
+    height: 50px; } }
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+@media only screen and (max-width: 540px) {
+  .content {
+    max-width: 270px; } }
+
+/*******************************************/
+/* The container for the double width tile */
+/* for sml screen size. 				   */
+/*******************************************/
+@media only screen and (max-width: 540px) {
+  .doubleTile {
+    width: 100%;
+    max-width: 260px; } }
+
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+@media only screen and (min-width: 540px) and (max-width: 1079px) {
+  .container {
+    width: 540px; } }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+@media only screen and (min-width: 540px) and (max-width: 1079px) {
+  .nav {
+    max-width: 530px;
+    height: 50px; } }
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+@media only screen and (min-width: 540px) and (max-width: 1079px) {
+  .content {
+    width: 540px; } }
+
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+@media only screen and (min-width: 1080px) and (max-width: 1823px) {
+  .container {
+    width: 1080px; } }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+@media only screen and (min-width: 1080px) and (max-width: 1823px) {
+  .nav {
+    max-width: 1070px;
+    height: 50px; } }
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+@media only screen and (min-width: 1080px) and (max-width: 1823px) {
+  .content {
+    width: 1080px; } }
+
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+@media only screen and (min-width: 1824px) {
+  .container {
+    width: 1350px; } }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+@media only screen and (min-width: 1824px) {
+  .nav {
+    float: right;
+    width: 260px;
+    height: 530px; } }
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+@media only screen and (min-width: 1824px) {
+  .content {
+    width: 1080px; } }
+
+/*******************************************/
+/* Colors to assist debugging non-visual   */
+/* elements - uncomment to enable		   */
+/*******************************************/
+.container {
+  background-color: yellow; }
+
+.content {
+  background-color: purple; }
+
+@media only screen and (max-width: 540px) {
+  #heartRate {
+    background-color: red; } }
+@media only screen and (min-width: 540px) and (max-width: 1079px) {
+  #heartRate {
+    background-color: green; } }
+@media only screen and (min-width: 1080px) and (max-width: 1823px) {
+  #heartRate {
+    background-color: blue; } }
+@media only screen and (min-width: 1824px) {
+  #heartRate {
+    background-color: pink; } }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav {
+  background-color: #666666; }
+
+/*******************************************/
+/* Tile color & font schemes			   */
+/*******************************************/
+#roadView {
+  background-color: green; }
+
+/*# sourceMappingURL=main.css.map */

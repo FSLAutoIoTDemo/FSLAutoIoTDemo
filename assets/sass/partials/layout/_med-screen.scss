@@ -1,0 +1,30 @@
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+.container{
+	@media #{$med-screen}{
+		width: $container-width-med;
+	}
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.nav{
+	@media #{$med-screen}{
+		max-width: $nav-width-med;
+		height: $nav-height-landscape;
+	}
+}
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+.content{
+	@media #{$med-screen}{
+		width: $content-width-med;
+	}
+}

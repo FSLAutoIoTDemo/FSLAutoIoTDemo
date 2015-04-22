@@ -19,7 +19,7 @@ module.exports = function(grunt){
 		},
 
         htmlhint: {
-		    build: {
+		    dist: {
 		        options: {
 		            'tag-pair': true,
 		            'tagname-lowercase': true,
@@ -36,20 +36,26 @@ module.exports = function(grunt){
 		},
 
 		htmlmin: {
-			build: {
+			dist: {
 				options:{
-					'removeComments': true
+					'removeComments': true,
+					'collapseWhitespace': true
 				},
 				files: {
-					'assets/html/index.html' : 'build/index.html'
+					'build/index.html' : 'assets/html/index-src.html'
 				}
 
+			},
+			dev: {
+				files: {
+					'build/index.html' : 'assets/html/index-src.html'
+				}
 			}
 
 		},
 
 		uglify: {
-		    build: {
+		    dist: {
 		        files: {
 		            'build/js/base.min.js': ['assets/js/base.js']
 		        }
@@ -58,7 +64,7 @@ module.exports = function(grunt){
 
 
 		cssc: {
-		    build: {
+		    dist: {
 		        options: {
 		            consolidateViaDeclarations: true,
 		            consolidateViaSelectors:    true,
@@ -71,14 +77,14 @@ module.exports = function(grunt){
 		},
 
 		cssmin: {
-		    build: {
+		    dist: {
 		        src: '<%= project.css %>',
 		        dest: '<%= project.scss %>'
 		    }
 		},
 
 		sass: {
-		    build: {
+		    dist: {
 		    	options: {
 			    	sourcemap: 'none',
 			    	trace: true,
@@ -112,14 +118,14 @@ module.exports = function(grunt){
 
     grunt.registerTask('default', []);
     
-    grunt.registerTask('buildhtml-prod',  ['htmlmin']);
-    grunt.registerTask('buildhtml-dev',  ['htmlhint']);
+    grunt.registerTask('buildhtml-dist',  ['htmlmin:dist', 'htmlhint']);
+    grunt.registerTask('buildhtml-dev',  ['htmlmin:dev', 'htmlhint']);
 	
-	grunt.registerTask('buildjs-prod',  ['uglify']);
+	grunt.registerTask('buildjs-dist',  ['uglify']);
     grunt.registerTask('buildjs-dev',  ['uglify']);
     
-    grunt.registerTask('buildcss-prod',  ['sass:build', 'cssc', 'cssmin']);
-    grunt.registerTask('buildcss-dev',  ['sass:build']);
+    grunt.registerTask('buildcss-dist',  ['sass:dist', 'cssc', 'cssmin']);
+    grunt.registerTask('buildcss-dev',  ['sass:dist']);
 
 };
 

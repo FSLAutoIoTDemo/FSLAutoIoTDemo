@@ -12,16 +12,16 @@ Dependencies:
 
 To install the grunt dependencies, run from command prompt:
 ```
-> npm install
+$> npm install
 ```
 
 ## Build
-* <build> folder contains build files
-* <assets> folder contains source files
+* `assets` folder contains source files
+* `build` folder contains build files
 
 To build, run from command prompt:
 ```
-> grunt buildcss-dev		// Development Build (user friendly)
+$> grunt buildcss-dev		// Development Build (user friendly)
 
-> grunt buildcss-prod		// Production Build (optimised)
+$> grunt buildcss-prod		// Production Build (optimised)
 ```

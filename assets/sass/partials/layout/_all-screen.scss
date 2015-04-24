@@ -5,8 +5,12 @@
 /*******************************************/
 .container{
 	margin:0 auto;
+	width: $container-width-dynamic;
 }
 
+/*******************************************/
+/* Clears all floats			 		   */
+/*******************************************/
 .clearfix:after { 
    content: ""; 
    visibility: hidden; 
@@ -19,7 +23,9 @@
 /* The container for the parent nav menu   */
 /*******************************************/
 .nav{
-	margin: $nav-margin $nav-margin $nav-margin $nav-margin;
+	margin: $nav-margin;
+	height: $nav-height;
+	width: $nav-width;
 }
 
 /*******************************************/
@@ -28,76 +34,63 @@
 /*******************************************/
 .content{
 	float: left;
+	width: $content-width;
 }
 
-/*
-.clearfix:after { 
-   content: ""; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-*/
 
 /*******************************************/
 /* The container for the single width tile */
-/* - Defines float & width characteristics */
+/* - Defines float & psudeo height box     */
 /*******************************************/
 .singleTile{
 	float: left;
 
-	width: 100%;
-	max-width: $single-tile-width;
-	
-	height: $single-tile-height;
+	// Psudeo element to provide dynamic height, based on width & w/h ratio
+	&::before{
+		content: "";
+		float:left;
 
-	margin: $single-tile-margin $single-tile-margin $single-tile-margin $single-tile-margin;
+		// Scale height. Small/Med screens default to wide screen ratio
+		padding-top: $single-tile-height-wide-pc; 	
+
+		@media #{$std-screen}{
+			// For large screen, scale height for non-wide screen	
+			padding-top: $single-tile-height-std-pc; 	
+		}
+		@media #{$wide-screen}{
+			// For large screen, scale height for wide screens
+			padding-top: $single-tile-height-wide-pc; 	
+		}
+	}
 }
-
-
-/*******************************************/
-/* Used to get the Width:Height ratio of   */
-/* a single width tile.      			   */
-/* - Change padding-top for different ratio*/
-/*******************************************/
-/*
-.singleTile:before{
-	content: "";
-	float:left;
-	padding-top: 100%; 	// initial ratio of 1:1
-}
-*/
 
 
 /*******************************************/
 /* The container for the double width tile */
-/* for all screen size. 				   */
+/* - Defines float & psudeo height box     */
 /*******************************************/
 .doubleTile{
 	float: left;
 
-	margin: $double-tile-margin $double-tile-margin $double-tile-margin $double-tile-margin;
+	// Psudeo element to provide dynamic height, based on width & w/h ratio
+	&::before{
+		content: "";
+		float:left;
 
-	@media #{$notsml-screen}{
-		width:100%;
-		max-width: $double-tile-width-full;
+		// Scale height. Small/Med screens default to wide screen ratio
+		padding-top: $double-tile-height-wide-pc; 	
+
+		@media #{$std-screen}{
+			// For large screen, scale height for non-wide screen	
+			padding-top: $double-tile-height-std-pc; 	
+		}
+		@media #{$wide-screen}{
+			// For large screen, scale height for wide screens
+			padding-top: $double-tile-height-wide-pc; 	
+		}
+		@media #{$med-screen}{
+			// For med screens, use this scale for height on double tiles
+			padding-top: $double-tile-height-med-pc;
+		}
 	}
-
-	height: $double-tile-height;
 }
-
-/*******************************************/
-/* Used to get the Width:Height ratio of   */
-/* a single width tile.      			   */
-/* - Change padding-top for different ratio*/
-/* http://www.mademyday.de/css-height-equal*/
-/* s-width-with-pure-css.html			   */
-/*******************************************/
-/*
-.doubleTile:before{
-	content: "";
-	float:left;
-	padding-top: 100%; 	// initial ratio of 1:1
-}
-*/

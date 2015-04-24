@@ -1,43 +1,64 @@
 // Screen break for media queries
-$break-sml: 540px;				//e.g. Phone
-$break-med: 540px;				//e.g. Tablet
-$break-large: 1080px;			//e.g. Monitor
-$break-xlarge: 1824px;			//e.g. HD Monitor/TV
+$break-sml: 600px;				//e.g. Phone
+$break-med: 600px;				//e.g. Tablet
+//###################### -- need to rethink this break!!
+//$break-large: 1080px;			//e.g. Monitor	
+$break-large: 1190px;			//e.g. Monitor	
 
-// Media query variables
+// Media query variables - viewport sizes
 $sml-screen: "only screen and (max-width: " + $break-sml + ")";
 $med-screen: "only screen and (min-width: " + $break-med + ") and (max-width:" + ($break-large - 1px) + ")";
-$large-screen: "only screen and (min-width: " + $break-large + ")  and (max-width:" + ($break-xlarge - 1px) + ")";
-$xlarge-screen: "only screen and (min-width: "+ $break-xlarge + ")";
+$large-screen: "only screen and (min-width: "+ $break-large + ")";
 $notsml-screen: "only screen and (min-width: " + $break-med + ")";
+$notlarge-screen: "only screen and (max-width: " + $break-large + ")";
+
+// Media query variables -  viewport aspect ratio
+$wide-aspect-ratio: "16/9";
+$std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
+$wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
+
 
 // Tile layout
-$single-tile-margin: 5px;
-$single-tile-width: 260px;
-$single-tile-height: $single-tile-width;
+// --> Configuration parameters for single & double tiles (modify if required)
+$single-tile-margin-sml-dyn: 2;			// Margin size (used for margin + width)
+$single-tile-min-width: 260px; 			// Minimum width of single tile (linked into screen break)
+$double-tile-min-width-full: 520px; 	//######calculate (use 260px=xyz% & work from there...)		// Minimum width of double tile (linked into screen break)
+$single-tile-height-scale-std: 1.25;	// Height scaling factor for standard screens
+$single-tile-height-scale-wide: 1.0;	// Height scaling factor for wide screens
 
-$double-tile-margin: $single-tile-margin;
-$double-tile-width-full: ($single-tile-width * 2) + ($single-tile-margin * 2);
-$double-tile-width-compact: $single-tile-width;
-$double-tile-height: $single-tile-height;
+//--> Automatically generates correct single tile margins, width & height (do not touch)
+$single-tile-margin-med-dyn: $single-tile-margin-sml-dyn / 2;
+$single-tile-margin-large-dyn: $single-tile-margin-sml-dyn / 4;
+$single-tile-margin-sml-pc: $single-tile-margin-sml-dyn * 1%;
+$single-tile-margin-med-pc: $single-tile-margin-med-dyn * 1%;
+$single-tile-margin-large-pc: $single-tile-margin-large-dyn * 1%;
+$single-tile-width-sml: ( 100 - ( 2*  $single-tile-margin-sml-dyn )  ) * 1%; 
+$single-tile-width-med: ( ( 100 - ( 4 * $single-tile-margin-med-dyn ) ) / 2 ) * 1%; 
+$single-tile-width-large: ( ( 100 - ( 8 * $single-tile-margin-large-dyn ) ) / 4 ) * 1%; 
+$single-tile-height-std-pc: $single-tile-height-scale-std * 100%;
+$single-tile-height-wide-pc: $single-tile-height-scale-wide * 100%;
+
+//--> Automatically generates correct single tile margins, width & height (do not touch)
+$double-tile-margin-sml-pc: $single-tile-margin-sml-pc;
+$double-tile-margin-med-pc: $single-tile-margin-med-pc;
+$double-tile-margin-large-pc: $single-tile-margin-large-pc;
+$double-tile-width-sml: $single-tile-width-sml;
+$double-tile-width-med: ($single-tile-width-med * 2) + ($double-tile-margin-med-pc * 2);
+$double-tile-width-large: ($single-tile-width-large * 2) + ($single-tile-margin-large-pc * 2);
+
+$double-tile-height-med-pc: ((((2 * $single-tile-width-med) / $double-tile-width-med) / 2) * $single-tile-height-scale-wide) * 100%;
+$double-tile-height-wide-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-wide) * 100%;
+$double-tile-height-std-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-std) * 100%;
+
+$double-tile-min-width-compact: $single-tile-min-width;
 
 // Nav layout
-$nav-margin: 5px;
-$nav-width-sml: $single-tile-width;
-$nav-width-med: $break-med - ($nav-margin * 2);
-$nav-width-large: $break-large - ($nav-margin * 2);
-$nav-width-xlarge: $single-tile-width;
-$nav-height-landscape: 50px;
-$nav-height-portrait: ($single-tile-height * 2) + ($single-tile-margin * 2);
+$nav-margin: 0px;
+$nav-width: 100%;
+$nav-height: 10%;		//#####????????
 
 // Content layout
-$content-width-sml: $single-tile-width + ($single-tile-margin * 2);
-$content-width-med: ($single-tile-width * 2) + ($single-tile-margin * 4);
-$content-width-xl-large: ($single-tile-width * 4) + ($single-tile-margin * 8);
-
+$content-width: 100%;
 
 // Container layout
-$container-width-sml: $single-tile-width + ($single-tile-margin * 2);
-$container-width-med: ($single-tile-width * 2) + ($single-tile-margin * 4);
-$container-width-large: ($single-tile-width * 4) + ($single-tile-margin * 8);
-$container-width-xlarge: ($single-tile-width * 4) + ($single-tile-margin * 8) + $nav-width-xlarge + ($nav-margin * 2);
+$container-width-dynamic: 95%;

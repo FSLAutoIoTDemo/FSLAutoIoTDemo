@@ -1,43 +1,25 @@
 /*******************************************/
-/* Container for content + nav bar 		   */
-/* - Used to keep tile layout in order 	   */
-/* - centres to screen			    	   */
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
 /*******************************************/
-.container{
+.singleTile{
 	@media #{$sml-screen}{
-		max-width: $container-width-sml;
+		width: $single-tile-width-sml;
+		margin: $single-tile-margin-sml-pc;
 	}
 }
 
-/*******************************************/
-/* The container for the parent nav menu   */
-/*******************************************/
-.nav{
-	@media #{$sml-screen}{
-		max-width: $nav-width-sml;
-		height: $nav-height-landscape;
-	}
-}
-
-/*******************************************/
-/* The box that contains all the tiles of  */
-/* content 								   */
-/*******************************************/
-.content{
-	@media #{$sml-screen}{
-		max-width: $content-width-sml;
-	}
-}
 
 /*******************************************/
 /* The container for the double width tile */
-/* for sml screen size. 				   */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
 /*******************************************/
 .doubleTile{
 	@media #{$sml-screen}{
-
-		width:100%;
-		max-width: $double-tile-width-compact;
+		width: $double-tile-width-sml;
+		min-width: $double-tile-min-width-compact;
+		margin: $double-tile-margin-sml-pc;
 	}
 }
-

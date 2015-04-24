@@ -1,30 +1,25 @@
 /*******************************************/
-/* Container for content + nav bar 		   */
-/* - Used to keep tile layout in order 	   */
-/* - centres to screen			    	   */
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
 /*******************************************/
-.container{
+.singleTile{
 	@media #{$med-screen}{
-		width: $container-width-med;
+		width: $single-tile-width-med;
+		min-width: $single-tile-min-width;
+		margin: $single-tile-margin-med-pc;
 	}
 }
 
 /*******************************************/
-/* The container for the parent nav menu   */
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
 /*******************************************/
-.nav{
+.doubleTile{
 	@media #{$med-screen}{
-		max-width: $nav-width-med;
-		height: $nav-height-landscape;
-	}
-}
-
-/*******************************************/
-/* The box that contains all the tiles of  */
-/* content 								   */
-/*******************************************/
-.content{
-	@media #{$med-screen}{
-		width: $content-width-med;
+		width: $double-tile-width-med;
+		min-width: $double-tile-min-width-full;
+		margin: $double-tile-margin-med-pc;
 	}
 }

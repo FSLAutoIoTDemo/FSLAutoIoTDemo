@@ -86,7 +86,7 @@ module.exports = function(grunt){
 		sass: {
 		    dist: {
 		    	options: {
-			    	sourcemap: 'none',
+			    	sourcemap: 'auto',
 			    	trace: true,
 			    	style: 'expanded'
 			    },
@@ -100,16 +100,17 @@ module.exports = function(grunt){
 
 		watch: {
 		    html: {
-		        files: ['index.html'],
-		        tasks: ['htmlhint']
+		        files: ['assets/html/**/*.html'],
+		        tasks: ['buildhtml-dev']
 		    },
-		 	js: {
+/*		 	js: {
 		        files: ['assets/js/base.js'],
 		        tasks: ['uglify']
 			},  
+*/
 		 	css: {
 		        files: ['assets/sass/**/*.scss'],
-		        tasks: ['buildcss']
+		        tasks: ['buildcss-dev']
 			}  
 		}
 

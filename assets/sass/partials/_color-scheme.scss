@@ -3,6 +3,7 @@
 /* elements - uncomment to enable		   */
 /*******************************************/
 //##### DEBUG ########################
+/*
 .container{ background-color: yellow;}	
 .content{background-color:purple;}		
 #heartRate{
@@ -10,13 +11,7 @@
 	@media #{$med-screen}{background-color: green;}
 	@media #{$large-screen}{background-color: blue;}
 }
-
-/*******************************************/
-/* The container for the parent nav menu   */
-/*******************************************/
-.nav{
-	background-color: $fsl-gray;
-}
+*/
 
 /*******************************************/
 /* Tile color & font schemes			   */
@@ -25,3 +20,43 @@
 	background-color: green;
 }
 
+
+body{
+	background-color: $fsl-black;
+}
+
+.headBar{
+	background-color: $fsl-gray;
+}
+
+.navBar{
+	background-color: $fsl-blue-light;
+}
+
+#tile1{
+	background-color: $fsl-gray;
+}
+
+#tile2{
+	background-color: $fsl-orange;
+}
+
+#tile3{
+	background-color: $fsl-lightblue;
+}
+
+#tile4{
+	background-color: $fsl-purple-light;
+}
+
+#tile5{
+	background-color: $fsl-yellow;
+}
+
+#tile6{
+	background-color: $fsl-purple;
+}
+
+#tile7{
+	background-color: $fsl-slate;
+}

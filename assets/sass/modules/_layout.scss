@@ -1,3 +1,5 @@
+// Note "-pc" is used to represent "percentage"
+
 // Screen break for media queries
 $break-sml: 600px;				//e.g. Phone
 $break-med: 600px;				//e.g. Tablet
@@ -29,19 +31,23 @@ $single-tile-height-scale-wide: 1.0;	// Height scaling factor for wide screens
 //--> Automatically generates correct single tile margins, width & height (do not touch)
 $single-tile-margin-med-dyn: $single-tile-margin-sml-dyn / 2;
 $single-tile-margin-large-dyn: $single-tile-margin-sml-dyn / 4;
+
 $single-tile-margin-sml-pc: $single-tile-margin-sml-dyn * 1%;
 $single-tile-margin-med-pc: $single-tile-margin-med-dyn * 1%;
 $single-tile-margin-large-pc: $single-tile-margin-large-dyn * 1%;
+
 $single-tile-width-sml: ( 100 - ( 2*  $single-tile-margin-sml-dyn )  ) * 1%; 
 $single-tile-width-med: ( ( 100 - ( 4 * $single-tile-margin-med-dyn ) ) / 2 ) * 1%; 
 $single-tile-width-large: ( ( 100 - ( 8 * $single-tile-margin-large-dyn ) ) / 4 ) * 1%; 
+
 $single-tile-height-std-pc: $single-tile-height-scale-std * 100%;
 $single-tile-height-wide-pc: $single-tile-height-scale-wide * 100%;
 
-//--> Automatically generates correct single tile margins, width & height (do not touch)
+//--> Automatically generates correct double  tile margins, width & height (do not touch)
 $double-tile-margin-sml-pc: $single-tile-margin-sml-pc;
 $double-tile-margin-med-pc: $single-tile-margin-med-pc;
 $double-tile-margin-large-pc: $single-tile-margin-large-pc;
+
 $double-tile-width-sml: $single-tile-width-sml;
 $double-tile-width-med: ($single-tile-width-med * 2) + ($double-tile-margin-med-pc * 2);
 $double-tile-width-large: ($single-tile-width-large * 2) + ($single-tile-margin-large-pc * 2);
@@ -53,8 +59,14 @@ $double-tile-height-std-pc: ((((2 * $single-tile-width-large) / $double-tile-wid
 $double-tile-min-width-compact: $single-tile-min-width;
 
 // Nav layout
-$nav-margin: 0px;
-$nav-width: 100%;
+$nav-margin-sml-pc: $single-tile-margin-sml-pc;
+$nav-margin-med-pc: $single-tile-margin-med-pc;
+$nav-margin-large-pc: $single-tile-margin-large-pc;
+
+$nav-width-sml: (100 - (2 * $single-tile-margin-sml-dyn)) * 1%;
+$nav-width-med: (100 - (2 * $single-tile-margin-med-dyn)) * 1%;
+$nav-width-large: (100 - (2 * $single-tile-margin-large-dyn)) * 1%;
+
 $nav-height: 10%;		//#####????????
 
 // Content layout
@@ -62,3 +74,4 @@ $content-width: 100%;
 
 // Container layout
 $container-width-dynamic: 95%;
+$container-max-width-med: 600px;

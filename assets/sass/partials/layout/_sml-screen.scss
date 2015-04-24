@@ -23,3 +23,14 @@
 		margin: $double-tile-margin-sml-pc;
 	}
 }
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+.navBar, .headBar{
+	@media #{$sml-screen}{
+		margin: $nav-margin-sml-pc;
+		width: $nav-width-sml;
+		}	
+}

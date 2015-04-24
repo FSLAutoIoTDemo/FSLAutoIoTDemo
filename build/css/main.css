@@ -7,6 +7,11 @@
   margin: 0 auto;
   width: 95%;
 }
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .container {
+    max-width: 600px;
+  }
+}
 
 /*******************************************/
 /* Clears all floats			 		   */
@@ -22,10 +27,8 @@
 /*******************************************/
 /* The container for the parent nav menu   */
 /*******************************************/
-.nav {
-  margin: 0px;
+.navBar, .headBar {
   height: 10%;
-  width: 100%;
 }
 
 /*******************************************/
@@ -114,6 +117,17 @@
 }
 
 /*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (max-width: 600px) {
+  .navBar, .headBar {
+    margin: 2%;
+    width: 96%;
+  }
+}
+
+/*******************************************/
 /* The container for the single width tile */
 /* - Width and margin will change on       */
 /*   large-screen break.				   */
@@ -136,6 +150,17 @@
     width: 98%;
     min-width: 520px;
     margin: 1%;
+  }
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .navBar, .headBar {
+    margin: 1%;
+    width: 98%;
   }
 }
 
@@ -166,45 +191,74 @@
 }
 
 /*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .navBar, .headBar {
+    margin: 0.5%;
+    width: 99%;
+  }
+}
+
+/*******************************************/
 /* Colors to assist debugging non-visual   */
 /* elements - uncomment to enable		   */
 /*******************************************/
-.container {
-  background-color: yellow;
+/*
+.container{ background-color: yellow;}	
+.content{background-color:purple;}		
+#heartRate{
+	@media only screen and (max-width: 600px){background-color: red;}
+	@media only screen and (min-width: 600px) and (max-width:1189px){background-color: green;}
+	@media only screen and (min-width: 1190px){background-color: blue;}
 }
-
-.content {
-  background-color: purple;
-}
-
-@media only screen and (max-width: 600px) {
-  #heartRate {
-    background-color: red;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  #heartRate {
-    background-color: green;
-  }
-}
-@media only screen and (min-width: 1190px) {
-  #heartRate {
-    background-color: blue;
-  }
-}
-
-/*******************************************/
-/* The container for the parent nav menu   */
-/*******************************************/
-.nav {
-  background-color: #666666;
-}
-
+*/
 /*******************************************/
 /* Tile color & font schemes			   */
 /*******************************************/
 #roadView {
   background-color: green;
+}
+
+body {
+  background-color: #000000;
+}
+
+.headBar {
+  background-color: #666666;
+}
+
+.navBar {
+  background-color: #9bc0e9;
+}
+
+#tile1 {
+  background-color: #666666;
+}
+
+#tile2 {
+  background-color: #e66a08;
+}
+
+#tile3 {
+  background-color: #8ad3de;
+}
+
+#tile4 {
+  background-color: #6f6fcc;
+}
+
+#tile5 {
+  background-color: #ffc20f;
+}
+
+#tile6 {
+  background-color: #2b368a;
+}
+
+#tile7 {
+  background-color: #9aa9af;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -6,6 +6,11 @@
 .container{
 	margin:0 auto;
 	width: $container-width-dynamic;
+
+	// Want to limit how big the med-screen container becomes
+	@media #{$med-screen}{
+		max-width: $container-max-width-med;
+	}
 }
 
 /*******************************************/
@@ -22,10 +27,8 @@
 /*******************************************/
 /* The container for the parent nav menu   */
 /*******************************************/
-.nav{
-	margin: $nav-margin;
+.navBar, .headBar{
 	height: $nav-height;
-	width: $nav-width;
 }
 
 /*******************************************/

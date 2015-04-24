@@ -25,3 +25,13 @@
 	}
 }
 
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+.navBar, .headBar{
+	@media #{$large-screen}{
+		margin: $nav-margin-large-pc;
+		width: $nav-width-large;
+		}	
+}

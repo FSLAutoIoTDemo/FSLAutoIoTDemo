@@ -14,15 +14,13 @@
 */
 
 /*******************************************/
-/* Tile color & font schemes			   */
+/* Manages colour blocks (font color found */
+/* in _font-scheme.scss)				   */
 /*******************************************/
-#roadView{
-	background-color: green;
-}
-
 
 body{
 	background-color: $fsl-black;
+
 }
 
 .headBar{
@@ -30,33 +28,30 @@ body{
 }
 
 .navBar{
-	background-color: $fsl-blue-light;
+	background-color: $fsl-blue;
 }
 
-#tile1{
-	background-color: $fsl-gray;
-}
-
-#tile2{
+#vd-Map{
 	background-color: $fsl-orange;
 }
 
-#tile3{
-	background-color: $fsl-lightblue;
-}
-
-#tile4{
-	background-color: $fsl-purple-light;
-}
-
-#tile5{
+#vd-RoadCam{
 	background-color: $fsl-yellow;
 }
 
-#tile6{
-	background-color: $fsl-purple;
+#vd-Speed{
+	background-color: $fsl-blue;
 }
 
-#tile7{
-	background-color: $fsl-slate;
+#vd-Accel{
+	background-color: $fsl-purple-light;
 }
+
+#vd-DriverCam{
+	background-color: $fsl-yellow;
+}
+
+#vd-Heart{
+	background-color: $fsl-orange;
+}
+

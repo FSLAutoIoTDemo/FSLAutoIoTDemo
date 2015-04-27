@@ -5,7 +5,7 @@
 /*******************************************/
 .container {
   margin: 0 auto;
-  width: 95%;
+  width: 92%;
 }
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   .container {
@@ -28,7 +28,29 @@
 /* The container for the parent nav menu   */
 /*******************************************/
 .navBar, .headBar {
-  height: 10%;
+  float: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.navBar::before, .headBar::before {
+  content: "";
+  float: left;
+  padding-top: 3%;
+}
+
+.navBar h1, .headBar h1 {
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-left: 2%;
 }
 
 /*******************************************/
@@ -54,7 +76,7 @@
 }
 @media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
   .singleTile::before {
-    padding-top: 125%;
+    padding-top: 120%;
   }
 }
 @media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
@@ -73,21 +95,26 @@
 .doubleTile::before {
   content: "";
   float: left;
-  padding-top: 48.97959%;
+  padding-top: 49.49495%;
 }
 @media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
   .doubleTile::before {
-    padding-top: 61.22449%;
+    padding-top: 59.39394%;
   }
 }
 @media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
   .doubleTile::before {
-    padding-top: 48.97959%;
+    padding-top: 49.49495%;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   .doubleTile::before {
-    padding-top: 48.97959%;
+    padding-top: 49.49495%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .doubleTile::before {
+    padding-top: 100%;
   }
 }
 
@@ -98,44 +125,7 @@
 /*******************************************/
 @media only screen and (max-width: 600px) {
   .singleTile {
-    width: 96%;
-    margin: 2%;
-  }
-}
-
-/*******************************************/
-/* The container for the double width tile */
-/* - Width and margin will change on       */
-/*   large-screen break.				   */
-/*******************************************/
-@media only screen and (max-width: 600px) {
-  .doubleTile {
-    width: 96%;
-    min-width: 260px;
-    margin: 2%;
-  }
-}
-
-/*******************************************/
-/* The container for the parent nav menu   */
-/* - Handles dynamic margin sizes: 		   */
-/*******************************************/
-@media only screen and (max-width: 600px) {
-  .navBar, .headBar {
-    margin: 2%;
-    width: 96%;
-  }
-}
-
-/*******************************************/
-/* The container for the single width tile */
-/* - Width and margin will change on       */
-/*   large-screen break.				   */
-/*******************************************/
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  .singleTile {
-    width: 48%;
-    min-width: 260px;
+    width: 98%;
     margin: 1%;
   }
 }
@@ -145,10 +135,9 @@
 /* - Width and margin will change on       */
 /*   large-screen break.				   */
 /*******************************************/
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
+@media only screen and (max-width: 600px) {
   .doubleTile {
     width: 98%;
-    min-width: 520px;
     margin: 1%;
   }
 }
@@ -157,7 +146,7 @@
 /* The container for the parent nav menu   */
 /* - Handles dynamic margin sizes: 		   */
 /*******************************************/
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
+@media only screen and (max-width: 600px) {
   .navBar, .headBar {
     margin: 1%;
     width: 98%;
@@ -169,22 +158,22 @@
 /* - Width and margin will change on       */
 /*   large-screen break.				   */
 /*******************************************/
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
   .singleTile {
-    width: 24%;
-    min-width: 260px;
-    margin: 0.5%;
-  }
-}
-
-/*******************************************/
-/* The container for the double width tile */
-/* - Width and margin will change on       */
-/*   large-screen break.				   */
-/*******************************************/
-@media only screen and (min-width: 1190px) {
-  .doubleTile {
     width: 49%;
+    min-width: 260px;
+    margin: 0.5%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .doubleTile {
+    width: 99%;
     min-width: 520px;
     margin: 0.5%;
   }
@@ -194,10 +183,47 @@
 /* The container for the parent nav menu   */
 /* - Handles dynamic margin sizes: 		   */
 /*******************************************/
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
   .navBar, .headBar {
     margin: 0.5%;
     width: 99%;
+  }
+}
+
+/*******************************************/
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .singleTile {
+    width: 24.5%;
+    min-width: 260px;
+    margin: 0.25%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .doubleTile {
+    width: 49.5%;
+    min-width: 520px;
+    margin: 0.25%;
+  }
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .navBar, .headBar {
+    margin: 0.25%;
+    width: 99.5%;
   }
 }
 
@@ -215,12 +241,9 @@
 }
 */
 /*******************************************/
-/* Tile color & font schemes			   */
+/* Manages colour blocks (font color found */
+/* in _font-scheme.scss)				   */
 /*******************************************/
-#roadView {
-  background-color: green;
-}
-
 body {
   background-color: #000000;
 }
@@ -230,35 +253,63 @@ body {
 }
 
 .navBar {
-  background-color: #9bc0e9;
+  background-color: #008ecb;
 }
 
-#tile1 {
-  background-color: #666666;
-}
-
-#tile2 {
+#vd-Map {
   background-color: #e66a08;
 }
 
-#tile3 {
-  background-color: #8ad3de;
-}
-
-#tile4 {
-  background-color: #6f6fcc;
-}
-
-#tile5 {
+#vd-RoadCam {
   background-color: #ffc20f;
 }
 
-#tile6 {
-  background-color: #2b368a;
+#vd-Speed {
+  background-color: #008ecb;
 }
 
-#tile7 {
-  background-color: #9aa9af;
+#vd-Accel {
+  background-color: #6f6fcc;
+}
+
+#vd-DriverCam {
+  background-color: #ffc20f;
+}
+
+#vd-Heart {
+  background-color: #e66a08;
+}
+
+/*******************************************/
+/* Font schemes	(size, style) */
+/*******************************************/
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.navBar h1, .headBar h1, .tileTitle {
+  font-weight: 300;
+  color: #ffffff;
+}
+@media only screen and (min-width: 1190px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 1.2vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 2.4vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 4.8vw;
+  }
+}
+
+.navBar {
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

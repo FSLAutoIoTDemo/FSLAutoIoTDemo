@@ -1,0 +1,33 @@
+/*******************************************/
+/* Font schemes	(size, style) */
+/*******************************************/
+
+body{
+	// Define default font settings
+	font-family: $default-font-family;
+	font-weight: $font-light;
+}
+
+.navBar h1, .headBar h1, .tileTitle{
+	@media #{$large-screen}{
+		font-size: 1.2vw;
+	}
+	
+	@media #{$med-screen}{
+		font-size: 2.4vw;
+	}
+
+	@media #{$sml-screen}{
+		font-size: 4.8vw;
+	}
+//	line-height: 0.1em;
+
+	font-weight: $font-light;
+	color: $fsl-white;
+}
+
+.navBar{
+	font-size: 1em; 
+}
+
+

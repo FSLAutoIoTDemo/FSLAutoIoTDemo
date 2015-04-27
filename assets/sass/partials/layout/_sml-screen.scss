@@ -19,7 +19,6 @@
 .doubleTile{
 	@media #{$sml-screen}{
 		width: $double-tile-width-sml;
-		min-width: $double-tile-min-width-compact;
 		margin: $double-tile-margin-sml-pc;
 	}
 }

@@ -8,6 +8,7 @@
 		
 		<!-- Master style sheet -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" >
+		<link href='http://fonts.googleapis.com/css?family=Roboto:500,300' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
@@ -16,11 +17,12 @@
 		<!--- Contains all of the content + nav to be shown -->	
 		<div class="container clearfix">
 
-			<header class="headBar"><h3>Vehicle Dashboard</h3></header>
+			<header class="headBar"><h1>Vehicle Dashboard</h1></header>
 
 			<!-- Navigation bar (top or left) -->
 			<nav class="navBar">
-				<h3>Select Vehicle <li><a href="#?????">Nav Element</a></li></h3>
+				<h1>Select Vehicle </h1>
+				<!-- <a href="#?????">Nav Element</a> -->
 			</nav>
 
 			<!-- Main content (tiles) -->
@@ -30,48 +32,39 @@
 				<article class="content">
 
 					<!-- Tiles begin here... -->
-					<section class="singleTile" id="tile1">
-						<h2>Heart Rate</h2>
-						<p>83</p>
-						<p>bpm</p>
+					<section class="doubleTile" id="vd-Map">
+						<h1 class="tileTitle">Map<h1>
+						<p>Map here - no title</p>
 					</section>
 
-					<section class="singleTile" id="tile2">
-						<h2>Heart Rate</h2>
-						<p>83</p>
-						<p>bpm</p>
+					<section class="doubleTile" id="vd-RoadCam">
+						<h1 class="tileTitle">Road View</h1>
+						<img src="img/road.jpg">
 					</section>
-
 										
-					<section class="doubleTile" id="tile3">
-						<h2>Road View</h2>
+					<section class="singleTile" id="vd-Speed">
+						<h1 class="tileTitle">Speed</h1>
+						<p>Dial here</p>
+						<p>25</p>
+						<p>mph</p>
+					</section>
+
+					<section class="singleTile" id="vd-Accel">
+						<h1 class="tileTitle">Acceleration</h1>
+						<p>0.6</p>
+						<p>G's</p>
+					</section>
+
+					<section class="singleTile" id="vd-DriverCam">
+						<h1 class="tileTitle">Driving Now</h1>
 						<img src="img/road.jpg">
 					</section>
 
-					<section class="singleTile" id="tile4">
-						<h2>Heart Rate</h2>
+					<section class="singleTile" id="vd-Heart">
+						<h1 class="tileTitle">Heart Rate</h1>
 						<p>83</p>
 						<p>bpm</p>
 					</section>
-
-					<section class="singleTile" id="tile5">
-						<h2>Heart Rate</h2>
-						<p>83</p>
-						<p>bpm</p>
-					</section>
-
-					<section class="singleTile" id="tile6">
-						<h2>Heart Rate</h2>
-						<p>83</p>
-						<p>bpm</p>
-					</section>
-
-					<section class="singleTile" id="tile7">
-						<h2>Heart Rate</h2>
-						<p>83</p>
-						<p>bpm</p>
-					</section>
-
 				</article>
 			</main>
 		</div>

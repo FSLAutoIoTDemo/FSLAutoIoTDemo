@@ -20,45 +20,89 @@ $std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ") and
 $wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
 
 
+//########################################################################################
 // Tile layout
+//########################################################################################
+
+//--########################################################################################
 // --> Configuration parameters for single & double tiles (modify if required)
-$single-tile-margin-sml-dyn: 2;			// Margin size (used for margin + width)
+//--########################################################################################
+
+$single-tile-margin-sml-dyn: 1.0;			// Margin size (used for margin + width)
 $single-tile-min-width: 260px; 			// Minimum width of single tile (linked into screen break)
-$double-tile-min-width-full: 520px; 	//######calculate (use 260px=xyz% & work from there...)		// Minimum width of double tile (linked into screen break)
-$single-tile-height-scale-std: 1.25;	// Height scaling factor for standard screens
+$single-tile-height-scale-std: 1.2;	// Height scaling factor for standard screens
 $single-tile-height-scale-wide: 1.0;	// Height scaling factor for wide screens
 
+//--########################################################################################
 //--> Automatically generates correct single tile margins, width & height (do not touch)
+//--########################################################################################
+
+//----> Scale single tile margin (as percentage) for 2 & 4 tile layouts (med & large screens)
 $single-tile-margin-med-dyn: $single-tile-margin-sml-dyn / 2;
 $single-tile-margin-large-dyn: $single-tile-margin-sml-dyn / 4;
 
+//----> Converted scaled margin to percentage
 $single-tile-margin-sml-pc: $single-tile-margin-sml-dyn * 1%;
 $single-tile-margin-med-pc: $single-tile-margin-med-dyn * 1%;
 $single-tile-margin-large-pc: $single-tile-margin-large-dyn * 1%;
 
+//----> Scale single tile width into percentage for 1, 2 & 4 tile layouts (sml, med & large screens)
 $single-tile-width-sml: ( 100 - ( 2*  $single-tile-margin-sml-dyn )  ) * 1%; 
 $single-tile-width-med: ( ( 100 - ( 4 * $single-tile-margin-med-dyn ) ) / 2 ) * 1%; 
 $single-tile-width-large: ( ( 100 - ( 8 * $single-tile-margin-large-dyn ) ) / 4 ) * 1%; 
 
+//----> Wide screen height: Uses square  aspect ratio (1:1)
+//----> Standard screen height: Uses longer height aspect ratio (1:n)
 $single-tile-height-std-pc: $single-tile-height-scale-std * 100%;
 $single-tile-height-wide-pc: $single-tile-height-scale-wide * 100%;
 
+//--########################################################################################
 //--> Automatically generates correct double  tile margins, width & height (do not touch)
+//--########################################################################################
+
+//----> Small screen width: Same as single tile
+//----> Med screen width: 2 x single tile
+//----> Large screen width: 2 x single tile
 $double-tile-margin-sml-pc: $single-tile-margin-sml-pc;
 $double-tile-margin-med-pc: $single-tile-margin-med-pc;
 $double-tile-margin-large-pc: $single-tile-margin-large-pc;
 
+//----> Small screen width: Same as single tile
+//----> Med screen width: 2 x single tile
+//----> Large screen width: 2 x single tile
 $double-tile-width-sml: $single-tile-width-sml;
 $double-tile-width-med: ($single-tile-width-med * 2) + ($double-tile-margin-med-pc * 2);
 $double-tile-width-large: ($single-tile-width-large * 2) + ($single-tile-margin-large-pc * 2);
 
+//----> Small screen height: Same as single tile
+//----> Med screen height: Uses square aspect ratio (1:1)
+//----> Wide screen height: Uses square  aspect ratio (1:1)
+//----> Standard screen height: Uses longer height aspect ratio (1:n)
+$double-tile-height-sml-pc: $single-tile-height-wide-pc;
 $double-tile-height-med-pc: ((((2 * $single-tile-width-med) / $double-tile-width-med) / 2) * $single-tile-height-scale-wide) * 100%;
 $double-tile-height-wide-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-wide) * 100%;
 $double-tile-height-std-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-std) * 100%;
 
+//----> Min-width of double tile is 2 x single tile min-witdh
+//----> Except when using sml screen, the use same min-width as single tile
+$double-tile-min-width-full: 2 * $single-tile-min-width; 
 $double-tile-min-width-compact: $single-tile-min-width;
 
-// Nav layout
+
+//########################################################################################
+// Tile layout
+//########################################################################################
+
+//--########################################################################################
+//--> Parameters to adjust Nav bar style (modify if required)
+//--########################################################################################
+
+//----> Height of the navigation bar
+$nav-height: 3%;		//#####????????
+//--########################################################################################
+//--> Automatically generates correct margin & width (do not touch)
+//--########################################################################################
+
 $nav-margin-sml-pc: $single-tile-margin-sml-pc;
 $nav-margin-med-pc: $single-tile-margin-med-pc;
 $nav-margin-large-pc: $single-tile-margin-large-pc;
@@ -67,11 +111,17 @@ $nav-width-sml: (100 - (2 * $single-tile-margin-sml-dyn)) * 1%;
 $nav-width-med: (100 - (2 * $single-tile-margin-med-dyn)) * 1%;
 $nav-width-large: (100 - (2 * $single-tile-margin-large-dyn)) * 1%;
 
-$nav-height: 10%;		//#####????????
 
-// Content layout
+//########################################################################################
+// Content (contains all tiles) Layout
+//--> Modify if required
+//########################################################################################
 $content-width: 100%;
 
-// Container layout
-$container-width-dynamic: 95%;
+
+//########################################################################################
+// Container (contains all tiles + nav bars) layout
+//--> Modify if required
+//########################################################################################
+$container-width-dynamic: 92%;
 $container-max-width-med: 600px;

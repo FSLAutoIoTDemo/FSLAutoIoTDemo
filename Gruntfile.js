@@ -119,8 +119,8 @@ module.exports = function(grunt){
 
     grunt.registerTask('default', []);
     
-    grunt.registerTask('buildhtml-dist',  ['htmlmin:dist', 'htmlhint']);
-    grunt.registerTask('buildhtml-dev',  ['htmlmin:dev', 'htmlhint']);
+    grunt.registerTask('buildhtml-dist',  ['htmlhint', 'htmlmin:dist' ]);
+    grunt.registerTask('buildhtml-dev',  ['htmlhint', 'htmlmin:dev']);
 	
 	grunt.registerTask('buildjs-dist',  ['uglify']);
     grunt.registerTask('buildjs-dev',  ['uglify']);

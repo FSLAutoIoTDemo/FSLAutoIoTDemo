@@ -12,3 +12,11 @@
 // Parials - color scheme & typography
 @import "partials/color-scheme";
 @import "partials/font-scheme";
+
+// Partials - tile specific formatting
+@import "partials/tiles/vd-map";
+@import "partials/tiles/vd-accel";
+@import "partials/tiles/vd-drivercam";
+@import "partials/tiles/vd-heart";
+@import "partials/tiles/vd-roadcam";
+@import "partials/tiles/vd-speed";

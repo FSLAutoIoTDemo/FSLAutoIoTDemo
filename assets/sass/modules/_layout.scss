@@ -74,14 +74,19 @@ $double-tile-width-sml: $single-tile-width-sml;
 $double-tile-width-med: ($single-tile-width-med * 2) + ($double-tile-margin-med-pc * 2);
 $double-tile-width-large: ($single-tile-width-large * 2) + ($single-tile-margin-large-pc * 2);
 
+//----> Save height ratios of the double containers for applying to tile content (wide + std)
+$double-tile-height-wide-aspect-ratio: (((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-wide;
+$double-tile-height-std-aspect-ratio: (((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-std;
+
 //----> Small screen height: Same as single tile
 //----> Med screen height: Uses square aspect ratio (1:1)
 //----> Wide screen height: Uses square  aspect ratio (1:1)
 //----> Standard screen height: Uses longer height aspect ratio (1:n)
 $double-tile-height-sml-pc: $single-tile-height-wide-pc;
-$double-tile-height-med-pc: ((((2 * $single-tile-width-med) / $double-tile-width-med) / 2) * $single-tile-height-scale-wide) * 100%;
-$double-tile-height-wide-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-wide) * 100%;
-$double-tile-height-std-pc: ((((2 * $single-tile-width-large) / $double-tile-width-large) / 2) * $single-tile-height-scale-std) * 100%;
+$double-tile-height-med-pc: $double-tile-height-wide-aspect-ratio * 100%;
+$double-tile-height-wide-pc: $double-tile-height-wide-aspect-ratio * 100%;
+$double-tile-height-std-pc: $double-tile-height-std-aspect-ratio * 100%;
+
 
 //----> Min-width of double tile is 2 x single tile min-witdh
 //----> Except when using sml screen, the use same min-width as single tile

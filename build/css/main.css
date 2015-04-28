@@ -317,32 +317,54 @@ body {
 }
 
 #vd-Map-obj {
-  position: relative;
-  content: "";
+  background-color: #666666;
   width: 95%;
   margin-left: 2.5%;
-  background-color: #666666;
 }
 @media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
   #vd-Map-obj {
-    padding-top: 56.42424%;
     margin-top: 1.48485%;
   }
 }
 @media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
   #vd-Map-obj {
-    padding-top: 47.0202%;
     margin-top: 1.23737%;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   #vd-Map-obj {
-    padding-top: 47.0202%;
     margin-top: 1.23737%;
   }
 }
 @media only screen and (max-width: 600px) {
   #vd-Map-obj {
+    margin-top: 2.5%;
+  }
+}
+#vd-Map-obj::before {
+  float: left;
+  content: "";
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj::before {
+    padding-top: 56.42424%;
+    margin-top: 1.48485%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj::before {
+    padding-top: 47.0202%;
+    margin-top: 1.23737%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #vd-Map-obj::before {
+    padding-top: 47.0202%;
+    margin-top: 1.23737%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #vd-Map-obj::before {
     padding-top: 95%;
     margin-top: 2.5%;
   }
@@ -352,6 +374,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#vd-Map-container {
   width: 100%;
   height: 100%;
 }

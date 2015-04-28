@@ -11,45 +11,68 @@
 	$vd-map-width: 95;							// Modify (in %)
 	$vd-map-margin: (100-$vd-map-width)/2;
 
-	// Position must be relative for children to be correctly positioned
-	// (see using 'padding-top' to define height of parent)
-	position: relative;
-	content:"";
+	// Set background color which should be replaced by map
+	background-color: $fsl-gray;
 
 	// Width of parent element
 	width: $vd-map-width * 1%;
 	// Left margin (top margin related to aspect ratio)
 	margin-left: $vd-map-margin * 1%;
 
-	// For the different screen configurations determine the correct height & top margin
+	// For the different screen configurations determine the correct top margin
 	// For "X" screen:
-	// --> Height % (padding-top) = width var (%) * double tile height % (as aspect ratio)
 	// --> Margin-top % = margin var (%) * double tile height % (as aspect ratio)
 	@media #{$std-screen}{	
 		// Standard, large screens	
-		padding-top: $vd-map-width * $double-tile-height-std-aspect-ratio * 1%;
 		margin-top: $vd-map-margin * $double-tile-height-std-aspect-ratio* 1%;
 	}
 	@media #{$wide-screen}{
 		// Wide, large screens
-		padding-top: $vd-map-width * $double-tile-height-wide-aspect-ratio * 1%;
 		margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
 	}
 	@media #{$med-screen}{
 		// Med screens (uses wide screen aspect ratio)
-		padding-top: $double-tile-height-med-pc  * ($vd-map-width/100);
 		margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
 	}
 	@media #{$sml-screen}{
 		// Small screens
-		// --> Height % (padding-top) = Percentage of width var to single tile width.
 		// --> Margin-top % = margin var (%, i.e. top is same as left)
-		padding-top: $double-tile-height-sml-pc * ($vd-map-width/100);
 		margin-top: $vd-map-margin * 1%;
 	}
 	
-	// Set background color which should be replaced by map
-	background-color: $fsl-gray;
+	
+	//Psuedo element used to implement a dynamic height
+	&::before{
+		float: left;
+		content:"";
+		// For the different screen configurations determine the correct height & top margin
+		// For "X" screen:
+		// --> Height % (padding-top) = width var (%) * double tile height % (as aspect ratio)
+		// --> Margin-top % = margin var (%) * double tile height % (as aspect ratio)
+		@media #{$std-screen}{	
+			// Standard, large screens	
+			padding-top: $vd-map-width * $double-tile-height-std-aspect-ratio * 1%;
+			margin-top: $vd-map-margin * $double-tile-height-std-aspect-ratio* 1%;
+		}
+		@media #{$wide-screen}{
+			// Wide, large screens
+			padding-top: $vd-map-width * $double-tile-height-wide-aspect-ratio * 1%;
+			margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
+		}
+		@media #{$med-screen}{
+			// Med screens (uses wide screen aspect ratio)
+			padding-top: $double-tile-height-med-pc  * ($vd-map-width/100);
+			margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
+		}
+		@media #{$sml-screen}{
+			// Small screens
+			// --> Height % (padding-top) = Percentage of width var to single tile width.
+			// --> Margin-top % = margin var (%, i.e. top is same as left)
+			padding-top: $double-tile-height-sml-pc * ($vd-map-width/100);
+			margin-top: $vd-map-margin * 1%;
+		}
+	}	
+
 }
 
 // Image placeholder, will be replaced by map
@@ -57,6 +80,15 @@
 	position:absolute;	// Position absolute to parent (parent must have 'position:relative;')
 	top:0;				// Fix element at 0 on y-axis
 	left:0;				// Fix element at 0 on x-axis
+	width:100%;			// Stretch img to fit parent width
+	height:100%;		// Stretch img to fit parent height
+	//float:left;
+}
+
+#vd-Map-container {
+//	position:relative;	// Position absolute to parent (parent must have 'position:relative;')
+//	top:0;				// Fix element at 0 on y-axis
+//	left:0;				// Fix element at 0 on x-axis
 	width:100%;			// Stretch img to fit parent width
 	height:100%;		// Stretch img to fit parent height
 	//float:left;

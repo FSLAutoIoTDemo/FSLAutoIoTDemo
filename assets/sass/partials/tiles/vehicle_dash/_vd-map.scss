@@ -1,0 +1,53 @@
+// Do not display the header for this tile
+#vd-Map h1{
+	display:none;
+}
+
+
+// This is the parent element for the map
+#vd-Map-obj{
+
+	// Vars that define width and margin;
+	$vd-map-width: 95;							// Modify (in %)
+	$vd-map-margin: (100-$vd-map-width)/2;
+
+	// Set background color which should be replaced by map
+	background-color: $fsl-gray;
+
+	// Width of parent element
+	width: $vd-map-width * 1%;
+	// Left margin (top margin related to aspect ratio)
+	margin-left: $vd-map-margin * 1%;
+
+	// For the different screen configurations determine the correct top margin
+	// For "X" screen:
+	// --> Margin-top % = margin var (%) * double tile height % (as aspect ratio)
+	@media #{$std-screen}{	
+		// Standard, large screens	
+		margin-top: $vd-map-margin * $double-tile-height-std-aspect-ratio* 1%;
+	}
+	@media #{$wide-screen}{
+		// Wide, large screens
+		margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
+	}
+	@media #{$med-screen}{
+		// Med screens (uses wide screen aspect ratio)
+		margin-top: $vd-map-margin * $double-tile-height-wide-aspect-ratio* 1%;
+	}
+	@media #{$sml-screen}{
+		// Small screens
+		// --> Margin-top % = margin var (%, i.e. top is same as left)
+		margin-top: $vd-map-margin * 1%;
+	}
+	
+	
+	//Psuedo element used to implement a dynamic height
+	&::before{
+		float: left;
+		content:"";
+		
+		// For the different screen configurations determine the correct height (padding-top)
+		@include setDynamicHeight('double', $vd-map-width, 100);
+	}	
+
+}

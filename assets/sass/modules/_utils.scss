@@ -2,3 +2,50 @@
 //@mixin allSides($element, $value){
 //	#{$element} : $value $value $value $value;
 //}
+
+// #############################################################
+// @include setDynamicHeight($format, $width, $height);
+// #############################################################
+// Determines the correct height for an element in a tile when 
+// using the psuedo '::before' method with padding to set the 
+// height. Padding is related to parent width, so need to scale the 
+// height of the element with the parent width + tile aspect 
+// ratio in mind.
+// - Adjusts height for different screen types
+// #############################################################
+// --> $format = 'single' or 'double' tile
+// --> $width = width of element (integer of %, i.e. 95 for 95%)
+// --> $height = desired height of available height (Integer of %, 0 - 100, note: maintains tile aspect ratio)
+// #############################################################
+@mixin setDynamicHeight($format, $width, $height){
+
+	// For double tiles...
+	@if $format == 'double' {
+
+		// For the different screen configurations determine the correct height (padding-top)
+		// For "X" screen:
+		// --> Height % (padding-top) = width var (%) * double tile height % (as aspect ratio)
+		
+		@media #{$std-screen}{	
+			// Standard, large screens	
+			padding-top: $height/100 * $width * $double-tile-height-std-aspect-ratio * 1%;
+		}
+		@media #{$wide-screen}{
+			// Wide, large screens
+			padding-top: $height/100 * $width * $double-tile-height-wide-aspect-ratio * 1%;
+		}
+		@media #{$med-screen}{
+			// Med screens (uses wide screen aspect ratio)
+			padding-top: $height/100 * $double-tile-height-med-pc  * ($width/100);
+		}
+		@media #{$sml-screen}{
+			// Small screens
+			// --> Height % (padding-top) = Percentage of width var to single tile width.
+			// --> Margin-top % = margin var (%, i.e. top is same as left)
+			padding-top: $height/100 * $double-tile-height-sml-pc * ($width/100);
+		}
+	} @else {	
+			// TO DO FOR SINGLE TILE
+	}
+
+}

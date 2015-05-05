@@ -88,7 +88,8 @@ module.exports = function(grunt){
 		    },
 		    dist: {
 		      src: ['assets/js/events.js',
-		      		'assets/js/maps.js'
+		      		'assets/js/maps.js',
+		      		'assets/js/graphs.js'
 		      	   ],
 		      dest: 'build/js/_base.js',
 			}

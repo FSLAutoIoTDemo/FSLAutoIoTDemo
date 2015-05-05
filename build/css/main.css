@@ -312,6 +312,27 @@ body {
   font-size: 1em;
 }
 
+.dataH1 {
+  text-align: center;
+  font-weight: 500;
+  color: #ffffff;
+}
+@media only screen and (min-width: 1190px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+
 #vd-Map h1 {
   display: none;
 }
@@ -366,34 +387,79 @@ body {
   }
 }
 
-#vd-Speed {
-  position: relative;
+#vd-Accel-obj {
+  top: 10%;
+  left: 0%;
+  height: 80%;
+  width: 100%;
 }
 
-#vd-Speed-dial {
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  height: 50%;
-  width: 50%;
-  z-index: 1;
-  background-color: red;
+#vd-Accel-acceltext {
+  top: 54%;
+  left: 45%;
+}
+
+#vd-Accel-gstext {
+  top: 80%;
+  left: 45%;
+}
+
+#vd-HR-obj {
+  top: 20%;
+  left: 20%;
+  height: 60%;
+  width: 60%;
+}
+
+#vd-HR-hrtext {
+  top: 54%;
+  left: 45%;
+}
+
+#vd-HR-bpmtext {
+  top: 80%;
+  left: 45%;
+}
+
+#vd-Speed-obj {
+  top: 20%;
+  left: 15%;
+  height: 80%;
+  width: 70%;
 }
 
 #vd-Speed-speedtext {
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  z-index: 2;
-  background-color: white;
+  top: 54%;
+  left: 45%;
 }
 
 #vd-Speed-mphtext {
-  position: absolute;
   top: 80%;
-  left: 10%;
+  left: 45%;
+}
+
+.stackParent {
+  position: relative;
+}
+
+.stackBottom {
+  position: absolute;
+  z-index: 1;
+}
+
+.stackMidBot {
+  position: absolute;
   z-index: 2;
-  background-color: grey;
+}
+
+.stackMidTop {
+  position: absolute;
+  z-index: 3;
+}
+
+.stackTop {
+  position: absolute;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=main.css.map */

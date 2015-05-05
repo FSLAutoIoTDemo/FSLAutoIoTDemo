@@ -9,10 +9,12 @@ jQuery(document).ready(function($){
 	var initLat = 55.748223;
 	var initLng = -4.168670;
 
-	// Load map
+	// Load Map
 	initalizeMaps(initLat,initLng);
 
-	google.maps.event.addListener(map, 'resize', recentreMaps());
+	// Load the Speed Pie Chart & Accel Graph
+	google.load("visualization", "1", {packages:["corechart"],"callback":initGraphs});
+
 });
 
 

@@ -27,5 +27,3 @@ function initalizeMaps(lat,lng) {
 function recentreMaps(){
 	map.setCenter(currCenter);
 }
-
-//google.maps.event.addDomListener(window, 'load', initialize);

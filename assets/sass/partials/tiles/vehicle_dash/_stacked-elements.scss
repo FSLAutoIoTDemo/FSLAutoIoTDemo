@@ -1,0 +1,26 @@
+// All child elements of the tile are going to be
+// absolute positioned. Make tile the 
+// reference point for the children.
+.stackParent{
+	position: relative;
+}
+
+.stackBottom{
+	position: absolute;
+	z-index: 1;
+}
+
+.stackMidBot{
+	position: absolute;
+	z-index: 2;
+}
+
+.stackMidTop{
+	position: absolute;
+	z-index: 3;
+}
+
+.stackTop{
+	position: absolute;
+	z-index: 2;
+}

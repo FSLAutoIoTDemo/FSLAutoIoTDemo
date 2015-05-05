@@ -31,3 +31,21 @@ body{
 }
 
 
+.dataH1{
+	@media #{$large-screen}{
+		font-size: 5vw;
+	}
+	
+	@media #{$med-screen}{
+		font-size: 5vw;
+	}
+
+	@media #{$sml-screen}{
+		font-size: 5vw;
+	}
+
+	text-align: center;
+	font-weight: $font-normal;
+	color: $fsl-white;
+}
+

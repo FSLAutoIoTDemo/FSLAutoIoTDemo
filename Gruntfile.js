@@ -42,13 +42,15 @@ module.exports = function(grunt){
 					'collapseWhitespace': true
 				},
 				files: {
-					'build/index.html' : 'assets/html/index-src.html'
+					'build/index.html' : 'assets/html/index-src.html',
+					'build/debug.html' : 'assets/html/debug-src.html'
 				}
 
 			},
 			dev: {
 				files: {
-					'build/index.html' : 'assets/html/index-src.html'
+					'build/index.html' : 'assets/html/index-src.html',
+					'build/debug.html' : 'assets/html/debug-src.html'
 				}
 			}
 
@@ -87,9 +89,17 @@ module.exports = function(grunt){
 		      separator: ';',
 		    },
 		    dist: {
-		      src: ['assets/js/events.js',
+		      src: ['assets/js/vd_events.js',
 		      		'assets/js/maps.js',
-		      		'assets/js/graphs.js'
+		      		'assets/js/graphs.js',
+		      		'assets/js/sockets.js'
+		      	   ],
+		      dest: 'build/js/_base.js',
+			},
+
+			debug: {
+		      src: ['assets/js/debug_events.js',
+		      		'assets/js/sockets.js'
 		      	   ],
 		      dest: 'build/js/_base.js',
 			}
@@ -154,8 +164,8 @@ module.exports = function(grunt){
     grunt.registerTask('buildhtml-dist',  ['htmlhint', 'htmlmin:dist' ]);
     grunt.registerTask('buildhtml-dev',  ['htmlhint', 'htmlmin:dev']);
 	
-	grunt.registerTask('buildjs-dist',  ['concat', 'uglify:dist']);
-    grunt.registerTask('buildjs-dev',  ['concat', 'uglify:dev']);
+	grunt.registerTask('buildjs-dist',  ['concat:debug', 'uglify:dist']);
+    grunt.registerTask('buildjs-dev',  ['concat:debug', 'uglify:dev']);
     
     grunt.registerTask('buildcss-dist',  ['sass:dist', 'cssc', 'cssmin']);
     grunt.registerTask('buildcss-dev',  ['sass:dist']);

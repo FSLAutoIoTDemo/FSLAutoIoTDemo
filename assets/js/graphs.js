@@ -177,6 +177,4 @@ function updateAccelData() {
 	loopCount++;
 	accelLinegraph.draw(accelLinedata, accelLineoptions);
 }
- 
 
- 

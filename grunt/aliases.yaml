@@ -1,0 +1,49 @@
+default: []
+
+#------- Vehicle Dashboard Configuration --------#
+vd-html-dist:
+	description: 'Vehicle Dashboard HTML Dist build'
+	tasks: 
+		- 'htmlhint'
+		- 'htmlmin:dist'
+
+vd-html-dev:
+	description: 'Vehicle Dashboard HTML Dev build'
+	tasks: 
+		- 'htmlhint'
+		- 'htmlmin:dev'
+
+vd-js-dist:
+	description: 'Vehicle Dashboard JS Dist build'
+	tasks:
+		- 'concat:debug'
+		- 'uglify:dist'
+
+vd-js-dev:
+	description: 'Vehicle Dashboard JS Dev build'
+	tasks:
+		- 'concat:debug'
+		- 'uglify:dev'
+
+vd-sass-dist:
+	description: 'Vehicle Dashboard SASS Dist build'
+	tasks:
+		- 'sass:dist'
+		- 'cssc'
+		- 'cssmin'
+
+vd-sass-dev:
+	description: 'Vehicle Dashboard SASS Dev build'
+	tasks:
+		- 'sass:dist'
+
+vd-build-dist:
+	- 'vd-html-dist'
+	- 'vd-js-dist'
+	- 'vd-sass-dist'
+
+vd-build-dev:
+	- 'vd-html-dev'
+	- 'vd-js-dev'
+	- 'vd-sass-dev'	
+#--END-- Vehicle Dashboard Configuration ---END--#

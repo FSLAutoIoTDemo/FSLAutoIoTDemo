@@ -1,24 +1,4 @@
-// Page loader
-jQuery(document).ready(function($){
-
-// --> For debug purposes
-//	alert("pageload event fired!");
-
-	alert("loading");
-
-	// Initialise websocket
-	init_websocket();
-	pageID = "";
-	alert("ready");
-
-	$("#useCaseBut").click(function(){
-		alert("buttonClick");
-	});
-
-
-});
-
-;var socketaddr  = "ws://fslautoiotdemobackend.mybluemix.net/ws/car0";
+var socketaddr  = "ws://fslautoiotdemobackend.mybluemix.net/ws/car0";
 var sock;
 var pageID = "";	// Variable used to identify the use case	  
 

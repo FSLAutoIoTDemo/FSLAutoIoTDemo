@@ -1,44 +1,18 @@
-// All child elements of the tile are going to be
-// absolute positioned. Make tile (vd-Speed) the 
-// reference point for the children.
-#vd-Speed{
-	position: relative;
-}
-
 // Speed Dial
-#vd-Speed-dial{
-	// Position absolute to parent
-	position: absolute;
+#vd-Speed-obj{
+	top: 20%;
+	left: 15%;
 
-	top: 30%;
-	left: 10%;
-
-	height: 50%;
-	width: 50%;
-
-	z-index: 1;
-
-	background-color:red;
+	height: 80%;
+	width: 70%;
 }
 
 #vd-Speed-speedtext{
-	position: absolute;
-
-	top: 30%;
-	left: 10%;
-
-	z-index: 2;
-
-	background-color:white;
+	top: 54%;
+	left: 45%;
 }
 
 #vd-Speed-mphtext{
-	position: absolute;
-
 	top: 80%;
-	left: 10%;
-
-	z-index: 2;
-
-	background-color:grey;
+	left: 45%;
 }

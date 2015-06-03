@@ -18,8 +18,14 @@
 		<!-- JQuery -->
 		<script src="js/jquery-1.11.2.min.js"></script>
 
+		<!-- Google Charts -->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 		<!-- Google Maps API -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		
+
+
 
 		<!-- Master site javascript file -->
 		<script src="js/base.min.js"></script>
@@ -49,31 +55,32 @@
 
 					<section class="doubleTile" id="vd-RoadCam">
 						<h1 class="tileTitle">Road View</h1>
-						<img src="img/road.jpg">
+						<img src="imgs/fill.jpg">
 					</section>
 										
-					<section class="singleTile" id="vd-Speed">
+					<section class="singleTile stackParent" id="vd-Speed">
 						<h1 class="tileTitle">Speed</h1>
-						<div id="vd-Speed-dial">Dial here</div>
-						<p id="vd-Speed-speedtext">25</p>
-						<p id="vd-Speed-mphtext">mph</p>
+						<div class="stackBottom" id="vd-Speed-obj">Dial here</div>
+						<p class="stackTop dataH1" id="vd-Speed-speedtext">25</p>
+						<p class="stackTop" id="vd-Speed-mphtext" >mph</p>
 					</section>
 
-					<section class="singleTile" id="vd-Accel">
-						<h1 class="tileTitle">Acceleration</h1>
-						<p>0.6</p>
-						<p>G's</p>
+					<section class="singleTile stackParent" id="vd-Accel">
+						<div class="stackBottom" id="vd-Accel-obj">Dial here</div>
+						<p class="stackTop dataH1" id="vd-Accel-acceltext">2.0</p>
+						<p class="stackTop" id="vd-Accel-gstext" >G's</p>
 					</section>
 
 					<section class="singleTile" id="vd-DriverCam">
 						<h1 class="tileTitle">Driving Now</h1>
-						<img src="img/road.jpg">
+						<img src="imgs/fill.jpg">
 					</section>
 
-					<section class="singleTile" id="vd-Heart">
+					<section class="singleTile stackParent" id="vd-Heart">
 						<h1 class="tileTitle">Heart Rate</h1>
-						<p>83</p>
-						<p>bpm</p>
+						<img class="stackBottom" id="vd-HR-obj" src="imgs/heart.svg">
+						<p class="stackTop" id="vd-HR-hrtext">83</p>
+						<p class="stackTop" id="vd-HR-bpmtext">bpm</p>
 					</section>
 				</article>
 			</main>

@@ -15,6 +15,9 @@
     "grunt-contrib-htmlmin": "*",
     "grunt-contrib-concat": "*",
     "matchdep": "*",
-    "load-grunt-config" : "*"
+    "load-grunt-config" : "*",
+    "load-grunt-tasks" : "*",
+    "glob" : "*",
+    "grunt-contrib-clean" : "*"
   }
 }

@@ -1,0 +1,463 @@
+/*******************************************/
+/* Container for content + nav bar 		   */
+/* - Used to keep tile layout in order 	   */
+/* - centres to screen			    	   */
+/*******************************************/
+.container {
+  margin: 0 auto;
+  width: 92%;
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+/*******************************************/
+/* Clears all floats			 		   */
+/*******************************************/
+.clearfix:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.navBar, .headBar {
+  float: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.navBar::before, .headBar::before {
+  content: "";
+  float: left;
+  padding-top: 3%;
+}
+
+.navBar h1, .headBar h1 {
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-left: 2%;
+}
+
+/*******************************************/
+/* The box that contains all the tiles of  */
+/* content 								   */
+/*******************************************/
+.content {
+  float: left;
+  width: 100%;
+}
+
+/*******************************************/
+/* The container for the single width tile */
+/* - Defines float & psudeo height box     */
+/*******************************************/
+.singleTile {
+  float: left;
+}
+.singleTile::before {
+  content: "";
+  float: left;
+  padding-top: 100%;
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  .singleTile::before {
+    padding-top: 120%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  .singleTile::before {
+    padding-top: 100%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Defines float & psudeo height box     */
+/*******************************************/
+.doubleTile {
+  float: left;
+}
+.doubleTile::before {
+  content: "";
+  float: left;
+  padding-top: 49.49495%;
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  .doubleTile::before {
+    padding-top: 59.39394%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  .doubleTile::before {
+    padding-top: 49.49495%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .doubleTile::before {
+    padding-top: 49.49495%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .doubleTile::before {
+    padding-top: 100%;
+  }
+}
+
+/*******************************************/
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (max-width: 600px) {
+  .singleTile {
+    width: 98%;
+    margin: 1%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (max-width: 600px) {
+  .doubleTile {
+    width: 98%;
+    margin: 1%;
+  }
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (max-width: 600px) {
+  .navBar, .headBar {
+    margin: 1%;
+    width: 98%;
+  }
+}
+
+/*******************************************/
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .singleTile {
+    width: 49%;
+    min-width: 260px;
+    margin: 0.5%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .doubleTile {
+    width: 99%;
+    min-width: 520px;
+    margin: 0.5%;
+  }
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .navBar, .headBar {
+    margin: 0.5%;
+    width: 99%;
+  }
+}
+
+/*******************************************/
+/* The container for the single width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .singleTile {
+    width: 24.5%;
+    min-width: 260px;
+    margin: 0.25%;
+  }
+}
+
+/*******************************************/
+/* The container for the double width tile */
+/* - Width and margin will change on       */
+/*   large-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .doubleTile {
+    width: 49.5%;
+    min-width: 520px;
+    margin: 0.25%;
+  }
+}
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/* - Handles dynamic margin sizes: 		   */
+/*******************************************/
+@media only screen and (min-width: 1190px) {
+  .navBar, .headBar {
+    margin: 0.25%;
+    width: 99.5%;
+  }
+}
+
+/*******************************************/
+/* Colors to assist debugging non-visual   */
+/* elements - uncomment to enable		   */
+/*******************************************/
+/*
+.container{ background-color: yellow;}	
+.content{background-color:purple;}		
+#heartRate{
+	@media only screen and (max-width: 600px){background-color: red;}
+	@media only screen and (min-width: 600px) and (max-width:1189px){background-color: green;}
+	@media only screen and (min-width: 1190px){background-color: blue;}
+}
+*/
+/*******************************************/
+/* Manages colour blocks (font color found */
+/* in _font-scheme.scss)				   */
+/*******************************************/
+body {
+  background-color: #000000;
+}
+
+.headBar {
+  background-color: #666666;
+}
+
+.navBar {
+  background-color: #008ecb;
+}
+
+#vd-Map {
+  background-color: #e66a08;
+}
+
+#vd-RoadCam {
+  background-color: #ffc20f;
+}
+
+#vd-Speed {
+  background-color: #008ecb;
+}
+
+#vd-Accel {
+  background-color: #6f6fcc;
+}
+
+#vd-DriverCam {
+  background-color: #ffc20f;
+}
+
+#vd-Heart {
+  background-color: #e66a08;
+}
+
+/*******************************************/
+/* Font schemes	(size, style) */
+/*******************************************/
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.navBar h1, .headBar h1, .tileTitle {
+  font-weight: 300;
+  color: #ffffff;
+}
+@media only screen and (min-width: 1190px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 2.4vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navBar h1, .headBar h1, .tileTitle {
+    font-size: 4.8vw;
+  }
+}
+
+.navBar {
+  font-size: 1em;
+}
+
+.dataH1 {
+  text-align: center;
+  font-weight: 500;
+  color: #ffffff;
+}
+@media only screen and (min-width: 1190px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .dataH1 {
+    font-size: 5vw;
+  }
+}
+
+#vd-Map h1 {
+  display: none;
+}
+
+#vd-Map-obj {
+  background-color: #666666;
+  width: 95%;
+  margin-left: 2.5%;
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj {
+    margin-top: 1.48485%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj {
+    margin-top: 1.23737%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #vd-Map-obj {
+    margin-top: 1.23737%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #vd-Map-obj {
+    margin-top: 2.5%;
+  }
+}
+#vd-Map-obj::before {
+  float: left;
+  content: "";
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj::before {
+    padding-top: 56.42424%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #vd-Map-obj::before {
+    padding-top: 47.0202%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #vd-Map-obj::before {
+    padding-top: 47.0202%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #vd-Map-obj::before {
+    padding-top: 95%;
+  }
+}
+
+#vd-Accel-obj {
+  top: 10%;
+  left: 0%;
+  height: 80%;
+  width: 100%;
+}
+
+#vd-Accel-acceltext {
+  top: 54%;
+  left: 45%;
+}
+
+#vd-Accel-gstext {
+  top: 80%;
+  left: 45%;
+}
+
+#vd-HR-obj {
+  top: 20%;
+  left: 20%;
+  height: 60%;
+  width: 60%;
+}
+
+#vd-HR-hrtext {
+  top: 54%;
+  left: 45%;
+}
+
+#vd-HR-bpmtext {
+  top: 80%;
+  left: 45%;
+}
+
+#vd-Speed-obj {
+  top: 20%;
+  left: 15%;
+  height: 80%;
+  width: 70%;
+}
+
+#vd-Speed-speedtext {
+  top: 54%;
+  left: 45%;
+}
+
+#vd-Speed-mphtext {
+  top: 80%;
+  left: 45%;
+}
+
+.stackParent {
+  position: relative;
+}
+
+.stackBottom {
+  position: absolute;
+  z-index: 1;
+}
+
+.stackMidBot {
+  position: absolute;
+  z-index: 2;
+}
+
+.stackMidTop {
+  position: absolute;
+  z-index: 3;
+}
+
+.stackTop {
+  position: absolute;
+  z-index: 2;
+}

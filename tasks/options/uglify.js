@@ -14,13 +14,13 @@ module.exports = {
             'head-script-disabled': true,
             'style-disabled': true
     	},
-        files: {
+        files: [{
             expand: true,
             cwd: 'assets/js/',
             src:['**/*.js'],
-            dest: 'assets/js/tmp/',
+            dest: 'assets/tmp/',
             ext: '.tmp.js'
-        }
+        }]
     },
     dev: {
     	options: {
@@ -30,7 +30,7 @@ module.exports = {
             expand: true,
             cwd: 'assets/js/',
             src:['**/*.js'],
-            dest: 'assets/js/tmp/',
+            dest: 'assets/tmp/',
             ext: '.tmp.js'
         }]
     }

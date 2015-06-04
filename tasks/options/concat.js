@@ -8,8 +8,8 @@ module.exports = {
 		files: [{
 			//expand: true,
 			//cwd: 'assets/js/',
-			src:['assets/js/tmp/*.tmp.js'],
-			dest: 'build/js/base.js'
+			src:['assets/tmp/**/*.tmp.js'],
+			dest: 'build/js/base.min.js'
 		}]
 	}
 };

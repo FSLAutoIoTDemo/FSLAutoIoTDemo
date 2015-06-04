@@ -1,1 +1,90 @@
-<!DOCTYPE html><html lang="en"><head><title>Freescale Automotive IoT Demo</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" type="text/css" href="css/main.css"><link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300"></head><body id="vd-page"><script src="js/jquery-1.11.2.min.js"></script><script type="text/javascript" src="https://www.google.com/jsapi"></script><script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script><script src="js/base.min.js"></script><div class="container clearfix"><header class="headBar"><h1>Vehicle Dashboard</h1></header><nav class="navBar"><h1>Select Vehicle</h1></nav><main role="main"><article class="content"><section class="doubleTile" id="vd-Map"><h1 class="tileTitle">Map</h1><div id="vd-Map-obj"></section><section class="doubleTile" id="vd-RoadCam"><h1 class="tileTitle">Road View</h1><img src="imgs/fill.jpg"></section><section class="singleTile stackParent" id="vd-Speed"><h1 class="tileTitle">Speed</h1><div class="stackBottom" id="vd-Speed-obj">Dial here</div><p class="stackTop dataH1" id="vd-Speed-speedtext">25</p><p class="stackTop" id="vd-Speed-mphtext">mph</p></section><section class="singleTile stackParent" id="vd-Accel"><div class="stackBottom" id="vd-Accel-obj">Dial here</div><p class="stackTop dataH1" id="vd-Accel-acceltext">2.0</p><p class="stackTop" id="vd-Accel-gstext">G's</p></section><section class="singleTile" id="vd-DriverCam"><h1 class="tileTitle">Driving Now</h1><img src="imgs/fill.jpg"></section><section class="singleTile stackParent" id="vd-Heart"><h1 class="tileTitle">Heart Rate</h1><img class="stackBottom" id="vd-HR-obj" src="imgs/heart.svg"><p class="stackTop" id="vd-HR-hrtext">83</p><p class="stackTop" id="vd-HR-bpmtext">bpm</p></section></article></main></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Freescale Automotive IoT Demo</title>
+		
+		<!-- Initalises the viewport for responsive layout -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<!-- Master style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<!-- Roboto fonts -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+	</head>
+
+
+	<body id="vd-page">
+		<!-- JQuery -->
+		<script src="js/jquery-1.11.2.min.js"></script>
+
+		<!-- Google Charts -->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<!-- Google Maps API -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		
+
+
+
+		<!-- Master site javascript file -->
+		<script src="js/base.min.js"></script>
+
+		<!--- Contains all of the content + nav to be shown -->	
+		<div class="container clearfix">
+
+			<header class="headBar"><h1>Vehicle Dashboard</h1></header>
+
+			<!-- Navigation bar (top or left) -->
+			<nav class="navBar">
+				<h1>Select Vehicle </h1>
+				<!-- <a href="#?????">Nav Element</a> -->
+			</nav>
+
+			<!-- Main content (tiles) -->
+			<main role="main">
+
+				<!-- Collection of all the tile sections -->
+				<article class="content">
+
+					<!-- Tiles begin here... -->
+					<section class="doubleTile" id="vd-Map">
+						<h1 class="tileTitle">Map</h1>  
+						<div id="vd-Map-obj">
+					</section>
+
+					<section class="doubleTile" id="vd-RoadCam">
+						<h1 class="tileTitle">Road View</h1>
+						<img id="vd-RoadCam-img" src="imgs/fill.jpg">
+					</section>
+										
+					<section class="singleTile stackParent" id="vd-Speed">
+						<h1 class="tileTitle">Speed</h1>
+						<div class="stackBottom" id="vd-Speed-obj">Dial here</div>
+						<p class="stackTop dataH1" id="vd-Speed-speedtext">25</p>
+						<p class="stackTop" id="vd-Speed-mphtext">mph</p>
+					</section>
+
+					<section class="singleTile stackParent" id="vd-Accel">
+						<div class="stackBottom" id="vd-Accel-obj">Dial here</div>
+						<p class="stackTop dataH1" id="vd-Accel-acceltext">2.0</p>
+						<p class="stackTop" id="vd-Accel-gstext">G's</p>
+					</section>
+
+					<section class="singleTile" id="vd-DriverCam">
+						<h1 class="tileTitle">Driving Now</h1>
+						<img id="vd-DriverCam-img" src="imgs/fill.jpg">
+					</section>
+
+					<section class="singleTile stackParent" id="vd-Heart">
+						<h1 class="tileTitle">Heart Rate</h1>
+						<img class="stackBottom" id="vd-HR-obj" src="imgs/heart.svg">
+						<p class="stackTop" id="vd-HR-hrtext">83</p>
+						<p class="stackTop" id="vd-HR-bpmtext">bpm</p>
+					</section>
+				</article>
+			</main>
+		</div>
+	</body>
+
+</html>

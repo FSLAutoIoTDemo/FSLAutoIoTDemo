@@ -1,10 +1,10 @@
-function initGraphs() {
-    drawSpeedPieChart(), drawAccelChart();
+function initGraphs(a, b) {
+    drawInitSpeedPieChart(a), drawInitAccelChart(b);
 }
 
-function drawSpeedPieChart() {
-    speedPieData = google.visualization.arrayToDataTable([ [ "segment", "speed" ], [ "bottom", 90 ], [ "mph", 0 ], [ "empty", 270 ] ]), 
-    speedPieOptions = {
+function drawInitSpeedPieChart(a) {
+    GLB.speedPieData = google.visualization.arrayToDataTable([ [ "segment", "speed" ], [ "bottom", 90 ], [ "mph", 0 ], [ "empty", 270 ] ]), 
+    GLB.speedPieOptions = {
         pieHole: .5,
         chartArea: {
             left: 0,
@@ -24,28 +24,26 @@ function drawSpeedPieChart() {
                 color: "transparent"
             },
             1: {
-                color: cssSppedPieFill
+                color: GLB.cssSppedPieFill
             },
             2: {
-                color: cssSppedPieSemiTransparent
+                color: GLB.cssSppedPieSemiTransparent
             }
         },
         backgroundColor: "transparent",
         pieSliceBorderColor: "transparent"
-    }, speedPiechart = new google.visualization.PieChart($("#vd-Speed-obj")[0]), speedPiechart.draw(speedPieData, speedPieOptions), 
-    setInterval(updateSpeedData, 1e3);
+    }, GLB.speedPiechart = new google.visualization.PieChart($(a)[0]), GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
 }
 
-function updateSpeedData() {
-    var a = Math.floor(Math.random() * maxSpeed);
-    if (a > maxSpeed) throw "Error: Speed value is greater than max speed";
-    a *= 2.25, speedPieData.setValue(1, 1, a), speedPieData.setValue(2, 1, 270 - a), 
-    speedPiechart.draw(speedPieData, speedPieOptions), $("#vd-Speed-speedtext").text(a);
+function updateSpeedData(a) {
+    newSpeedValue = a, newSpeedValue > GLB.maxSpeed && (newSpeedValue = GLB.maxSpeed), 
+    newSpeedValue *= 2.25, GLB.speedPieData.setValue(1, 1, newSpeedValue), GLB.speedPieData.setValue(2, 1, 270 - newSpeedValue), 
+    GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
 }
 
-function drawAccelChart() {
-    accelLinedata = google.visualization.arrayToDataTable([ [ "Time", "X-Axis", "Y-Axis" ], [ 0, .003, -.185 ], [ 1, -.026, .971 ], [ 2, -.085, .095 ], [ 3, .655, -.077 ], [ 4, .048, .015 ], [ 5, .095, -.213 ], [ 6, -.426, .609 ], [ 7, .19, .032 ], [ 8, .04, .001 ] ]), 
-    accelLineoptions = {
+function drawInitAccelChart(a) {
+    GLB.accelLinedata = google.visualization.arrayToDataTable([ [ "Time", "X-Axis", "Y-Axis" ], [ 0, .003, -.185 ], [ 1, -.026, .971 ], [ 2, -.085, .095 ], [ 3, .655, -.077 ], [ 4, .048, .015 ], [ 5, .095, -.213 ], [ 6, -.426, .609 ], [ 7, .19, .032 ], [ 8, .04, .001 ] ]), 
+    GLB.accelLineoptions = {
         title: "G-Forces",
         titleTextStyle: {
             color: "white",
@@ -59,7 +57,7 @@ function drawAccelChart() {
             },
             viewWindow: {
                 min: 0,
-                max: dataPoints - 1
+                max: GLB.dataPoints - 1
             }
         },
         legend: "none",
@@ -93,21 +91,17 @@ function drawAccelChart() {
                 visibleInLegend: !0
             }
         }
-    }, accelLinegraph = new google.visualization.AreaChart($("#vd-Accel-obj")[0]), accelLinegraph.draw(accelLinedata, accelLineoptions), 
-    setInterval(updateAccelData, 1e3);
+    }, GLB.accelLinegraph = new google.visualization.AreaChart($(a)[0]), GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 }
 
-function updateAccelData() {
-    if (accelLinedata.addRows([ [ loopCount, 2 * Math.random() - 1, 2 * Math.random() - 1 ] ]), 
-    accelLineoptions.hAxis.viewWindow.min += 1, accelLineoptions.hAxis.viewWindow.max += 1, 
-    1e3 == loopCount) {
-        accelLineoptions.hAxis.viewWindow.min = 0, accelLineoptions.hAxis.viewWindow.max = dataPoints - 1, 
-        accelLineoptions.animation.duration = 0, accelLinedata.removeRows(0, loopCount + 1 - dataPoints);
-        for (var a = 0; dataPoints > a; a++) accelLinedata.setValue(a, 0, a);
-        return accelLinegraph.draw(accelLinedata, accelLineoptions), loopCount = dataPoints, 
-        void (accelLineoptions.animation.duration = 750);
+function updateAccelData(a, b) {
+    if (GLB.accelLinedata.addRows([ [ GLB.loopCount, a, b ] ]), GLB.accelLineoptions.hAxis.viewWindow.min += 1, 
+    GLB.accelLineoptions.hAxis.viewWindow.max += 1, 1e3 == GLB.loopCount) {
+        GLB.accelLineoptions.hAxis.viewWindow.min = 0, GLB.accelLineoptions.hAxis.viewWindow.max = GLB.dataPoints - 1, 
+        GLB.accelLineoptions.animation.duration = 0, GLB.accelLinedata.removeRows(0, GLB.loopCount + 1 - GLB.dataPoints);
+        for (var c = 0; c < GLB.dataPoints; c++) GLB.accelLinedata.setValue(c, 0, c);
+        return GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions), GLB.loopCount = GLB.dataPoints, 
+        void (GLB.accelLineoptions.animation.duration = 750);
     }
-    loopCount++, accelLinegraph.draw(accelLinedata, accelLineoptions);
+    GLB.loopCount++, GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 }
-
-var maxSpeed = 120, cssSppedPieSemiTransparent = "#004461", cssSppedPieFill = "#ffffff", dataPoints = 9, loopCount = dataPoints;

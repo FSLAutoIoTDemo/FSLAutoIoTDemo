@@ -1,0 +1,15 @@
+VD Demo data - combine into different JS file, and load separate to base.min.js
+- want to avoid loading big demo data array when I don't have to
+- Can you load JS file to JS event (i.e. 'demo' NAV button click)?
+
+Remove "onpageload" from VD Demo page. Use "Demo" NAV button click to start "init_vdDemo"
+
+Add exception handling for values that are out of range (i.e. speed over 3 digits, etc...)
+
+
+
+Road Image
+https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix:e0c0adf29c281330bda1bf426bc78c2f134e0a9022d52b1eaa96dfba54f86d15@03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/2_0_2015_06_02_161727/image.jpg
+
+Driver Image
+https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix:e0c0adf29c281330bda1bf426bc78c2f134e0a9022d52b1eaa96dfba54f86d15@03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/1_0_2015_06_02_161727/image.jpg

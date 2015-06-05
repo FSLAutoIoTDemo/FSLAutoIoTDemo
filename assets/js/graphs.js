@@ -1,30 +1,29 @@
-var maxSpeed=120; //set the maximum speed for the speedometer
-var cssSppedPieSemiTransparent='#004461';
-var cssSppedPieFill='#ffffff';
 
-function initGraphs(){
-	
+
+function initGraphs(pieHtmlId,chartHtmlId){
+
+//function initGraphs(){	
 	// Create Speed Graph
-	drawSpeedPieChart();
+	drawInitSpeedPieChart(pieHtmlId);
 
 	// Create Accel Graph
-	drawAccelChart();
-
+	drawInitAccelChart(chartHtmlId);
 }
 
 
-// Function to draw the speed Pie Chart
-function drawSpeedPieChart() {
+// Function to initialise & draw the speed Pie Chart
+function drawInitSpeedPieChart(pieHtmlId) {
 	
-	speedPieData = google.visualization.arrayToDataTable([
+	// Create default data for Speed Pie Chart
+	GLB.speedPieData = google.visualization.arrayToDataTable([
 	  ['segment', 'speed'],
 	  ['bottom',  90],
 	  ['mph',     0],
 	  ['empty',    270],
 	]);
 
-
-	speedPieOptions = {
+	// Create Options for Speed Pie Chart
+	GLB.speedPieOptions = {
 
 	  pieHole: 0.5,					// Size of hole
 
@@ -42,8 +41,8 @@ function drawSpeedPieChart() {
 	  // Set colour for pie chart (use glob vars above)
 	  slices: {
 	    0: { color: 'transparent' },
-	    1: { color: cssSppedPieFill },
-		2: { color: cssSppedPieSemiTransparent},
+	    1: { color: GLB.cssSppedPieFill },
+		2: { color: GLB.cssSppedPieSemiTransparent},
 	  },
 
 	  // Make background components transparent
@@ -51,47 +50,46 @@ function drawSpeedPieChart() {
 	  pieSliceBorderColor: 'transparent',
 	};
 
-	// Create a new chart object at div with id:'#vd-Speed-obj'
-	speedPiechart = new google.visualization.PieChart($('#vd-Speed-obj')[0]);
+	// Create a new chart object at the correct HTML ID location
+	GLB.speedPiechart = new google.visualization.PieChart($(pieHtmlId)[0]);
 	
 	// Draw Chart
-	speedPiechart.draw(speedPieData,speedPieOptions);
+	GLB.speedPiechart.draw(GLB.speedPieData,GLB.speedPieOptions);
 
 	//###### Debug mode only - REMOVE later
-	setInterval(updateSpeedData, 1000); //trigger the update function every 1 seconds
+//	setInterval(updateSpeedData, 1000); //trigger the update function every 1 seconds
 
 }
 
 // Update the Speed of the speed pie chart + text
-function updateSpeedData() {		//###need to pass in new val from websocket
+function updateSpeedData(speed) {		//###need to pass in new val from websocket
 		
 		// #####DEBUG - remove later with websockets data
 		//there are 3 segments that need to be updated
-		var newSpeedValue = (Math.floor(Math.random()*maxSpeed));
+		//var newSpeedValue = (Math.floor(Math.random()*GLB.maxSpeed));
 		
-		// Check if exceeds max speed
-		if(newSpeedValue>maxSpeed) {
-			throw 'Error: Speed value is greater than max speed';
+		newSpeedValue = speed;
+
+		// Check if exceeds max speed, if so: set to max
+		if(newSpeedValue>GLB.maxSpeed) {
+			newSpeedValue = GLB.maxSpeed;
 		}
-		newSpeedValue *= 2.25; 						//change to degrees
-		speedPieData.setValue(1, 1, newSpeedValue); 		//mph
-		speedPieData.setValue(2, 1, (270-newSpeedValue)); 	//empty segment
+		newSpeedValue *= 2.25; 								//change to degrees
+		GLB.speedPieData.setValue(1, 1, newSpeedValue); 		//mph
+		GLB.speedPieData.setValue(2, 1, (270-newSpeedValue)); 	//empty segment
 
 		// Update the Pie Chart
-		speedPiechart.draw(speedPieData, speedPieOptions);
-
-		// Update the speed text
-		$('#vd-Speed-speedtext').text(newSpeedValue);
+		GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
 }
 
 
 
-var dataPoints = 9; //set the number of points to be plotted
-var loopCount = dataPoints;
 
-function drawAccelChart() {
+
+// Function to initialise & draw the speed Pie Chart
+function drawInitAccelChart(chartHtmlId) {
 		  
-	accelLinedata = google.visualization.arrayToDataTable([
+	GLB.accelLinedata = google.visualization.arrayToDataTable([
       ['Time', 'X-Axis', 'Y-Axis'],
       [0, 0.003,	-0.185],
 	  [1, -0.026,	0.971],
@@ -104,7 +102,7 @@ function drawAccelChart() {
 	  [8, 0.04,	0.001],
     ]);
 
-	accelLineoptions = {
+	GLB.accelLineoptions = {
 	  title: 'G-Forces',
 	  titleTextStyle: {color: 'white', fontSize: 20, fontName: 'Roboto'},
 	  hAxis: {
@@ -112,7 +110,7 @@ function drawAccelChart() {
 	    gridlines: {
 	      count: 0,
 	    },
-	    viewWindow: {min:0, max:(dataPoints-1)},
+	    viewWindow: {min:0, max:(GLB.dataPoints-1)},
 	  },
 	  legend: 'none',
 	  vAxis: {
@@ -141,40 +139,40 @@ function drawAccelChart() {
 	  },
 	};
 
-	accelLinegraph = new google.visualization.AreaChart($('#vd-Accel-obj')[0]);
+	GLB.accelLinegraph = new google.visualization.AreaChart($(chartHtmlId)[0]);
 
 	// Draw Acceleration Line Graph
-	accelLinegraph.draw(accelLinedata, accelLineoptions);
+	GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 	
 	//##### DEBUG  - remove later
-	setInterval(updateAccelData, 1000); //trigger the update function every 1 seconds
+//	setInterval(updateAccelData, 1000); //trigger the update function every 1 seconds
 }
 
-function updateAccelData() {
-	accelLinedata.addRows([[loopCount,  ((Math.random()*2)-1), ((Math.random()*2)-1)]]); //add new data in row corresponding to loopCount
-	accelLineoptions.hAxis.viewWindow.min += 1;
-    accelLineoptions.hAxis.viewWindow.max += 1;
+function updateAccelData(xAccel,yAccel) {
+	GLB.accelLinedata.addRows([[GLB.loopCount,  xAccel, yAccel]]); //add new data in row corresponding to loopCount
+	GLB.accelLineoptions.hAxis.viewWindow.min += 1;
+    GLB.accelLineoptions.hAxis.viewWindow.max += 1;
 	
-	if (loopCount==1000) {
+	if (GLB.loopCount==1000) {
 	  // Clean up time!
 	  //we need to clean up array to prevent it from growing too large
 	  //removing cells causes issues with animation so do not want to do this every loop
 	  //hence the reason to do it periodically
-	  accelLineoptions.hAxis.viewWindow.min = 0;
-      accelLineoptions.hAxis.viewWindow.max = (dataPoints-1);
-	  accelLineoptions.animation.duration = 0; //turn off animation for this
-	  accelLinedata.removeRows(0, (loopCount+1)-dataPoints);
+	  GLB.accelLineoptions.hAxis.viewWindow.min = 0;
+      GLB.accelLineoptions.hAxis.viewWindow.max = (GLB.dataPoints-1);
+	  GLB.accelLineoptions.animation.duration = 0; //turn off animation for this
+	  GLB.accelLinedata.removeRows(0, (GLB.loopCount+1)-GLB.dataPoints);
 	  //renumber the rows
-	  for(var i=0; i<dataPoints; i++) {
-	    accelLinedata.setValue(i,0,i);
+	  for(var i=0; i<GLB.dataPoints; i++) {
+	    GLB.accelLinedata.setValue(i,0,i);
 	  }
-	  accelLinegraph.draw(accelLinedata, accelLineoptions);
-	  loopCount = dataPoints;
-	  accelLineoptions.animation.duration = 750; 
+	  GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+	  GLB.loopCount = GLB.dataPoints;
+	  GLB.accelLineoptions.animation.duration = 750; 
 	  return;
 	}
 	
-	loopCount++;
-	accelLinegraph.draw(accelLinedata, accelLineoptions);
+	GLB.loopCount++;
+	GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 }
 

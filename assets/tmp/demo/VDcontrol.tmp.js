@@ -1,9 +1,19 @@
 function init_vdDemo() {
-    console.log("VD-Demo Mode Started"), GLB.vehicle = new VDvehicle(), alert(GLB.vehicle.getData()), 
-    GLB.vehicle.updateData("some_id", 2, 3, 4, 5, 6, 7, 8, 30.264524, -97.743435, 11), 
-    alert(GLB.vehicle.getData()), GLB.vehicle.modifyVdHtmlText(), GLB.vehicle.modifyVdRoadImg();
+    console.log("OnPageLoad: VD-Demo Mode Started"), initDemoData(), GLB.vehicle = new VDvehicle(), 
+    setInterval(vdDemo_updateData, 1e3), setInterval(vdDemo_modifyMaps, 1e3), setInterval(vdDemo_modifyImgs, 5e3);
 }
 
-jQuery(document).ready(function(a) {
-    a("#vd-page").length && init_vdDemo();
-});
+function vdDemo_updateData() {
+    var a = GLB.vdDemoData[GLB.vdDemoIdx];
+    GLB.vehicle.updateData(a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11]), 
+    GLB.vehicle.updateDriverImg(a[12]), GLB.vehicle.updateRoadImg(a[13]), GLB.vehicle.modifyVdHtmlText(), 
+    GLB.vdDemoIdx == GLB.vdDemoData.length - 1 ? GLB.vdDemoIdx = 0 : GLB.vdDemoIdx++;
+}
+
+function vdDemo_modifyMaps() {
+    GLB.vehicle.modifyVdMap();
+}
+
+function vdDemo_modifyImgs() {
+    GLB.vehicle.modifyVdDriverImg(), GLB.vehicle.modifyVdRoadImg();
+}

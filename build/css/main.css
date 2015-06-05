@@ -394,9 +394,24 @@ body {
   width: 100%;
 }
 
-#vd-Accel-acceltext {
+#vd-Accel-frontArrow {
   top: 54%;
-  left: 45%;
+  left: 10%;
+}
+
+#vd-xAccel-acceltext {
+  top: 54%;
+  left: 15%;
+}
+
+#vd-Accel-sideArrow {
+  top: 54%;
+  left: 50%;
+}
+
+#vd-yAccel-acceltext {
+  top: 54%;
+  left: 65%;
 }
 
 #vd-Accel-gstext {

@@ -21,8 +21,8 @@ function Vehicle(){
 	// Default insurance to 50%
 	var insurance = 500;	// Insurance cost ($'s)
 
-	var driverimg = "imgs/fill.jpg";		// Driver Camera
-	var roadimg = "imgs/fill.jpg";			// Road Camera
+	var driverimg = "imgs/fill.svg";		// Driver Camera
+	var roadimg = "imgs/fill.svg";			// Road Camera
 }
 
 //######### VEHICLE obj - PROTOTYPES ###########################/

@@ -15,7 +15,6 @@ function init_vd_page(){
 
 	// Load the Speed Pie Chart & Accel Graph (pass in HTML IDs to update)
 	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs('#vd-Speed-obj','#vd-Accel-obj')}});
-//	google.setOnLoadCallback(initGraphs);
 
 	// -- Now open web socket
 	// Initialise websocket

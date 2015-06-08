@@ -333,6 +333,27 @@ body {
   }
 }
 
+/*******************************************/
+/* Image Specific						   */
+/*******************************************/
+img.resizeImgSingle {
+  margin: 2.5%;
+  width: 95%;
+  height: auto;
+}
+
+img.resizeImgDouble {
+  margin: 2.5%;
+  width: 70%;
+  height: auto;
+}
+@media only screen and (max-width: 600px) {
+  img.resizeImgDouble {
+    margin: 2.5%;
+    width: 95%;
+  }
+}
+
 #vd-Map h1 {
   display: none;
 }
@@ -434,6 +455,12 @@ body {
 #vd-HR-bpmtext {
   top: 80%;
   left: 45%;
+}
+
+@media only screen and (min-width: 600px) {
+  #vd-RoadCam h1 {
+    display: none;
+  }
 }
 
 #vd-Speed-obj {

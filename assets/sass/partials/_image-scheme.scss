@@ -1,0 +1,25 @@
+/*******************************************/
+/* Image Specific						   */
+/*******************************************/
+
+// Size of Single Tile Image
+img.resizeImgSingle{
+    margin: $img-single-margin;
+    width: $img-single-width;
+    height: auto;
+}
+
+// Size of Double Tile Image
+img.resizeImgDouble{
+	
+	// IF on sml-screen resolution, use single tile dimensions
+	@media #{$sml-screen}{
+		margin: $img-single-margin;
+    	width: $img-single-width;
+	}
+
+	margin: $img-double-margin;
+    width: $img-double-width;
+    height: auto;
+}
+

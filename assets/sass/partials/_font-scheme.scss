@@ -2,31 +2,47 @@
 /* Font schemes	(size, style) */
 /*******************************************/
 
+
 body{
 	// Define default font settings
 	font-family: $default-font-family;
 	font-weight: $font-light;
 }
 
+// Set colour and weight for header / nav / Tile titles
 .navBar h1, .headBar h1, .tileTitle{
 	font-weight: $font-light;
 	color: $fsl-white;
 }
 
+// Set font size and spacing for Nav h1
 .navBar h1{
 	@include setDynFont($font-size-nav-h1);
 }
 
+// Set font size and spacing for Header h1
 .headBar h1{
 	@include setDynFont($font-size-head-h1);
 }
 
+// Set font size and spacing for Nav header 1
 .tileTitle{
 	@include setDynFont($font-size-h1);
+	float:left;
 	width:100%;
 	margin-top: 5%;
 	margin-bottom: 2%;
 	text-align: center;
+
+}
+
+// Use exception for double tiles where the title is not centre-aligned
+.doubleTile{
+	.tileTitle{
+		width:auto;
+		margin-left: 2%;
+		text-align:left;
+	}
 }
 
 // NEED TO ALIGN TEXT ON LEFT FOR ROAD IMG
@@ -34,8 +50,20 @@ body{
 .dataH1{
 	@include setDynFont($font-size-data-h1);
 
+	float:left;
+	width:100%;
 	text-align: center;
 	font-weight: $font-normal;
 	color: $fsl-white;
 }
 
+
+.dataH2{
+	@include setDynFont($font-size-data-h2);
+
+	float:left;
+	width:100%;
+	text-align: center;
+	font-weight: $font-light;
+	color: $fsl-white;
+}

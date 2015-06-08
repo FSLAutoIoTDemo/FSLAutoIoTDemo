@@ -415,6 +415,7 @@ body {
 }
 
 .tileTitle {
+  float: left;
   width: 100%;
   margin-top: 5%;
   margin-bottom: 2%;
@@ -461,11 +462,15 @@ body {
   }
 }
 
-#vd-RoadCam.h1 {
+.doubleTile .tileTitle {
+  width: auto;
+  margin-left: 2%;
   text-align: left;
 }
 
 .dataH1 {
+  float: left;
+  width: 100%;
   text-align: center;
   font-weight: 500;
   color: #ffffff;
@@ -511,6 +516,54 @@ body {
   }
 }
 
+.dataH2 {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  color: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .dataH2 {
+    font-size: 10vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .dataH2 {
+    font-size: 2.5vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .dataH2 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .dataH2 {
+    font-size: 4.28571vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .dataH2 {
+    font-size: 3.75vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .dataH2 {
+    font-size: 3.33333vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .dataH2 {
+    font-size: 3vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .dataH2 {
+    font-size: 2.72727vw;
+  }
+}
+
 /*******************************************/
 /* Image Specific						   */
 /*******************************************/
@@ -521,21 +574,29 @@ img.resizeImgSingle {
 }
 
 img.resizeImgDouble {
-  margin: 2.5%;
-  width: 58%;
   height: auto;
 }
+@media only screen and (min-width: 600px) and (min-aspect-ratio: 16 / 9) {
+  img.resizeImgDouble {
+    width: 58%;
+    float: right;
+    margin: 2.5%;
+    margin-left: 10%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-aspect-ratio: 16 / 9) {
+  img.resizeImgDouble {
+    width: 72%;
+    float: right;
+    margin: 2.5%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   img.resizeImgDouble {
     margin: 2.5%;
     width: 95%;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  img.layoutImgDouble {
-    float: right;
-    margin-right: 10%;
+    margin: 2.5%;
   }
 }
 
@@ -594,52 +655,73 @@ img.resizeImgDouble {
 }
 
 #vd-Accel-obj {
-  top: 10%;
   left: 0%;
   height: 80%;
   width: 100%;
 }
-
-#vd-Accel-frontArrow {
-  top: 54%;
-  left: 10%;
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #vd-Accel-obj {
+    top: 20%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  #vd-Accel-obj {
+    top: 15%;
+  }
 }
 
-#vd-xAccel-acceltext {
-  top: 54%;
-  left: 15%;
+#vd-Accel-frontArrow {
+  top: 39%;
+  left: 30%;
+  width: 4.5%;
+  height: auto;
 }
 
 #vd-Accel-sideArrow {
-  top: 54%;
-  left: 50%;
+  top: 59%;
+  left: 27%;
+  width: 10%;
+  height: auto;
+}
+
+#vd-xAccel-acceltext {
+  left: 40%;
+  top: 18%;
+  text-align: left;
 }
 
 #vd-yAccel-acceltext {
-  top: 54%;
-  left: 65%;
+  left: 40%;
+  top: 35%;
+  text-align: left;
 }
 
 #vd-Accel-gstext {
-  top: 80%;
-  left: 45%;
+  top: 65%;
 }
 
 #vd-HR-obj {
-  top: 20%;
   left: 20%;
   height: 60%;
   width: 60%;
 }
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #vd-HR-obj {
+    top: 20%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  #vd-HR-obj {
+    top: 15%;
+  }
+}
 
 #vd-HR-hrtext {
-  top: 54%;
-  left: 45%;
+  top: 20%;
 }
 
 #vd-HR-bpmtext {
-  top: 80%;
-  left: 45%;
+  top: 65%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -648,21 +730,32 @@ img.resizeImgDouble {
   }
 }
 
+#vd-Speed.br {
+  display: none;
+}
+
 #vd-Speed-obj {
-  top: 20%;
   left: 15%;
   height: 80%;
   width: 70%;
 }
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #vd-Speed-obj {
+    top: 20%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  #vd-Speed-obj {
+    top: 15%;
+  }
+}
 
 #vd-Speed-speedtext {
-  top: 54%;
-  left: 45%;
+  top: 32%;
 }
 
 #vd-Speed-mphtext {
-  top: 80%;
-  left: 45%;
+  top: 65%;
 }
 
 .stackParent {

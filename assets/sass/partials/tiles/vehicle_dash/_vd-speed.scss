@@ -1,6 +1,12 @@
 // Speed Dial
 #vd-Speed-obj{
-	top: 20%;
+	@media #{$all-wide-screen}{
+		top: 20%;
+	}
+	@media #{$all-std-screen}{
+		top: 15%;
+	}
+
 	left: 15%;
 
 	height: 80%;
@@ -8,11 +14,9 @@
 }
 
 #vd-Speed-speedtext{
-	top: 54%;
-	left: 45%;
+	top: 32%;
 }
 
 #vd-Speed-mphtext{
-	top: 80%;
-	left: 45%;
+	top: 65%;
 }

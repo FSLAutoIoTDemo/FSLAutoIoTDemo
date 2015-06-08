@@ -18,7 +18,8 @@ $notlarge-screen: "only screen and (max-width: " + $break-large + ")";
 $wide-aspect-ratio: "16/9";
 $std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
 $wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
-
+$all-std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ")";
+$all-wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ")";
 
 //########################################################################################
 // Tile layout

@@ -1,6 +1,11 @@
 // Accel Graph
 #vd-HR-obj{
-	top: 20%;
+	@media #{$all-wide-screen}{
+		top: 20%;
+	}
+	@media #{$all-std-screen}{
+		top: 15%;
+	}
 	left: 20%;
 
 	height: 60%;
@@ -8,11 +13,9 @@
 }
 
 #vd-HR-hrtext{
-	top: 54%;
-	left: 45%;
+	top: 20%;
 }
 
 #vd-HR-bpmtext{
-	top: 80%;
-	left: 45%;
+	top: 65%;
 }

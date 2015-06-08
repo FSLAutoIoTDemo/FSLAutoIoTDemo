@@ -1,6 +1,12 @@
 // Accel Graph
 #vd-Accel-obj{
-	top: 10%;
+	@media #{$all-wide-screen}{
+		top: 20%;
+	}
+	@media #{$all-std-screen}{
+		top: 15%;
+	}
+
 	left: 0%;
 
 	height: 80%;
@@ -8,26 +14,35 @@
 }
 
 #vd-Accel-frontArrow{
-	top: 54%;
-	left: 10%;
-}
+	top: 39%;
+	left: 30%;
 
-#vd-xAccel-acceltext{
-	top: 54%;
-	left: 15%;
+	width:4.5%;
+	height:auto;
 }
 
 #vd-Accel-sideArrow{
-	top: 54%;
-	left: 50%;
+	top: 59%;
+	left: 27%;
+
+	width:10%;
+	height:auto;
+}
+
+#vd-xAccel-acceltext{
+	left:40%;
+	top: 18%;
+
+	text-align:left;		// Overwrite base class
 }
 
 #vd-yAccel-acceltext{
-	top: 54%;
-	left: 65%;
+	left:40%;
+	top: 35%;
+
+	text-align:left;		// Overwrite base class
 }
 
 #vd-Accel-gstext{
-	top: 80%;
-	left: 45%;
+	top: 65%;
 }

@@ -12,23 +12,25 @@ img.resizeImgSingle{
 // Size of Double Tile Image
 img.resizeImgDouble{
 	
+	@media #{$notsml-screen}{
+		@media #{$all-wide-screen}{
+			width: $img-double-width-wide;
+			float:right;
+			margin: $img-double-margin;
+			margin-left: 10%;
+		}
+		@media #{$all-std-screen}{
+			width: $img-double-width-std;
+			float:right;
+			margin: $img-double-margin;
+		}
+	}
 	// IF on sml-screen resolution, use single tile dimensions
 	@media #{$sml-screen}{
 		margin: $img-single-margin;
     	width: $img-single-width;
+    	margin: $img-double-margin;
 	}
 
-	margin: $img-double-margin;
-    width: $img-double-width;
     height: auto;
-}
-
-// Make the double tile images float left
-img.layoutImgDouble{
-	// IF on !sml-screen resolution, float right
-	@media #{$notsml-screen}{
-		float:right;
-		margin-right: 10%;
-	}
-
 }

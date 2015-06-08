@@ -5,3 +5,78 @@ $tile-font-family: 'Roboto', sans-serif;
 
 $font-light: 300;
 $font-normal: 500;
+
+/**************************************************/
+/* Font sizes are defined here. VW units are used */
+/**************************************************/
+
+$font-size-h1: 10vw;			// Header for tiles
+
+$font-size-head-h1: 5vw;	// Header H1
+
+$font-size-nav-h1: 5vw;		// Nav H1
+$font-size-nav-h2: 5vw;		// Nav H2
+
+$font-size-data-h1: 15vw;	// Data H1
+
+
+
+/**************************************************/
+/* Basis for scaling fonts relative to viewport   */
+/**************************************************/
+// Set a base value which all fonts scale from
+$font-dyn-base: 1;
+
+// 
+// Scale the base value to the 3 main screen breaks
+// -> sml-screen = same as base (i.e. 1 tile wide)
+// -> med-screen = 1/2 base (i.e. 2 tile wide)
+// -> lrg-screen = 1/4 base (i.e. 4 tile wide)
+$font-dyn-sml: $font-dyn-base;
+$font-dyn-med: 0.5 * $font-dyn-base;
+$font-dyn-lrg: 0.25 * $font-dyn-base;
+
+// Additional screen breaks for med screen need to also be scaled
+// Work out different between 'med-screen width (%)' & 'break-screen-wdith (%)' then
+// use to scale med-screen font size (i.e. $font-dyn-med) above for the new break
+$font-dyn-med-break2: $font-dyn-med * ($container-width-dynamic-break2 / $container-width-dynamic);
+$font-dyn-med-break3: $font-dyn-med * ($container-width-dynamic-break3 / $container-width-dynamic);
+$font-dyn-med-break4: $font-dyn-med * ($container-width-dynamic-break4 / $container-width-dynamic);
+$font-dyn-med-break5: $font-dyn-med * ($container-width-dynamic-break5 / $container-width-dynamic);
+$font-dyn-med-break6: $font-dyn-med * ($container-width-dynamic-break6 / $container-width-dynamic);
+
+
+/**************************************************/
+/* Mixins to apply dynamic scaling to different	  */
+/* font styles									  */
+/**************************************************/
+@mixin setDynFont($size){
+	
+	@media #{$sml-screen}{
+		font-size: $font-dyn-sml * $size;
+	}
+
+	@media #{$large-screen}{
+		font-size: $font-dyn-lrg * $size;
+	}
+
+	@media #{$med-break1-screen}{
+		font-size: $font-dyn-med * $size;
+	}
+
+	@media #{$med-break2-screen}{
+		font-size: $font-dyn-med-break2 * $size;
+	}
+	@media #{$med-break3-screen}{
+		font-size: $font-dyn-med-break3 * $size;
+	}
+	@media #{$med-break4-screen}{
+		font-size: $font-dyn-med-break4 * $size;
+	}
+	@media #{$med-break5-screen}{
+		font-size: $font-dyn-med-break5 * $size;
+	}
+	@media #{$med-break6-screen}{
+		font-size: $font-dyn-med-break6 * $size;
+	}
+}

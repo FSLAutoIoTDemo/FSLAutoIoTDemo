@@ -130,3 +130,34 @@ $content-width: 100%;
 //########################################################################################
 $container-width-dynamic: 92%;
 $container-max-width-med: 600px;
+
+
+//########################################################################################
+// Required for font scaling. Works out the max-size of the content, so that the text
+// can be scales according to this.
+//--> Modify break points only
+//########################################################################################
+// Create intermediate break points for the med-screen to support text scaling
+$container-max-width-med-break2: 700px;
+$container-max-width-med-break3: 800px;
+$container-max-width-med-break4: 900px;
+$container-max-width-med-break5: 1000px;
+$container-max-width-med-break6: 1100px;
+
+// Work out the new % of content vs viewport for new breaks (i.e. can be used by fonts as a reference for width)
+$container-width-dynamic-break2: ($container-max-width-med/$container-max-width-med-break2) * $container-width-dynamic;
+$container-width-dynamic-break3: ($container-max-width-med/$container-max-width-med-break3) * $container-width-dynamic;
+$container-width-dynamic-break4: ($container-max-width-med/$container-max-width-med-break4) * $container-width-dynamic;
+$container-width-dynamic-break5: ($container-max-width-med/$container-max-width-med-break5) * $container-width-dynamic;
+$container-width-dynamic-break6: ($container-max-width-med/$container-max-width-med-break6) * $container-width-dynamic;
+
+// Create new media queries for the intermediate break points
+$med-break1-screen: "only screen and (min-width: " + $container-max-width-med + ") and (max-width:" + ($container-max-width-med-break2 - 1px) + ")";
+$med-break2-screen: "only screen and (min-width: " + $container-max-width-med-break2 + ") and (max-width:" + ($container-max-width-med-break3 - 1px) + ")";
+$med-break3-screen: "only screen and (min-width: " + $container-max-width-med-break3 + ") and (max-width:" + ($container-max-width-med-break4 - 1px) + ")";
+$med-break4-screen: "only screen and (min-width: " + $container-max-width-med-break4 + ") and (max-width:" + ($container-max-width-med-break5 - 1px) + ")";
+$med-break5-screen: "only screen and (min-width: " + $container-max-width-med-break5 + ") and (max-width:" + ($container-max-width-med-break6 - 1px) + ")";
+$med-break6-screen: "only screen and (min-width: " + $container-max-width-med-break6 + ") and (max-width:" + ($break-large - 1px) + ")";
+
+
+

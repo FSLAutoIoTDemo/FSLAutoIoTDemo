@@ -9,40 +9,30 @@ body{
 }
 
 .navBar h1, .headBar h1, .tileTitle{
-	@media #{$large-screen}{
-		font-size: 1.5vw;
-	}
-	
-	@media #{$med-screen}{
-		font-size: 2.4vw;
-	}
-
-	@media #{$sml-screen}{
-		font-size: 4.8vw;
-	}
-//	line-height: 0.1em;
-
 	font-weight: $font-light;
 	color: $fsl-white;
 }
 
-.navBar{
-	font-size: 1em; 
+.navBar h1{
+	@include setDynFont($font-size-nav-h1);
 }
 
+.headBar h1{
+	@include setDynFont($font-size-head-h1);
+}
+
+.tileTitle{
+	@include setDynFont($font-size-h1);
+	width:100%;
+	margin-top: 5%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+// NEED TO ALIGN TEXT ON LEFT FOR ROAD IMG
 
 .dataH1{
-	@media #{$large-screen}{
-		font-size: 5vw;
-	}
-	
-	@media #{$med-screen}{
-		font-size: 5vw;
-	}
-
-	@media #{$sml-screen}{
-		font-size: 5vw;
-	}
+	@include setDynFont($font-size-data-h1);
 
 	text-align: center;
 	font-weight: $font-normal;

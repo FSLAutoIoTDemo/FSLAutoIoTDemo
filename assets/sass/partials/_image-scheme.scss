@@ -23,3 +23,12 @@ img.resizeImgDouble{
     height: auto;
 }
 
+// Make the double tile images float left
+img.layoutImgDouble{
+	// IF on !sml-screen resolution, float right
+	@media #{$notsml-screen}{
+		float:right;
+		margin-right: 10%;
+	}
+
+}

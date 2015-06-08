@@ -1,3 +1,7 @@
+body{
+	margin:0;
+}
+
 /*******************************************/
 /* Container for content + nav bar 		   */
 /* - Used to keep tile layout in order 	   */
@@ -10,6 +14,21 @@
 	// Want to limit how big the med-screen container becomes
 	@media #{$med-screen}{
 		max-width: $container-max-width-med;
+	}
+	@media #{$med-break2-screen}{
+		width: $container-width-dynamic-break2;
+	}
+	@media #{$med-break3-screen}{
+		width: $container-width-dynamic-break3;
+	}
+	@media #{$med-break4-screen}{
+		width: $container-width-dynamic-break4;
+	}
+	@media #{$med-break5-screen}{
+		width: $container-width-dynamic-break5;
+	}
+	@media #{$med-break6-screen}{
+		width: $container-width-dynamic-break6;
 	}
 }
 

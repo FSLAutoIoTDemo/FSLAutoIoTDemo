@@ -1,3 +1,17 @@
+/**************************************************/
+/* Font sizes are defined here. VW units are used */
+/**************************************************/
+/**************************************************/
+/* Basis for scaling fonts relative to viewport   */
+/**************************************************/
+/**************************************************/
+/* Mixins to apply dynamic scaling to different	  */
+/* font styles									  */
+/**************************************************/
+body {
+  margin: 0;
+}
+
 /*******************************************/
 /* Container for content + nav bar 		   */
 /* - Used to keep tile layout in order 	   */
@@ -10,6 +24,31 @@
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   .container {
     max-width: 600px;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .container {
+    width: 78.85714%;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .container {
+    width: 69%;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .container {
+    width: 61.33333%;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .container {
+    width: 55.2%;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .container {
+    width: 50.18182%;
   }
 }
 
@@ -292,24 +331,138 @@ body {
   font-weight: 300;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 600px) {
+  .navBar h1 {
+    font-size: 5vw;
+  }
+}
 @media only screen and (min-width: 1190px) {
-  .navBar h1, .headBar h1, .tileTitle {
+  .navBar h1 {
+    font-size: 1.25vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .navBar h1 {
+    font-size: 2.5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .navBar h1 {
+    font-size: 2.14286vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .navBar h1 {
+    font-size: 1.875vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .navBar h1 {
+    font-size: 1.66667vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .navBar h1 {
     font-size: 1.5vw;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  .navBar h1, .headBar h1, .tileTitle {
-    font-size: 2.4vw;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .navBar h1, .headBar h1, .tileTitle {
-    font-size: 4.8vw;
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .navBar h1 {
+    font-size: 1.36364vw;
   }
 }
 
-.navBar {
-  font-size: 1em;
+@media only screen and (max-width: 600px) {
+  .headBar h1 {
+    font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .headBar h1 {
+    font-size: 1.25vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .headBar h1 {
+    font-size: 2.5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .headBar h1 {
+    font-size: 2.14286vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .headBar h1 {
+    font-size: 1.875vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .headBar h1 {
+    font-size: 1.66667vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .headBar h1 {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .headBar h1 {
+    font-size: 1.36364vw;
+  }
+}
+
+.tileTitle {
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .tileTitle {
+    font-size: 10vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .tileTitle {
+    font-size: 2.5vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .tileTitle {
+    font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .tileTitle {
+    font-size: 4.28571vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .tileTitle {
+    font-size: 3.75vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .tileTitle {
+    font-size: 3.33333vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .tileTitle {
+    font-size: 3vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .tileTitle {
+    font-size: 2.72727vw;
+  }
+}
+
+#vd-RoadCam.h1 {
+  text-align: left;
 }
 
 .dataH1 {
@@ -317,19 +470,44 @@ body {
   font-weight: 500;
   color: #ffffff;
 }
-@media only screen and (min-width: 1190px) {
-  .dataH1 {
-    font-size: 5vw;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  .dataH1 {
-    font-size: 5vw;
-  }
-}
 @media only screen and (max-width: 600px) {
   .dataH1 {
+    font-size: 15vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .dataH1 {
+    font-size: 3.75vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .dataH1 {
+    font-size: 7.5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .dataH1 {
+    font-size: 6.42857vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .dataH1 {
+    font-size: 5.625vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .dataH1 {
     font-size: 5vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .dataH1 {
+    font-size: 4.5vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .dataH1 {
+    font-size: 4.09091vw;
   }
 }
 
@@ -344,13 +522,20 @@ img.resizeImgSingle {
 
 img.resizeImgDouble {
   margin: 2.5%;
-  width: 70%;
+  width: 58%;
   height: auto;
 }
 @media only screen and (max-width: 600px) {
   img.resizeImgDouble {
     margin: 2.5%;
     width: 95%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  img.layoutImgDouble {
+    float: right;
+    margin-right: 10%;
   }
 }
 
@@ -459,7 +644,7 @@ img.resizeImgDouble {
 
 @media only screen and (min-width: 600px) {
   #vd-RoadCam h1 {
-    display: none;
+    float: left;
   }
 }
 

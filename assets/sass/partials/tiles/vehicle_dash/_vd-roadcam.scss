@@ -2,8 +2,9 @@
 #vd-RoadCam h1{
 	// Only show header on sml-screen devices
 	@media #{$notsml-screen}{
-		display:none;
+		float:left;
 	}
+
 }
 
 

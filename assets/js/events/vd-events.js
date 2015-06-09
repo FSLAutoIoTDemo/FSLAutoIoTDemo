@@ -34,7 +34,6 @@ function init_vd_page(){
 	// -- Now open web socket
 	// Initialise websocket
 	init_websocket(GLB.SOCKETA, GLB.sockAddr);
-	//pageID = "vd";
 
 	//IF DEMO MODE, THEN CALL THIS FUNCTION
 	//init_vdDemo();

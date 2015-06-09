@@ -1,6 +1,6 @@
 function init_vdDemo() {
     console.log("OnPageLoad: VD-Demo Mode Started"), initDemoData(), GLB.vehicle = new VDvehicle(), 
-    setInterval(vdDemo_updateData, 1e4), setInterval(vdDemo_modifyMaps, 1e4), setInterval(vdDemo_modifyImgs, 15e3);
+    setInterval(vdDemo_updateData, 3e3), setInterval(vdDemo_modifyMaps, 3e3), setInterval(vdDemo_modifyImgs, 15e3);
 }
 
 function vdDemo_updateData() {

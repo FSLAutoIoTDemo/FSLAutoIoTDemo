@@ -10,9 +10,11 @@ GLB.PGSTRESS = 'pgSRESS';
 GLB.PGBIGD = 'pgBIGD';
 
 // Initialise Global vars
-GLB.map = null;				// Map object
-GLB.mapCurrCenter = null;	// Center point of map
-GLB.mapMarker = null;		// Marker on map
+GLB.map = null;						// Map object
+GLB.mapCurrCenter = null;			// Center point of map
+GLB.mapMarker = null;				// Marker on map
+GLB.carRoute = null;				// Polyline trace for map
+GLB.mapStrokeColour = '#FF0000';	// Map Polyline colour
 
 GLB.vehile = null;			// Vehicle Object
 
@@ -26,6 +28,8 @@ GLB.speedPiechart = null;		// Speed Pit Chart object
 GLB.accelLinedata = null;		// Accel Line Graph Data
 GLB.accelLineoptions = null;	// Accel Line Graph Options
 GLB.accelLinegraph = null;		// Accel Line Graph object
+
+
 
 // Speed Pie Chart variables
 GLB.maxSpeed=120; //set the maximum speed for the speedometer
@@ -59,6 +63,6 @@ GLB.SOCKETBIGD = '/ws/bigdata';
 GLB.SOCKETSTRESSREQ = 'request!';
 GLB.SOCKETBIGDFLEETREQ = 'Fleet Data Request!';
 
-
+// Image SRC definitions
 GLB.IMGROOT = 'https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/';
 GLB.IMGAPPEND = '/image.jpg';

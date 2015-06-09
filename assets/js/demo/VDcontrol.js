@@ -22,8 +22,8 @@ function init_vdDemo(){
 	//-> Modify map @t2
 	//-> Modify imgs @t3
 
-	setInterval(vdDemo_updateData,10000);	// 1 second
-	setInterval(vdDemo_modifyMaps,10000) 	// 1 seconds
+	setInterval(vdDemo_updateData,3000);	// 1 second
+	setInterval(vdDemo_modifyMaps,3000) 	// 1 seconds
 	setInterval(vdDemo_modifyImgs,15000);	// 5 seconds
 }
 

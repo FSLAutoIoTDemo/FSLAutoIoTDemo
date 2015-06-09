@@ -16,6 +16,15 @@ function initalizeMaps(htmlId,markerText,lat,lng) {
     	map: GLB.map,
     	title: markerText
   	});
+
+  	GLB.carRoute = new google.maps.Polyline({
+        geodesic: true,
+        strokeColor: GLB.mapStrokeColour,
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+       
+    GLB.carRoute.setMap(GLB.map);
 	
 	// Update current centre position
 	GLB.mapCurrCenter = GLB.map.getCenter();
@@ -38,6 +47,16 @@ function updateMap(lat,lng){
 
 	// Update current centre position variable
 	GLB.mapCurrCenter = GLB.map.getCenter();
+
+	// Update path on map
+	var path = GLB.carRoute.getPath();		// Assign route to 'path'
+        //remove oldest entry
+        if (path.length >9) {
+            //temp = path.getArray();
+            //temp.shift();
+            (path.getArray()).shift();	// Clear trailing entry if >9 entires
+        }
+    path.push(myLatlng);				// Update path with new location
 }
 
 // Re-centers the map to the position passed into function

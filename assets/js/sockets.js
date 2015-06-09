@@ -63,13 +63,14 @@ function sockOnMessage(dataRawSOCK){
 	console.log('Sock OnMessage - Object Data follows...');
 	console.log(dataJsonSOCK);
 
+//######## NEED TO SORT OUT pgID HERE - does not exist
 	// Determine from Page ID, which processing function should be called
-	if(pgID = GLB.PGVD)
+	if(pgID == GLB.PGVD)
 		GLB.vehicle.processSocketVD(dataJsonSOCK);
-	if(pgID = GLB.PGCONS){}
+	if(pgID == GLB.PGCONS){}
 //		processSocketCONS(dataJsonSOCK);
-	if(pgID = GLB.PGSTRESS){}
+	if(pgID == GLB.PGSTRESS){}
 //		processSocketSTRESS(dataJsonSOCK);
-	if(pgID = GLB.PGBIGD){}
+	if(pgID == GLB.PGBIGD){}
 //		processSocketBIGD(dataJsonSOCK);
 };

@@ -14,7 +14,7 @@
 	</head>
 
 
-	<body id="vd-page">
+	<body id="index-page">
 		<!-- JQuery -->
 		<script src="js/jquery-1.11.2.min.js"></script>
 
@@ -33,61 +33,21 @@
 		<!--- Contains all of the content + nav to be shown -->	
 		<div class="container clearfix">
 
-			<header class="headBar"><h1>Vehicle Dashboard</h1></header>
+			<header class="headBar"><h1>Use Case Options</h1></header>
 
 			<!-- Navigation bar (top or left) -->
 			<nav class="navBar">
-				<h1>Select Vehicle </h1>
-				<!-- <a href="#?????">Nav Element</a> -->
+				<ul class="navigation">
+					<li class="navSelect"> <h1>Select Mode</h1>
+						<ul class="subNav">
+							<li id="navVD"><a href="vd.html?vid=100"><h2>Vehicle Dashboard</h2></a></li>
+							<li id="navCONS"><a href="vd.html?vid=1"><h2>Consumer</h2></a></li>
+							<li id="navBIGD"><a href="vd.html?vid=2"><h2>Big Data</h2></a></li>
+							<li id="navSTRESS"><a href="vd.html?vid=3"><h2>Smart City</h2></a></li>
+						</ul>
+					</li>
+				</ul>
 			</nav>
-
-			<!-- Main content (tiles) -->
-			<main role="main">
-
-				<!-- Collection of all the tile sections -->
-				<article class="content">
-
-					<!-- Tiles begin here... -->
-					<section class="doubleTile" id="vd-Map">
-						<h1 class="tileTitle">Map</h1>  
-						<div id="vd-Map-obj">
-					</section>
-
-					<section class="doubleTile" id="vd-RoadCam">
-						<h1 class="tileTitle">Road <br> View</h1>		<!--###############FIX BREAK FOR SMALLER SCREENS!!#######-->
-						<img id="vd-RoadCam-img" class="layoutImgDouble resizeImgDouble" src="imgs/fill.svg">
-					</section>
-										
-					<section class="singleTile stackParent" id="vd-Speed">
-						<h1 class="tileTitle">Speed</h1>
-						<div class="stackBottom" id="vd-Speed-obj">Dial here</div>
-						<p class="stackTop dataH1" id="vd-Speed-speedtext">25</p>
-						<p class="stackTop dataH2" id="vd-Speed-mphtext">mph</p>
-					</section>
-
-					<section class="singleTile stackParent" id="vd-Accel">
-						<h1 class="tileTitle">Acceleration</h1>
-						<div class="stackBottom" id="vd-Accel-obj">Dial here</div>
-						<img class="stackTop" id="vd-Accel-frontArrow" src="imgs/forwardArrow.svg">
-						<p class="stackTop dataH1" id="vd-xAccel-acceltext">2.0</p>
-						<img class="stackTop" id="vd-Accel-sideArrow" src="imgs/sideArrow.svg">
-						<p class="stackTop dataH1" id="vd-yAccel-acceltext">2.0</p>
-						<p class="stackTop dataH2" id="vd-Accel-gstext">G's</p>
-					</section>
-
-					<section class="singleTile" id="vd-DriverCam">
-						<h1 class="tileTitle">Driving Now</h1>
-						<img id="vd-DriverCam-img" class="resizeImgSingle" src="imgs/fill.svg">
-					</section>
-
-					<section class="singleTile stackParent" id="vd-Heart">
-						<h1 class="tileTitle">Heart Rate</h1>
-						<img class="stackBottom" id="vd-HR-obj" src="imgs/heart.svg">
-						<p class="stackTop dataH1" id="vd-HR-hrtext">83</p>
-						<p class="stackTop dataH2" id="vd-HR-bpmtext">bpm</p>
-					</section>
-				</article>
-			</main>
 		</div>
 	</body>
 

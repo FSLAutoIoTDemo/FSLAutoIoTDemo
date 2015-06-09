@@ -6,15 +6,8 @@
 function init_vd_page(){
 	console.log("OnPageLoad: VD-page");
 
-	//NEED SOME CODE TO EXTRACT THE VEHICLE ID FROM PAGE NAV
-	GLB.currVID = 1;
-	GLB.sockAddr = GLB.SOCKROOT + GLB.SOCKETB
-
 	// Initialise VDvehicle object
 	GLB.vehicle=new VDvehicle();
-
-	// Set the Vehicle ID of the VDvehicle object
-	GLB.vehicle.setVehicle(GLB.currVID);
 
 	// -- Load map first to reduce page load times
 	// Initial position
@@ -31,10 +24,32 @@ function init_vd_page(){
 	// Load the Speed Pie Chart & Accel Graph (pass in HTML IDs to update)
 	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs('#vd-Speed-obj','#vd-Accel-obj')}});
 
-	// -- Now open web socket
-	// Initialise websocket
-	init_websocket(GLB.SOCKETA, GLB.sockAddr);
 
-	//IF DEMO MODE, THEN CALL THIS FUNCTION
-	//init_vdDemo();
+	// Query the variables in the URL and load the appropriate mode
+	GLB.currVID = getQueryVariable("vid");
+
+	// Set the Vehicle ID of the VDvehicle object
+	GLB.vehicle.setVehicle(GLB.currVID-1);
+
+	// If debug mode (99)
+	// #Workaround adds 1 to GLB.currVID, to avoid case of undefined being confused with VID=0, need
+	// to remove the +1 before passing into other functions
+	if((GLB.currVID) == 100){
+		GLB.currVID = GLB.currVID-1;		//#Workaround
+		init_vdDemo();
+		console.log('Debug Mode Detected');
+	}
+	// If vehicle ID > 9 or null/undefined-> invalid case
+	else if (GLB.currVID > 9 || GLB.currVID < 0 || GLB.currVID==false){
+		GLB.currVID = GLB.currVID-1;		//#Workaround
+		init_vdDemo();
+		console.log('Invalid Mode Detected - set to Debug Mode');
+	}
+	// Should catch all vehicles between 0 & 9
+	else{
+		GLB.currVID = GLB.currVID-1;		//#Workaround
+		GLB.sockAddr = GLB.SOCKROOT + GLB.SOCKETVEH[GLB.currVID];
+		init_websocket(GLB.SOCKETVEH[GLB.currVID], GLB.sockAddr);
+	}
+
 }

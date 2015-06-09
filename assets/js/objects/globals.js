@@ -46,16 +46,16 @@ GLB.currSOCK = null;		// Current socket in session
 GLB.sockAddr = null;		// Socket Address
 GLB.SOCKROOT  = "ws://fslautoiotdemobackend.mybluemix.net"
 
-GLB.SOCKETA = '/ws/vehicleA';
-GLB.SOCKETB = '/ws/vehicleB';
-GLB.SOCKETC = '/ws/vehicleC';
-GLB.SOCKETD = '/ws/vehicleD';
-GLB.SOCKETE = '/ws/vehicleE';
-GLB.SOCKETF = '/ws/vehicleF';
-GLB.SOCKETG = '/ws/vehicleG';
-GLB.SOCKETH = '/ws/vehicleH';
-GLB.SOCKETI = '/ws/vehicleI';
-GLB.SOCKETJ = '/ws/vehicleJ';
+GLB.SOCKETVEH = ['/ws/vehicleA',
+				'/ws/vehicleB',
+				'/ws/vehicleC',
+				'/ws/vehicleD',
+				'/ws/vehicleE',
+				'/ws/vehicleF',
+				'/ws/vehicleG',
+				'/ws/vehicleH',
+				'/ws/vehicleI',
+				'/ws/vehicleJ'];
 
 GLB.SOCKETSTRESS = '/ws/stress';
 GLB.SOCKETBIGD = '/ws/bigdata';

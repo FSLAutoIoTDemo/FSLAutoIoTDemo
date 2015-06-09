@@ -10,15 +10,32 @@ body{
 }
 
 // Set colour and weight for header / nav / Tile titles
-.navBar h1, .headBar h1, .tileTitle{
+.navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2{
 	font-weight: $font-light;
 	color: $fsl-white;
+	text-decoration:none;
 }
 
 // Set font size and spacing for Nav h1
 .navBar h1{
 	@include setDynFont($font-size-nav-h1);
 }
+
+// Set font size and spacing for Nav h2
+.navSelect ul h2{
+	@include setDynFont($font-size-nav-h2);
+}
+
+// Change font colour of Nav Select button on hover
+.navSelect:hover h1{
+	color: $fsl-gray;
+}
+
+// Set 
+.navSelect ul li:hover{
+	color: $fsl-gray;
+}
+
 
 // Set font size and spacing for Header h1
 .headBar h1{

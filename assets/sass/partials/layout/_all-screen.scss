@@ -44,46 +44,6 @@ body{
 }
 
 /*******************************************/
-/* The container for the parent nav menu   */
-/*******************************************/
-.navBar, .headBar{
-	float: left;
-	// Psudeo element to provide dynamic height, based on width & w/h ratio
-	&::before{
-		content: "";
-		float:left;
-
-		// Scale height. Small/Med screens default to wide screen ratio
-		padding-top: $nav-height; 	
-	}
-
-	// This horizontally centres the content
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-
-}
-
-.navBar h1, .headBar h1{
-	float: left;
-	position: relative;
-	
-	// No padding or margin
-	margin:0;
-	padding:0;
-
-	// Offset left margin
-	margin-left: 2%;
-	
-}
-
-/*******************************************/
 /* The box that contains all the tiles of  */
 /* content 								   */
 /*******************************************/

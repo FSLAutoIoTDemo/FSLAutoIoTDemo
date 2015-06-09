@@ -161,4 +161,10 @@ $med-break5-screen: "only screen and (min-width: " + $container-max-width-med-br
 $med-break6-screen: "only screen and (min-width: " + $container-max-width-med-break6 + ") and (max-width:" + ($break-large - 1px) + ")";
 
 
-
+//########################################################################################
+// Navigation bar layout
+//-->
+//########################################################################################
+$navSelect-width-sml: 40%;
+$navSelect-width-med: 30%;
+$navSelect-width-large: 20%;

@@ -1,0 +1,129 @@
+/*******************************************/
+/* Navigation Bar Styles				   */
+/*******************************************/
+
+/*******************************************/
+/* The container for the parent nav menu   */
+/*******************************************/
+.navBar, .headBar{
+	float: left;
+	// Psudeo element to provide dynamic height, based on width & w/h ratio
+	&::before{
+		content: "";
+		float:left;
+
+		// Scale height. Small/Med screens default to wide screen ratio
+		padding-top: $nav-height; 	
+	}
+
+	// This horizontally centres the content
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+}
+
+/*
+.navBar h1, .headBar h1{
+	float: left;
+	position: relative;
+	
+	// No padding or margin
+	margin:0;
+	padding:0;
+
+	// Offset left margin
+	margin-left: 2%;
+	
+}
+
+*/
+
+// Parent ul for nav bar
+ul.navigation{
+
+	// Sets the top level button to far left/top
+	float:left;
+	position:relative;
+	padding:0%;		
+	margin:0%;
+
+	// Set width of top level button
+	width:100%;
+
+}
+
+// 'Select Vehicle' button
+ul.navigation li{
+	display:inline;
+	float:left;
+	position:relative;
+
+	margin: 0px auto;
+	height: auto;
+	text-align:center;
+
+	@media #{$sml-screen}{
+		width:$navSelect-width-sml;
+	}
+
+	@media #{$med-screen}{
+		width:$navSelect-width-med;
+	}
+	@media #{$large-screen}{
+		width:$navSelect-width-large;
+	}	
+
+	height:auto;
+}
+
+// 'Select Vehicle' button
+ul.navigation li h1{
+	
+}
+
+// On hover over 'Select Vehicle' button
+ul.navigation li a:hover{
+
+}
+
+// ???
+ul.navigation li:hover > a{
+
+}
+
+
+// Use to unhide the submenu
+ul.navigation li:hover > ul{
+	visibility:visible;
+	opacity:1;
+}
+
+ul.navigation li ul{
+	position:absolute;		//  Removes the hidden menu from parent height
+	visibility:hidden;
+	opacity:0;
+
+	padding:0px;
+	margin:0px;
+
+	z-index:99999;				// Bring to top of stack
+}
+
+ul.navigation li ul li {
+	width:100%;
+}
+
+ul.navigation li ul li a {
+
+}
+
+.navHome{
+	float:right;
+}

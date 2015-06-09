@@ -8,10 +8,7 @@ GLB.accelLinedata = null, GLB.accelLineoptions = null, GLB.accelLinegraph = null
 GLB.maxSpeed = 120, GLB.cssSppedPieSemiTransparent = "#004461", GLB.cssSppedPieFill = "#ffffff", 
 GLB.dataPoints = 9, GLB.loopCount = GLB.dataPoints, GLB.socket = null, GLB.currSOCK = null, 
 GLB.sockAddr = null, GLB.SOCKROOT = "ws://fslautoiotdemobackend.mybluemix.net", 
-GLB.SOCKETA = "/ws/vehicleA", GLB.SOCKETB = "/ws/vehicleB", GLB.SOCKETC = "/ws/vehicleC", 
-GLB.SOCKETD = "/ws/vehicleD", GLB.SOCKETE = "/ws/vehicleE", GLB.SOCKETF = "/ws/vehicleF", 
-GLB.SOCKETG = "/ws/vehicleG", GLB.SOCKETH = "/ws/vehicleH", GLB.SOCKETI = "/ws/vehicleI", 
-GLB.SOCKETJ = "/ws/vehicleJ", GLB.SOCKETSTRESS = "/ws/stress", GLB.SOCKETBIGD = "/ws/bigdata", 
-GLB.SOCKETSTRESSREQ = "request!", GLB.SOCKETBIGDFLEETREQ = "Fleet Data Request!", 
-GLB.IMGROOT = "https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/", 
+GLB.SOCKETVEH = [ "/ws/vehicleA", "/ws/vehicleB", "/ws/vehicleC", "/ws/vehicleD", "/ws/vehicleE", "/ws/vehicleF", "/ws/vehicleG", "/ws/vehicleH", "/ws/vehicleI", "/ws/vehicleJ" ], 
+GLB.SOCKETSTRESS = "/ws/stress", GLB.SOCKETBIGD = "/ws/bigdata", GLB.SOCKETSTRESSREQ = "request!", 
+GLB.SOCKETBIGDFLEETREQ = "Fleet Data Request!", GLB.IMGROOT = "https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/", 
 GLB.IMGAPPEND = "/image.jpg";

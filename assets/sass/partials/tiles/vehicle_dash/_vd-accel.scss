@@ -14,7 +14,12 @@
 }
 
 #vd-Accel-frontArrow{
-	top: 39%;
+	@media #{$all-wide-screen}{
+		top: 46%;
+	}
+	@media #{$all-std-screen}{
+		top: 43%;
+	}
 	left: 30%;
 
 	width:4.5%;
@@ -22,7 +27,12 @@
 }
 
 #vd-Accel-sideArrow{
-	top: 59%;
+	@media #{$all-wide-screen}{
+		top: 65%;
+	}
+	@media #{$all-std-screen}{
+		top: 61%;
+	}
 	left: 27%;
 
 	width:10%;
@@ -30,16 +40,16 @@
 }
 
 #vd-xAccel-acceltext{
+	top: 25%;
 	left:40%;
-	top: 18%;
 
 	text-align:left;		// Overwrite base class
 }
 
 #vd-yAccel-acceltext{
+	top: 40%;
 	left:40%;
-	top: 35%;
-
+	
 	text-align:left;		// Overwrite base class
 }
 

@@ -671,28 +671,46 @@ img.resizeImgDouble {
 }
 
 #vd-Accel-frontArrow {
-  top: 39%;
   left: 30%;
   width: 4.5%;
   height: auto;
 }
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #vd-Accel-frontArrow {
+    top: 46%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  #vd-Accel-frontArrow {
+    top: 43%;
+  }
+}
 
 #vd-Accel-sideArrow {
-  top: 59%;
   left: 27%;
   width: 10%;
   height: auto;
 }
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #vd-Accel-sideArrow {
+    top: 65%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16 / 9) {
+  #vd-Accel-sideArrow {
+    top: 61%;
+  }
+}
 
 #vd-xAccel-acceltext {
+  top: 25%;
   left: 40%;
-  top: 18%;
   text-align: left;
 }
 
 #vd-yAccel-acceltext {
+  top: 40%;
   left: 40%;
-  top: 35%;
   text-align: left;
 }
 

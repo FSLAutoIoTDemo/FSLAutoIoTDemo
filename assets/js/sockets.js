@@ -1,40 +1,75 @@
-var socketaddr  = "ws://fslautoiotdemobackend.mybluemix.net/ws/car0";
-var sock;
-var pageID = "";	// Variable used to identify the use case	  
+// OPEN SOCKET, pass in addr / VID / 
 
+// PARSE FUNCTION -> use case on ID?? to then open apprope page function
+// PAGE FUNCTION -> attached to page object, applys data and configures anything else.
 
-function init_websocket(){
+function init_websocket(socketID, address){
 
 	// Create new websocket
-	// ## I THINK I SHOULD PASS "PROTOCOL" WITH THIS STATEMENT. IDENTIFIES WHICH WEBPAGE I'M OPENING THE SOCKET FROM
-	sock = new WebSocket(socketaddr /*, pageID*/ );
+	GLB.sock = new WebSocket(address);
+	
+	// Save which socket is being used
+	GLB.currSOCK = socketID;
+
+	console.log('Sock Init - Websocket Initialising:' + GLB.currSOCK);
+	console.log('Sock Init - Socket Address:' + address);
+
+	// Bind socket events to functions
+	GLB.sock.onopen = function(evt) { sockOnOpen(evt) }; 
+	GLB.sock.onclose = function(evt) { sockOnClose(evt) }; 
+	GLB.sock.onmessage = function(evt) { sockOnMessage(evt) };
+	GLB.sock.onerror = function(evt) { sockOnError(evt) };
 
 }
 
 
-sock.onopen = function(){ 
-	console.log("Connected websocket");
+function sockOnOpen(evt){ 
 
-	// Send the pageID to the server 
-	// MAY NOT NEED IF DONE IN init_websocket
-	socket.send(pageID);
+	console.log("Sock Open - Connected to websocket: " + GLB.currSOCK);
+
+	if(GLB.currSOCK==GLB.SOCKETSTRESS)
+	{
+		// Send request for map data
+		GLB.socket.send(GLB.SOCKETSTRESSREQ);
+	}
+	else if (GLB.currSOCK==GLB.SOCKETBIGD)
+	{
+		// Send request for graph data
+		GLB.socket.send(GLB.SOCKETBIGDFLEETREQ);	
+	}
+
+	// Other sockets are push only (i.e. don't need requests)
 };
 
-sock.onclose = function() {console.log("Connection closed");};
-sock.onerror = function(){console.log("Websocket error detected");};
+function sockOnClose(evt) {
+	console.log("Sock Close - Websocket Connection closed: " + GLB.currSOCK);
+	GLB.sock = null;		// Terminate object
+};
+
+function sockOnError(evt){
+	console.log("Sock Error - Websocket error detected: " + GLB.currSOCK);
+};
+
 
 // On receiving new data, parse the packet and call approp function
-sock.onmessage = function(evt){
+//GLB.sock.onmessage = function(dataRawSOCK){
+function sockOnMessage(dataRawSOCK){
 
-	msg = JSON.parse(evt.data);
-	console.log(msg);
+	console.log('Sock OnMessage - Data received from socket: ' + GLB.currSOCK);
 
-	switch(msg.type){
-		case "vdData":
-			update_vdData(msg);
-			break;
-		case "vdImg":
-			update_vdImg(msg);
-			break;
-	}
+	// JSON parsed data received from socket
+	var dataJsonSOCK = JSON.parse(dataRawSOCK.data);
+		
+	console.log('Sock OnMessage - Object Data follows...');
+	console.log(dataJsonSOCK);
+
+	// Determine from Page ID, which processing function should be called
+	if(pgID = GLB.PGVD)
+		GLB.vehicle.processSocketVD(dataJsonSOCK);
+	if(pgID = GLB.PGCONS){}
+//		processSocketCONS(dataJsonSOCK);
+	if(pgID = GLB.PGSTRESS){}
+//		processSocketSTRESS(dataJsonSOCK);
+	if(pgID = GLB.PGBIGD){}
+//		processSocketBIGD(dataJsonSOCK);
 };

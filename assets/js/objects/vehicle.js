@@ -52,15 +52,20 @@ Vehicle.prototype.updateData = function(_id, _vehicle, _speed, _accel, _heart, _
 
 // Prototype function to update source of driver facing image
 Vehicle.prototype.updateDriverImg = function(img_src){
-	this.driverimg = img_src;
+	this.driverimg = GLB.IMGROOT + img_src + GLB.IMGAPPEND;
 }
 
 // Prototype function to update source of front facing image
 Vehicle.prototype.updateRoadImg = function(img_src){
-	this.roadimg = img_src;
+	this.roadimg = GLB.IMGROOT + img_src + GLB.IMGAPPEND;
 }
 
 // Returns ID value
-Vehicle.prototype.getData = function(){
-	return this.id;
+Vehicle.prototype.getVehicle = function(){
+	return this.vehicle;
+}
+
+// Returns ID value
+Vehicle.prototype.setVehicle = function(vID){
+	this.vehicle = vID;
 }

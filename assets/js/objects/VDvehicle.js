@@ -31,3 +31,46 @@ Vehicle.prototype.modifyVdRoadImg = function(){
 	$('#vd-RoadCam-img').attr('src', this.roadimg);
 }
 
+
+Vehicle.prototype.processSocketVD = function(dIn){
+	
+	// First - test that data received is for current vehicle
+	if(dIn.vehicle != this.vehicle){
+		console.log('### WARNING ####');
+		console.log('Data received for Vehicle: ' + dIn.vehicle);
+		console.log('Page is expecting data from Vehicle: ' + this.vehicle);
+	}
+
+	// Then, test to see whether input is data / roadIMG / driverIMG
+	else if(dIn.info == 'data'){
+		// Update VDvehicle object with Socket data
+		this.updateData(dIn._id, dIn.vehicle, dIn.speed, "", dIn.heart, dIn.fGax, dIn.fGay, dIn.fGaz, dIn.lat, dIn.lng, dIn.insurance)
+		
+		// Push changes into the HTML
+		this.modifyVdHtmlText();
+		console.log('Data Received for VD Page');
+	}
+	else if (dIn.info == 'image_road')
+	{
+		// Update VDvehicle object with Road Img src
+		this.updateRoadImg(dIn.image);
+
+		// Push changes into the HTML
+		this.modifyVdRoadImg();
+		console.log('Road Image Received for VD Page');
+	}
+	else if (dIn.info == 'image_driver')
+	{
+		// Update VDvehicle object with Road Img src
+		this.updateDriverImg(dIn.image);
+
+		// Push changes into the HTML
+		this.modifyVdDriverImg();
+		console.log('Driver Image Received for VD Page');
+	}
+	else
+	{
+		// Catch for anything else - not expected
+		console.log('Unknown Packet received for VD Page');
+	}
+}

@@ -1,6 +1,14 @@
 // Add global namespace
 var GLB = GLB || {};
 
+GLB.currVID = 1;			// Vehicle ID - default to 1.
+
+// CONSTANT definitions for page IDs
+GLB.PGVD = 'pgVD';
+GLB.PGCONS = 'pgCONS';
+GLB.PGSTRESS = 'pgSRESS';
+GLB.PGBIGD = 'pgBIGD';
+
 // Initialise Global vars
 GLB.map = null;				// Map object
 GLB.mapCurrCenter = null;	// Center point of map
@@ -27,3 +35,30 @@ GLB.cssSppedPieFill='#ffffff';
 // Accel Line Graph variable
 GLB.dataPoints = 9; //set the number of points to be plotted
 GLB.loopCount = GLB.dataPoints;
+
+// WebSocket Definitions
+GLB.socket = null;			// Current socket object
+GLB.currSOCK = null;		// Current socket in session
+GLB.sockAddr = null;		// Socket Address
+GLB.SOCKROOT  = "ws://fslautoiotdemobackend.mybluemix.net"
+
+GLB.SOCKETA = '/ws/vehicleA';
+GLB.SOCKETB = '/ws/vehicleB';
+GLB.SOCKETC = '/ws/vehicleC';
+GLB.SOCKETD = '/ws/vehicleD';
+GLB.SOCKETE = '/ws/vehicleE';
+GLB.SOCKETF = '/ws/vehicleF';
+GLB.SOCKETG = '/ws/vehicleG';
+GLB.SOCKETH = '/ws/vehicleH';
+GLB.SOCKETI = '/ws/vehicleI';
+GLB.SOCKETJ = '/ws/vehicleJ';
+
+GLB.SOCKETSTRESS = '/ws/stress';
+GLB.SOCKETBIGD = '/ws/bigdata';
+
+GLB.SOCKETSTRESSREQ = 'request!';
+GLB.SOCKETBIGDFLEETREQ = 'Fleet Data Request!';
+
+
+GLB.IMGROOT = 'https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/';
+GLB.IMGAPPEND = '/image.jpg';

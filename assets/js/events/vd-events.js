@@ -1,5 +1,20 @@
+// Setup events for the Vehicle Dashboard Page
+// --> Set vehicle ID
+// --> Initialise maps
+// --> Initialise graphs
+// --> Open websocket
 function init_vd_page(){
 	console.log("OnPageLoad: VD-page");
+
+	//NEED SOME CODE TO EXTRACT THE VEHICLE ID FROM PAGE NAV
+	GLB.currVID = 1;
+	GLB.sockAddr = GLB.SOCKROOT + GLB.SOCKETB
+
+	// Initialise VDvehicle object
+	GLB.vehicle=new VDvehicle();
+
+	// Set the Vehicle ID of the VDvehicle object
+	GLB.vehicle.setVehicle(GLB.currVID);
 
 	// -- Load map first to reduce page load times
 	// Initial position
@@ -18,8 +33,9 @@ function init_vd_page(){
 
 	// -- Now open web socket
 	// Initialise websocket
-	init_websocket();
-	pageID = "vd";
+	init_websocket(GLB.SOCKETA, GLB.sockAddr);
+	//pageID = "vd";
 
-	init_vdDemo();
+	//IF DEMO MODE, THEN CALL THIS FUNCTION
+	//init_vdDemo();
 }

@@ -48,6 +48,9 @@ Vehicle.prototype.processSocketVD = function(dIn){
 		
 		// Push changes into the HTML
 		this.modifyVdHtmlText();
+
+		// Update Map
+		this.modifyVdMap(dIn.lng,dIn.lat);
 		console.log('Data Received for VD Page');
 	}
 	else if (dIn.info == 'image_road')

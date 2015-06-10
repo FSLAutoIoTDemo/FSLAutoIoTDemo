@@ -36,7 +36,10 @@ Vehicle.prototype.updateData = function(_id, _vehicle, _speed, _accel, _heart, _
 	// Default all display text to "--"
 	this.speed = _speed;		// Speed
 	this.accel = _accel;		// Acceleration
-	this.heart = _heart;		// Heart Rate
+	
+	// Only update heart rate if greater than 0
+	if(_heart>0)
+		this.heart = _heart;		// Heart Rate
 
 	this.fGax = _fGax;		// X-Accel
 	this.fGay = _fGay;		// Y-Accel

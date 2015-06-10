@@ -14,6 +14,9 @@ body{
 	font-weight: $font-light;
 	color: $fsl-white;
 	text-decoration:none;
+
+	// Do not allow the user to 'select' the text
+	@extend .noselect;
 }
 
 // Set font size and spacing for Nav h1

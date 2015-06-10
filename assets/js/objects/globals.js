@@ -1,6 +1,8 @@
 // Add global namespace
 var GLB = GLB || {};
 
+GLB.navMenuStatus=false;	// Nav Menu Open/Close status (true=opened/false=closed)
+
 GLB.currVID = 1;			// Vehicle ID - default to 1.
 
 // CONSTANT definitions for page IDs

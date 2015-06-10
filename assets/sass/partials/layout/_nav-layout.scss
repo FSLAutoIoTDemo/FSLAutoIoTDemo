@@ -59,6 +59,9 @@ ul.navigation{
 
 }
 
+.navSelect{
+}
+
 // 'Select Vehicle' button
 ul.navigation li{
 	display:inline;
@@ -124,6 +127,19 @@ ul.navigation li ul li a {
 
 }
 
-.navHome{
+#navHome{
+	display:inline;
 	float:right;
+	position:relative;
+}
+
+.navHomeImg{
+	float:right;
+	position:relative;
+
+	margin: 0px auto;
+	margin-right:10%;
+
+	width: 25%;
+	height: auto;
 }

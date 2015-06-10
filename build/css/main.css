@@ -8,6 +8,15 @@
 /* Mixins to apply dynamic scaling to different	  */
 /* font styles									  */
 /**************************************************/
+.noselect, .navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2 {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
   margin: 0;
 }
@@ -327,8 +336,19 @@ ul.navigation li ul li {
   width: 100%;
 }
 
-.navHome {
+#navHome {
+  display: inline;
   float: right;
+  position: relative;
+}
+
+.navHomeImg {
+  float: right;
+  position: relative;
+  margin: 0px auto;
+  margin-right: 10%;
+  width: 25%;
+  height: auto;
 }
 
 /*******************************************/

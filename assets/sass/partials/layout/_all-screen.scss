@@ -52,12 +52,34 @@ body{
 	width: $content-width;
 }
 
+/*******************************************/
+/* For Quad Tile screens, 2 x contentHalf  */
+/* boxes are used to contain 4 tiles each  */
+/*******************************************/
+.contentHalf{
+	float: left;
+
+	// Sml screen can take full container width (1 tile)
+	@media #{$sml-screen}{
+		width: $content-width;
+	}
+	// Med screen can take full container width (2 tiles)
+	@media #{$med-screen}{
+		width: $content-width;
+	}
+	// Large screens need to be set to half container width (i.e. to 2 tiles)
+	@media #{$large-screen}{
+		width: $content-half-width;
+	}
+}
+
+
 
 /*******************************************/
 /* The container for the single width tile */
 /* - Defines float & psudeo height box     */
 /*******************************************/
-.singleTile{
+.singleTile, .quadTile{
 	float: left;
 
 	// Psudeo element to provide dynamic height, based on width & w/h ratio

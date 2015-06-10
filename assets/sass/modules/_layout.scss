@@ -61,9 +61,9 @@ $single-tile-height-wide-pc: $single-tile-height-scale-wide * 100%;
 //--> Automatically generates correct double  tile margins, width & height (do not touch)
 //--########################################################################################
 
-//----> Small screen width: Same as single tile
-//----> Med screen width: 2 x single tile
-//----> Large screen width: 2 x single tile
+//----> Small screen margin: single tile margin
+//----> Med screen margin: single tile margin
+//----> Large screen margin: single tile margin
 $double-tile-margin-sml-pc: $single-tile-margin-sml-pc;
 $double-tile-margin-med-pc: $single-tile-margin-med-pc;
 $double-tile-margin-large-pc: $single-tile-margin-large-pc;
@@ -94,6 +94,22 @@ $double-tile-height-std-pc: $double-tile-height-std-aspect-ratio * 100%;
 $double-tile-min-width-full: 2 * $single-tile-min-width; 
 $double-tile-min-width-compact: $single-tile-min-width;
 
+//--########################################################################################
+//--> Automatically generates correct quad tile margins, width & height (do not touch)
+//--> Only need to generate for large screens
+//--> Med screen uses same class as quadTile(ie. same as large screen)
+//--> Sml screen uses same class as singleTile
+//--########################################################################################
+$quad-tile-margin-large-pc: $single-tile-margin-large-pc*2;
+
+//----> Large screen width: 2 x single tile
+//----> but because using 1/2 size content, need to double the %width of 2 tiles
+$quad-tile-width-large: 2* ($single-tile-width-large * 2) + ($single-tile-margin-large-pc * 4);
+
+//----> Min-width of double tile is 2 x single tile px min-width
+//----> Except when using sml screen, the use same min-width as single tile
+$quad-tile-min-width-full: 2 * $single-tile-min-width; 
+
 
 //########################################################################################
 // Tile layout
@@ -123,6 +139,7 @@ $nav-width-large: (100 - (2 * $single-tile-margin-large-dyn)) * 1%;
 //--> Modify if required
 //########################################################################################
 $content-width: 100%;
+$content-half-width: 50%;
 
 
 //########################################################################################

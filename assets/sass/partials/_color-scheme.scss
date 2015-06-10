@@ -50,6 +50,8 @@ body{
 	background-color: $fsl-blue;
 }
 
+
+//#### VD PAGE TILE COLOURS ########
 #vd-Map{
 	background-color: $fsl-orange;
 }
@@ -71,5 +73,35 @@ body{
 }
 
 #vd-Heart{
+	background-color: $fsl-orange;
+}
+
+
+//#### BIG DATA PAGE TILE COLOURS ########
+#bigd-info{
+	background-color: $fsl-orange;
+}
+
+#bigd-evmap{
+	background-color: $fsl-yellow;
+}
+
+#bigd-analy{
+	background-color: $fsl-blue;
+}
+
+#bigd-evinfo{
+	background-color: $fsl-purple-light;
+}
+
+#bigd-graph{
+	background-color: $fsl-orange;
+}
+
+//#### STRESSFUL STREET PAGE TILE COLOURS ########
+#stress-map{
+	background-color: $fsl-gray;
+}
+.stress-cam{
 	background-color: $fsl-orange;
 }

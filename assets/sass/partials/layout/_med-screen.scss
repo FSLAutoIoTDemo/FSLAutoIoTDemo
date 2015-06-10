@@ -1,7 +1,7 @@
 /*******************************************/
 /* The container for the single width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   med-screen break.				  	   */
 /*******************************************/
 .singleTile{
 	@media #{$med-screen}{
@@ -12,9 +12,22 @@
 }
 
 /*******************************************/
+/* The container for the quad width tile   */
+/* - Width and margin will change on       */
+/*   med-screen break.				   */
+/*******************************************/
+.quadTile{
+	@media #{$notsml-screen}{
+		width: $quad-tile-width-large;
+		min-width: $quad-tile-min-width-full;
+		margin: $quad-tile-margin-large-pc;
+	}
+}
+
+/*******************************************/
 /* The container for the double width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   med-screen break.				  	   */
 /*******************************************/
 .doubleTile{
 	@media #{$med-screen}{

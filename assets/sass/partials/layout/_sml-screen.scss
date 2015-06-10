@@ -1,9 +1,11 @@
 /*******************************************/
 /* The container for the single width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   sml-screen break.				   	   */
+/* - quadTile same as singleTile in sml-   */
+/* screen								   */
 /*******************************************/
-.singleTile{
+.singleTile, .quadTile{
 	@media #{$sml-screen}{
 		width: $single-tile-width-sml;
 		margin: $single-tile-margin-sml-pc;
@@ -14,7 +16,7 @@
 /*******************************************/
 /* The container for the double width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   sml-screen break.				       */
 /*******************************************/
 .doubleTile{
 	@media #{$sml-screen}{

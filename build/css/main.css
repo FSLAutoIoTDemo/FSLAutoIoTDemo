@@ -82,24 +82,47 @@ body {
 }
 
 /*******************************************/
+/* For Quad Tile screens, 2 x contentHalf  */
+/* boxes are used to contain 4 tiles each  */
+/*******************************************/
+.contentHalf {
+  float: left;
+}
+@media only screen and (max-width: 600px) {
+  .contentHalf {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .contentHalf {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .contentHalf {
+    width: 50%;
+  }
+}
+
+/*******************************************/
 /* The container for the single width tile */
 /* - Defines float & psudeo height box     */
 /*******************************************/
-.singleTile {
+.singleTile, .quadTile {
   float: left;
 }
-.singleTile::before {
+.singleTile::before, .quadTile::before {
   content: "";
   float: left;
   padding-top: 100%;
 }
 @media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  .singleTile::before {
+  .singleTile::before, .quadTile::before {
     padding-top: 120%;
   }
 }
 @media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  .singleTile::before {
+  .singleTile::before, .quadTile::before {
     padding-top: 100%;
   }
 }
@@ -140,10 +163,12 @@ body {
 /*******************************************/
 /* The container for the single width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   sml-screen break.				   	   */
+/* - quadTile same as singleTile in sml-   */
+/* screen								   */
 /*******************************************/
 @media only screen and (max-width: 600px) {
-  .singleTile {
+  .singleTile, .quadTile {
     width: 98%;
     margin: 1%;
   }
@@ -152,7 +177,7 @@ body {
 /*******************************************/
 /* The container for the double width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   sml-screen break.				       */
 /*******************************************/
 @media only screen and (max-width: 600px) {
   .doubleTile {
@@ -175,7 +200,7 @@ body {
 /*******************************************/
 /* The container for the single width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   med-screen break.				  	   */
 /*******************************************/
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   .singleTile {
@@ -186,9 +211,22 @@ body {
 }
 
 /*******************************************/
+/* The container for the quad width tile   */
+/* - Width and margin will change on       */
+/*   med-screen break.				   */
+/*******************************************/
+@media only screen and (min-width: 600px) {
+  .quadTile {
+    width: 99%;
+    min-width: 520px;
+    margin: 0.5%;
+  }
+}
+
+/*******************************************/
 /* The container for the double width tile */
 /* - Width and margin will change on       */
-/*   large-screen break.				   */
+/*   med-screen break.				  	   */
 /*******************************************/
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
   .doubleTile {
@@ -219,6 +257,14 @@ body {
     width: 24.5%;
     min-width: 260px;
     margin: 0.25%;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .singleTileHalfLayout {
+    width: 49%;
+    min-width: 260px;
+    margin: 0.5%;
   }
 }
 
@@ -270,21 +316,10 @@ body {
   padding-top: 3%;
 }
 
-/*
-.navBar h1, .headBar h1{
-	float: left;
-	position: relative;
-	
-	// No padding or margin
-	margin:0;
-	padding:0;
-
-	// Offset left margin
-	margin-left: 2%;
-	
+.headBar h1 {
+  margin-left: 2%;
 }
 
-*/
 ul.navigation {
   float: left;
   position: relative;
@@ -442,6 +477,34 @@ body {
 }
 
 #vd-Heart {
+  background-color: #e66a08;
+}
+
+#bigd-info {
+  background-color: #e66a08;
+}
+
+#bigd-evmap {
+  background-color: #ffc20f;
+}
+
+#bigd-analy {
+  background-color: #008ecb;
+}
+
+#bigd-evinfo {
+  background-color: #6f6fcc;
+}
+
+#bigd-graph {
+  background-color: #e66a08;
+}
+
+#stress-map {
+  background-color: #666666;
+}
+
+.stress-cam {
   background-color: #e66a08;
 }
 

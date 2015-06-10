@@ -11,6 +11,14 @@
 	}
 }
 
+// In the half content layout, need to scale single tile width/margin x2
+.singleTileHalfLayout{
+	@media #{$large-screen}{
+		width: $single-tile-width-large*2;
+		min-width: $single-tile-min-width;
+		margin: $single-tile-margin-large-pc*2;
+	}
+}
 
 /*******************************************/
 /* The container for the double width tile */

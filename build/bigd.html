@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Freescale Automotive IoT Demo</title>
+		
+		<!-- Initalises the viewport for responsive layout -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<!-- Master style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<!-- Roboto fonts -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+	</head>
+
+
+	<body id="bigd-page">
+		<!-- JQuery -->
+		<script src="js/jquery-1.11.2.min.js"></script>
+
+		<!-- Google Charts -->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<!-- Google Maps API -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		
+
+
+
+		<!-- Master site javascript file -->
+		<script src="js/base.min.js"></script>
+
+		<!--- Contains all of the content + nav to be shown -->	
+		<div class="container clearfix">
+
+			<header class="headBar"><h1>OEM Use Case: Big Data</h1></header>
+
+			<!-- Navigation bar (top or left) -->
+			<nav class="navBar">
+				<ul class="navigation">
+					<li id="navHome">
+						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main content (tiles) -->
+			<main role="main">
+
+				<!-- Second Half of Tiles -->
+				<article class="contentHalf">
+
+					<!-- Tiles begin here... -->
+					<section class="singleTile singleTileHalfLayout" id="bigd-info">
+						<h1 class="tileTitle">Information</h1>  
+						<p>Some text about use case</p>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout" id="bigd-evmap">
+						<h1 class="tileTitle">Event Location</h1>  
+						<div id="bigd-Map-obj">Map here</div>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout" id="bigd-analy">
+						<h1 class="tileTitle">Event Location</h1>  
+						<p>Text about analystics</p>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout" id="bigd-evinfo">
+						<h1 class="tileTitle">Event Information</h1>  
+						<p>Event Information</p>
+					</section>
+				</article>
+				<!-- Second Half of Tiles -->
+				<article class="contentHalf">
+					<!-- Tiles begin here... -->
+					<section class="quadTile" id="bigd-graph">
+						<h1 class="tileTitle">Quad Tile!</h1>  
+						<p>Some text about use case</p>
+					</section>
+				</article>
+			</main>
+		</div>
+	</body>
+
+</html>

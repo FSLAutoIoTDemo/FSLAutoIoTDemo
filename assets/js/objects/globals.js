@@ -3,7 +3,12 @@ var GLB = GLB || {};
 
 GLB.navMenuStatus=false;	// Nav Menu Open/Close status (true=opened/false=closed)
 
-GLB.currVID = 1;			// Vehicle ID - default to 1.
+GLB.watchdogInterval = 10000;		// Check watchdog count every 10s
+GLB.watchdogCount = 100;			// Inital watchdog count should be > Red Limit (i.e. default=offline)
+GLB.watchdogLimitAmber = 3;			// Amber Limit (40seconds)
+GLB.watchdogLimitRed = 11;			// Red Limit (120seconds)
+
+GLB.currVID = 100;			// Vehicle ID - default to 100 (demo mode).
 
 // CONSTANT definitions for page IDs
 GLB.pgID = null;			// Page ID

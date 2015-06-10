@@ -57,6 +57,10 @@ function sockOnMessage(dataRawSOCK){
 
 	console.log('Sock OnMessage - Data received from socket: ' + GLB.currSOCK);
 
+	// Clearing watchdog
+	watchdogClear();
+	console.log('Clearing watchog');
+
 	// JSON parsed data received from socket
 	var dataJsonSOCK = JSON.parse(dataRawSOCK.data);
 		

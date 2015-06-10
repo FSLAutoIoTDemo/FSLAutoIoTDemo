@@ -1,11 +1,12 @@
 var GLB = GLB || {};
 
-GLB.navMenuStatus = !1, GLB.currVID = 1, GLB.pgID = null, GLB.PGVD = "pgVD", GLB.PGCONS = "pgCONS", 
-GLB.PGSTRESS = "pgSRESS", GLB.PGBIGD = "pgBIGD", GLB.map = null, GLB.mapCurrCenter = null, 
-GLB.mapMarker = null, GLB.carRoute = null, GLB.mapStrokeColour = "#FF0000", GLB.vehile = null, 
-GLB.vdDemoData = null, GLB.vdDemoIdx = 0, GLB.speedPieData = null, GLB.speedPieOptions = null, 
-GLB.speedPiechart = null, GLB.accelLinedata = null, GLB.accelLineoptions = null, 
-GLB.accelLinegraph = null, GLB.maxSpeed = 120, GLB.cssSppedPieSemiTransparent = "#004461", 
+GLB.navMenuStatus = !1, GLB.watchdogInterval = 1e4, GLB.watchdogCount = 100, GLB.watchdogLimitAmber = 3, 
+GLB.watchdogLimitRed = 11, GLB.currVID = 100, GLB.pgID = null, GLB.PGVD = "pgVD", 
+GLB.PGCONS = "pgCONS", GLB.PGSTRESS = "pgSRESS", GLB.PGBIGD = "pgBIGD", GLB.map = null, 
+GLB.mapCurrCenter = null, GLB.mapMarker = null, GLB.carRoute = null, GLB.mapStrokeColour = "#FF0000", 
+GLB.vehile = null, GLB.vdDemoData = null, GLB.vdDemoIdx = 0, GLB.speedPieData = null, 
+GLB.speedPieOptions = null, GLB.speedPiechart = null, GLB.accelLinedata = null, 
+GLB.accelLineoptions = null, GLB.accelLinegraph = null, GLB.maxSpeed = 120, GLB.cssSppedPieSemiTransparent = "#004461", 
 GLB.cssSppedPieFill = "#ffffff", GLB.dataPoints = 9, GLB.loopCount = GLB.dataPoints, 
 GLB.socket = null, GLB.currSOCK = null, GLB.sockAddr = null, GLB.SOCKROOT = "ws://fslautoiotdemobackend.mybluemix.net", 
 GLB.SOCKETVEH = [ "/ws/vehicleA", "/ws/vehicleB", "/ws/vehicleC", "/ws/vehicleD", "/ws/vehicleE", "/ws/vehicleF", "/ws/vehicleG", "/ws/vehicleH", "/ws/vehicleI", "/ws/vehicleJ" ], 

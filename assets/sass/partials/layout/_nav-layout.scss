@@ -101,12 +101,13 @@ ul.navigation li:hover > a{
 
 }
 
-
+/*
 // Use to unhide the submenu
 ul.navigation li:hover > ul{
 	visibility:visible;
 	opacity:1;
 }
+*/
 
 ul.navigation li ul{
 	position:absolute;		//  Removes the hidden menu from parent height
@@ -143,3 +144,13 @@ ul.navigation li ul li a {
 	width: 25%;
 	height: auto;
 }
+/*
+.status-circle{
+ background-color: red;
+ 
+ -moz-border-radius:5%;
+ -webkit-border-radius: 5%;
+ width: 10%;
+ height: 10%;
+}
+*/

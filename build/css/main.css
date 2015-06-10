@@ -318,11 +318,13 @@ ul.navigation li {
   }
 }
 
-ul.navigation li:hover > ul {
-  visibility: visible;
-  opacity: 1;
+/*
+// Use to unhide the submenu
+ul.navigation li:hover > ul{
+	visibility:visible;
+	opacity:1;
 }
-
+*/
 ul.navigation li ul {
   position: absolute;
   visibility: hidden;
@@ -351,6 +353,16 @@ ul.navigation li ul li {
   height: auto;
 }
 
+/*
+.status-circle{
+ background-color: red;
+ 
+ -moz-border-radius:5%;
+ -webkit-border-radius: 5%;
+ width: 10%;
+ height: 10%;
+}
+*/
 /*******************************************/
 /* Colors to assist debugging non-visual   */
 /* elements - uncomment to enable		   */

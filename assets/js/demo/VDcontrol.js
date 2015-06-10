@@ -11,6 +11,9 @@ jQuery(document).ready(function($){
 function init_vdDemo(){
 	console.log("OnPageLoad: VD-Demo Mode Started");
 
+	// Clear watchdog
+	watchdogClear();
+
 	// Load data for Vehicle Dash page
 	initDemoData();
 
@@ -25,6 +28,7 @@ function init_vdDemo(){
 	setInterval(vdDemo_updateData,3000);	// 1 second
 	setInterval(vdDemo_modifyMaps,3000) 	// 1 seconds
 	setInterval(vdDemo_modifyImgs,15000);	// 5 seconds
+	setInterval(watchdogClear,10000);		// Clear Watchdog every 10 seconds
 }
 
 

@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
 
 	// Setup the onclick events for the nav menu
 	navSetup();
+	watchdogInit();
 
 	if($("#debug-page").length){init_debug_page()};
 

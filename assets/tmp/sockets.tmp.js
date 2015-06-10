@@ -24,7 +24,8 @@ function sockOnError(a) {
 }
 
 function sockOnMessage(a) {
-    console.log("Sock OnMessage - Data received from socket: " + GLB.currSOCK);
+    console.log("Sock OnMessage - Data received from socket: " + GLB.currSOCK), watchdogClear(), 
+    console.log("Clearing watchog");
     var b = JSON.parse(a.data);
     console.log("Sock OnMessage - Object Data follows..."), console.log(b), GLB.pgID == GLB.PGVD && GLB.vehicle.processSocketVD(b), 
     GLB.pgID == GLB.PGCONS, GLB.pgID == GLB.PGSTRESS, GLB.pgID == GLB.PGBIGD;

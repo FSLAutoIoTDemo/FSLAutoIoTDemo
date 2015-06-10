@@ -3,7 +3,7 @@ function watchdogInit() {
 }
 
 function watchdogCount() {
-    GLB.watchdogCount > GLB.watchdogLimitAmber ? $("#navMenuStatusId").css("background-color", "#e66a08") : GLB.watchdogCount > GLB.watchdogLimitRed ? $("#navMenuStatusId").css("background-color", "red") : $("#navMenuStatusId").css("background-color", "green"), 
+    GLB.watchdogCount > GLB.watchdogLimitAmber && GLB.watchdogCount < GLB.watchdogLimitRed ? $("#navMenuStatusText").css("color", "#ffc20f") : GLB.watchdogCount > GLB.watchdogLimitRed ? $("#navMenuStatusText").css("color", "red") : $("#navMenuStatusText").css("color", "rgb(9, 255, 9)"), 
     GLB.watchdogCount += 1;
 }
 

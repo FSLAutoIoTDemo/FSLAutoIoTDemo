@@ -19,6 +19,10 @@ body{
 	@extend .noselect;
 }
 
+.navMenuStatus h1{
+	font-weight: $font-normal;
+}
+
 // Set font size and spacing for Nav h1
 .navBar h1{
 	@include setDynFont($font-size-nav-h1);

@@ -293,7 +293,7 @@ ul.navigation {
   width: 100%;
 }
 
-ul.navigation li {
+ul.navigation li, .navMenuStatus {
   display: inline;
   float: left;
   position: relative;
@@ -303,28 +303,21 @@ ul.navigation li {
   height: auto;
 }
 @media only screen and (max-width: 600px) {
-  ul.navigation li {
+  ul.navigation li, .navMenuStatus {
     width: 40%;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1189px) {
-  ul.navigation li {
+  ul.navigation li, .navMenuStatus {
     width: 30%;
   }
 }
 @media only screen and (min-width: 1190px) {
-  ul.navigation li {
+  ul.navigation li, .navMenuStatus {
     width: 20%;
   }
 }
 
-/*
-// Use to unhide the submenu
-ul.navigation li:hover > ul{
-	visibility:visible;
-	opacity:1;
-}
-*/
 ul.navigation li ul {
   position: absolute;
   visibility: hidden;
@@ -338,10 +331,33 @@ ul.navigation li ul li {
   width: 100%;
 }
 
+.navMenuStatus {
+  text-align: left;
+  margin-left: 2%;
+}
+
 #navHome {
   display: inline;
   float: right;
   position: relative;
+}
+@media only screen and (max-width: 600px) {
+  #navHome {
+    width: 14.84848%;
+    margin-top: 3%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #navHome {
+    width: 7.07143%;
+    margin-top: 1%;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  #navHome {
+    width: 4.14583%;
+    margin-top: 0.25%;
+  }
 }
 
 .navHomeImg {
@@ -349,18 +365,15 @@ ul.navigation li ul li {
   position: relative;
   margin: 0px auto;
   margin-right: 10%;
-  width: 25%;
+  width: 100%;
   height: auto;
 }
 
 /*
-.status-circle{
- background-color: red;
- 
- -moz-border-radius:5%;
- -webkit-border-radius: 5%;
- width: 10%;
- height: 10%;
+#navMenuStatuscolor{
+
+	width:20%;
+	height:100%;
 }
 */
 /*******************************************/
@@ -444,6 +457,10 @@ body {
   font-weight: 300;
   color: #ffffff;
   text-decoration: none;
+}
+
+.navMenuStatus h1 {
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 600px) {

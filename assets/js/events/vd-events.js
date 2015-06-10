@@ -33,7 +33,7 @@ function init_vd_page(){
 
 	// Set the Vehicle ID of the VDvehicle object
 	GLB.vehicle.setVehicle(GLB.currVID-1);
-
+	
 	// Update the Nav menu to include the current vehicle.
 	navMenuStatusSetVeh();
 

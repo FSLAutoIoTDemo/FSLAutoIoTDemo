@@ -63,7 +63,7 @@ ul.navigation{
 }
 
 // 'Select Vehicle' button
-ul.navigation li{
+ul.navigation li, .navMenuStatus{
 	display:inline;
 	float:left;
 	position:relative;
@@ -86,29 +86,6 @@ ul.navigation li{
 	height:auto;
 }
 
-// 'Select Vehicle' button
-ul.navigation li h1{
-	
-}
-
-// On hover over 'Select Vehicle' button
-ul.navigation li a:hover{
-
-}
-
-// ???
-ul.navigation li:hover > a{
-
-}
-
-/*
-// Use to unhide the submenu
-ul.navigation li:hover > ul{
-	visibility:visible;
-	opacity:1;
-}
-*/
-
 ul.navigation li ul{
 	position:absolute;		//  Removes the hidden menu from parent height
 	visibility:hidden;
@@ -124,14 +101,29 @@ ul.navigation li ul li {
 	width:100%;
 }
 
-ul.navigation li ul li a {
-
+.navMenuStatus{
+	text-align:left;
+	margin-left:2%;
 }
 
 #navHome{
 	display:inline;
 	float:right;
 	position:relative;
+
+	@media #{$sml-screen}{
+		width:$nav-width-sml/6.6;
+		margin-top:3%;
+	}
+
+	@media #{$med-screen}{
+		width:$nav-width-med/14;
+		margin-top:1%;	
+	}
+	@media #{$large-screen}{
+		width:$nav-width-large/24;
+		margin-top:0.25%;
+	}	
 }
 
 .navHomeImg{
@@ -141,16 +133,16 @@ ul.navigation li ul li a {
 	margin: 0px auto;
 	margin-right:10%;
 
-	width: 25%;
+	width: 100%;
 	height: auto;
 }
+
 /*
-.status-circle{
- background-color: red;
- 
- -moz-border-radius:5%;
- -webkit-border-radius: 5%;
- width: 10%;
- height: 10%;
+#navMenuStatuscolor{
+
+	width:20%;
+	height:100%;
 }
 */
+
+

@@ -42,5 +42,5 @@ function navMenuStatusSetVeh() {
       default:
         a = "Demo";
     }
-    $("#navMenuStatusId").text(a);
+    $("#navMenuStatusText").text(a);
 }

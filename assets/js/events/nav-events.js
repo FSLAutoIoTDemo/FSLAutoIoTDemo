@@ -53,5 +53,5 @@ function navMenuStatusSetVeh(){
 			id="Demo";
 	}
 
-	$("#navMenuStatusId").text(id);
+	$("#navMenuStatusText").text(id);
 }

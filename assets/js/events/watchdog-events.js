@@ -9,13 +9,13 @@ function watchdogCount(){
 
 	// Test status of watchdog, update status icon
 	// -> If above amber limit, change status to orange
-	if(GLB.watchdogCount > GLB.watchdogLimitAmber)
-		$("#navMenuStatusId").css("background-color", '#e66a08');
+	if((GLB.watchdogCount > GLB.watchdogLimitAmber) && (GLB.watchdogCount < GLB.watchdogLimitRed))
+		$("#navMenuStatusText").css("color", '#ffc20f');
 	// -> If above red limit, change status to orange
 	else if(GLB.watchdogCount > GLB.watchdogLimitRed)
-		$("#navMenuStatusId").css("background-color", 'red');
+		$("#navMenuStatusText").css("color", 'red');
 	else
-		$("#navMenuStatusId").css("background-color", 'green');
+		$("#navMenuStatusText").css("color", 'rgb(9, 255, 9)');
 	
 	// Increment Watchdog Count
 	GLB.watchdogCount += 1;

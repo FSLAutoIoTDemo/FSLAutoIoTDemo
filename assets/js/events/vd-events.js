@@ -6,6 +6,9 @@
 function init_vd_page(){
 	console.log("OnPageLoad: VD-page");
 
+	// Set Page ID to Vehicle Dash
+	GLB.pgID = GLB.PGVD;
+
 	// Initialise VDvehicle object
 	GLB.vehicle=new VDvehicle();
 

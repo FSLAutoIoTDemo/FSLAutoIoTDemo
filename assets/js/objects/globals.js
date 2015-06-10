@@ -4,6 +4,7 @@ var GLB = GLB || {};
 GLB.currVID = 1;			// Vehicle ID - default to 1.
 
 // CONSTANT definitions for page IDs
+GLB.pgID = null;			// Page ID
 GLB.PGVD = 'pgVD';
 GLB.PGCONS = 'pgCONS';
 GLB.PGSTRESS = 'pgSRESS';

@@ -1,6 +1,6 @@
 var GLB = GLB || {};
 
-GLB.currVID = 1, GLB.PGVD = "pgVD", GLB.PGCONS = "pgCONS", GLB.PGSTRESS = "pgSRESS", 
+GLB.currVID = 1, GLB.pgID = null, GLB.PGVD = "pgVD", GLB.PGCONS = "pgCONS", GLB.PGSTRESS = "pgSRESS", 
 GLB.PGBIGD = "pgBIGD", GLB.map = null, GLB.mapCurrCenter = null, GLB.mapMarker = null, 
 GLB.carRoute = null, GLB.mapStrokeColour = "#FF0000", GLB.vehile = null, GLB.vdDemoData = null, 
 GLB.vdDemoIdx = 0, GLB.speedPieData = null, GLB.speedPieOptions = null, GLB.speedPiechart = null, 

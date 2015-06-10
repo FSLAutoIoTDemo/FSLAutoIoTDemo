@@ -65,12 +65,12 @@ function sockOnMessage(dataRawSOCK){
 
 //######## NEED TO SORT OUT pgID HERE - does not exist
 	// Determine from Page ID, which processing function should be called
-	if(pgID == GLB.PGVD)
+	if(GLB.pgID == GLB.PGVD)
 		GLB.vehicle.processSocketVD(dataJsonSOCK);
-	if(pgID == GLB.PGCONS){}
+	if(GLB.pgID == GLB.PGCONS){}
 //		processSocketCONS(dataJsonSOCK);
-	if(pgID == GLB.PGSTRESS){}
+	if(GLB.pgID == GLB.PGSTRESS){}
 //		processSocketSTRESS(dataJsonSOCK);
-	if(pgID == GLB.PGBIGD){}
+	if(GLB.pgID == GLB.PGBIGD){}
 //		processSocketBIGD(dataJsonSOCK);
 };

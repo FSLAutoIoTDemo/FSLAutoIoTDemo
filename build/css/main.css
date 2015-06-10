@@ -480,20 +480,12 @@ body {
   background-color: #e66a08;
 }
 
-#bigd-info {
-  background-color: #e66a08;
+.bigd-info {
+  background-color: #666666;
 }
 
-#bigd-evmap {
-  background-color: #ffc20f;
-}
-
-#bigd-analy {
+.bigd-event {
   background-color: #008ecb;
-}
-
-#bigd-evinfo {
-  background-color: #6f6fcc;
 }
 
 #bigd-graph {
@@ -505,6 +497,34 @@ body {
 }
 
 .stress-cam {
+  background-color: #e66a08;
+}
+
+#cons-info {
+  background-color: #e66a08;
+}
+
+#cons-twit {
+  background-color: #666666;
+}
+
+#cons-Map {
+  background-color: #ffc20f;
+}
+
+#cons-DriverCam {
+  background-color: #008ecb;
+}
+
+#cons-prof {
+  background-color: #6f6fcc;
+}
+
+#cons-insur {
+  background-color: #ffc20f;
+}
+
+#cons-speed {
   background-color: #e66a08;
 }
 

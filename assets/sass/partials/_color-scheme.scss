@@ -78,20 +78,12 @@ body{
 
 
 //#### BIG DATA PAGE TILE COLOURS ########
-#bigd-info{
-	background-color: $fsl-orange;
+.bigd-info{
+	background-color: $fsl-gray;
 }
 
-#bigd-evmap{
-	background-color: $fsl-yellow;
-}
-
-#bigd-analy{
+.bigd-event{
 	background-color: $fsl-blue;
-}
-
-#bigd-evinfo{
-	background-color: $fsl-purple-light;
 }
 
 #bigd-graph{
@@ -103,5 +95,35 @@ body{
 	background-color: $fsl-gray;
 }
 .stress-cam{
+	background-color: $fsl-orange;
+}
+
+
+//#### CONSUMER PAGE TILE COLOURS ########
+#cons-info{
+	background-color: $fsl-orange;
+}
+
+#cons-twit{
+	background-color: $fsl-gray;
+}
+
+#cons-Map{
+	background-color: $fsl-yellow;
+}
+
+#cons-DriverCam{
+	background-color: $fsl-blue;
+}
+
+#cons-prof{
+	background-color: $fsl-purple-light;
+}
+
+#cons-insur{
+	background-color: $fsl-yellow;
+}
+
+#cons-speed{
 	background-color: $fsl-orange;
 }

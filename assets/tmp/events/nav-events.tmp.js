@@ -39,6 +39,18 @@ function navMenuStatusSetVeh() {
         a = "Live F";
         break;
 
+      case "7":
+        a = "Live G";
+        break;
+
+      case "8":
+        a = "Live H";
+        break;
+
+      case "50":
+        a = "Live";
+        break;
+
       default:
         a = "Demo";
     }

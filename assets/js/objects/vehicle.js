@@ -3,6 +3,7 @@
 function Vehicle(){
 
 	var id = null;
+	var time = null;
 	var vehicle = 0;
 	
 	// Default all display text to "--"
@@ -28,9 +29,10 @@ function Vehicle(){
 //######### VEHICLE obj - PROTOTYPES ###########################/
 
 // Prototype function to set all the Alpha Numberic Values of Vehicle (i.e. all but imgs)
-Vehicle.prototype.updateData = function(_id, _vehicle, _speed, _accel, _heart, _fGax, _fGay, _fGaz, _lat, _lng, _insurance){
+Vehicle.prototype.updateData = function(_id, _vehicle, _speed, _accel, _heart, _fGax, _fGay, _fGaz, _lat, _lng, _insurance,_time){
 	
 	this.id = _id;
+	this.time = _time;
 	this.vehicle = _vehicle;
 	
 	// Default all display text to "--"

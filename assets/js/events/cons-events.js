@@ -3,14 +3,14 @@
 // --> Initialise maps
 // --> Initialise graphs
 // --> Open websocket
-function init_vd_page(){
-	console.log("OnPageLoad: VD-page");
+function init_cons_page(){
+	console.log("OnPageLoad: Consumer-page");
 
 	// Set Page ID to Vehicle Dash
-	GLB.pgID = GLB.PGVD;
+	GLB.pgID = GLB.PGCONS;
 
 	// Initialise VDvehicle object
-	GLB.vehicle=new VDvehicle();
+	GLB.vehicle=new CONSvehicle();
 
 	// -- Load map first to reduce page load times
 	// Initial position
@@ -18,14 +18,10 @@ function init_vd_page(){
 	var initLng = -4.168670;
 
 	// Load Road Map, with marker, but no heat overlay
-	initalizeMaps('#vd-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, true, "Vehicle Here!", true, false);
+	initalizeMaps('#cons-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, true, "Vehicle Here!", true, false);
 
-	// NEED TO ADD TEST TO SEE WHICH MODE TO USE (VEHICLE "X", "Y", or DEMO)
-
-	// MAY PUT CODE BELOW INTO OWN FUNCTION FOR VEHICLE "X"
-
-	// Load the Speed Pie Chart & Accel Graph (pass in HTML IDs to update)
-	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs(true,'#vd-Speed-obj',true,'#vd-Accel-obj',false,null,false,null)}});
+	// Load the Speed Pie Chart & Bar Graph (pass in HTML IDs to update)
+	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs(true,'#cons-Speed-obj',false,null,false,null,false,null)}});
 
 
 	// Query the variables in the URL and load the appropriate mode
@@ -42,13 +38,13 @@ function init_vd_page(){
 	// to remove the +1 before passing into other functions
 	if((GLB.currVID) == 100){
 		GLB.currVID = GLB.currVID-1;		//#Workaround
-		init_vdDemo();
+		init_consDemo();
 		console.log('Debug Mode Detected');
 	}
 	// If vehicle ID > 9 or null/undefined-> invalid case
 	else if (GLB.currVID > 9 || GLB.currVID < 0 || GLB.currVID==false){
 		GLB.currVID = GLB.currVID-1;		//#Workaround
-		init_vdDemo();
+		init_consDemo();
 		console.log('Invalid Mode Detected - set to Debug Mode');
 	}
 	// Should catch all vehicles between 0 & 9

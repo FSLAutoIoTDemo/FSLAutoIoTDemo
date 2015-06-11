@@ -1,13 +1,23 @@
 
 
-function initGraphs(pieHtmlId,chartHtmlId){
+function initGraphs(pie,pieHtmlId,chart,chartHtmlId,gforce,gforceHtmlId,bar,barHtmlId){
 
 //function initGraphs(){	
 	// Create Speed Graph
-	drawInitSpeedPieChart(pieHtmlId);
+	if(pie)
+		drawInitSpeedPieChart(pieHtmlId);
 
 	// Create Accel Graph
-	drawInitAccelChart(chartHtmlId);
+	if(chart)
+		drawInitAccelChart(chartHtmlId);
+
+	// Create G-Force Graph
+	if(gforce)
+		drawInitGforceGraph(gforceHtmlId);		
+
+	// Create Bar Graph
+	if(bar)
+		drawInitBarGraph(barHtmlId);
 }
 
 
@@ -56,6 +66,8 @@ function drawInitSpeedPieChart(pieHtmlId) {
 	// Draw Chart
 	GLB.speedPiechart.draw(GLB.speedPieData,GLB.speedPieOptions);
 
+	// Add listener to resize graph dynamically
+	addGraphResizeListener(GLB.speedPiechart, GLB.speedPieData, GLB.speedPieOptions);
 	//###### Debug mode only - REMOVE later
 //	setInterval(updateSpeedData, 1000); //trigger the update function every 1 seconds
 
@@ -143,6 +155,9 @@ function drawInitAccelChart(chartHtmlId) {
 
 	// Draw Acceleration Line Graph
 	GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+
+	// Add listener to resize graph dynamically
+	addGraphResizeListener(GLB.accelLinegraph, GLB.accelLinedata, GLB.accelLineoptions);
 	
 	//##### DEBUG  - remove later
 //	setInterval(updateAccelData, 1000); //trigger the update function every 1 seconds
@@ -174,5 +189,102 @@ function updateAccelData(xAccel,yAccel) {
 	
 	GLB.loopCount++;
 	GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+}
+
+
+
+// Function to initialise & draw the speed Pie Chart
+function drawInitGforceGraph(gforceHtmlId) {
+	GLB.gforceGraphData = new google.visualization.DataTable();
+    GLB.gforceGraphData.addColumn('number');
+    GLB.gforceGraphData.addColumn('number');
+
+    //add 50 rows
+    for(var i=0; i<50;i++)
+        GLB.gforceGraphData.addRow([null, null]);
+    
+    GLB.gforceGraphOptions = {
+        //title: 'Vehicle Fleet G-Forces',
+        hAxis: {title: 'Lateral', minValue: -0.5, maxValue: 0.5, minorGridlines: {count: 4}},
+        vAxis: {title: 'Longitudinal', minValue: -0.5, maxValue: 0.5, minorGridlines: {count: 4}},
+        legend: 'none',
+        //colors: ['#087037'],
+        pointShape: 'circle',
+        series: {
+            0:{color: '#e66a08', visibleInLegend: true},
+        },
+        dataOpacity: 0.5, //make it easier to see overlapping points
+        pointSize: 10,
+        animation: {
+            duration: 200,
+            easing: 'inAndOut',
+            startup: true,
+        },
+        tooltip: {trigger: 'selection'},
+        //explorer: {}, //allows panning and zooming etc. listed as experimental in API guide.
+        backgroundColor: {fill:'transparent'}
+    };
+
+    GLB.gforceGraph = new google.visualization.ScatterChart($(gforceHtmlId)[0]);
+    
+    // setup a listener to capture click events
+    google.visualization.events.addListener(GLB.gforceGraph, 'select', processGforceEvent);
+
+	// Add listener to resize graph dynamically
+	addGraphResizeListener(GLB.gforceGraph, GLB.gforceGraphData, GLB.gforceGraphOptions);
+    
+    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+
+    start_bigd_session();
+}
+
+function updateGforceData(gforce) {
+
+	// For length of new points
+	for(var i=0; i<gforce.length;i++) {
+        if(gforce[i] === null) {
+            // If get to a null point before end of array, 
+            // then assume array is not full & initiate drawing graphs
+            GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+            return;
+        }
+        // Add new list of Lat/Lng Values
+        GLB.gforceGraphData.setValue(i, 0, gforce[i].gLat);
+        GLB.gforceGraphData.setValue(i, 1, gforce[i].gLng);
+    }
+    
+    // At end of array, draw graph
+    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+}
+
+function processGforceEvent(){
+	// Get the current row selected
+	var selection = GLB.gforceGraph.getSelection()[0];
+
+	//make sure event was not triggered by deselection or reselection of currently displayed point.
+    if (selection == null || selection.row == processGforceEvent.currentSelection) { 
+        GLB.gforceGraph.setSelection([{row: processGforceEvent.currentSelection}]);
+        return;
+    } 
+    processGforceEvent.currentSelection = selection.row;
+
+    GLB.fleet.requestBDEvent(selection.row);
+}
+
+function resizeChart (graphObj,gdata,goptions) {
+    graphObj.draw(gdata,goptions);
+} 
+
+function addGraphResizeListener(graphObj,gdata,goptions){
+// Resize the graph if the window resizes (graphs not dynamic)
+    if (document.addEventListener) {
+    	window.addEventListener('resize', function(){resizeChart(graphObj,gdata,goptions)});
+	}
+	else if (document.attachEvent) {
+    	window.attachEvent('onresize',  function(){resizeChart(graphObj,gdata,goptions)});
+	}
+	else {
+    	window.resize =  function(){resizeChart(graphObj,gdata,goptions)};
+	}
 }
 

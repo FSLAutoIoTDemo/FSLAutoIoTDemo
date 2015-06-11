@@ -1,0 +1,22 @@
+// Speed Dial
+#cons-Speed-obj{
+	@media #{$all-wide-screen}{
+		top: 20%;
+	}
+	@media #{$all-std-screen}{
+		top: 15%;
+	}
+
+	left: 15%;
+
+	height: 80%;
+	width: 70%;
+}
+
+#cons-Speed-speedtext{
+	top: 32%;
+}
+
+#cons-Speed-mphtext{
+	top: 65%;
+}

@@ -1,0 +1,34 @@
+// Speed Dial
+#bigd-graph-obj{
+
+	position:relative;
+	
+
+	width: 100%;
+	height: 100%;
+
+//##### STILL TO FIX	
+/*
+	@media #{$all-wide-screen}{
+		top: 20%;
+	}
+	@media #{$all-std-screen}{
+		top: 15%;
+	}
+
+	left: 15%;
+
+	width: 70%;
+	height: 80%;	
+*/	
+
+	//Psuedo element used to implement a dynamic height
+	&::before{
+		float: left;
+		content:"";
+		
+		// For the different screen configurations determine the correct height (padding-top)
+		@include setDynamicHeight('single', 100, 100);
+	}	
+
+}

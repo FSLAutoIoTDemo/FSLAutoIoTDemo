@@ -30,12 +30,12 @@ function sockOnOpen(evt){
 	if(GLB.currSOCK==GLB.SOCKETSTRESS)
 	{
 		// Send request for map data
-		GLB.socket.send(GLB.SOCKETSTRESSREQ);
+		GLB.sock.send(GLB.SOCKETSTRESSREQ);
 	}
 	else if (GLB.currSOCK==GLB.SOCKETBIGD)
 	{
 		// Send request for graph data
-		GLB.socket.send(GLB.SOCKETBIGDFLEETREQ);	
+		GLB.sock.send(GLB.SOCKETBIGDFLEETREQ);	
 	}
 
 	// Other sockets are push only (i.e. don't need requests)
@@ -67,14 +67,22 @@ function sockOnMessage(dataRawSOCK){
 	console.log('Sock OnMessage - Object Data follows...');
 	console.log(dataJsonSOCK);
 
-//######## NEED TO SORT OUT pgID HERE - does not exist
 	// Determine from Page ID, which processing function should be called
 	if(GLB.pgID == GLB.PGVD)
 		GLB.vehicle.processSocketVD(dataJsonSOCK);
-	if(GLB.pgID == GLB.PGCONS){}
+
+	if(GLB.pgID == GLB.PGCONS)
+		console.log('CONS');
 //		processSocketCONS(dataJsonSOCK);
-	if(GLB.pgID == GLB.PGSTRESS){}
-//		processSocketSTRESS(dataJsonSOCK);
-	if(GLB.pgID == GLB.PGBIGD){}
-//		processSocketBIGD(dataJsonSOCK);
+
+	if(GLB.pgID == GLB.PGSTRESS)
+		GLB.fleet.processSocketStress(dataJsonSOCK);
+
+	if(GLB.pgID == GLB.PGBIGD)
+		GLB.fleet.processSocketBIGD(dataJsonSOCK);
+
 };
+
+function sockSendMessage(data){
+	GLB.sock.send(data);
+}

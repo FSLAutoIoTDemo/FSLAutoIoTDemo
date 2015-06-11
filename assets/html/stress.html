@@ -22,7 +22,7 @@
 	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 		<!-- Google Maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 		
 
 
@@ -47,44 +47,48 @@
 			<!-- Main content (tiles) -->
 			<main role="main">
 
+				<!-- First Half of Tiles -->
+				<article class="contentHalf">
+
+					<section class="singleTile singleTileHalfLayout stress-info">
+						<h1 class="tileTitle">Information</h1>  
+						<p>Some text</p>
+					</section>
+
+					<!-- Tiles begin here... -->
+					<section class="singleTile singleTileHalfLayout stress-cam">
+						<h1 class="tileTitle">#1 Stress Street</h1>  
+						<img id="stress-RoadCam-img0" class="resizeImgSingle" src="imgs/fill.svg">
+						<p class="dataH4">Street:</p><p class="dataH3" id="stressStreet0">--</p>
+						<p class="dataH4">HR Change:</p><p class="dataH3" id="stressHeart0">--</p>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout stress-cam">
+						<h1 class="tileTitle">#2 Stress Street</h1>  
+						<img id="stress-RoadCam-img1" class="resizeImgSingle" src="imgs/fill.svg">
+						<p class="dataH4">Street:</p><p class="dataH3" id="stressStreet1">--</p>
+						<p class="dataH4">HR Change:</p><p class="dataH3" id="stressHeart1">--</p>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout stress-cam">
+						<h1 class="tileTitle">#3 Stress Street</h1>  
+						<img id="stress-RoadCam-img2" class="resizeImgSingle" src="imgs/fill.svg">
+						<p class="dataH4">Street:</p><p class="dataH3" id="stressStreet2">--</p>
+						<p class="dataH4">HR Change:</p><p class="dataH3" id="stressHeart2">--</p>
+					</section>
+
+				</article>
+
 				<!-- Second Half of Tiles -->
 				<article class="contentHalf">
 
 					<!-- Tiles begin here... -->
-					<section class="quadTile" id="stress-map">
+					<section class="quadTile" id="stress-Map">
 						<h1 class="tileTitle">Stress Map</h1>  
-						<div id="stress-Map-obj">Map here</div>
+						<div class="single-Map-obj" id="stress-Map-obj">Map here</div>
 					</section>
 				</article>
 
-				<!-- Second Half of Tiles -->
-				<article class="contentHalf">
-
-					<!-- Tiles begin here... -->
-					<section class="singleTile singleTileHalfLayout stress-cam">
-						<h1 class="tileTitle">1st Position</h1>  
-						<img id="stress-RoadCam1-img" class="resizeImgSingle" src="imgs/fill.svg">
-						<p>Some text</p>
-					</section>
-
-					<section class="singleTile singleTileHalfLayout stress-cam">
-						<h1 class="tileTitle">2nd Position</h1>  
-						<img id="stress-RoadCam2-img" class="resizeImgSingle" src="imgs/fill.svg">
-						<p>Some text</p>
-					</section>
-
-					<section class="singleTile singleTileHalfLayout stress-cam">
-						<h1 class="tileTitle">3rd Position</h1>  
-						<img id="stress-RoadCam3-img" class="resizeImgSingle" src="imgs/fill.svg">
-						<p>Some text</p>
-					</section>
-
-					<section class="singleTile singleTileHalfLayout stress-cam">
-						<h1 class="tileTitle">4th Position</h1>  
-						<img id="stress-RoadCam4-img" class="resizeImgSingle" src="imgs/fill.svg">
-						<p>Some text</p>
-					</section>
-				</article>
 			</main>
 		</div>
 	</body>

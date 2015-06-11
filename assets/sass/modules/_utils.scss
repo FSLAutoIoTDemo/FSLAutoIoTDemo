@@ -45,7 +45,24 @@
 			padding-top: $height/100 * $double-tile-height-sml-pc * ($width/100);
 		}
 	} @else {	
-			// TO DO FOR SINGLE TILE
+		// For Single Tiles....
+
+		@media #{$std-screen}{	
+			// Standard, large screens	
+			padding-top: $height/100 * $width * $single-tile-height-scale-std * 1%;
+		}
+		@media #{$wide-screen}{
+			// Wide, large screens
+			padding-top: $height/100 * $width * $single-tile-height-scale-wide * 1%;
+		}
+		@media #{$med-screen}{
+			// Med screens (uses wide screen aspect ratio)
+			padding-top: $height/100 * $width * $single-tile-height-scale-wide * 1%;
+		}
+		@media #{$sml-screen}{
+			// Small screens (uses wide screen aspect ratio)
+		padding-top: $height/100 * $width * $single-tile-height-scale-wide * 1%;
+		}
 	}
 
 }

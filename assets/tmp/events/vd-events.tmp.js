@@ -1,10 +1,11 @@
 function init_vd_page() {
     console.log("OnPageLoad: VD-page"), GLB.pgID = GLB.PGVD, GLB.vehicle = new VDvehicle();
     var a = 55.748223, b = -4.16867;
-    initalizeMaps("#vd-Map-obj", "Vehicle Here!", a, b), google.load("visualization", "1.0", {
+    initalizeMaps("#vd-Map-obj", a, b, 15, google.maps.MapTypeId.ROADMAP, !0, "Vehicle Here!", !0, !1), 
+    google.load("visualization", "1.0", {
         packages: [ "corechart" ],
         callback: function() {
-            initGraphs("#vd-Speed-obj", "#vd-Accel-obj");
+            initGraphs(!0, "#vd-Speed-obj", !0, "#vd-Accel-obj", !1, null, !1, null);
         }
     }), GLB.currVID = getQueryVariable("vid"), GLB.vehicle.setVehicle(GLB.currVID - 1), 
     navMenuStatusSetVeh(), 100 == GLB.currVID ? (GLB.currVID = GLB.currVID - 1, init_vdDemo(), 

@@ -5,7 +5,7 @@ inherit(VDvehicle, Vehicle), Vehicle.prototype.modifyVdHtmlText = function() {
     $("#vd-yAccel-acceltext").text(this.fGay), $("#vd-HR-hrtext").text(this.heart), 
     updateSpeedData(this.speed), updateAccelData(this.fGax, this.fGay);
 }, Vehicle.prototype.modifyVdMap = function() {
-    updateMap(this.lat, this.lng);
+    updateMap(this.lat, this.lng, !0);
 }, Vehicle.prototype.modifyVdDriverImg = function() {
     $("#vd-DriverCam-img").attr("src", this.driverimg);
 }, Vehicle.prototype.modifyVdRoadImg = function() {

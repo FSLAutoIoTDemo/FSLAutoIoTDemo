@@ -1,5 +1,6 @@
-function initGraphs(a, b) {
-    drawInitSpeedPieChart(a), drawInitAccelChart(b);
+function initGraphs(a, b, c, d, e, f, g, h) {
+    a && drawInitSpeedPieChart(b), c && drawInitAccelChart(d), e && drawInitGforceGraph(f), 
+    g && drawInitBarGraph(h);
 }
 
 function drawInitSpeedPieChart(a) {
@@ -32,7 +33,8 @@ function drawInitSpeedPieChart(a) {
         },
         backgroundColor: "transparent",
         pieSliceBorderColor: "transparent"
-    }, GLB.speedPiechart = new google.visualization.PieChart($(a)[0]), GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
+    }, GLB.speedPiechart = new google.visualization.PieChart($(a)[0]), GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions), 
+    addGraphResizeListener(GLB.speedPiechart, GLB.speedPieData, GLB.speedPieOptions);
 }
 
 function updateSpeedData(a) {
@@ -91,7 +93,8 @@ function drawInitAccelChart(a) {
                 visibleInLegend: !0
             }
         }
-    }, GLB.accelLinegraph = new google.visualization.AreaChart($(a)[0]), GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+    }, GLB.accelLinegraph = new google.visualization.AreaChart($(a)[0]), GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions), 
+    addGraphResizeListener(GLB.accelLinegraph, GLB.accelLinedata, GLB.accelLineoptions);
 }
 
 function updateAccelData(a, b) {
@@ -104,4 +107,80 @@ function updateAccelData(a, b) {
         void (GLB.accelLineoptions.animation.duration = 750);
     }
     GLB.loopCount++, GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+}
+
+function drawInitGforceGraph(a) {
+    GLB.gforceGraphData = new google.visualization.DataTable(), GLB.gforceGraphData.addColumn("number"), 
+    GLB.gforceGraphData.addColumn("number");
+    for (var b = 0; 50 > b; b++) GLB.gforceGraphData.addRow([ null, null ]);
+    GLB.gforceGraphOptions = {
+        hAxis: {
+            title: "Lateral",
+            minValue: -.5,
+            maxValue: .5,
+            minorGridlines: {
+                count: 4
+            }
+        },
+        vAxis: {
+            title: "Longitudinal",
+            minValue: -.5,
+            maxValue: .5,
+            minorGridlines: {
+                count: 4
+            }
+        },
+        legend: "none",
+        pointShape: "circle",
+        series: {
+            0: {
+                color: "#e66a08",
+                visibleInLegend: !0
+            }
+        },
+        dataOpacity: .5,
+        pointSize: 10,
+        animation: {
+            duration: 200,
+            easing: "inAndOut",
+            startup: !0
+        },
+        tooltip: {
+            trigger: "selection"
+        },
+        backgroundColor: {
+            fill: "transparent"
+        }
+    }, GLB.gforceGraph = new google.visualization.ScatterChart($(a)[0]), google.visualization.events.addListener(GLB.gforceGraph, "select", processGforceEvent), 
+    addGraphResizeListener(GLB.gforceGraph, GLB.gforceGraphData, GLB.gforceGraphOptions), 
+    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions), start_bigd_session();
+}
+
+function updateGforceData(a) {
+    for (var b = 0; b < a.length; b++) {
+        if (null === a[b]) return void GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+        GLB.gforceGraphData.setValue(b, 0, a[b].gLat), GLB.gforceGraphData.setValue(b, 1, a[b].gLng);
+    }
+    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+}
+
+function processGforceEvent() {
+    var a = GLB.gforceGraph.getSelection()[0];
+    return null == a || a.row == processGforceEvent.currentSelection ? void GLB.gforceGraph.setSelection([ {
+        row: processGforceEvent.currentSelection
+    } ]) : (processGforceEvent.currentSelection = a.row, void GLB.fleet.requestBDEvent(a.row));
+}
+
+function resizeChart(a, b, c) {
+    a.draw(b, c);
+}
+
+function addGraphResizeListener(a, b, c) {
+    document.addEventListener ? window.addEventListener("resize", function() {
+        resizeChart(a, b, c);
+    }) : document.attachEvent ? window.attachEvent("onresize", function() {
+        resizeChart(a, b, c);
+    }) : window.resize = function() {
+        resizeChart(a, b, c);
+    };
 }

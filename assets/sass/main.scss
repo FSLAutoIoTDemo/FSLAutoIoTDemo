@@ -14,6 +14,7 @@
 @import "partials/color-scheme";
 @import "partials/font-scheme";
 @import "partials/image-scheme";
+@import "partials/mapping-scheme";
 
 // Partials - tile specific formatting
 @import "partials/tiles/vehicle_dash/vd-map";
@@ -23,3 +24,12 @@
 @import "partials/tiles/vehicle_dash/vd-roadcam";
 @import "partials/tiles/vehicle_dash/vd-speed";
 @import "partials/tiles/vehicle_dash/stacked-elements";
+
+@import "partials/tiles/stress_street/stress-map";
+
+@import "partials/tiles/big_data/bigd-map";
+@import "partials/tiles/big_data/bigd-gforce";
+
+@import "partials/tiles/consumer/cons-map";
+@import "partials/tiles/consumer/cons-roadcam";
+@import "partials/tiles/consumer/cons-speed";

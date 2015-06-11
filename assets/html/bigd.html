@@ -33,7 +33,7 @@
 		<!--- Contains all of the content + nav to be shown -->	
 		<div class="container clearfix">
 
-			<header class="headBar"><h1>OEM Use Case: Big Data</h1></header>
+			<header class="headBar"><h1>OEM Use Case: Harnessing Big Data in the Auto IoT</h1></header>
 
 			<!-- Navigation bar (top or left) -->
 			<nav class="navBar">
@@ -47,39 +47,42 @@
 			<!-- Main content (tiles) -->
 			<main role="main">
 
-				<!-- Second Half of Tiles -->
+				<!-- First Half of Tiles -->
 				<article class="contentHalf">
 
 					<!-- Tiles begin here... -->
-					
-
-					<section class="singleTile singleTileHalfLayout bigd-event">
-						<h1 class="tileTitle">Event Location</h1>  
-						<div id="bigd-Map-obj">Map here</div>
-					</section>
-					
-					<section class="singleTile singleTileHalfLayout bigd-event">
-						<h1 class="tileTitle">Event Information</h1>  
-						<p>Event Information</p>
-					</section>
-
 					<section class="singleTile singleTileHalfLayout bigd-info">
 						<h1 class="tileTitle">Information</h1>  
 						<p>Some text about use case</p>
 					</section>
 
 					<section class="singleTile singleTileHalfLayout bigd-info">
-						<h1 class="tileTitle">Analytics</h1>  
+						<h1 class="tileTitle">Analytics<br>Options</h1>  
 						<p>Text about analystics</p>
 					</section>
+
+					<section class="singleTile singleTileHalfLayout bigd-event">
+						<h1 class="tileTitle">Event<br>Information</h1>  
+						<p class="dataH3">Vehicle ID</p><p id="bigd-evt-id">--</p>
+						<p class="dataH3">Event Time</p><p id="bigd-evt-time">--</p>
+						<p class="dataH3">Speed</p><p id="bigd-evt-speed">--</p>
+					</section>
+
+					<section class="singleTile singleTileHalfLayout bigd-event" id="bigd-Map">
+						<h1 class="tileTitle">Event Location</h1>  
+						<div class="single-Map-obj" id="bigd-Map-obj">Map here</div>
+					</section>
+					
+					
+
 				</article>
 				
 				<!-- Second Half of Tiles -->
 				<article class="contentHalf">
 					<!-- Tiles begin here... -->
 					<section class="quadTile" id="bigd-graph">
-						<h1 class="tileTitle">Quad Tile!</h1>  
-						<p>Some text about use case</p>
+						<h1 class="tileTitle">Vehicle Fleet G-Forces</h1>  
+						<div id="bigd-graph-obj">Graph Here</div>
 					</section>
 				</article>
 			</main>

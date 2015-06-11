@@ -57,6 +57,7 @@ $single-tile-width-large: ( ( 100 - ( 8 * $single-tile-margin-large-dyn ) ) / 4 
 $single-tile-height-std-pc: $single-tile-height-scale-std * 100%;
 $single-tile-height-wide-pc: $single-tile-height-scale-wide * 100%;
 
+
 //--########################################################################################
 //--> Automatically generates correct double  tile margins, width & height (do not touch)
 //--########################################################################################
@@ -81,7 +82,7 @@ $double-tile-height-std-aspect-ratio: (((2 * $single-tile-width-large) / $double
 
 //----> Small screen height: Same as single tile
 //----> Med screen height: Uses square aspect ratio (1:1)
-//----> Wide screen height: Uses square  aspect ratio (1:1)
+//----> Wide screen height: Uses longer height aspect ratio (1:n)
 //----> Standard screen height: Uses longer height aspect ratio (1:n)
 $double-tile-height-sml-pc: $single-tile-height-wide-pc;
 $double-tile-height-med-pc: $double-tile-height-wide-aspect-ratio * 100%;

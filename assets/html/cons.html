@@ -14,7 +14,7 @@
 	</head>
 
 
-	<body id="vd-page">
+	<body id="cons-page">
 		<!-- JQuery -->
 		<script src="js/jquery-1.11.2.min.js"></script>
 
@@ -33,20 +33,20 @@
 		<!--- Contains all of the content + nav to be shown -->	
 		<div class="container clearfix">
 
-			<header class="headBar"><h1>Consumer Use Case: ????</h1></header>
+			<header class="headBar"><h1>Consumer Use Case: Staying Connected with your Kids</h1></header>
 
 			<!-- Navigation bar (top or left) -->
 			<nav class="navBar">
 				<ul class="navigation">
 					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Select Vehicle</h1>
 						<ul id="navSubMenu" class="subNav">
-							<li class="navMenuItem" id="navDemo"><a href="vd.html?vid=100"><h2>Demo</h2></a></li>
-							<li class="navMenuItem" id="navA"><a href="vd.html?vid=1"><h2>Live A</h2></a></li>
-							<li class="navMenuItem" id="navB"><a href="vd.html?vid=2"><h2>Live B</h2></a></li>
-							<li class="navMenuItem" id="navC"><a href="vd.html?vid=3"><h2>Live C</h2></a></li>
-							<li class="navMenuItem" id="navD"><a href="vd.html?vid=4"><h2>Live D</h2></a></li>
-							<li class="navMenuItem" id="navE"><a href="vd.html?vid=5"><h2>Live E</h2></a></li>
-							<li class="navMenuItem" id="navF"><a href="vd.html?vid=6"><h2>Live F</h2></a></li>
+							<li class="navMenuItem" id="navDemo"><a href="cons.html?vid=100"><h2>Demo</h2></a></li>
+							<li class="navMenuItem" id="navA"><a href="cons.html?vid=1"><h2>Live A</h2></a></li>
+							<li class="navMenuItem" id="navB"><a href="cons.html?vid=2"><h2>Live B</h2></a></li>
+							<li class="navMenuItem" id="navC"><a href="cons.html?vid=3"><h2>Live C</h2></a></li>
+							<li class="navMenuItem" id="navD"><a href="cons.html?vid=4"><h2>Live D</h2></a></li>
+							<li class="navMenuItem" id="navE"><a href="cons.html?vid=5"><h2>Live E</h2></a></li>
+							<li class="navMenuItem" id="navF"><a href="cons.html?vid=6"><h2>Live F</h2></a></li>
 						</ul>
 					</li>
 					<div class="navMenuStatus"><h1 id="navMenuStatusText"></h1></div>
@@ -69,25 +69,25 @@
 					</section>
 
 					<section class="singleTile" id="cons-twit">
-						<h1 class="tileTitle">Map</h1>  
+						<h1 class="tileTitle">@teenage_son</h1>  
 						<p> Twitter Spoof</p>
 					</section>
 
 					<section class="singleTile" id="cons-Map">
 						<h1 class="tileTitle">Map</h1>  
-						<div id="vd-Map-obj" />
+						<div class="single-Map-obj" id="cons-Map-obj" />
 					</section>
 
 					<section class="singleTile" id="cons-DriverCam">
 						<h1 class="tileTitle">Driving Now</h1>
-						<img id="vd-DriverCam-img" class="resizeImgSingle" src="imgs/fill.svg">
+						<img id="cons-DriverCam-img" class="resizeImgSingle" src="imgs/fill.svg">
 					</section>
 										
-					<section class="singleTile stackParent" id="cons-prof">
-						<h1 class="tileTitle">Profile</h1>
-						<p class="stackTop dataH2" id="cons-Speed-data" >--</p>
-						<p class="stackTop dataH2" id="cons-Accel-data" >--</p>
-						<p class="stackTop dataH2" id="cons-Music-data" >--</p>
+					<section class="singleTile stackParent" id="cons-metric">
+						<h1 class="tileTitle">Insurance Metrics</h1>
+						<p>Speed:</p><p class="dataH3" id="cons-Metric-speedtext" >--</p>
+						<p>Accel:</p><p class="dataH3" id="cons-Metric-acceltext" >--</p>
+						<p>Music:</p><p class="dataH3" id="cons-Music-data" >Rock</p>
 					</section>
 
 					<section class="doubleTile stackParent" id="cons-insur">
@@ -97,9 +97,10 @@
 					</section>
 
 					<section class="singleTile stackParent" id="cons-speed">
-						<h1 class="tileTitle">Speed Limit</h1>
-						<div id="cons-speedLimit-obj">Graph Here</div>
-						<p class="stackTop dataH1" id="cons-SpeedLimit-data">--</p>
+						<h1 class="tileTitle">Speed</h1>
+						<div class="stackBottom" id="cons-Speed-obj">Dial here</div>
+						<p class="stackTop dataH1" id="cons-Speed-speedtext">--</p>
+						<p class="stackTop dataH2" id="cons-Speed-mphtext" >mph</p>
 					</section>					
 				</article>
 			</main>

@@ -14,7 +14,7 @@ GLB.currVID = 100;			// Vehicle ID - default to 100 (demo mode).
 GLB.pgID = null;			// Page ID
 GLB.PGVD = 'pgVD';
 GLB.PGCONS = 'pgCONS';
-GLB.PGSTRESS = 'pgSRESS';
+GLB.PGSTRESS = 'pgSTRESS';
 GLB.PGBIGD = 'pgBIGD';
 
 // Initialise Global vars
@@ -23,8 +23,11 @@ GLB.mapCurrCenter = null;			// Center point of map
 GLB.mapMarker = null;				// Marker on map
 GLB.carRoute = null;				// Polyline trace for map
 GLB.mapStrokeColour = '#FF0000';	// Map Polyline colour
+GLB.heatmap = null;					// Heat Map overlay
 
 GLB.vehile = null;			// Vehicle Object
+GLB.fleet = null;			// Fleet Object
+
 
 GLB.vdDemoData = null;		// Vehicle Dashboard Demo Data
 GLB.vdDemoIdx = 0;			// Index for current VD Demo Data entry being used
@@ -37,7 +40,9 @@ GLB.accelLinedata = null;		// Accel Line Graph Data
 GLB.accelLineoptions = null;	// Accel Line Graph Options
 GLB.accelLinegraph = null;		// Accel Line Graph object
 
-
+GLB.gforceGraphData = null;		// G-Force Graph Data
+GLB.gforceGraphOptions = null;			// G-Force Graph Object
+GLB.gforceGraph = null;			// G-Force Graph Object
 
 // Speed Pie Chart variables
 GLB.maxSpeed=120; //set the maximum speed for the speedometer
@@ -68,8 +73,10 @@ GLB.SOCKETVEH = ['/ws/vehicleA',
 GLB.SOCKETSTRESS = '/ws/stress';
 GLB.SOCKETBIGD = '/ws/bigdata';
 
-GLB.SOCKETSTRESSREQ = 'request!';
-GLB.SOCKETBIGDFLEETREQ = 'Fleet Data Request!';
+GLB.SOCKETSTRESSREQ = "request!";
+GLB.SOCKETBIGDFLEETREQ = "Fleet Data Request!";
+GLB.SOCKETBIGDEVREQ_S = "Event ";
+GLB.SOCKETBIGDEVREQ_E = " Request!";
 
 // Image SRC definitions
 GLB.IMGROOT = 'https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/';

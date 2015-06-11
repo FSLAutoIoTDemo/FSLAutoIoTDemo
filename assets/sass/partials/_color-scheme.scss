@@ -79,49 +79,52 @@ body{
 
 //#### BIG DATA PAGE TILE COLOURS ########
 .bigd-info{
-	background-color: $fsl-gray;
-}
-
-.bigd-event{
 	background-color: $fsl-blue;
 }
 
+.bigd-event{
+	background-color: $fsl-gray;
+}
+
 #bigd-graph{
-	background-color: $fsl-orange;
+	background-color: $fsl-gray;
 }
 
 //#### STRESSFUL STREET PAGE TILE COLOURS ########
-#stress-map{
-	background-color: $fsl-gray;
+#stress-Map{
+	background-color: $fsl-orange;
 }
 .stress-cam{
-	background-color: $fsl-orange;
+	background-color: $fsl-blue-light;
+}
+.stress-info{
+	background-color: $fsl-blue;
 }
 
 
 //#### CONSUMER PAGE TILE COLOURS ########
 #cons-info{
-	background-color: $fsl-orange;
-}
-
-#cons-twit{
-	background-color: $fsl-gray;
-}
-
-#cons-Map{
-	background-color: $fsl-yellow;
-}
-
-#cons-DriverCam{
 	background-color: $fsl-blue;
 }
 
-#cons-prof{
-	background-color: $fsl-purple-light;
+#cons-twit{
+	background-color: $fsl-orange;
+}
+
+#cons-Map{
+	background-color: $fsl-purple;
+}
+
+#cons-DriverCam{
+	background-color: $fsl-yellow;
+}
+
+#cons-metric{
+	background-color: $fsl-yellow;
 }
 
 #cons-insur{
-	background-color: $fsl-yellow;
+	background-color: $fsl-purple-light;
 }
 
 #cons-speed{

@@ -11,10 +11,10 @@ jQuery(document).ready(function($){
 	if($("#vd-page").length){init_vd_page()};
 	if($("#cons-page").length){init_cons_page()};
 	if($("#bigd-page").length){init_bigd_page()};
-	if($("#stress-page-page").length){init_stress_page()};
+	if($("#stress-page").length){init_stress_page()};
 	
 
 	// One time event to quickly determine online status
-	setTimeout(watchdogCount,500);	// Call after 500ms
+	setTimeout(watchdogCount,2000);	// Call after 500ms
 
 });

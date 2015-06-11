@@ -12,7 +12,7 @@ function init_websocket(a, b) {
 }
 
 function sockOnOpen(a) {
-    console.log("Sock Open - Connected to websocket: " + GLB.currSOCK), GLB.currSOCK == GLB.SOCKETSTRESS ? GLB.socket.send(GLB.SOCKETSTRESSREQ) : GLB.currSOCK == GLB.SOCKETBIGD && GLB.socket.send(GLB.SOCKETBIGDFLEETREQ);
+    console.log("Sock Open - Connected to websocket: " + GLB.currSOCK), GLB.currSOCK == GLB.SOCKETSTRESS ? GLB.sock.send(GLB.SOCKETSTRESSREQ) : GLB.currSOCK == GLB.SOCKETBIGD && GLB.sock.send(GLB.SOCKETBIGDFLEETREQ);
 }
 
 function sockOnClose(a) {
@@ -28,5 +28,10 @@ function sockOnMessage(a) {
     console.log("Clearing watchog");
     var b = JSON.parse(a.data);
     console.log("Sock OnMessage - Object Data follows..."), console.log(b), GLB.pgID == GLB.PGVD && GLB.vehicle.processSocketVD(b), 
-    GLB.pgID == GLB.PGCONS, GLB.pgID == GLB.PGSTRESS, GLB.pgID == GLB.PGBIGD;
+    GLB.pgID == GLB.PGCONS && console.log("CONS"), GLB.pgID == GLB.PGSTRESS && GLB.fleet.processSocketStress(b), 
+    GLB.pgID == GLB.PGBIGD && GLB.fleet.processSocketBIGD(b);
+}
+
+function sockSendMessage(a) {
+    GLB.sock.send(a);
 }

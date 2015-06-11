@@ -49,6 +49,15 @@ function navMenuStatusSetVeh(){
 		case "6":
 			id="Live F";
 			break;
+		case "7":
+			id="Live G";
+			break;		
+		case "8":
+			id="Live H";
+			break;	
+		case "50":	
+			id="Live";		// All vehicles (BigData/Stress Street)
+			break;	
 		default:
 			id="Demo";
 	}

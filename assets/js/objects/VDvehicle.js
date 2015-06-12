@@ -5,7 +5,7 @@ function VDvehicle(){}
 inherit(VDvehicle, Vehicle);
 
 // Update the VD Page HMTL text with Vehicle object data
-Vehicle.prototype.modifyVdHtmlText = function(){
+Vehicle.prototype.modifyHtmlText = function(){
 	
 	$('#vd-Speed-speedtext').text(this.speed);		// Speed
 	$('#vd-xAccel-acceltext').text(this.fGax);		// X-Accel + Y-Accel
@@ -17,17 +17,17 @@ Vehicle.prototype.modifyVdHtmlText = function(){
 }
 
 // Update the VD Page Map with Vehicle object data
-Vehicle.prototype.modifyVdMap = function(){
+Vehicle.prototype.modifyMap = function(){
 	updateMap(this.lat, this.lng, true);
 }
 
 // Update the VD Page Driver Image with Vehicle object data
-Vehicle.prototype.modifyVdDriverImg = function(){
+Vehicle.prototype.modifyDriverImg = function(){
 	$('#vd-DriverCam-img').attr('src', this.driverimg);
 }
 
 // Update the VD Page Road Image with Vehicle object data
-Vehicle.prototype.modifyVdRoadImg = function(){
+Vehicle.prototype.modifyRoadImg = function(){
 	$('#vd-RoadCam-img').attr('src', this.roadimg);
 }
 
@@ -47,10 +47,10 @@ Vehicle.prototype.processSocketVD = function(dIn){
 		this.updateData(dIn._id, dIn.vehicle, dIn.speed, "", dIn.heart, dIn.fGax, dIn.fGay, dIn.fGaz, dIn.lat, dIn.lng, dIn.insurance)
 		
 		// Push changes into the HTML
-		this.modifyVdHtmlText();
+		this.modifyHtmlText();
 
 		// Update Map
-		this.modifyVdMap(dIn.lng,dIn.lat);
+		this.modifyMap(dIn.lng,dIn.lat);
 		console.log('Data Received for VD Page');
 	}
 	else if (dIn.info == 'image_road')
@@ -59,7 +59,7 @@ Vehicle.prototype.processSocketVD = function(dIn){
 		this.updateRoadImg(dIn.image);
 
 		// Push changes into the HTML
-		this.modifyVdRoadImg();
+		this.modifyRoadImg();
 		console.log('Road Image Received for VD Page');
 	}
 	else if (dIn.info == 'image_driver')
@@ -68,7 +68,7 @@ Vehicle.prototype.processSocketVD = function(dIn){
 		this.updateDriverImg(dIn.image);
 
 		// Push changes into the HTML
-		this.modifyVdDriverImg();
+		this.modifyDriverImg();
 		console.log('Driver Image Received for VD Page');
 	}
 	else

@@ -41,8 +41,12 @@ GLB.accelLineoptions = null;	// Accel Line Graph Options
 GLB.accelLinegraph = null;		// Accel Line Graph object
 
 GLB.gforceGraphData = null;		// G-Force Graph Data
-GLB.gforceGraphOptions = null;			// G-Force Graph Object
+GLB.gforceGraphOptions = null;	// G-Force Graph Options
 GLB.gforceGraph = null;			// G-Force Graph Object
+
+GLB.insurBarData = null;		// Insurance Graph Data
+GLB.insurBarOptions = null;		// Insurance Graph Options
+GLB.insurBarGraph = null;		// Insurance Graph Object
 
 // Speed Pie Chart variables
 GLB.maxSpeed=120; //set the maximum speed for the speedometer

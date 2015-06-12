@@ -21,6 +21,23 @@ function initGraphs(pie,pieHtmlId,chart,chartHtmlId,gforce,gforceHtmlId,bar,barH
 }
 
 
+function resizeChart (graphObj,gdata,goptions) {
+    graphObj.draw(gdata,goptions);
+} 
+
+function addGraphResizeListener(graphObj,gdata,goptions){
+// Resize the graph if the window resizes (graphs not dynamic)
+    if (document.addEventListener) {
+    	window.addEventListener('resize', function(){resizeChart(graphObj,gdata,goptions)});
+	}
+	else if (document.attachEvent) {
+    	window.attachEvent('onresize',  function(){resizeChart(graphObj,gdata,goptions)});
+	}
+	else {
+    	window.resize =  function(){resizeChart(graphObj,gdata,goptions)};
+	}
+}
+
 // Function to initialise & draw the speed Pie Chart
 function drawInitSpeedPieChart(pieHtmlId) {
 	
@@ -235,6 +252,7 @@ function drawInitGforceGraph(gforceHtmlId) {
     
     GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
 
+    //## Hack (Not best way to implement) Only load Big Data application once graph is ready
     start_bigd_session();
 }
 
@@ -271,20 +289,69 @@ function processGforceEvent(){
     GLB.fleet.requestBDEvent(selection.row);
 }
 
-function resizeChart (graphObj,gdata,goptions) {
-    graphObj.draw(gdata,goptions);
-} 
 
-function addGraphResizeListener(graphObj,gdata,goptions){
-// Resize the graph if the window resizes (graphs not dynamic)
-    if (document.addEventListener) {
-    	window.addEventListener('resize', function(){resizeChart(graphObj,gdata,goptions)});
+// Function to initialise & draw the speed Pie Chart
+function drawInitBarGraph(barHtmlId) {
+	
+	GLB.insurBarData = google.visualization.arrayToDataTable([
+		['Name', 'Premium', {role: 'style'},'Other',{role: 'style'}],
+        ['', 400, 'color: #2ca02c; opacity: 1.0',600, 'color: black; opacity: 0.5'],
+        ]);
+
+	GLB.insurBarOptions = {
+//		title: 'Live Insurance Premium',
+//		titleTextStyle: {color: 'white', fontSize: 20, fontName: 'Roboto'},
+        chartArea: {width: '50%'},
+        hAxis: {
+          minValue: 0,
+		  maxValue: 1000,
+		  baselineColor: 'white',
+		  format: '$#,###',
+		  gridlines: {color: 'white', count: 5},
+		  textStyle: {color: 'white', fontSize: 15, fontName: 'Roboto'},
+        },
+        vAxis: {
+			//textPosition: 'in',
+        },
+		isStacked: true,
+		//bar: {groupWidth: "75%"},
+		legend: 'none',
+        backgroundColor: {fill:'transparent'},
+		animation: {
+          duration: 200,
+          easing: 'inAndOut',
+		  startup: true,
+        }
 	}
-	else if (document.attachEvent) {
-    	window.attachEvent('onresize',  function(){resizeChart(graphObj,gdata,goptions)});
-	}
-	else {
-    	window.resize =  function(){resizeChart(graphObj,gdata,goptions)};
-	}
+  
+  	// Create bar graph object
+  	GLB.insurBarGraph = new google.visualization.BarChart($(barHtmlId)[0]);
+    
+    // Draw bar graph
+    GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
+
+    // Add listener to resize graph dynamically
+	addGraphResizeListener(GLB.insurBarGraph, GLB.insurBarData, GLB.insurBarOptions);
 }
+
+
+// Update the Insurance Graph
+function updateInsurGraphData(insur) {		
+		
+		// Update the graph data
+		GLB.insurBarData.setValue(0, 1, insur); 
+		GLB.insurBarData.setValue(0, 3, (1000-insur)); //this is the greyed area
+
+		// Update the Bar Chart
+		GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
+}
+
+
+
+
+
+
+
+
+
 

@@ -5,16 +5,16 @@ function init_vdDemo() {
 }
 
 function vdDemo_updateData() {
-    var a = GLB.vdDemoData[GLB.vdDemoIdx];
+    var a = GLB.DemoData[GLB.vdDemoIdx];
     GLB.vehicle.updateData(a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10]), 
-    GLB.vehicle.updateDriverImg(a[11]), GLB.vehicle.updateRoadImg(a[12]), GLB.vehicle.modifyVdHtmlText(), 
+    GLB.vehicle.updateDriverImg(a[11]), GLB.vehicle.updateRoadImg(a[12]), GLB.vehicle.modifyHtmlText(), 
     GLB.vdDemoIdx == GLB.vdDemoData.length - 1 ? GLB.vdDemoIdx = 0 : GLB.vdDemoIdx++;
 }
 
 function vdDemo_modifyMaps() {
-    GLB.vehicle.modifyVdMap();
+    GLB.vehicle.modifyMap();
 }
 
 function vdDemo_modifyImgs() {
-    GLB.vehicle.modifyVdRoadImg(), GLB.vehicle.modifyVdDriverImg();
+    GLB.vehicle.modifyRoadImg(), GLB.vehicle.modifyDriverImg();
 }

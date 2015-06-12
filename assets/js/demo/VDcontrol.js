@@ -35,7 +35,7 @@ function init_vdDemo(){
 
 // Store new data in VDVechicle obj, then update HTML text elements
 function vdDemo_updateData(){
-	var d=GLB.vdDemoData[GLB.vdDemoIdx];	// Use current index row of Demo Data Array
+	var d=GLB.DemoData[GLB.vdDemoIdx];	// Use current index row of Demo Data Array
 	
 	// Update VDvehicle obj with data: [id,vehicle,speed,accel,heart,X,Y,Z,lat,lng,insurance]
 	GLB.vehicle.updateData(d[0],d[1],d[2],d[3],d[4],d[5],d[6],d[7],d[8],d[9],d[10]);
@@ -43,7 +43,7 @@ function vdDemo_updateData(){
 	GLB.vehicle.updateRoadImg(d[12]);
 
 	// Update the Text elements on the page
-	GLB.vehicle.modifyVdHtmlText();
+	GLB.vehicle.modifyHtmlText();
 
 	//UPDATE CHARTS HERE
 
@@ -58,11 +58,11 @@ function vdDemo_updateData(){
 
 // Update Vehicle Dash Map with Vehicle data
 function vdDemo_modifyMaps(){
-	GLB.vehicle.modifyVdMap();
+	GLB.vehicle.modifyMap();
 }
 
 // Update Vehicle Dash Driver & Road Images with Vehicle data
 function vdDemo_modifyImgs(){
-	GLB.vehicle.modifyVdRoadImg();
-	GLB.vehicle.modifyVdDriverImg();
+	GLB.vehicle.modifyRoadImg();
+	GLB.vehicle.modifyDriverImg();
 }

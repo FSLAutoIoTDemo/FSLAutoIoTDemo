@@ -28,7 +28,7 @@ function sockOnMessage(a) {
     console.log("Clearing watchog");
     var b = JSON.parse(a.data);
     console.log("Sock OnMessage - Object Data follows..."), console.log(b), GLB.pgID == GLB.PGVD && GLB.vehicle.processSocketVD(b), 
-    GLB.pgID == GLB.PGCONS && console.log("CONS"), GLB.pgID == GLB.PGSTRESS && GLB.fleet.processSocketStress(b), 
+    GLB.pgID == GLB.PGCONS && GLB.vehicle.processSocketCONS(b), GLB.pgID == GLB.PGSTRESS && GLB.fleet.processSocketStress(b), 
     GLB.pgID == GLB.PGBIGD && GLB.fleet.processSocketBIGD(b);
 }
 

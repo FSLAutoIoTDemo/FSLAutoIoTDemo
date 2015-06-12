@@ -21,7 +21,7 @@ function init_cons_page(){
 	initalizeMaps('#cons-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, true, "Vehicle Here!", true, false);
 
 	// Load the Speed Pie Chart & Bar Graph (pass in HTML IDs to update)
-	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs(true,'#cons-Speed-obj',false,null,false,null,false,null)}});
+	google.load('visualization', '1.0', {'packages':['corechart'], 'callback':function(){initGraphs(true,'#cons-Speed-obj',false,null,false,null,true,"#cons-Insur-obj")}});
 
 
 	// Query the variables in the URL and load the appropriate mode

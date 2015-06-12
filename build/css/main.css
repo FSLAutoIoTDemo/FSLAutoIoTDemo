@@ -1202,4 +1202,34 @@ img.resizeImgDouble {
   top: 65%;
 }
 
+#cons-Insur-obj {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+#cons-Insur-obj::before {
+  float: left;
+  content: "";
+}
+@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #cons-Insur-obj::before {
+    padding-top: 59.39394%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #cons-Insur-obj::before {
+    padding-top: 49.49495%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #cons-Insur-obj::before {
+    padding-top: 49.49495%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #cons-Insur-obj::before {
+    padding-top: 100%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

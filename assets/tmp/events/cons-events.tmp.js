@@ -5,7 +5,7 @@ function init_cons_page() {
     google.load("visualization", "1.0", {
         packages: [ "corechart" ],
         callback: function() {
-            initGraphs(!0, "#cons-Speed-obj", !1, null, !1, null, !1, null);
+            initGraphs(!0, "#cons-Speed-obj", !1, null, !1, null, !0, "#cons-Insur-obj");
         }
     }), GLB.currVID = getQueryVariable("vid"), GLB.vehicle.setVehicle(GLB.currVID - 1), 
     navMenuStatusSetVeh(), 100 == GLB.currVID ? (GLB.currVID = GLB.currVID - 1, init_consDemo(), 

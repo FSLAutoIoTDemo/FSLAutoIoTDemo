@@ -72,8 +72,7 @@ function sockOnMessage(dataRawSOCK){
 		GLB.vehicle.processSocketVD(dataJsonSOCK);
 
 	if(GLB.pgID == GLB.PGCONS)
-		console.log('CONS');
-//		processSocketCONS(dataJsonSOCK);
+		GLB.vehicle.processSocketCONS(dataJsonSOCK);
 
 	if(GLB.pgID == GLB.PGSTRESS)
 		GLB.fleet.processSocketStress(dataJsonSOCK);

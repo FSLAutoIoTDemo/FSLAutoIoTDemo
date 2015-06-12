@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 
 // Start events to provide page with Demo Data
 function init_consDemo(){
-	console.log("OnPageLoad: VD-Demo Mode Started");
+	console.log("OnPageLoad: CONS-Demo Mode Started");
 
 	// Clear watchdog
 	watchdogClear();
@@ -17,7 +17,7 @@ function init_consDemo(){
 	// Load data for Vehicle Dash page
 	initDemoData();
 
-	// Create new VDvehicle object
+	// Create new CONSvehicle object
 	GLB.vehicle=new CONSvehicle();
 
 	// SETUP TIMERS TO KICK OFF UPDATES
@@ -25,24 +25,27 @@ function init_consDemo(){
 	//-> Modify map @t2
 	//-> Modify imgs @t3
 
-	setInterval(vdDemo_updateData,3000);	// 1 second
-	setInterval(vdDemo_modifyMaps,3000) 	// 1 seconds
-	setInterval(vdDemo_modifyImgs,15000);	// 5 seconds
+	setInterval(consDemo_updateData,3000);	// 1 second
+	setInterval(consdDemo_modifyMaps,3000) 	// 1 seconds
+	setInterval(consdDemo_modifyImgs,15000);	// 5 seconds
 	setInterval(watchdogClear,10000);		// Clear Watchdog every 10 seconds
 }
 
 
 
-// Store new data in VDVechicle obj, then update HTML text elements
-function vdDemo_updateData(){
+// Store new data in CONSVechicle obj, then update HTML text elements
+function consDemo_updateData(){
 	var d=GLB.vdDemoData[GLB.vdDemoIdx];	// Use current index row of Demo Data Array
 	
-	// Update VDvehicle obj with data: [id,vehicle,speed,accel,heart,X,Y,Z,lat,lng,insurance]
+	// ##HACK Add acceleration profile - not done in backend
+	GLB.vehicle.calcAccelProf(d[10]);
+
+	// Update CONSvehicle obj with data: [id,vehicle,speed,accel,heart,X,Y,Z,lat,lng,insurance]
 	GLB.vehicle.updateData(d[0],d[1],d[2],d[3],d[4],d[5],d[6],d[7],d[8],d[9],d[10]);
 	GLB.vehicle.updateDriverImg(d[11]);
 
 	// Update the Text elements on the page
-	GLB.vehicle.modifyVdHtmlText();
+	GLB.vehicle.modifyHtmlText();
 
 	// Check if index has reached end of array
 	// - If no: update by 1
@@ -54,11 +57,11 @@ function vdDemo_updateData(){
 }
 
 // Update Vehicle Dash Map with Vehicle data
-function vdDemo_modifyMaps(){
-	GLB.vehicle.modifyVdMap();
+function consdDemo_modifyMaps(){
+	GLB.vehicle.modifyMap();
 }
 
 // Update Vehicle Dash Driver & Road Images with Vehicle data
-function vdDemo_modifyImgs(){
-	GLB.vehicle.modifyVdDriverImg();
+function consdDemo_modifyImgs(){
+	GLB.vehicle.modifyDriverImg();
 }

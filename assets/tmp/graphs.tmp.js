@@ -3,6 +3,20 @@ function initGraphs(a, b, c, d, e, f, g, h) {
     g && drawInitBarGraph(h);
 }
 
+function resizeChart(a, b, c) {
+    a.draw(b, c);
+}
+
+function addGraphResizeListener(a, b, c) {
+    document.addEventListener ? window.addEventListener("resize", function() {
+        resizeChart(a, b, c);
+    }) : document.attachEvent ? window.attachEvent("onresize", function() {
+        resizeChart(a, b, c);
+    }) : window.resize = function() {
+        resizeChart(a, b, c);
+    };
+}
+
 function drawInitSpeedPieChart(a) {
     GLB.speedPieData = google.visualization.arrayToDataTable([ [ "segment", "speed" ], [ "bottom", 90 ], [ "mph", 0 ], [ "empty", 270 ] ]), 
     GLB.speedPieOptions = {
@@ -171,16 +185,46 @@ function processGforceEvent() {
     } ]) : (processGforceEvent.currentSelection = a.row, void GLB.fleet.requestBDEvent(a.row));
 }
 
-function resizeChart(a, b, c) {
-    a.draw(b, c);
+function drawInitBarGraph(a) {
+    GLB.insurBarData = google.visualization.arrayToDataTable([ [ "Name", "Premium", {
+        role: "style"
+    }, "Other", {
+        role: "style"
+    } ], [ "", 400, "color: #2ca02c; opacity: 1.0", 600, "color: black; opacity: 0.5" ] ]), 
+    GLB.insurBarOptions = {
+        chartArea: {
+            width: "50%"
+        },
+        hAxis: {
+            minValue: 0,
+            maxValue: 1e3,
+            baselineColor: "white",
+            format: "$#,###",
+            gridlines: {
+                color: "white",
+                count: 5
+            },
+            textStyle: {
+                color: "white",
+                fontSize: 15,
+                fontName: "Roboto"
+            }
+        },
+        vAxis: {},
+        isStacked: !0,
+        legend: "none",
+        backgroundColor: {
+            fill: "transparent"
+        },
+        animation: {
+            duration: 200,
+            easing: "inAndOut",
+            startup: !0
+        }
+    }, GLB.insurBarGraph = new google.visualization.BarChart($(a)[0]), GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions), 
+    addGraphResizeListener(GLB.insurBarGraph, GLB.insurBarData, GLB.insurBarOptions);
 }
 
-function addGraphResizeListener(a, b, c) {
-    document.addEventListener ? window.addEventListener("resize", function() {
-        resizeChart(a, b, c);
-    }) : document.attachEvent ? window.attachEvent("onresize", function() {
-        resizeChart(a, b, c);
-    }) : window.resize = function() {
-        resizeChart(a, b, c);
-    };
+function updateInsurGraphData(a) {
+    GLB.insurBarData.setValue(0, 1, a), GLB.insurBarData.setValue(0, 3, 1e3 - a), GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
 }

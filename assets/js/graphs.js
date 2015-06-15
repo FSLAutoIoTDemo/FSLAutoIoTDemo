@@ -221,11 +221,11 @@ function drawInitGforceGraph(gforceHtmlId) {
         GLB.gforceGraphData.addRow([null, null]);
     
     GLB.gforceGraphOptions = {
-        //title: 'Vehicle Fleet G-Forces',
+        
         hAxis: {title: 'Lateral', minValue: -0.5, maxValue: 0.5, minorGridlines: {count: 4}},
         vAxis: {title: 'Longitudinal', minValue: -0.5, maxValue: 0.5, minorGridlines: {count: 4}},
         legend: 'none',
-        //colors: ['#087037'],
+   		chartArea: {width: '80%', height: '80%'},
         pointShape: 'circle',
         series: {
             0:{color: '#e66a08', visibleInLegend: true},
@@ -301,7 +301,7 @@ function drawInitBarGraph(barHtmlId) {
 	GLB.insurBarOptions = {
 //		title: 'Live Insurance Premium',
 //		titleTextStyle: {color: 'white', fontSize: 20, fontName: 'Roboto'},
-        chartArea: {width: '50%'},
+        chartArea: {width: '100%'},
         hAxis: {
           minValue: 0,
 		  maxValue: 1000,

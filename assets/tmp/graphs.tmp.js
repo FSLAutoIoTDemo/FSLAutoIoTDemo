@@ -145,6 +145,10 @@ function drawInitGforceGraph(a) {
             }
         },
         legend: "none",
+        chartArea: {
+            width: "80%",
+            height: "80%"
+        },
         pointShape: "circle",
         series: {
             0: {
@@ -193,7 +197,7 @@ function drawInitBarGraph(a) {
     } ], [ "", 400, "color: #2ca02c; opacity: 1.0", 600, "color: black; opacity: 0.5" ] ]), 
     GLB.insurBarOptions = {
         chartArea: {
-            width: "50%"
+            width: "100%"
         },
         hAxis: {
             minValue: 0,

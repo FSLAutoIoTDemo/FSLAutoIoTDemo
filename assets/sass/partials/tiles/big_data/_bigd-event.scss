@@ -1,0 +1,55 @@
+$bigd-evt-id-height: 30%;
+$bigd-evt-time-height: 50%;
+$bigd-evt-speed-height: 70%;
+$bigd-evt-title-col: 53%;
+$bigd-evt-data-col: 53%;
+$bigd-evt-unit-col: 70%;
+
+// ID Title
+#bigd-evt-id-title{
+	@include absPosition();
+	@include vertPos($bigd-evt-id-height);
+	right: $bigd-evt-title-col;
+}
+
+// ID Data
+#bigd-evt-id{
+	@include absPosition();
+	@include vertPos($bigd-evt-id-height);
+	left: $bigd-evt-data-col;
+}
+
+
+// Time Title
+#bigd-evt-time-title{
+	@include absPosition();
+	@include vertPos($bigd-evt-time-height);
+	right: $bigd-evt-title-col;
+}
+
+// Time Data
+#bigd-evt-time{
+	@include absPosition();
+	@include vertPos($bigd-evt-time-height);
+	left: $bigd-evt-data-col;
+}
+
+// Speed Title
+#bigd-evt-speed-title{
+	@include absPosition();
+	@include vertPos($bigd-evt-speed-height);
+	right: $bigd-evt-title-col;
+}
+
+// Speed Data
+#bigd-evt-speed{
+	@include absPosition();
+	@include vertPos($bigd-evt-speed-height);
+	left: $bigd-evt-data-col;
+}
+
+#bigd-evt-speed-unit{
+	@include absPosition();
+	@include vertPos($bigd-evt-speed-height);
+	left: $bigd-evt-unit-col;
+}

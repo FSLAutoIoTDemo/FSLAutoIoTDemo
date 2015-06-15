@@ -1,0 +1,38 @@
+#cons-twit-tweet{
+	@include absPosition();
+	right: 13%;
+	top: 20%;
+}
+
+#cons-twit-post{
+	@include absPosition();
+	width:80%;
+	left: 10%;
+	top: 35%;
+}
+
+#cons-twit-reply{
+	@include absPosition();
+	left: 10%;
+	bottom: 34%;
+}
+
+#cons-twit-repmes-box{
+	//padding-top:50%;
+	@include absPosition();
+	width:80%;
+	left: 10%;
+	bottom:12%;
+	background-color:rgba(0,0,0,0.2);		// 20% transparent black
+}
+
+#cons-twit-repmes{
+	margin:2% 5% 2% 5%;
+	width:90%;
+}
+
+#cons-twit-send{
+	@include absPosition();
+	right: 13%;
+	bottom: 5%;
+}

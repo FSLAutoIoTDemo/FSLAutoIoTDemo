@@ -18,6 +18,7 @@
 
 // Partials - tile specific formatting
 @import "partials/tiles/stacked-elements";
+@import "partials/tiles/general";
 
 @import "partials/tiles/vehicle_dash/vd-map";
 @import "partials/tiles/vehicle_dash/vd-accel";
@@ -28,10 +29,14 @@
 
 @import "partials/tiles/stress_street/stress-map";
 
-@import "partials/tiles/big_data/bigd-map";
 @import "partials/tiles/big_data/bigd-gforce";
+@import "partials/tiles/big_data/bigd-info";
+@import "partials/tiles/big_data/bigd-analy";
+@import "partials/tiles/big_data/bigd-event";
 
 @import "partials/tiles/consumer/cons-map";
 @import "partials/tiles/consumer/cons-roadcam";
 @import "partials/tiles/consumer/cons-speed";
 @import "partials/tiles/consumer/cons-insur";
+@import "partials/tiles/consumer/cons-tweet";
+@import "partials/tiles/consumer/cons-info";

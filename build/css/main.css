@@ -521,7 +521,7 @@ body {
 }
 
 #cons-metric {
-  background-color: #ffc20f;
+  background-color: #6f6fcc;
 }
 
 #cons-insur {
@@ -793,49 +793,53 @@ body {
   text-align: center;
 }
 
-.dataH2, .dataH2center {
+.dataH2, .dataH2light, .dataH2center {
   font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 10vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 2.5vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 5vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 4.28571vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 3.75vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 3.33333vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 3vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH2, .dataH2center {
+  .dataH2, .dataH2light, .dataH2center {
     font-size: 2.72727vw;
   }
+}
+
+.dataH2light {
+  font-weight: 300;
 }
 
 .dataH2center {
@@ -843,49 +847,53 @@ body {
   text-align: center;
 }
 
-.dataH3, .dataH3center {
+.dataH3, .dataH3light, .dataH3center {
   font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 8.5vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 2.125vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 4.25vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 3.64286vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 3.1875vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 2.83333vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 2.55vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH3, .dataH3center {
+  .dataH3, .dataH3light, .dataH3center {
     font-size: 2.31818vw;
   }
+}
+
+.dataH3light {
+  font-weight: 300;
 }
 
 .dataH3center {
@@ -893,54 +901,107 @@ body {
   text-align: center;
 }
 
-.dataH4, .dataH4center {
+.dataH4, .dataH4light, .dataH4center {
   font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH4, .dataH4center {
-    font-size: 7vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 6vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH4, .dataH4center {
-    font-size: 1.75vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 1.5vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH4, .dataH4center {
-    font-size: 3.5vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 3vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH4, .dataH4center {
-    font-size: 3.0vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 2.57143vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH4, .dataH4center {
-    font-size: 2.625vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 2.25vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH4, .dataH4center {
-    font-size: 2.33333vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 2vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH4, .dataH4center {
-    font-size: 2.1vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 1.8vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH4, .dataH4center {
-    font-size: 1.90909vw;
+  .dataH4, .dataH4light, .dataH4center {
+    font-size: 1.63636vw;
   }
+}
+
+.dataH4light {
+  font-weight: 300;
 }
 
 .dataH4center {
   width: 100%;
   text-align: center;
+}
+
+.dataH5, .dataH5light {
+  font-weight: 500;
+  color: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .dataH5, .dataH5light {
+    font-size: 4vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .dataH5, .dataH5light {
+    font-size: 1vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .dataH5, .dataH5light {
+    font-size: 2vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .dataH5, .dataH5light {
+    font-size: 1.71429vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .dataH5, .dataH5light {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .dataH5, .dataH5light {
+    font-size: 1.33333vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .dataH5, .dataH5light {
+    font-size: 1.2vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .dataH5, .dataH5light {
+    font-size: 1.09091vw;
+  }
+}
+
+.dataH5light {
+  font-weight: 300;
 }
 
 /*******************************************/
@@ -1079,6 +1140,15 @@ img.resizeImgDouble {
   }
 }
 
+.singleMapWithTitle {
+  position: absolute;
+  margin: 0;
+  top: 20%;
+  left: 2.5%;
+  width: 95%;
+  height: 75%;
+}
+
 .stackParent {
   position: relative;
 }
@@ -1101,6 +1171,11 @@ img.resizeImgDouble {
 .stackTop {
   position: absolute;
   z-index: 2;
+}
+
+.infobox {
+  padding: 1% 2% 1% 2%;
+  width: 96%;
 }
 
 #vd-Map h1 {
@@ -1235,47 +1310,169 @@ img.resizeImgDouble {
   padding: 0;
 }
 
-#bigd-Map h1 {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
 #bigd-graph-obj {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /*
-  	@media only screen and (min-aspect-ratio: 16/9){
-  		top: 20%;
-  	}
-  	@media only screen and (max-aspect-ratio: 16000/9001){
-  		top: 15%;
-  	}
-  
-  	left: 15%;
-  
-  	width: 70%;
-  	height: 80%;	
-  */
-  /*
-  	//Psuedo element used to implement a dynamic height
-  	&::before{
-  		float: left;
-  		content:"";
-  		
-  		// For the different screen configurations determine the correct height (padding-top)
-  		@include setDynamicHeight('single', 100, 100);
-  	}	
-  	*/
+  margin: 0;
+  top: 5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+}
+@media only screen and (max-width: 600px) {
+  #bigd-graph-obj {
+    top: 28%;
+    height: 70%;
+  }
 }
 
-#cons-Map h1 {
+#bigd-info-text h1 {
   display: none;
   margin: 0;
   padding: 0;
+}
+
+#bigd-analy-Cog1 {
+  position: absolute;
+  margin: 0;
+  top: 40%;
+  left: 15%;
+  width: 20%;
+}
+
+#bigd-analy-Cog2 {
+  position: absolute;
+  margin: 0;
+  top: 40%;
+  right: 15%;
+  width: 20%;
+}
+
+#bigd-analy-Cog1-text {
+  position: absolute;
+  margin: 0;
+  bottom: 10%;
+  left: 10%;
+  text-align: center;
+}
+
+#bigd-analy-Cog2-text {
+  position: absolute;
+  margin: 0;
+  bottom: 10%;
+  right: 12%;
+  text-align: center;
+}
+
+#bigd-evt-id-title {
+  position: absolute;
+  margin: 0;
+  right: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-id-title {
+    top: 30%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-id-title {
+    top: 30%;
+  }
+}
+
+#bigd-evt-id {
+  position: absolute;
+  margin: 0;
+  left: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-id {
+    top: 30%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-id {
+    top: 30%;
+  }
+}
+
+#bigd-evt-time-title {
+  position: absolute;
+  margin: 0;
+  right: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-time-title {
+    top: 50%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-time-title {
+    top: 50%;
+  }
+}
+
+#bigd-evt-time {
+  position: absolute;
+  margin: 0;
+  left: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-time {
+    top: 50%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-time {
+    top: 50%;
+  }
+}
+
+#bigd-evt-speed-title {
+  position: absolute;
+  margin: 0;
+  right: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-speed-title {
+    top: 70%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-speed-title {
+    top: 70%;
+  }
+}
+
+#bigd-evt-speed {
+  position: absolute;
+  margin: 0;
+  left: 53%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-speed {
+    top: 70%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-speed {
+    top: 70%;
+  }
+}
+
+#bigd-evt-speed-unit {
+  position: absolute;
+  margin: 0;
+  left: 70%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #bigd-evt-speed-unit {
+    top: 70%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #bigd-evt-speed-unit {
+    top: 70%;
+  }
 }
 
 #cons-Speed-obj {
@@ -1302,17 +1499,10 @@ img.resizeImgDouble {
   top: 65%;
 }
 
-#cons-info h1 {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
 #cons-Metric-speed {
   position: absolute;
   margin: 0;
-  left: 7%;
-  font-weight: 300;
+  right: 65%;
 }
 @media only screen and (max-aspect-ratio: 16000 / 9001) {
   #cons-Metric-speed {
@@ -1345,7 +1535,6 @@ img.resizeImgDouble {
   position: absolute;
   margin: 0;
   left: 60%;
-  font-weight: 300;
 }
 @media only screen and (max-aspect-ratio: 16000 / 9001) {
   #cons-Metric-mph {
@@ -1361,8 +1550,7 @@ img.resizeImgDouble {
 #cons-Metric-accel {
   position: absolute;
   margin: 0;
-  left: 7%;
-  font-weight: 300;
+  right: 65%;
 }
 @media only screen and (max-aspect-ratio: 16000 / 9001) {
   #cons-Metric-accel {
@@ -1394,8 +1582,7 @@ img.resizeImgDouble {
 #cons-Music {
   position: absolute;
   margin: 0;
-  left: 7%;
-  font-weight: 300;
+  right: 65%;
 }
 @media only screen and (max-aspect-ratio: 16000 / 9001) {
   #cons-Music {
@@ -1427,9 +1614,58 @@ img.resizeImgDouble {
 #cons-Insur-obj {
   position: absolute;
   top: 20%;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+}
+
+#cons-twit-tweet {
+  position: absolute;
+  margin: 0;
+  right: 13%;
+  top: 20%;
+}
+
+#cons-twit-post {
+  position: absolute;
+  margin: 0;
+  width: 80%;
+  left: 10%;
+  top: 35%;
+}
+
+#cons-twit-reply {
+  position: absolute;
+  margin: 0;
+  left: 10%;
+  bottom: 34%;
+}
+
+#cons-twit-repmes-box {
+  position: absolute;
+  margin: 0;
+  width: 80%;
+  left: 10%;
+  bottom: 12%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#cons-twit-repmes {
+  margin: 2% 5% 2% 5%;
+  width: 90%;
+}
+
+#cons-twit-send {
+  position: absolute;
+  margin: 0;
+  right: 13%;
+  bottom: 5%;
+}
+
+#cons-info h1 {
+  display: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

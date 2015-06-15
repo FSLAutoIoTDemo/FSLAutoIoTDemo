@@ -1,14 +1,7 @@
-// Do not display the header for this tile
-#cons-info h1{
-	display:none;
-	margin:0;
-	padding:0;
-}
-
 $cons-Metric-speed-height: 30%;
 $cons-Metric-accel-height: 50%;
 $cons-Metric-music-height: 70%;
-$cons-Metric-text-col: 7%;
+$cons-Metric-text-col: 65%;
 $cons-Metric-data-col: 45%;
 $cons-Metric-unit-col: 60%;
 
@@ -16,8 +9,7 @@ $cons-Metric-unit-col: 60%;
 #cons-Metric-speed{
 	@include absPosition();
 	@include vertPos($cons-Metric-speed-height);
-	left: $cons-Metric-text-col;
-	font-weight: $font-light;
+	right: $cons-Metric-text-col;
 }
 
 // Speed Data
@@ -31,15 +23,13 @@ $cons-Metric-unit-col: 60%;
 	@include absPosition();
 	@include vertPos($cons-Metric-speed-height);
 	left: $cons-Metric-unit-col;
-	font-weight: $font-light;
 }
 
 // Accel Title
 #cons-Metric-accel{
 	@include absPosition();
 	@include vertPos($cons-Metric-accel-height);
-	left: $cons-Metric-text-col;
-	font-weight: $font-light;
+	right: $cons-Metric-text-col;
 }
 
 // Accel Data
@@ -53,8 +43,7 @@ $cons-Metric-unit-col: 60%;
 #cons-Music{
 	@include absPosition();
 	@include vertPos($cons-Metric-music-height);
-	left: $cons-Metric-text-col;
-	font-weight: $font-light;
+	right: $cons-Metric-text-col;
 }
 
 // Music Data
@@ -70,8 +59,8 @@ $cons-Metric-unit-col: 60%;
 	position:absolute;
 
 	top:20%;
-	left:0;
+	left:10%;
 
-	width: 100%;
-	height: 100%;
+	width: 80%;
+	height: 70%;
 }

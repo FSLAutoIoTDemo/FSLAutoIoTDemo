@@ -1,0 +1,39 @@
+#bigd-analy-Cog1{
+
+	@include absPosition();
+
+	top:40%;
+	left: 15%;
+
+	width:20%
+}
+
+#bigd-analy-Cog2{
+
+	@include absPosition();
+
+	top:40%;
+	right: 15%;
+
+	width:20%
+}
+
+#bigd-analy-Cog1-text{
+
+	@include absPosition();
+
+	bottom:10%;
+	left:10%;
+
+	text-align:center;
+}
+
+#bigd-analy-Cog2-text{
+
+	@include absPosition();
+
+	bottom:10%;
+	right:12%;
+
+	text-align:center;
+}

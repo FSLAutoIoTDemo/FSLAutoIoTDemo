@@ -94,3 +94,16 @@
 	}	
 
 }
+
+// Single Tile Map using single line title
+// --> Look at Big Data Event & Consumer page for example
+.singleMapWithTitle{
+	
+	@include absPosition();
+
+	top:20%;
+	left:2.5%;
+
+	width: 95%;
+	height:75%;
+}

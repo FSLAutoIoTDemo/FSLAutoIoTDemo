@@ -103,6 +103,11 @@ body{
 	color: $fsl-white;
 }
 
+.dataH2light{
+	@extend .dataH2;
+	font-weight: $font-light;
+}
+
 .dataH2center{
 	@include centerText();
 	@extend .dataH2;
@@ -112,6 +117,11 @@ body{
 	@include setDynFont($font-size-data-h3);
 	font-weight: $font-normal;
 	color: $fsl-white;
+}
+
+.dataH3light{
+	@extend .dataH3;
+	font-weight: $font-light;
 }
 
 .dataH3center{
@@ -125,7 +135,23 @@ body{
 	color: $fsl-white;
 }
 
+.dataH4light{
+	@extend .dataH4;
+	font-weight: $font-light;
+}
+
 .dataH4center{
 	@include centerText();
 	@extend .dataH4;
+}
+
+.dataH5{
+	@include setDynFont($font-size-data-h5);
+	font-weight: $font-normal;
+	color: $fsl-white;
+}
+
+.dataH5light{
+	@extend .dataH5;
+	font-weight: $font-light;
 }

@@ -1,4 +1,14 @@
 /*******************************************/
+/* MIXINS								   */
+/*******************************************/
+
+// Centre text within the HTML block
+@mixin centerText(){
+	width:100%;
+	text-align: center;
+}
+
+/*******************************************/
 /* Font schemes	(size, style) */
 /*******************************************/
 
@@ -74,25 +84,48 @@ body{
 		text-align:left;
 }
 
-// NEED TO ALIGN TEXT ON LEFT FOR ROAD IMG
 
+// Font settings for majority of text in tiles
 .dataH1{
 	@include setDynFont($font-size-data-h1);
-
-	float:left;
-	width:100%;
-	text-align: center;
 	font-weight: $font-normal;
 	color: $fsl-white;
 }
 
+.dataH1center{
+	@include centerText();
+	@extend .dataH1;
+}
 
 .dataH2{
 	@include setDynFont($font-size-data-h2);
-
-	float:left;
-	width:100%;
-	text-align: center;
-	font-weight: $font-light;
+	font-weight: $font-normal;
 	color: $fsl-white;
+}
+
+.dataH2center{
+	@include centerText();
+	@extend .dataH2;
+}
+
+.dataH3{
+	@include setDynFont($font-size-data-h3);
+	font-weight: $font-normal;
+	color: $fsl-white;
+}
+
+.dataH3center{
+	@include centerText();
+	@extend .dataH3;
+}
+
+.dataH4{
+	@include setDynFont($font-size-data-h4);
+	font-weight: $font-normal;
+	color: $fsl-white;
+}
+
+.dataH4center{
+	@include centerText();
+	@extend .dataH4;
 }

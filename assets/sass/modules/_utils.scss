@@ -76,3 +76,25 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+
+// Applied to elements that are positioned absolute to their parent 
+// within a tile
+@mixin absPosition(){
+	position:absolute;
+	margin:0;
+}
+
+// Used for setting vertical position depending on aspect ratio
+// - Pass in position required for wide tile
+@mixin vertPos($vertPosPoint){
+	@media #{$all-std-screen}{
+		//#### Leave in the same position for time being
+		top: $vertPosPoint;
+	}
+	@media #{$all-wide-screen}{
+		// Do not modify for wide screen
+		top: $vertPosPoint;	
+	}
+	
+}

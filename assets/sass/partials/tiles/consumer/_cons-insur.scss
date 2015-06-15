@@ -1,6 +1,70 @@
+// Do not display the header for this tile
+#cons-info h1{
+	display:none;
+	margin:0;
+	padding:0;
+}
 
+$cons-Metric-speed-height: 30%;
+$cons-Metric-accel-height: 50%;
+$cons-Metric-music-height: 70%;
+$cons-Metric-text-col: 7%;
+$cons-Metric-data-col: 45%;
+$cons-Metric-unit-col: 60%;
 
-// Speed Dial
+// Speed Title
+#cons-Metric-speed{
+	@include absPosition();
+	@include vertPos($cons-Metric-speed-height);
+	left: $cons-Metric-text-col;
+	font-weight: $font-light;
+}
+
+// Speed Data
+#cons-Metric-speedtext{
+	@include absPosition();
+	@include vertPos($cons-Metric-speed-height);
+	left: $cons-Metric-data-col;
+}
+
+#cons-Metric-mph{
+	@include absPosition();
+	@include vertPos($cons-Metric-speed-height);
+	left: $cons-Metric-unit-col;
+	font-weight: $font-light;
+}
+
+// Accel Title
+#cons-Metric-accel{
+	@include absPosition();
+	@include vertPos($cons-Metric-accel-height);
+	left: $cons-Metric-text-col;
+	font-weight: $font-light;
+}
+
+// Accel Data
+#cons-Metric-acceltext{
+	@include absPosition();
+	@include vertPos($cons-Metric-accel-height);
+	left: $cons-Metric-data-col;
+}
+
+// Music Title
+#cons-Music{
+	@include absPosition();
+	@include vertPos($cons-Metric-music-height);
+	left: $cons-Metric-text-col;
+	font-weight: $font-light;
+}
+
+// Music Data
+#cons-Music-data{
+	@include absPosition();
+	@include vertPos($cons-Metric-music-height);
+	left: $cons-Metric-data-col;
+}
+
+// Insurance Bar Chart
 #cons-Insur-obj{
 
 	position:absolute;
@@ -8,13 +72,6 @@
 	top:20%;
 	left:0;
 
-
 	width: 100%;
 	height: 100%;
-
-	// For the different screen configurations determine the correct height (padding-top)
-//		@include setDynamicHeight('single', 100, 100);
-
-//	padding-bottom:100%;
-
 }

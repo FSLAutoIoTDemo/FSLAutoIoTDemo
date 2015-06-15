@@ -533,6 +533,9 @@ body {
 }
 
 /*******************************************/
+/* MIXINS								   */
+/*******************************************/
+/*******************************************/
 /* Font schemes	(size, style) */
 /*******************************************/
 body {
@@ -740,100 +743,204 @@ body {
   text-align: left;
 }
 
-.dataH1 {
-  float: left;
-  width: 100%;
-  text-align: center;
+.dataH1, .dataH1center {
   font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 15vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 3.75vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 7.5vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 6.42857vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 5.625vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 5vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 4.5vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH1 {
+  .dataH1, .dataH1center {
     font-size: 4.09091vw;
   }
 }
 
-.dataH2 {
-  float: left;
+.dataH1center {
   width: 100%;
   text-align: center;
-  font-weight: 300;
+}
+
+.dataH2, .dataH2center {
+  font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 10vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 2.5vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 5vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 4.28571vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 3.75vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 3.33333vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 3vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH2 {
+  .dataH2, .dataH2center {
     font-size: 2.72727vw;
   }
+}
+
+.dataH2center {
+  width: 100%;
+  text-align: center;
+}
+
+.dataH3, .dataH3center {
+  font-weight: 500;
+  color: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .dataH3, .dataH3center {
+    font-size: 8.5vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .dataH3, .dataH3center {
+    font-size: 2.125vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .dataH3, .dataH3center {
+    font-size: 4.25vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .dataH3, .dataH3center {
+    font-size: 3.64286vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .dataH3, .dataH3center {
+    font-size: 3.1875vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .dataH3, .dataH3center {
+    font-size: 2.83333vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .dataH3, .dataH3center {
+    font-size: 2.55vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .dataH3, .dataH3center {
+    font-size: 2.31818vw;
+  }
+}
+
+.dataH3center {
+  width: 100%;
+  text-align: center;
+}
+
+.dataH4, .dataH4center {
+  font-weight: 500;
+  color: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .dataH4, .dataH4center {
+    font-size: 7vw;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .dataH4, .dataH4center {
+    font-size: 1.75vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+  .dataH4, .dataH4center {
+    font-size: 3.5vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .dataH4, .dataH4center {
+    font-size: 3.0vw;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 899px) {
+  .dataH4, .dataH4center {
+    font-size: 2.625vw;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+  .dataH4, .dataH4center {
+    font-size: 2.33333vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px) {
+  .dataH4, .dataH4center {
+    font-size: 2.1vw;
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1189px) {
+  .dataH4, .dataH4center {
+    font-size: 1.90909vw;
+  }
+}
+
+.dataH4center {
+  width: 100%;
+  text-align: center;
 }
 
 /*******************************************/
@@ -1193,6 +1300,128 @@ img.resizeImgDouble {
 
 #cons-Speed-mphtext {
   top: 65%;
+}
+
+#cons-info h1 {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+#cons-Metric-speed {
+  position: absolute;
+  margin: 0;
+  left: 7%;
+  font-weight: 300;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Metric-speed {
+    top: 30%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Metric-speed {
+    top: 30%;
+  }
+}
+
+#cons-Metric-speedtext {
+  position: absolute;
+  margin: 0;
+  left: 45%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Metric-speedtext {
+    top: 30%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Metric-speedtext {
+    top: 30%;
+  }
+}
+
+#cons-Metric-mph {
+  position: absolute;
+  margin: 0;
+  left: 60%;
+  font-weight: 300;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Metric-mph {
+    top: 30%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Metric-mph {
+    top: 30%;
+  }
+}
+
+#cons-Metric-accel {
+  position: absolute;
+  margin: 0;
+  left: 7%;
+  font-weight: 300;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Metric-accel {
+    top: 50%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Metric-accel {
+    top: 50%;
+  }
+}
+
+#cons-Metric-acceltext {
+  position: absolute;
+  margin: 0;
+  left: 45%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Metric-acceltext {
+    top: 50%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Metric-acceltext {
+    top: 50%;
+  }
+}
+
+#cons-Music {
+  position: absolute;
+  margin: 0;
+  left: 7%;
+  font-weight: 300;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Music {
+    top: 70%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Music {
+    top: 70%;
+  }
+}
+
+#cons-Music-data {
+  position: absolute;
+  margin: 0;
+  left: 45%;
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
+  #cons-Music-data {
+    top: 70%;
+  }
+}
+@media only screen and (min-aspect-ratio: 16 / 9) {
+  #cons-Music-data {
+    top: 70%;
+  }
 }
 
 #cons-Insur-obj {

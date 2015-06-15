@@ -61,7 +61,7 @@ GLB.loopCount = GLB.dataPoints;
 GLB.socket = null;			// Current socket object
 GLB.currSOCK = null;		// Current socket in session
 GLB.sockAddr = null;		// Socket Address
-GLB.SOCKROOT  = "wss://fslautoiotdemobackend.mybluemix.net"
+GLB.SOCKROOT  = "wss://fslautoiotdemobackend.mybluemix.net"		// Use wss: (443) (vs ws: (80)) to get past mobile proxy
 
 GLB.SOCKETVEH = ['/ws/vehicleA',
 				'/ws/vehicleB',

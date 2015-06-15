@@ -15,11 +15,12 @@ $notsml-screen: "only screen and (min-width: " + $break-med + ")";
 $notlarge-screen: "only screen and (max-width: " + $break-large + ")";
 
 // Media query variables -  viewport aspect ratio
-$wide-aspect-ratio: "16/9";
-$std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
-$wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ") and (min-width: "+ $break-large + ")";
-$all-std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio + ")";
-$all-wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio + ")";
+$wide-aspect-ratio-max: "16000/9001";		//((16/9) * 1000) + 1 unit (i.e. just bigger than 16/9, had issue where 16/9 was both max + min)
+$wide-aspect-ratio-min: "16/9";
+$std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio-max + ") and (min-width: "+ $break-large + ")";
+$wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio-min + ") and (min-width: "+ $break-large + ")";
+$all-std-screen: "only screen and (max-aspect-ratio: " + $wide-aspect-ratio-max + ")";
+$all-wide-screen: "only screen and (min-aspect-ratio: " + $wide-aspect-ratio-min + ")";
 
 //########################################################################################
 // Tile layout

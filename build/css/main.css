@@ -116,7 +116,7 @@ body {
   float: left;
   padding-top: 100%;
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .singleTile::before, .quadTile::before {
     padding-top: 120%;
   }
@@ -139,7 +139,7 @@ body {
   float: left;
   padding-top: 49.49495%;
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .doubleTile::before {
     padding-top: 59.39394%;
   }
@@ -856,7 +856,7 @@ img.resizeImgDouble {
     margin-left: 10%;
   }
 }
-@media only screen and (min-width: 600px) and (max-aspect-ratio: 16 / 9) {
+@media only screen and (min-width: 600px) and (max-aspect-ratio: 16000 / 9001) {
   img.resizeImgDouble {
     width: 72%;
     float: right;
@@ -877,7 +877,7 @@ img.resizeImgDouble {
   width: 95%;
   margin-left: 2.5%;
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .single-Map-obj {
     margin-top: 3%;
   }
@@ -901,7 +901,7 @@ img.resizeImgDouble {
   float: left;
   content: "";
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .single-Map-obj::before {
     padding-top: 120%;
   }
@@ -927,7 +927,7 @@ img.resizeImgDouble {
   width: 95%;
   margin-left: 2.5%;
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .double-Map-obj {
     margin-top: 1.48485%;
   }
@@ -951,7 +951,7 @@ img.resizeImgDouble {
   float: left;
   content: "";
 }
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
   .double-Map-obj::before {
     padding-top: 59.39394%;
   }
@@ -1010,7 +1010,7 @@ img.resizeImgDouble {
     top: 20%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #vd-Accel-obj {
     top: 15%;
   }
@@ -1026,7 +1026,7 @@ img.resizeImgDouble {
     top: 46%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #vd-Accel-frontArrow {
     top: 43%;
   }
@@ -1042,7 +1042,7 @@ img.resizeImgDouble {
     top: 65%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #vd-Accel-sideArrow {
     top: 61%;
   }
@@ -1074,7 +1074,7 @@ img.resizeImgDouble {
     top: 20%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #vd-HR-obj {
     top: 15%;
   }
@@ -1108,7 +1108,7 @@ img.resizeImgDouble {
     top: 20%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #vd-Speed-obj {
     top: 15%;
   }
@@ -1144,7 +1144,7 @@ img.resizeImgDouble {
   	@media only screen and (min-aspect-ratio: 16/9){
   		top: 20%;
   	}
-  	@media only screen and (max-aspect-ratio: 16/9){
+  	@media only screen and (max-aspect-ratio: 16000/9001){
   		top: 15%;
   	}
   
@@ -1181,7 +1181,7 @@ img.resizeImgDouble {
     top: 20%;
   }
 }
-@media only screen and (max-aspect-ratio: 16 / 9) {
+@media only screen and (max-aspect-ratio: 16000 / 9001) {
   #cons-Speed-obj {
     top: 15%;
   }

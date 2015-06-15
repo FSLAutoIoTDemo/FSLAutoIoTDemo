@@ -730,6 +730,11 @@ body {
 }
 
 .doubleTile .tileTitle {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.tileTitleLeft {
   width: auto;
   margin-left: 2%;
   text-align: left;
@@ -967,6 +972,30 @@ img.resizeImgDouble {
   }
 }
 
+.stackParent {
+  position: relative;
+}
+
+.stackBottom {
+  position: absolute;
+  z-index: 1;
+}
+
+.stackMidBot {
+  position: absolute;
+  z-index: 2;
+}
+
+.stackMidTop {
+  position: absolute;
+  z-index: 3;
+}
+
+.stackTop {
+  position: absolute;
+  z-index: 2;
+}
+
 #vd-Map h1 {
   display: none;
 }
@@ -1093,30 +1122,6 @@ img.resizeImgDouble {
   top: 65%;
 }
 
-.stackParent {
-  position: relative;
-}
-
-.stackBottom {
-  position: absolute;
-  z-index: 1;
-}
-
-.stackMidBot {
-  position: absolute;
-  z-index: 2;
-}
-
-.stackMidTop {
-  position: absolute;
-  z-index: 3;
-}
-
-.stackTop {
-  position: absolute;
-  z-index: 2;
-}
-
 #stress-Map h1 {
   display: none;
   margin: 0;
@@ -1130,7 +1135,9 @@ img.resizeImgDouble {
 }
 
 #bigd-graph-obj {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   /*
@@ -1146,30 +1153,16 @@ img.resizeImgDouble {
   	width: 70%;
   	height: 80%;	
   */
-}
-#bigd-graph-obj::before {
-  float: left;
-  content: "";
-}
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  #bigd-graph-obj::before {
-    padding-top: 120%;
-  }
-}
-@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  #bigd-graph-obj::before {
-    padding-top: 100%;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  #bigd-graph-obj::before {
-    padding-top: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  #bigd-graph-obj::before {
-    padding-top: 100%;
-  }
+  /*
+  	//Psuedo element used to implement a dynamic height
+  	&::before{
+  		float: left;
+  		content:"";
+  		
+  		// For the different screen configurations determine the correct height (padding-top)
+  		@include setDynamicHeight('single', 100, 100);
+  	}	
+  	*/
 }
 
 #cons-Map h1 {
@@ -1203,33 +1196,11 @@ img.resizeImgDouble {
 }
 
 #cons-Insur-obj {
-  position: relative;
+  position: absolute;
+  top: 20%;
+  left: 0;
   width: 100%;
-  height: 300px;
-}
-#cons-Insur-obj::before {
-  float: left;
-  content: "";
-}
-@media only screen and (max-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  #cons-Insur-obj::before {
-    padding-top: 59.39394%;
-  }
-}
-@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  #cons-Insur-obj::before {
-    padding-top: 49.49495%;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  #cons-Insur-obj::before {
-    padding-top: 49.49495%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  #cons-Insur-obj::before {
-    padding-top: 100%;
-  }
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

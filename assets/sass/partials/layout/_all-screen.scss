@@ -111,6 +111,7 @@ body{
 
 	// Psudeo element to provide dynamic height, based on width & w/h ratio
 	&::before{
+		
 		content: "";
 		float:left;
 

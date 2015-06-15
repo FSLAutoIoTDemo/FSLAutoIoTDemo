@@ -17,13 +17,14 @@
 @import "partials/mapping-scheme";
 
 // Partials - tile specific formatting
+@import "partials/tiles/stacked-elements";
+
 @import "partials/tiles/vehicle_dash/vd-map";
 @import "partials/tiles/vehicle_dash/vd-accel";
 @import "partials/tiles/vehicle_dash/vd-drivercam";
 @import "partials/tiles/vehicle_dash/vd-heart";
 @import "partials/tiles/vehicle_dash/vd-roadcam";
 @import "partials/tiles/vehicle_dash/vd-speed";
-@import "partials/tiles/vehicle_dash/stacked-elements";
 
 @import "partials/tiles/stress_street/stress-map";
 

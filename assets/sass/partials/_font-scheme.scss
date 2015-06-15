@@ -57,16 +57,21 @@ body{
 	margin-top: 5%;
 	margin-bottom: 2%;
 	text-align: center;
+}
 
+// tileTitle, but for double tiles: need to margin % / 2
+.doubleTile{
+	.tileTitle{
+	margin-top: 2.5%;
+	margin-bottom: 2.5%;
+	}
 }
 
 // Use exception for double tiles where the title is not centre-aligned
-.doubleTile{
-	.tileTitle{
+.tileTitleLeft{
 		width:auto;
 		margin-left: 2%;
 		text-align:left;
-	}
 }
 
 // NEED TO ALIGN TEXT ON LEFT FOR ROAD IMG

@@ -1,18 +1,20 @@
+
+
 // Speed Dial
 #cons-Insur-obj{
 
-	position:relative;
+	position:absolute;
+
+	top:20%;
+	left:0;
+
 
 	width: 100%;
+	height: 100%;
 
-	height: 300px;
+	// For the different screen configurations determine the correct height (padding-top)
+//		@include setDynamicHeight('single', 100, 100);
 
-	//Psuedo element used to implement a dynamic height
-	&::before{
-		float: left;
-		content:"";
-		
-		// For the different screen configurations determine the correct height (padding-top)
-		@include setDynamicHeight('double', 100, 100);
-	}	
+//	padding-bottom:100%;
+
 }

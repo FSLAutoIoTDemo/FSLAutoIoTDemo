@@ -532,6 +532,14 @@ body {
   background-color: #e66a08;
 }
 
+#fleet-road-view {
+  background-color: #e66a08;
+}
+
+#fleet-Map {
+  background-color: #9bc0e9;
+}
+
 /*******************************************/
 /* MIXINS								   */
 /*******************************************/
@@ -1707,6 +1715,18 @@ img.resizeImgDouble {
 }
 
 #cons-info h1 {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fleet-road h1 {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+#fleet-Map h1 {
   display: none;
   margin: 0;
   padding: 0;

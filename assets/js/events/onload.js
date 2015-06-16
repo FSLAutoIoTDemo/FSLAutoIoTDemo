@@ -12,6 +12,7 @@ jQuery(document).ready(function($){
 	if($("#cons-page").length){init_cons_page()};
 	if($("#bigd-page").length){init_bigd_page()};
 	if($("#stress-page").length){init_stress_page()};
+	if($("#fleet-page").length){init_fleet_page()};
 	
 
 	// One time event to quickly determine online status

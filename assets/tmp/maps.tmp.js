@@ -14,7 +14,8 @@ function initalizeMaps(a, b, c, d, e, f, g, h, i) {
         strokeOpacity: 1,
         strokeWeight: 2
     }), GLB.carRoute.setMap(GLB.map)), i && (console.log("Here Maps"), GLB.heatmap = new google.maps.visualization.HeatmapLayer({
-        data: []
+        data: [],
+        fitBounds: !0
     }), GLB.heatmap.setMap(GLB.map)), GLB.mapCurrCenter = GLB.map.getCenter(), google.maps.event.addListener(GLB.map, "resize", recentreMaps(GLB.mapCurrCenter));
 }
 
@@ -33,4 +34,15 @@ function updateHeatMapData(a) {
 
 function recentreMaps(a) {
     GLB.map.setCenter(a);
+}
+
+function fitBound(a, b, c, d) {
+    var e = new google.maps.LatLng(c, d), f = new google.maps.LatLng(a, b), g = new google.maps.LatLngBounds(e, f);
+    GLB.map.fitBounds(g);
+}
+
+function findMapBounds(a) {
+    for (var b = a[0].A, c = a[0].F, d = a[0].A, e = a[0].F, f = 0; f < a.length; f++) a[f].A > b && (b = a[f].A), 
+    a[f].F > c && (c = a[f].F), a[f].A < d && (d = a[f].A), a[f].F < e && (e = a[f].F);
+    fitBound(b, c, d, e);
 }

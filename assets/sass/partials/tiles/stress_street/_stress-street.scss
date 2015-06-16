@@ -1,0 +1,32 @@
+.stressImg{
+	@include absPosition();
+	top: 20%;
+	left: 6%;
+	width: 88%;
+    height: auto;
+}
+
+.stressStreet-title{
+	@include absPosition();
+	top: 76%;
+	left: 8%;
+}
+
+.stressStreet{
+	@include absPosition();
+	top: 76%;
+	left: 30%;
+	width:63%;
+}
+
+.stressHeart-title{
+	@include absPosition();
+	top: 88%;
+	right: 45%;
+}
+
+.stressHeart{
+	@include absPosition();
+	top: 88%;
+	left: 58%;
+}

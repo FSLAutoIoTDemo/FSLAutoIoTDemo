@@ -1,0 +1,14 @@
+OnPageLoad: Stessful Street-page
+Here Maps
+Live Mode Detected
+Sock Init - Websocket Initialising:/ws/stress
+Sock Init - Socket Address:wss://fslautoiotdemobackend.mybluemix.net/ws/stress
+Sock Open - Connected to websocket: /ws/stress
+Sock OnMessage - Data received from socket: /ws/stress
+Clearing watchog
+Sock OnMessage - Object Data follows...
+Object {locations: Array[50], mostStressful: Array[4]}
+Updated Stressful Street Data
+Updated Heat Map Layer
+function (){return this[a]},function (){return this[a]}
+XHR finished loading: GET "https://www.google.com/maps/vt?pb=!1m4!1m3!1i15!2i16003!3i10243!1m4!1m3!1i1…8!12m4!1e52!2m2!1sentity_class!2s0!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e3".

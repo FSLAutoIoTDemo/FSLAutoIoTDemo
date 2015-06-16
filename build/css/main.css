@@ -1310,6 +1310,50 @@ img.resizeImgDouble {
   padding: 0;
 }
 
+.stressImg {
+  position: absolute;
+  margin: 0;
+  top: 20%;
+  left: 6%;
+  width: 88%;
+  height: auto;
+}
+
+.stressStreet-title {
+  position: absolute;
+  margin: 0;
+  top: 76%;
+  left: 8%;
+}
+
+.stressStreet {
+  position: absolute;
+  margin: 0;
+  top: 76%;
+  left: 30%;
+  width: 63%;
+}
+
+.stressHeart-title {
+  position: absolute;
+  margin: 0;
+  top: 88%;
+  right: 45%;
+}
+
+.stressHeart {
+  position: absolute;
+  margin: 0;
+  top: 88%;
+  left: 58%;
+}
+
+#stress-info-text h1 {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
 #bigd-graph-obj {
   position: absolute;
   margin: 0;

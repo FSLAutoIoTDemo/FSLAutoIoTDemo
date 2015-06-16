@@ -1,0 +1,27 @@
+OnPageLoad: Stessful Street-page
+Here Maps
+Live Mode Detected
+Sock Init - Websocket Initialising:/ws/stress
+Sock Init - Socket Address:wss://fslautoiotdemobackend.mybluemix.net/ws/stress
+Sock Open - Connected to websocket: /ws/stress
+XHR finished loading: GET "https://www.google.com/maps/vt?pb=!1m4!1m3!1i15!2i16003!3i10243!1m4!1m3!1i1…8!12m4!1e52!2m2!1sentity_class!2s0!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!4e3".
+Sock OnMessage - Data received from socket: /ws/stress
+Clearing watchog
+Sock OnMessage - Object Data follows...
+Object {locations: Array[50], mostStressful: Array[4]}
+Updated Stressful Street Data
+Updated Heat Map Layer
+Sock OnMessage - Data received from socket: /ws/stress
+Clearing watchog
+Sock OnMessage - Object Data follows...
+Object {locations: Array[50], mostStressful: Array[4]}locations: Array[50]0: Object1: Object2: Object3: Object4: Object5: Object6: Object7: Object8: Object9: Object10: Object11: Object12: Object13: Object14: Object15: Object16: Object17: Object18: Object19: Object20: Object21: Object22: Object23: Object24: Object25: Object26: Object27: Object28: Object29: Object30: Object31: Object32: Object33: Object34: Object35: Object36: Object37: Object38: Object39: Object40: Object41: Object42: Object43: Object44: Object45: Object46: Object47: Object48: Object49: Objectlength: 50__proto__: Array[0]mostStressful: Array[4]__proto__: Object
+Updated Stressful Street Data
+Updated Heat Map Layer
+temp1
+SSFleet {locations: Array[50], mostStressful: Array[4]}locations: Array[50]0: rfA: 55.75052F: -4.160939999999982__proto__: rf1: rf2: rf3: rf4: rf5: rf6: rf7: rf8: rf9: rf10: rf11: rf12: rf13: rf14: rf15: rf16: rf17: rf18: rf19: rf20: rf21: rf22: rf23: rf24: rf25: rf26: rf27: rf28: rf29: rf30: rf31: rf32: rf33: rf34: rf35: rf36: rf37: rf38: rf39: rf40: rf41: rf42: rf43: rf44: rf45: rf46: rf47: rf48: rf49: rflength: 50__proto__: Array[0]mostStressful: Array[4]__proto__: ObjectmodifyStressCams: () {modifyStressMap: () {processSocketStress: (a) {__proto__: Fleet
+copy(SSFleet)
+undefined
+temp2
+55.75052
+copy(A)
+undefined

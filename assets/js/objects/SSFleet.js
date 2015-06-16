@@ -9,6 +9,11 @@ SSFleet.prototype.modifyStressMap = function(){
 	
 	//Update heat map
 	updateHeatMapData(this.locations);
+
+
+	// Calculate new bounds for the map (determine new sw / ne corners)
+	findMapBounds(this.locations);
+
 }
 
 // Update the VD Page Map with Vehicle object data

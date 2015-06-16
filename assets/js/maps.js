@@ -45,7 +45,8 @@ function initalizeMaps(htmlId,lat,lng,_zoom,mapType,marker,markerText,route,heat
  		console.log('Here Maps');
  		// Create heatmap, initialised with no points
  		GLB.heatmap = new google.maps.visualization.HeatmapLayer({
-                data: []
+                data: [],
+                fitBounds: true
         });
 
 		GLB.heatmap.setMap(GLB.map);
@@ -98,4 +99,41 @@ function recentreMaps(latlng){
 
 	// Centre map to new position
 	GLB.map.setCenter(latlng);
+}
+
+// Fits map viewport within a specific bound of sw/ne
+function fitBound(latn,lnge,lats,lngw){
+	var sw = new google.maps.LatLng(lats,lngw);
+	var ne = new google.maps.LatLng(latn,lnge);
+	var bounds = new google.maps.LatLngBounds(sw,ne);
+	
+	GLB.map.fitBounds(bounds);
+}
+
+
+// Finds ne/sw corners of map, then updates map to fit to these bounds
+function findMapBounds(locations){
+	var maxLat = locations[0].A;
+	var maxLng = locations[0].F;
+
+	var minLat = locations[0].A;
+	var minLng = locations[0].F;
+
+	for(var i=0; i<locations.length; i++){
+	
+		if (locations[i].A > maxLat)
+				maxLat = locations[i].A;
+
+		if (locations[i].F > maxLng)
+				maxLng = locations[i].F;
+
+		if (locations[i].A < minLat)
+				minLat = locations[i].A;
+
+		if (locations[i].F < minLng)
+				minLng = locations[i].F;
+	}
+
+	// Fit map to new bounds
+	fitBound(maxLat,maxLng,minLat,minLng);
 }

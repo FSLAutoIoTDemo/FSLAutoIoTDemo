@@ -9,3 +9,11 @@ function getQueryVariable(a) {
     }
     return !1;
 }
+
+function updateText(a, b) {
+    $(a).text(b);
+}
+
+function updateImg(a, b) {
+    $(a).attr("src", b);
+}

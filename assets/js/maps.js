@@ -9,7 +9,7 @@
 // --> route: Route trail on/off. True=ON, False:OFF
 // --> heat: Heat map on/off. True=ON, False:OFF
 // --> heatLoc: Heat Map locations (array of Google LatLng objects)
-function initalizeMaps(htmlId,lat,lng,_zoom,mapType,marker,markerText,route,heat) {
+function initalizeMaps(htmlId,lat,lng,_zoom,mapType,marker,markerText,route,heat,fleet) {
 	var myLatlng = new google.maps.LatLng(lat,lng);
 
 	var mapOptions = {
@@ -52,6 +52,10 @@ function initalizeMaps(htmlId,lat,lng,_zoom,mapType,marker,markerText,route,heat
 		GLB.heatmap.setMap(GLB.map);
  	}
 	
+ 	if(fleet){
+ 		mapsInitFleetMarkers();
+ 	}
+
 	// Update current centre position
 	GLB.mapCurrCenter = GLB.map.getCenter();
 
@@ -79,8 +83,6 @@ function updateMap(lat,lng,path){
 		var path = GLB.carRoute.getPath();		// Assign route to 'path'
 	        //remove oldest entry
 	        if (path.length >9) {
-	            //temp = path.getArray();
-	            //temp.shift();
 	            (path.getArray()).shift();	// Clear trailing entry if >9 entires
 	        }
 	    path.push(myLatlng);				// Update path with new location
@@ -137,3 +139,84 @@ function findMapBounds(locations){
 	// Fit map to new bounds
 	fitBound(maxLat,maxLng,minLat,minLng);
 }
+
+// Add markers & path for all valid vehicles
+function mapsInitFleetMarkers(){
+
+	// For each vehicle, check if marker should be set
+	for (var i=0;i<GLB.MaxVeh; i++){
+		// If marker is to be set
+		if(GLB.fleet.vehicles[i].marker.valid == true){
+			// Create new marker
+			GLB.fleet.vehicles[i].marker.markerObj = addFleetMarker(GLB.fleet.vehicles[i].marker)
+	  		
+	  		// Add marker to the map
+	  		GLB.fleet.vehicles[i].marker.markerObj.setMap(GLB.map);
+
+	  		// Create new path
+	  		GLB.fleet.vehicles[i].marker.carRoute = new google.maps.Polyline({
+		        geodesic: true,
+		        strokeColor: GLB.mapStrokeColour,
+		        strokeOpacity: 1.0,
+		        strokeWeight: 2
+	   		 });
+        
+        	// Add path to map
+ 	   		GLB.fleet.vehicles[i].marker.carRoute.setMap(GLB.map);
+
+ 	   		
+ 	   		// Add onclick event to change the vid and load new vehciles data
+ 	   		var _vid=i;			// Set current vehicle ID
+ 	   		google.maps.event.addListener(GLB.fleet.vehicles[i].marker.markerObj, 'click', function() {GLB.fleet.loadNewVehicle(_vid);});
+	  	}	  	
+	}
+}
+
+// Remove old marker and update to new position
+function mapsUpdateFleetMarkers(_marker,vid){
+
+	// Remove old marker
+	_marker.markerObj.setMap(null);
+
+	// Create updated marker object
+	_marker.markerObj = addFleetMarker(_marker)
+
+	// Update the map
+	_marker.markerObj.setMap(GLB.map);
+
+	// Update path on map
+	var path = _marker.carRoute.getPath();		// Assign route to 'path'
+	        //remove oldest entry
+	        if (path.length >40) {
+	            (path.getArray()).shift();	// Clear trailing entry if >20 entires
+	        }
+	path.push(_marker.latlng);				// Update path with new location
+
+
+	// Add onclick event to change the vid and load new vehciles data
+	google.maps.event.addListener(_marker.markerObj, 'click', function() {GLB.fleet.loadNewVehicle(vid);});
+}
+
+function addFleetMarker(_marker){
+
+	var mapMarker = new google.maps.Marker({
+	    	position: _marker.latlng,
+	    	map: GLB.map,
+	    	title: _marker.markerText,
+	    	icon: _marker.icon
+	});
+
+	return mapMarker;
+}
+
+
+/*
+GLB.carRoute = new google.maps.Polyline({
+	        geodesic: true,
+	        strokeColor: GLB.mapStrokeColour,
+	        strokeOpacity: 1.0,
+	        strokeWeight: 2
+	    });
+        
+ 	   GLB.carRoute.setMap(GLB.map);
+*/

@@ -5,35 +5,41 @@ function init_fleet_page(){
 	console.log("OnPageLoad: Fleet-page");
 
 	// Set Page ID to Stressful Street
-	GLB.pgID = GLB.PGSTRESS;
+	GLB.pgID = GLB.PGFLEET;
+
+	// Init Vehicle ID for showing image/info
+	GLB.currVID = 6;
 
 	// Initialise SSFleet object
-	GLB.fleet=new SSFleet();
+	GLB.fleet = new ALLFleet();
 
 	// -- Load map first to reduce page load times
 	// Initial position (EKB)
 	var initLat = 55.748223;
 	var initLng = -4.168670;
 
+	// Initialise 10 vehicles, using the VDvehicle object
+	for (var i=0; i<10;i++){
+		GLB.fleet.vehicles[i] = new VDvehicle;
+		var vehicleLetter = String.fromCharCode(65+i);
+		GLB.fleet.vehicles[i].marker = new MarkerOptions(initLat,initLng,true,"imgs/icons/red_Marker"+vehicleLetter+".png",vehicleLetter);
+	}
+	
 	// Load Hybrid Map, with heat overlay
-	initalizeMaps('#fleet-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, false, "", true, false);
+	initalizeMaps('#fleet-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, false, "", false, false,true);
 
-	// Query the variables in the URL and load the appropriate mode
-	GLB.currVID = getQueryVariable("vid");
+	// Create and Initialise the required websockets
+	var sockAddrArgs = [GLB.SOCKROOT + GLB.SOCKETVEHALL,
+					GLB.SOCKROOT + GLB.SOCKETDEBUG,
+					GLB.SOCKROOT + GLB.SOCKETVEH[GLB.currVID]]
 
-	// Update the Nav menu to include the current vehicle.
-	navMenuStatusSetVeh();
-
-	// If live (vid=50), load websocket
-	if((GLB.currVID) == 50){
-		console.log('Live Mode Detected');
-		GLB.sockAddr = GLB.SOCKROOT + GLB.SOCKETSTRESS;
-		init_websocket(GLB.SOCKETSTRESS, GLB.sockAddr);
-	}
-	// Else, load demo mode
-	else{
-//		init_vdDemo();		//#####TO ADD LATER
-		console.log('Debug Mode Detected');
-	}
+	var sockIDArgs = [GLB.SOCKETVEHALL,
+					GLB.SOCKETDEBUG,
+					GLB.SOCKETVEH[GLB.currVID]]					
+	
+	configureMultiSockets(3,sockAddrArgs,sockIDArgs);
 
 }
+
+
+

@@ -1,11 +1,11 @@
-function initalizeMaps(a, b, c, d, e, f, g, h, i) {
-    var j = new google.maps.LatLng(b, c), k = {
+function initalizeMaps(a, b, c, d, e, f, g, h, i, j) {
+    var k = new google.maps.LatLng(b, c), l = {
         zoom: d,
-        center: j,
+        center: k,
         mapTypeId: e
     };
-    GLB.map = new google.maps.Map($(a)[0], k), f && (GLB.mapMarker = new google.maps.Marker({
-        position: j,
+    GLB.map = new google.maps.Map($(a)[0], l), f && (GLB.mapMarker = new google.maps.Marker({
+        position: k,
         map: GLB.map,
         title: g
     })), h && (GLB.carRoute = new google.maps.Polyline({
@@ -16,7 +16,8 @@ function initalizeMaps(a, b, c, d, e, f, g, h, i) {
     }), GLB.carRoute.setMap(GLB.map)), i && (console.log("Here Maps"), GLB.heatmap = new google.maps.visualization.HeatmapLayer({
         data: [],
         fitBounds: !0
-    }), GLB.heatmap.setMap(GLB.map)), GLB.mapCurrCenter = GLB.map.getCenter(), google.maps.event.addListener(GLB.map, "resize", recentreMaps(GLB.mapCurrCenter));
+    }), GLB.heatmap.setMap(GLB.map)), j && mapsInitFleetMarkers(), GLB.mapCurrCenter = GLB.map.getCenter(), 
+    google.maps.event.addListener(GLB.map, "resize", recentreMaps(GLB.mapCurrCenter));
 }
 
 function updateMap(a, b, c) {
@@ -45,4 +46,38 @@ function findMapBounds(a) {
     for (var b = a[0].A, c = a[0].F, d = a[0].A, e = a[0].F, f = 0; f < a.length; f++) a[f].A > b && (b = a[f].A), 
     a[f].F > c && (c = a[f].F), a[f].A < d && (d = a[f].A), a[f].F < e && (e = a[f].F);
     fitBound(b, c, d, e);
+}
+
+function mapsInitFleetMarkers() {
+    for (var a = 0; a < GLB.MaxVeh; a++) if (1 == GLB.fleet.vehicles[a].marker.valid) {
+        GLB.fleet.vehicles[a].marker.markerObj = addFleetMarker(GLB.fleet.vehicles[a].marker), 
+        GLB.fleet.vehicles[a].marker.markerObj.setMap(GLB.map), GLB.fleet.vehicles[a].marker.carRoute = new google.maps.Polyline({
+            geodesic: !0,
+            strokeColor: GLB.mapStrokeColour,
+            strokeOpacity: 1,
+            strokeWeight: 2
+        }), GLB.fleet.vehicles[a].marker.carRoute.setMap(GLB.map);
+        var b = a;
+        google.maps.event.addListener(GLB.fleet.vehicles[a].marker.markerObj, "click", function() {
+            GLB.fleet.loadNewVehicle(b);
+        });
+    }
+}
+
+function mapsUpdateFleetMarkers(a, b) {
+    a.markerObj.setMap(null), a.markerObj = addFleetMarker(a), a.markerObj.setMap(GLB.map);
+    var c = a.carRoute.getPath();
+    c.length > 40 && c.getArray().shift(), c.push(a.latlng), google.maps.event.addListener(a.markerObj, "click", function() {
+        GLB.fleet.loadNewVehicle(b);
+    });
+}
+
+function addFleetMarker(a) {
+    var b = new google.maps.Marker({
+        position: a.latlng,
+        map: GLB.map,
+        title: a.markerText,
+        icon: a.icon
+    });
+    return b;
 }

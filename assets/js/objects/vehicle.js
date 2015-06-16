@@ -5,7 +5,8 @@ function Vehicle(){
 	var id = null;
 	var time = null;
 	var vehicle = 0;
-	
+	var onlineStatus = "Red";		// Vehicle is offline by default
+
 	// Default all display text to "--"
 	var speed = "--";		// Speed
 	var accel = "--";		// Acceleration
@@ -24,6 +25,8 @@ function Vehicle(){
 
 	var driverimg = "imgs/fill.svg";		// Driver Camera
 	var roadimg = "imgs/fill.svg";			// Road Camera
+
+	var marker = null;
 }
 
 //######### VEHICLE obj - PROTOTYPES ###########################/

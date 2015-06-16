@@ -28,3 +28,14 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+
+
+// Function that updates the text of an HTML ID
+function updateText(ID,_text){
+	$(ID).text(_text);
+}
+
+// Function that updates the src of an HTML img
+function updateImg(ID,_src){
+	$(ID).attr('src', _src);
+}

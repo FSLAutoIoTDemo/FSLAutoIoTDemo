@@ -15,6 +15,9 @@ function Fleet(){
 
 	// Stores the vehicle object where the event took place
 	var eventVehicle = null;
+
+	// Array of all 10 vehicles in the fleet
+	this.vehicles = [];
 }
 
 

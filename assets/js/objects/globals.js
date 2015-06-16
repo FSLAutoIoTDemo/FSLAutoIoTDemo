@@ -9,6 +9,7 @@ GLB.watchdogLimitAmber = 3;			// Amber Limit (40seconds)
 GLB.watchdogLimitRed = 11;			// Red Limit (120seconds)
 
 GLB.currVID = 100;			// Vehicle ID - default to 100 (demo mode).
+GLB.MaxVeh = 10;			// Max number of live vehicles
 
 // CONSTANT definitions for page IDs
 GLB.pgID = null;			// Page ID
@@ -16,6 +17,7 @@ GLB.PGVD = 'pgVD';
 GLB.PGCONS = 'pgCONS';
 GLB.PGSTRESS = 'pgSTRESS';
 GLB.PGBIGD = 'pgBIGD';
+GLB.PGFLEET = 'pgFLEET';
 
 // Initialise Global vars
 GLB.map = null;						// Map object
@@ -61,6 +63,9 @@ GLB.loopCount = GLB.dataPoints;
 GLB.socket = null;			// Current socket object
 GLB.currSOCK = null;		// Current socket in session
 GLB.sockAddr = null;		// Socket Address
+
+GLB.multiSocket = [];			// Array of socket objects
+
 GLB.SOCKROOT  = "wss://fslautoiotdemobackend.mybluemix.net"		// Use wss: (443) (vs ws: (80)) to get past mobile proxy
 
 GLB.SOCKETVEH = ['/ws/vehicleA',
@@ -74,8 +79,11 @@ GLB.SOCKETVEH = ['/ws/vehicleA',
 				'/ws/vehicleI',
 				'/ws/vehicleJ'];
 
+GLB.SOCKETVEHALL = '/ws/vehicleAll';
 GLB.SOCKETSTRESS = '/ws/stress';
 GLB.SOCKETBIGD = '/ws/bigdata';
+GLB.SOCKETDEBUG = '/ws/debug';
+
 
 GLB.SOCKETSTRESSREQ = "request!";
 GLB.SOCKETBIGDFLEETREQ = "Fleet Data Request!";

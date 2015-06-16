@@ -1720,12 +1720,53 @@ img.resizeImgDouble {
   padding: 0;
 }
 
-.fleet-road h1 {
-  display: none;
+#fleet-speed-text {
+  position: absolute;
   margin: 0;
-  padding: 0;
+  bottom: 3%;
+  right: 60%;
 }
 
+#fleet-speed-data {
+  position: absolute;
+  margin: 0;
+  bottom: 3%;
+  left: 45%;
+}
+
+#fleet-speed-mph {
+  position: absolute;
+  margin: 0;
+  bottom: 3%;
+  left: 55%;
+}
+
+@media only screen and (max-width: 600px) {
+  #fleet-speed-text {
+    display: none;
+  }
+
+  #fleet-speed-data {
+    display: none;
+  }
+
+  #fleet-speed-mph {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  #fleet-speed-text {
+    display: none;
+  }
+
+  #fleet-speed-data {
+    display: none;
+  }
+
+  #fleet-speed-mph {
+    display: none;
+  }
+}
 #fleet-Map h1 {
   display: none;
   margin: 0;

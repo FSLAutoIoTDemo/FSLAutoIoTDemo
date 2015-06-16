@@ -44,7 +44,7 @@ Vehicle.prototype.processSocketVD = function(dIn){
 	// Then, test to see whether input is data / roadIMG / driverIMG
 	else if(dIn.info == 'data'){
 		// Update VDvehicle object with Socket data
-		this.updateData(dIn._id, dIn.vehicle, dIn.speed, "", dIn.heart, dIn.fGax, dIn.fGay, dIn.fGaz, dIn.lat, dIn.lng, dIn.insurance)
+		this.updateData(dIn._id, dIn.vehicle, dIn.speed, "", dIn.heart, dIn.fGax, dIn.fGay, dIn.fGaz, dIn.lat, dIn.lng, dIn.insurance);
 		
 		// Push changes into the HTML
 		this.modifyHtmlText();

@@ -1,4 +1,5 @@
 function Fleet() {
+    this.vehicles = [];
 }
 
 Fleet.prototype.updateStessData = function(a, b) {

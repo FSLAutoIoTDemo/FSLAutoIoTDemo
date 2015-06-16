@@ -1,8 +1,35 @@
-// Do not display the header for this tile
-.fleet-road h1{
-	display:none;
-	margin:0;
-	padding:0;
+$fleet-speed-horiz: 3%;
+
+// Speed Tite
+#fleet-speed-text{
+	@include absPosition();
+	bottom: $fleet-speed-horiz;
+	right: 60%;
 }
 
+// Speed Data
+#fleet-speed-data{
+	@include absPosition();
+	bottom: $fleet-speed-horiz;
+	left: 45%;
+}
 
+//Speed MPG
+#fleet-speed-mph{
+	@include absPosition();
+	bottom: $fleet-speed-horiz;
+	left: 55%;
+}
+
+// Hide Speed if on med or small screens
+@media #{$sml-screen}{
+		#fleet-speed-text{display:none;}
+		#fleet-speed-data{display:none;}
+		#fleet-speed-mph{display:none;}
+	}
+
+@media #{$med-screen}{
+		#fleet-speed-text{display:none;}
+		#fleet-speed-data{display:none;}
+		#fleet-speed-mph{display:none;}
+	}

@@ -1723,24 +1723,47 @@ img.resizeImgDouble {
 #fleet-speed-text {
   position: absolute;
   margin: 0;
-  bottom: 3%;
   right: 60%;
 }
 
 #fleet-speed-data {
   position: absolute;
   margin: 0;
-  bottom: 3%;
   left: 45%;
 }
 
 #fleet-speed-mph {
   position: absolute;
   margin: 0;
-  bottom: 3%;
   left: 55%;
 }
 
+@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
+  #fleet-speed-text {
+    bottom: 3%;
+  }
+
+  #fleet-speed-data {
+    bottom: 3%;
+  }
+
+  #fleet-speed-mph {
+    bottom: 3%;
+  }
+}
+@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
+  #fleet-speed-text {
+    bottom: 10%;
+  }
+
+  #fleet-speed-data {
+    bottom: 10%;
+  }
+
+  #fleet-speed-mph {
+    bottom: 10%;
+  }
+}
 @media only screen and (max-width: 600px) {
   #fleet-speed-text {
     display: none;

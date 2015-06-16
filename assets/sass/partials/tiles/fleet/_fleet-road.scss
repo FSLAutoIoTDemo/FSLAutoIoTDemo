@@ -1,24 +1,34 @@
-$fleet-speed-horiz: 3%;
+$fleet-speed-horiz-wide: 3%;
+$fleet-speed-horiz-std: 10%;
 
 // Speed Tite
 #fleet-speed-text{
 	@include absPosition();
-	bottom: $fleet-speed-horiz;
 	right: 60%;
 }
 
 // Speed Data
 #fleet-speed-data{
 	@include absPosition();
-	bottom: $fleet-speed-horiz;
 	left: 45%;
 }
 
 //Speed MPG
 #fleet-speed-mph{
 	@include absPosition();
-	bottom: $fleet-speed-horiz;
 	left: 55%;
+}
+
+@media #{$wide-screen}{
+	#fleet-speed-text{bottom: $fleet-speed-horiz-wide;}
+	#fleet-speed-data{bottom: $fleet-speed-horiz-wide;}
+	#fleet-speed-mph{bottom: $fleet-speed-horiz-wide;}
+}
+
+@media #{$std-screen}{
+	#fleet-speed-text{bottom: $fleet-speed-horiz-std;}
+	#fleet-speed-data{bottom: $fleet-speed-horiz-std;}
+	#fleet-speed-mph{bottom: $fleet-speed-horiz-std;}
 }
 
 // Hide Speed if on med or small screens

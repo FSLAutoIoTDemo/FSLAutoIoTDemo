@@ -5,27 +5,32 @@ function configureMultiSockets(a, b, c) {
 }
 
 function open_multiWebsocket() {
-    for (var a = 0; a < GLB.multiSocket.length; a++) 1 == GLB.multiSocket[a].sockOpenReq && (1 == GLB.multiSocket[a].sockStatus ? GLB.multiSocket[a].socket.close() : (GLB.multiSocket[a].socket = new WebSocket(GLB.multiSocket[a].sockAddrReq), 
-    GLB.multiSocket[a].sockAddr = GLB.multiSocket[a].sockAddrReq, GLB.multiSocket[a].sockOpenReq = !1, 
-    console.log("Sock Init - Websocket Initialising:" + GLB.multiSocket[a].sockID), 
-    console.log("Sock Init - Socket Address:" + GLB.multiSocket[a].sockAddr), GLB.multiSocket[a].socket.onopen = function(a) {
-        multiSockOnOpen(a);
-    }, GLB.multiSocket[a].socket.onclose = function(a) {
-        multiSockOnClose(a);
-    }, GLB.multiSocket[a].socket.onmessage = function(a) {
-        multiSockOnMessage(a);
-    }, GLB.multiSocket[a].socket.onerror = function(a) {
-        multiSockOnError(a);
-    }));
+    for (var a = 0; a < GLB.multiSocket.length; a++) if (1 == GLB.multiSocket[a].sockOpenReq) if (1 == GLB.multiSocket[a].sockStatus) GLB.multiSocket[a].socket.close(); else {
+        console.log("Opening new socket for VID=" + a), GLB.multiSocket[a].socket = new WebSocket(GLB.multiSocket[a].sockAddrReq), 
+        GLB.multiSocket[a].sockAddr = GLB.multiSocket[a].sockAddrReq, GLB.multiSocket[a].sockOpenReq = !1, 
+        console.log("Sock Init - Websocket Initialising:" + GLB.multiSocket[a].sockID), 
+        console.log("Sock Init - Socket Address:" + GLB.multiSocket[a].sockAddr);
+        var b = a;
+        GLB.multiSocket[a].socket.onopen = function(a) {
+            multiSockOnOpen(a, b);
+        }, GLB.multiSocket[a].socket.onclose = function(a) {
+            multiSockOnClose(a, b);
+        }, GLB.multiSocket[a].socket.onmessage = function(a) {
+            multiSockOnMessage(a, b);
+        }, GLB.multiSocket[a].socket.onerror = function(a) {
+            multiSockOnError(a, b);
+        };
+    }
 }
 
-function multiSockOnOpen(a) {
-    console.log("Sock Open - Connected to websocket: " + a.currentTarget.url), a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETSTRESS ? GLB.sock.send(GLB.SOCKETSTRESSREQ) : a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETBIGD && GLB.sock.send(GLB.SOCKETBIGDFLEETREQ);
+function multiSockOnOpen(a, b) {
+    console.log("Sock Open - Connected to websocket: " + a.currentTarget.url), GLB.multiSocket[b].sockStatus = !0, 
+    a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETSTRESS ? GLB.sock.send(GLB.SOCKETSTRESSREQ) : a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETBIGD && GLB.sock.send(GLB.SOCKETBIGDFLEETREQ);
 }
 
-function multiSockOnClose(a) {
-    console.log("Sock Close - Websocket Connection closed: " + a.currentTarget.url), 
-    open_multiWebsocket();
+function multiSockOnClose(a, b) {
+    a && console.log("Sock Close - Websocket Connection closed: " + a.currentTarget.url), 
+    GLB.multiSocket[b].sockStatus = !1, open_multiWebsocket();
 }
 
 function multiSockOnError(a) {

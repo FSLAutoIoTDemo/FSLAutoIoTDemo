@@ -16,9 +16,9 @@ ALLFleet.prototype.updateDriverText = function(vid){
 }
 
 // Update Driver Image
-ALLFleet.prototype.updateDriverImg = function(vid){
+ALLFleet.prototype.updateRoadImg = function(vid){
 
-	var img = this.vehicles[vid].driverimg;
+	var img = this.vehicles[vid].roadimg;
 	if(img)
 		updateImg('#fleet-RoadCam-img', img);
 	else{
@@ -48,12 +48,18 @@ ALLFleet.prototype.loadNewVehicle = function(vid){
 	// Update current vehicle ID to clicked vehicle
 	GLB.currVID = vid;
 
+	// Close existing vehicle websocket & request to open new socket
+	GLB.multiSocket[2].sockOpenReq = true;
+	GLB.multiSocket[2].sockAddrReq = GLB.SOCKROOT + GLB.SOCKETVEH[vid];
+	open_multiWebsocket();
+	//multiSockOnClose(null,2);
+
 	// Update the text/image to match the new vehicle
 	// Uodate text
 	this.updateDriverText(GLB.currVID);
 
 	// Push changes into the HTML
-	this.updateDriverImg(GLB.currVID);
+	this.updateRoadImg(GLB.currVID);
 }
 
 
@@ -79,8 +85,6 @@ ALLFleet.prototype.processSocketFLEETvehicle = function(dIn){
 			this.updateDriverText(GLB.currVID);
 
 			
-
-			
 		}
 
 		// Update Marker Position
@@ -100,7 +104,7 @@ ALLFleet.prototype.processSocketFLEETvehicle = function(dIn){
 		if(this.vehicles[dIn.vehicle].vehicle == GLB.currVID){
 			
 			// Push changes into the HTML
-			this.updateDriverImg(GLB.currVID);
+			this.updateRoadImg(GLB.currVID);
 
 		}
 		console.log('Road Image Received for Fleet Page');

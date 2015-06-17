@@ -21,21 +21,19 @@ function configureMultiSockets(noSockets,_sockAddrReq,_sockID){
 // Initialise sockets
 // --> socketID - Array of 
 function open_multiWebsocket(){
-
 	// Determine number of websockets requested & create new sockets
 	for (var i=0; i < GLB.multiSocket.length; i++){
 
 		// If this socket object has a request to open a socket
 		if(GLB.multiSocket[i].sockOpenReq == true){
-
 			// Check to see if socket is already open
 			if(GLB.multiSocket[i].sockStatus == true){
-				
 				// Close the socket
 				GLB.multiSocket[i].socket.close();
 			}
 			// Assume socket is closed & wants to be opened
 			else{
+				console.log("Opening new socket for VID=" + i);
 				// Create new websocket
 				GLB.multiSocket[i].socket = new WebSocket(GLB.multiSocket[i].sockAddrReq);
 				
@@ -47,11 +45,14 @@ function open_multiWebsocket(){
 				console.log('Sock Init - Websocket Initialising:' + GLB.multiSocket[i].sockID);
 				console.log('Sock Init - Socket Address:' + GLB.multiSocket[i].sockAddr);
 
+				// Store current socket index
+				var sockIdx = i;
+
 				// Bind socket events to functions
-				GLB.multiSocket[i].socket.onopen = function(evt) { multiSockOnOpen(evt) }; 
-				GLB.multiSocket[i].socket.onclose = function(evt) { multiSockOnClose(evt) }; 
-				GLB.multiSocket[i].socket.onmessage = function(evt) { multiSockOnMessage(evt) };
-				GLB.multiSocket[i].socket.onerror = function(evt) { multiSockOnError(evt) };
+				GLB.multiSocket[i].socket.onopen = function(evt) { multiSockOnOpen(evt,sockIdx) }; 
+				GLB.multiSocket[i].socket.onclose = function(evt) { multiSockOnClose(evt,sockIdx) }; 
+				GLB.multiSocket[i].socket.onmessage = function(evt) { multiSockOnMessage(evt,sockIdx) };
+				GLB.multiSocket[i].socket.onerror = function(evt) { multiSockOnError(evt,sockIdx) };
 			}
 		}
 	}
@@ -59,9 +60,12 @@ function open_multiWebsocket(){
 
 
 
-function multiSockOnOpen(evt){ 
+function multiSockOnOpen(evt,idx){ 
 
 	console.log("Sock Open - Connected to websocket: " + evt.currentTarget.url);
+
+	// Set socket status to open
+	GLB.multiSocket[idx].sockStatus = true;
 
 	if(evt.currentTarget.url== (GLB.SOCKROOT + GLB.SOCKETSTRESS))
 	{
@@ -79,8 +83,12 @@ function multiSockOnOpen(evt){
 
 
 // On closing a socket...
-function multiSockOnClose(evt) {
-	console.log("Sock Close - Websocket Connection closed: " + evt.currentTarget.url);
+function multiSockOnClose(evt,idx) {
+	if(evt)
+		console.log("Sock Close - Websocket Connection closed: " + evt.currentTarget.url);
+
+	// Set socket status to open
+	GLB.multiSocket[idx].sockStatus = false;
 
 	// Callback to open any sockets with pending open request
 	// --> i.e. socket.close may have been from socket looking to change addr

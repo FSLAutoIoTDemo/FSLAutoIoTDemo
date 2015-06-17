@@ -17,10 +17,10 @@ inherit(ALLFleet, Fleet), ALLFleet.prototype.updateDriverText = function(a) {
 }, ALLFleet.prototype.processSocketFLEETvehicle = function(a) {
     a.vehicle > 10 || a.vehicle < 0 ? (console.log("### WARNING ####"), console.log("Data received for Vehicle: " + a.vehicle), 
     console.log("Page is expecting data from Vehicle: " + this.vehicle)) : "data" == a.info ? (this.vehicles[a.vehicle].updateData(a._id, a.vehicle, a.speed, "", a.heart, a.fGax, a.fGay, a.fGaz, a.lat, a.lng, a.insurance), 
-    this.vehicles[a.vehicle].vehicle == GLB.currVID && (this.updateDriverText(GLB.currVID), 
-    this.vehicles[a.vehicle].marker.updateMarkerPos(a.lat, a.lng), this.updateMapMarker(GLB.currVID)), 
-    console.log("Data Received for VD Page")) : "image_road" == a.info ? (this.vehicles[a.vehicle].updateRoadImg(a.image), 
+    this.vehicles[a.vehicle].vehicle == GLB.currVID && this.updateDriverText(GLB.currVID), 
+    this.vehicles[a.vehicle].marker.updateMarkerPos(a.lat, a.lng), this.updateMapMarker(a.vehicle), 
+    console.log("Data Received for Fleet Page")) : "image_road" == a.info ? (this.vehicles[a.vehicle].updateRoadImg(a.image), 
     this.vehicles[a.vehicle].vehicle == GLB.currVID && this.updateDriverImg(GLB.currVID), 
-    console.log("Road Image Received for VD Page")) : "image_driver" == a.info ? (this.vehicles[a.vehicle].updateDriverImg(a.image), 
-    console.log("Driver Image Received for VD Page")) : console.log("Unknown Packet received for VD Page");
+    console.log("Road Image Received for Fleet Page")) : "image_driver" == a.info ? (this.vehicles[a.vehicle].updateDriverImg(a.image), 
+    console.log("Driver Image Received for Fleet Page")) : console.log("Unknown Packet received for VD Page");
 };

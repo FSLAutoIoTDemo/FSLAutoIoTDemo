@@ -78,13 +78,18 @@ ALLFleet.prototype.processSocketFLEETvehicle = function(dIn){
 			// Push changes into the HTML
 			this.updateDriverText(GLB.currVID);
 
-			// Update Marker Position
-			this.vehicles[dIn.vehicle].marker.updateMarkerPos(dIn.lat,dIn.lng);
+			
 
-			// Update Map
-			this.updateMapMarker(GLB.currVID);
+			
 		}
-			console.log('Data Received for VD Page');
+
+		// Update Marker Position
+		this.vehicles[dIn.vehicle].marker.updateMarkerPos(dIn.lat,dIn.lng);
+		
+		// Update Map
+		this.updateMapMarker(dIn.vehicle);
+
+		console.log('Data Received for Fleet Page');
 	}
 	else if (dIn.info == 'image_road')
 	{
@@ -98,14 +103,14 @@ ALLFleet.prototype.processSocketFLEETvehicle = function(dIn){
 			this.updateDriverImg(GLB.currVID);
 
 		}
-		console.log('Road Image Received for VD Page');
+		console.log('Road Image Received for Fleet Page');
 	}
 	else if (dIn.info == 'image_driver')
 	{
 		// Update VDvehicle object with Driver Img src
 		this.vehicles[dIn.vehicle].updateDriverImg(dIn.image);
 
-		console.log('Driver Image Received for VD Page');
+		console.log('Driver Image Received for Fleet Page');
 	}
 	else
 	{

@@ -1,6 +1,6 @@
 function init_vd_page() {
     console.log("OnPageLoad: VD-page"), GLB.pgID = GLB.PGVD, GLB.vehicle = new VDvehicle();
-    var a = 55.748223, b = -4.16867;
+    var a = GLB.DEFAULTLAT, b = GLB.DEFAULTLNG;
     initalizeMaps("#vd-Map-obj", a, b, 15, google.maps.MapTypeId.ROADMAP, !0, "Vehicle Here!", !0, !1), 
     google.load("visualization", "1.0", {
         packages: [ "corechart" ],

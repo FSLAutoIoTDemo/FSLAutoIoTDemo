@@ -1,7 +1,8 @@
 function init_consDemo() {
-    console.log("OnPageLoad: CONS-Demo Mode Started"), watchdogClear(), initDemoData(), 
-    GLB.vehicle = new CONSvehicle(), setInterval(consDemo_updateData, 3e3), setInterval(consdDemo_modifyMaps, 3e3), 
-    setInterval(consdDemo_modifyImgs, 15e3), setInterval(watchdogClear, 1e4);
+    console.log("OnPageLoad: CONS-Demo Mode Started"), watchdogClear(), initVDDemoData(), 
+    GLB.IMGROOT = "imgs/demo/dash/", GLB.IMGAPPEND = ".jpg", GLB.vehicle = new CONSvehicle(), 
+    setInterval(consDemo_updateData, 1e3), setInterval(consDemo_modifyMaps, 1e3), setInterval(consDemo_modifyImgs, 1e4), 
+    setInterval(watchdogClear, 1e4), consDemo_updateData(), consDemo_modifyMaps(), consDemo_modifyImgs();
 }
 
 function consDemo_updateData() {
@@ -10,10 +11,10 @@ function consDemo_updateData() {
     GLB.vehicle.updateDriverImg(a[11]), GLB.vehicle.modifyHtmlText(), GLB.vdDemoIdx == GLB.vdDemoData.length - 1 ? GLB.vdDemoIdx = 0 : GLB.vdDemoIdx++;
 }
 
-function consdDemo_modifyMaps() {
+function consDemo_modifyMaps() {
     GLB.vehicle.modifyMap();
 }
 
-function consdDemo_modifyImgs() {
+function consDemo_modifyImgs() {
     GLB.vehicle.modifyDriverImg();
 }

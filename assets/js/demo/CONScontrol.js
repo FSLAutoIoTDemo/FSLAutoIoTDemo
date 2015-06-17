@@ -15,7 +15,11 @@ function init_consDemo(){
 	watchdogClear();
 
 	// Load data for Vehicle Dash page
-	initDemoData();
+	initVDDemoData();
+
+	// Change Image Root to Local
+	GLB.IMGROOT = "imgs/demo/dash/";
+	GLB.IMGAPPEND = ".jpg";
 
 	// Create new CONSvehicle object
 	GLB.vehicle=new CONSvehicle();
@@ -25,10 +29,14 @@ function init_consDemo(){
 	//-> Modify map @t2
 	//-> Modify imgs @t3
 
-	setInterval(consDemo_updateData,3000);	// 1 second
-	setInterval(consdDemo_modifyMaps,3000) 	// 1 seconds
-	setInterval(consdDemo_modifyImgs,15000);	// 5 seconds
-	setInterval(watchdogClear,10000);		// Clear Watchdog every 10 seconds
+	setInterval(consDemo_updateData,1000);	// 1 second
+	setInterval(consDemo_modifyMaps,1000) 	// 1 seconds
+	setInterval(consDemo_modifyImgs,10000);	// 10 seconds
+	setInterval(watchdogClear,10000);			// Clear Watchdog every 10 seconds
+
+	consDemo_updateData();
+	consDemo_modifyMaps();
+	consDemo_modifyImgs();
 }
 
 
@@ -57,11 +65,11 @@ function consDemo_updateData(){
 }
 
 // Update Vehicle Dash Map with Vehicle data
-function consdDemo_modifyMaps(){
+function consDemo_modifyMaps(){
 	GLB.vehicle.modifyMap();
 }
 
 // Update Vehicle Dash Driver & Road Images with Vehicle data
-function consdDemo_modifyImgs(){
+function consDemo_modifyImgs(){
 	GLB.vehicle.modifyDriverImg();
 }

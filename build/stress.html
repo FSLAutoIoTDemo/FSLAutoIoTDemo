@@ -38,6 +38,13 @@
 			<!-- Navigation bar (top or left) -->
 			<nav class="navBar">
 				<ul class="navigation">
+					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Select Mode</h1>
+						<ul id="navSubMenu" class="subNav">
+							<li class="navMenuItem" id="navDemo"><a href="stress.html?vid=100"><h2>Demo</h2></a></li>
+							<li class="navMenuItem" id="navLive"><a href="stress.html?vid=50"><h2>Live</h2></a></li>
+						</ul>
+					</li>
+					<div class="navMenuStatus"><h1 id="navMenuStatusText"></h1></div>
 					<li id="navHome">
 						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
 					</li>
@@ -52,7 +59,7 @@
 
 					<section class="singleTile singleTileHalfLayout stress-info" id="stress-info-text">
 						<h1 class="tileTitle">Information</h1>  
-						<p class="dataH4light infobox">Smart Cities can use data from the Auto IoT to identify issues	 in &amp; around the city.
+						<p class="dataH4light infobox">Smart Cities can use data from the Auto IoT to identify issues in &amp; around the city.
 							<br>
 							<br>The Auto IoT will enable new data sources that are traditionally difficult to gather, such as driver stress level.</p>
 					</section>

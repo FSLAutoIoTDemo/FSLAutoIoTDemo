@@ -12,8 +12,8 @@ function init_bigd_page(){
 
 	// -- Load map first to reduce page load times
 	// Initial position (EKB)
-	var initLat = 55.748223;
-	var initLng = -4.168670;
+	var initLat = GLB.DEFAULTLAT;
+	var initLng = GLB.DEFAULTLNG;
 
 	// Load Road Map, with heat overlay
 	initalizeMaps('#bigd-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, true, "Event Here", false, false);
@@ -40,7 +40,7 @@ function start_bigd_session(){
 	}
 	// Else, load demo mode
 	else{
-//		init_vdDemo();		//#####TO ADD LATER
+		init_bigdDemo();
 		console.log('Debug Mode Detected');
 	}
 }

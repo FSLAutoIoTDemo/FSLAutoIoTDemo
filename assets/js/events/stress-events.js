@@ -12,8 +12,8 @@ function init_stress_page(){
 
 	// -- Load map first to reduce page load times
 	// Initial position (EKB)
-	var initLat = 55.748223;
-	var initLng = -4.168670;
+	var initLat = GLB.DEFAULTLAT;
+	var initLng = GLB.DEFAULTLNG;
 
 	// Load Hybrid Map, with heat overlay
 	initalizeMaps('#stress-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, false, "", false, true);
@@ -32,7 +32,7 @@ function init_stress_page(){
 	}
 	// Else, load demo mode
 	else{
-//		init_vdDemo();		//#####TO ADD LATER
+		init_stressDemo();
 		console.log('Debug Mode Detected');
 	}
 

@@ -1,10 +1,13 @@
 function BDFleet() {}
 
 inherit(BDFleet, Fleet), BDFleet.prototype.modifyBDEventHtmlText = function() {
-    $("#bigd-evt-id").text(this.eventVehicle.vehicle), $("#bigd-evt-time").text(this.eventVehicle.time), 
-    $("#bigd-evt-speed").text(this.eventVehicle.speed), updateMap(this.eventVehicle.lat, this.eventVehicle.lng, !1);
+    var a = String.fromCharCode(65 + this.eventVehicle.vehicle);
+    $("#bigd-evt-id").text(a);
+    var b = this.eventVehicle.time.match(/.{1,2}/g);
+    $("#bigd-evt-time").text(b[0] + ":" + b[1] + "." + b[2]), $("#bigd-evt-speed").text(this.eventVehicle.speed), 
+    updateMap(this.eventVehicle.lat, this.eventVehicle.lng, !1);
 }, BDFleet.prototype.requestBDEvent = function(a) {
-    sockSendMessage(GLB.SOCKETBIGDEVREQ_S + a + GLB.SOCKETBIGDEVREQ_E);
+    console.log("Requesting Event Information"), sockSendMessage(GLB.SOCKETBIGDEVREQ_S + a + GLB.SOCKETBIGDEVREQ_E);
 }, BDFleet.prototype.modifyBDGforceGraph = function() {
     updateGforceData(this.gforce);
 }, BDFleet.prototype.processSocketBIGD = function(a) {

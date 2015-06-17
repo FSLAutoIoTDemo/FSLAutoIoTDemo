@@ -81,6 +81,8 @@ ul.navigation li, .navMenuStatus{
 
 ul.navigation li ul{
 	position:absolute;		//  Removes the hidden menu from parent height
+	width: 100%;
+	
 	visibility:hidden;
 	opacity:0;
 

@@ -14,8 +14,8 @@ function init_cons_page(){
 
 	// -- Load map first to reduce page load times
 	// Initial position
-	var initLat = 55.748223;
-	var initLng = -4.168670;
+	var initLat = GLB.DEFAULTLAT;
+	var initLng = GLB.DEFAULTLNG;
 
 	// Load Road Map, with marker, but no heat overlay
 	initalizeMaps('#cons-Map-obj', initLat,initLng, 15, google.maps.MapTypeId.ROADMAP, true, "Vehicle Here!", true, false);

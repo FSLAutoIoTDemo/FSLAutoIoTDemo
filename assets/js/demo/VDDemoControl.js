@@ -1,12 +1,3 @@
-//### Will remove the document.ready function in long run - will
-// be initiated by NAV button click
-// Page loader
-/*
-jQuery(document).ready(function($){
-	if($("#vd-page").length){init_vdDemo()};
-});
-*/
-
 // Start events to provide page with Demo Data
 function init_vdDemo(){
 	console.log("OnPageLoad: VD-Demo Mode Started");
@@ -15,8 +6,12 @@ function init_vdDemo(){
 	watchdogClear();
 
 	// Load data for Vehicle Dash page
-	initDemoData();
+	initVDDemoData();
 
+	// Change Image Root to Local
+	GLB.IMGROOT = "imgs/demo/dash/";
+	GLB.IMGAPPEND = ".jpg";
+	
 	// Create new VDvehicle object
 	GLB.vehicle=new VDvehicle();
 
@@ -25,10 +20,14 @@ function init_vdDemo(){
 	//-> Modify map @t2
 	//-> Modify imgs @t3
 
-	setInterval(vdDemo_updateData,3000);	// 1 second
-	setInterval(vdDemo_modifyMaps,3000) 	// 1 seconds
-	setInterval(vdDemo_modifyImgs,15000);	// 5 seconds
+	setInterval(vdDemo_updateData,1000);	// 1 second
+	setInterval(vdDemo_modifyMaps,1000) 	// 1 seconds
+	setInterval(vdDemo_modifyImgs,10000);	// 10 seconds
 	setInterval(watchdogClear,10000);		// Clear Watchdog every 10 seconds
+
+	vdDemo_updateData();
+	vdDemo_modifyMaps();
+	vdDemo_modifyImgs();
 }
 
 

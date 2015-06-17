@@ -5,7 +5,8 @@ GLB.watchdogLimitRed = 11, GLB.currVID = 100, GLB.MaxVeh = 10, GLB.pgID = null,
 GLB.PGVD = "pgVD", GLB.PGCONS = "pgCONS", GLB.PGSTRESS = "pgSTRESS", GLB.PGBIGD = "pgBIGD", 
 GLB.PGFLEET = "pgFLEET", GLB.map = null, GLB.mapCurrCenter = null, GLB.mapMarker = null, 
 GLB.carRoute = null, GLB.mapStrokeColour = "#FF0000", GLB.heatmap = null, GLB.vehile = null, 
-GLB.fleet = null, GLB.vdDemoData = null, GLB.vdDemoIdx = 0, GLB.speedPieData = null, 
+GLB.fleet = null, GLB.vdDemoData = null, GLB.vdDemoIdx = 0, GLB.stressDemoData = null, 
+GLB.stressDemoIdx = 0, GLB.bigdDemoData = null, GLB.bigdDemoIdx = 0, GLB.speedPieData = null, 
 GLB.speedPieOptions = null, GLB.speedPiechart = null, GLB.accelLinedata = null, 
 GLB.accelLineoptions = null, GLB.accelLinegraph = null, GLB.gforceGraphData = null, 
 GLB.gforceGraphOptions = null, GLB.gforceGraph = null, GLB.insurBarData = null, 
@@ -16,4 +17,4 @@ GLB.SOCKROOT = "wss://fslautoiotdemobackend.mybluemix.net", GLB.SOCKETVEH = [ "/
 GLB.SOCKETVEHALL = "/ws/vehicleAll", GLB.SOCKETSTRESS = "/ws/stress", GLB.SOCKETBIGD = "/ws/bigdata", 
 GLB.SOCKETDEBUG = "/ws/debug", GLB.SOCKETSTRESSREQ = "request!", GLB.SOCKETBIGDFLEETREQ = "Fleet Data Request!", 
 GLB.SOCKETBIGDEVREQ_S = "Event ", GLB.SOCKETBIGDEVREQ_E = " Request!", GLB.IMGROOT = "https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/", 
-GLB.IMGAPPEND = "/image.jpg";
+GLB.IMGAPPEND = "/image.jpg", GLB.DEFAULTLAT = 30.261473, GLB.DEFAULTLNG = -97.745283;

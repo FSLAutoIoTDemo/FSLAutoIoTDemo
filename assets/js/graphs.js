@@ -104,11 +104,15 @@ function updateSpeedData(speed) {		//###need to pass in new val from websocket
 			newSpeedValue = GLB.maxSpeed;
 		}
 		newSpeedValue *= 2.25; 								//change to degrees
-		GLB.speedPieData.setValue(1, 1, newSpeedValue); 		//mph
-		GLB.speedPieData.setValue(2, 1, (270-newSpeedValue)); 	//empty segment
+	
+		// Check that chart exists on page		
+		if(GLB.speedPieData){
+			GLB.speedPieData.setValue(1, 1, newSpeedValue); 		//mph
+			GLB.speedPieData.setValue(2, 1, (270-newSpeedValue)); 	//empty segment
 
-		// Update the Pie Chart
-		GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
+			// Update the Pie Chart
+			GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
+		}
 }
 
 
@@ -181,31 +185,34 @@ function drawInitAccelChart(chartHtmlId) {
 }
 
 function updateAccelData(xAccel,yAccel) {
-	GLB.accelLinedata.addRows([[GLB.loopCount,  xAccel, yAccel]]); //add new data in row corresponding to loopCount
-	GLB.accelLineoptions.hAxis.viewWindow.min += 1;
-    GLB.accelLineoptions.hAxis.viewWindow.max += 1;
-	
-	if (GLB.loopCount==1000) {
-	  // Clean up time!
-	  //we need to clean up array to prevent it from growing too large
-	  //removing cells causes issues with animation so do not want to do this every loop
-	  //hence the reason to do it periodically
-	  GLB.accelLineoptions.hAxis.viewWindow.min = 0;
-      GLB.accelLineoptions.hAxis.viewWindow.max = (GLB.dataPoints-1);
-	  GLB.accelLineoptions.animation.duration = 0; //turn off animation for this
-	  GLB.accelLinedata.removeRows(0, (GLB.loopCount+1)-GLB.dataPoints);
-	  //renumber the rows
-	  for(var i=0; i<GLB.dataPoints; i++) {
-	    GLB.accelLinedata.setValue(i,0,i);
-	  }
-	  GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
-	  GLB.loopCount = GLB.dataPoints;
-	  GLB.accelLineoptions.animation.duration = 750; 
-	  return;
+	// Check if graph exists on page
+	if(GLB.accelLinegraph){
+		GLB.accelLinedata.addRows([[GLB.loopCount,  xAccel, yAccel]]); //add new data in row corresponding to loopCount
+		GLB.accelLineoptions.hAxis.viewWindow.min += 1;
+	    GLB.accelLineoptions.hAxis.viewWindow.max += 1;
+		
+		if (GLB.loopCount==1000) {
+		  // Clean up time!
+		  //we need to clean up array to prevent it from growing too large
+		  //removing cells causes issues with animation so do not want to do this every loop
+		  //hence the reason to do it periodically
+		  GLB.accelLineoptions.hAxis.viewWindow.min = 0;
+	      GLB.accelLineoptions.hAxis.viewWindow.max = (GLB.dataPoints-1);
+		  GLB.accelLineoptions.animation.duration = 0; //turn off animation for this
+		  GLB.accelLinedata.removeRows(0, (GLB.loopCount+1)-GLB.dataPoints);
+		  //renumber the rows
+		  for(var i=0; i<GLB.dataPoints; i++) {
+		    GLB.accelLinedata.setValue(i,0,i);
+		  }
+		  GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
+		  GLB.loopCount = GLB.dataPoints;
+		  GLB.accelLineoptions.animation.duration = 750; 
+		  return;
+		}
+		
+		GLB.loopCount++;
+		GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 	}
-	
-	GLB.loopCount++;
-	GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 }
 
 
@@ -257,22 +264,24 @@ function drawInitGforceGraph(gforceHtmlId) {
 }
 
 function updateGforceData(gforce) {
-
-	// For length of new points
-	for(var i=0; i<gforce.length;i++) {
-        if(gforce[i] === null) {
-            // If get to a null point before end of array, 
-            // then assume array is not full & initiate drawing graphs
-            GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
-            return;
-        }
-        // Add new list of Lat/Lng Values
-        GLB.gforceGraphData.setValue(i, 0, gforce[i].gLat);
-        GLB.gforceGraphData.setValue(i, 1, gforce[i].gLng);
-    }
-    
-    // At end of array, draw graph
-    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+	// If graph exists on page
+	if(GLB.gforceGraph){
+		// For length of new points
+		for(var i=0; i<gforce.length;i++) {
+	        if(gforce[i] === null) {
+	            // If get to a null point before end of array, 
+	            // then assume array is not full & initiate drawing graphs
+	            GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+	            return;
+	        }
+	        // Add new list of Lat/Lng Values
+	        GLB.gforceGraphData.setValue(i, 0, gforce[i].gLat);
+	        GLB.gforceGraphData.setValue(i, 1, gforce[i].gLng);
+	    }
+	    
+	    // At end of array, draw graph
+	    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+	}
 }
 
 function processGforceEvent(){
@@ -337,13 +346,15 @@ function drawInitBarGraph(barHtmlId) {
 
 // Update the Insurance Graph
 function updateInsurGraphData(insur) {		
-		
-		// Update the graph data
-		GLB.insurBarData.setValue(0, 1, insur); 
-		GLB.insurBarData.setValue(0, 3, (1000-insur)); //this is the greyed area
+		// If bar chart exists on page
+		if (GLB.insurBarData){
+			// Update the graph data
+			GLB.insurBarData.setValue(0, 1, insur); 
+			GLB.insurBarData.setValue(0, 3, (1000-insur)); //this is the greyed area
 
-		// Update the Bar Chart
-		GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
+			// Update the Bar Chart
+			GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
+		}
 }
 
 

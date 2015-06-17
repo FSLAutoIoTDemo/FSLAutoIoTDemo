@@ -5,8 +5,13 @@ function BDFleet(){}
 inherit(BDFleet, Fleet);
 
 BDFleet.prototype.modifyBDEventHtmlText = function(){
-	$('#bigd-evt-id').text(this.eventVehicle.vehicle);		// Event Vehicle ID
-	$('#bigd-evt-time').text(this.eventVehicle.time);		// Event Time
+	// Get vehicle letter
+	var vehicleLetter = String.fromCharCode(65+this.eventVehicle.vehicle); 
+	$('#bigd-evt-id').text(vehicleLetter);					// Event Vehicle ID
+
+	var time = this.eventVehicle.time.match(/.{1,2}/g);
+
+	$('#bigd-evt-time').text(time[0] + ":" + time[1] + "." + time[2]);		// Event Time
 	$('#bigd-evt-speed').text(this.eventVehicle.speed);		// Event Speed
 
 	// Update Map with event location
@@ -14,6 +19,7 @@ BDFleet.prototype.modifyBDEventHtmlText = function(){
 }
 
 BDFleet.prototype.requestBDEvent = function(id){
+	console.log("Requesting Event Information");
 	sockSendMessage(GLB.SOCKETBIGDEVREQ_S + id + GLB.SOCKETBIGDEVREQ_E);
 }
 
@@ -22,31 +28,6 @@ BDFleet.prototype.modifyBDGforceGraph = function(){
 	updateGforceData(this.gforce);
 }	
 
-/*
-// Update the VD Page HMTL text with Vehicle object data
-BDFleet.prototype.modifyVdHtmlText = function(){
-	
-	
-
-	updateSpeedData(this.speed);					// Update Speed Pie Graph
-	updateAccelData(this.fGax, this.fGay);			// Update Accel Chart
-}
-
-// Update the VD Page Map with Vehicle object data
-BDFleet.prototype.modifyVdMap = function(){
-	updateMap(this.lat, this.lng);
-}
-
-// Update the VD Page Driver Image with Vehicle object data
-BDFleet.prototype.modifyVdDriverImg = function(){
-	$('#vd-DriverCam-img').attr('src', this.driverimg);
-}
-
-// Update the VD Page Road Image with Vehicle object data
-BDFleet.prototype.modifyVdRoadImg = function(){
-	$('#vd-RoadCam-img').attr('src', this.roadimg);
-}
-*/
 
 BDFleet.prototype.processSocketBIGD = function(dIn){
 	

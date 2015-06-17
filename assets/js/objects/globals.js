@@ -34,6 +34,12 @@ GLB.fleet = null;			// Fleet Object
 GLB.vdDemoData = null;		// Vehicle Dashboard Demo Data
 GLB.vdDemoIdx = 0;			// Index for current VD Demo Data entry being used
 
+GLB.stressDemoData = null;	// Stressful Street Demo Data
+GLB.stressDemoIdx = 0;		// Index for current SS Demo Data entry being used
+
+GLB.bigdDemoData = null;	// Big Data Demo Data
+GLB.bigdDemoIdx = 0;		// Index for current BD Demo Data entry being used
+
 GLB.speedPieData = null;		// Soeed Pie Chart Data
 GLB.speedPieOptions = null;		// Speed Pie Chart Options
 GLB.speedPiechart = null;		// Speed Pit Chart object
@@ -93,3 +99,11 @@ GLB.SOCKETBIGDEVREQ_E = " Request!";
 // Image SRC definitions
 GLB.IMGROOT = 'https://03e88029-53b4-4909-93a8-24348cae4f74-bluemix.cloudant.com/ftfimages/';
 GLB.IMGAPPEND = '/image.jpg';
+
+// EKB Central Location
+//GLB.DEFAULTLAT = 55.748223;
+//GLB.DEFAULTLNG = -4.168670;
+
+// JW Marriot Central Location
+GLB.DEFAULTLAT = 30.261473;
+GLB.DEFAULTLNG = -97.745283;

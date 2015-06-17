@@ -53,8 +53,8 @@ function drawInitSpeedPieChart(a) {
 
 function updateSpeedData(a) {
     newSpeedValue = a, newSpeedValue > GLB.maxSpeed && (newSpeedValue = GLB.maxSpeed), 
-    newSpeedValue *= 2.25, GLB.speedPieData.setValue(1, 1, newSpeedValue), GLB.speedPieData.setValue(2, 1, 270 - newSpeedValue), 
-    GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions);
+    newSpeedValue *= 2.25, GLB.speedPieData && (GLB.speedPieData.setValue(1, 1, newSpeedValue), 
+    GLB.speedPieData.setValue(2, 1, 270 - newSpeedValue), GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions));
 }
 
 function drawInitAccelChart(a) {
@@ -112,15 +112,17 @@ function drawInitAccelChart(a) {
 }
 
 function updateAccelData(a, b) {
-    if (GLB.accelLinedata.addRows([ [ GLB.loopCount, a, b ] ]), GLB.accelLineoptions.hAxis.viewWindow.min += 1, 
-    GLB.accelLineoptions.hAxis.viewWindow.max += 1, 1e3 == GLB.loopCount) {
-        GLB.accelLineoptions.hAxis.viewWindow.min = 0, GLB.accelLineoptions.hAxis.viewWindow.max = GLB.dataPoints - 1, 
-        GLB.accelLineoptions.animation.duration = 0, GLB.accelLinedata.removeRows(0, GLB.loopCount + 1 - GLB.dataPoints);
-        for (var c = 0; c < GLB.dataPoints; c++) GLB.accelLinedata.setValue(c, 0, c);
-        return GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions), GLB.loopCount = GLB.dataPoints, 
-        void (GLB.accelLineoptions.animation.duration = 750);
+    if (GLB.accelLinegraph) {
+        if (GLB.accelLinedata.addRows([ [ GLB.loopCount, a, b ] ]), GLB.accelLineoptions.hAxis.viewWindow.min += 1, 
+        GLB.accelLineoptions.hAxis.viewWindow.max += 1, 1e3 == GLB.loopCount) {
+            GLB.accelLineoptions.hAxis.viewWindow.min = 0, GLB.accelLineoptions.hAxis.viewWindow.max = GLB.dataPoints - 1, 
+            GLB.accelLineoptions.animation.duration = 0, GLB.accelLinedata.removeRows(0, GLB.loopCount + 1 - GLB.dataPoints);
+            for (var c = 0; c < GLB.dataPoints; c++) GLB.accelLinedata.setValue(c, 0, c);
+            return GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions), GLB.loopCount = GLB.dataPoints, 
+            void (GLB.accelLineoptions.animation.duration = 750);
+        }
+        GLB.loopCount++, GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
     }
-    GLB.loopCount++, GLB.accelLinegraph.draw(GLB.accelLinedata, GLB.accelLineoptions);
 }
 
 function drawInitGforceGraph(a) {
@@ -175,11 +177,13 @@ function drawInitGforceGraph(a) {
 }
 
 function updateGforceData(a) {
-    for (var b = 0; b < a.length; b++) {
-        if (null === a[b]) return void GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
-        GLB.gforceGraphData.setValue(b, 0, a[b].gLat), GLB.gforceGraphData.setValue(b, 1, a[b].gLng);
+    if (GLB.gforceGraph) {
+        for (var b = 0; b < a.length; b++) {
+            if (null === a[b]) return void GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
+            GLB.gforceGraphData.setValue(b, 0, a[b].gLat), GLB.gforceGraphData.setValue(b, 1, a[b].gLng);
+        }
+        GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
     }
-    GLB.gforceGraph.draw(GLB.gforceGraphData, GLB.gforceGraphOptions);
 }
 
 function processGforceEvent() {
@@ -230,5 +234,6 @@ function drawInitBarGraph(a) {
 }
 
 function updateInsurGraphData(a) {
-    GLB.insurBarData.setValue(0, 1, a), GLB.insurBarData.setValue(0, 3, 1e3 - a), GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions);
+    GLB.insurBarData && (GLB.insurBarData.setValue(0, 1, a), GLB.insurBarData.setValue(0, 3, 1e3 - a), 
+    GLB.insurBarGraph.draw(GLB.insurBarData, GLB.insurBarOptions));
 }

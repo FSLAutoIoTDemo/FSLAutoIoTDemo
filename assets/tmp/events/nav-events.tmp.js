@@ -1,5 +1,6 @@
 function navSetup() {
-    $("#navSelectBut").click(navMenuExpose), $("#navSelectBut").hover(function() {
+    $("#navSelectBut").click(navMenuExpose), $("#navSelectBut").on("tap", navMenuExpose()), 
+    $("#navSelectBut").hover(function() {
         GLB.navMenuStatus = !1, navMenuExpose();
     }, function() {
         GLB.navMenuStatus = !0, navMenuExpose();

@@ -2,6 +2,10 @@
 function navSetup(){
 	// bind clicks to 'Select' button
 	$("#navSelectBut").click(navMenuExpose);		
+
+	// binds touches to 'Select' button
+	$("#navSelectBut").on("tap", navMenuExpose());
+
 	// bind hovers over 'Select' button, pass in with either hide/unhide depending on hoverIn/hoverOut
 	$("#navSelectBut").hover(function(){GLB.navMenuStatus=false; navMenuExpose();},function(){GLB.navMenuStatus=true; navMenuExpose();}); 
 

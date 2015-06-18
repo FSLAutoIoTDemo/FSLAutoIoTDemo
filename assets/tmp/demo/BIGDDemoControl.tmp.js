@@ -12,6 +12,6 @@ function bigdDemo_modifyBigdData() {
 
 function bigdDemo_setBigdEvent() {
     var a = new Vehicle();
-    a.updateData(null, "B", 12, null, null, null, null, null, GLB.DEFAULTLAT, GLB.DEFAULTLNG, null, "12:34"), 
+    a.updateData(null, "B", 12, null, null, null, null, null, GLB.DEFAULTLAT, GLB.DEFAULTLNG, null, "123422"), 
     GLB.fleet.eventVehicle = a, console.log("Event Data Received for BD Page"), GLB.fleet.modifyBDEventHtmlText();
 }

@@ -51,7 +51,7 @@ function bigdDemo_setBigdEvent(){
 
 	// Update vehicle event information
 	// updateData(_id, _vehicle, _speed, _accel, _heart, _fGax, _fGay, _fGaz, _lat, _lng, _insurance,_time)
-	_eventVehicle.updateData(null,"B",12,null,null,null,null,null,GLB.DEFAULTLAT,GLB.DEFAULTLNG,null,"12:34");
+	_eventVehicle.updateData(null,"B",12,null,null,null,null,null,GLB.DEFAULTLAT,GLB.DEFAULTLNG,null,"123422");
 
 	// Store vehicle object in fleet object
 	GLB.fleet.eventVehicle=_eventVehicle;

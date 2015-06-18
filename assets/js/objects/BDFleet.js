@@ -11,7 +11,18 @@ BDFleet.prototype.modifyBDEventHtmlText = function(){
 
 	var time = this.eventVehicle.time.match(/.{1,2}/g);
 
-	$('#bigd-evt-time').text(time[0] + ":" + time[1] + "." + time[2]);		// Event Time
+	// Adjust for users local time
+	var now = new Date();
+
+	// Get timezone offset in mins
+	var minsOffset = now.getTimezoneOffset()
+	console.log("##########" + minsOffset);
+	// Get timezone offet in hours (BST to UTC to local time)
+	var hrsOffset = parseInt(time[0]) - 1 - Math.floor(minsOffset / 60);
+
+//	$('#bigd-evt-time').text(time[0] + ":" + time[1] + "." + time[2]);		// Event Time
+	$('#bigd-evt-time').text(hrsOffset + ":" + time[1] + "." + time[2]);		// Event Time
+
 	$('#bigd-evt-speed').text(this.eventVehicle.speed);		// Event Speed
 
 	// Update Map with event location

@@ -3,8 +3,10 @@ function BDFleet() {}
 inherit(BDFleet, Fleet), BDFleet.prototype.modifyBDEventHtmlText = function() {
     var a = String.fromCharCode(65 + this.eventVehicle.vehicle);
     $("#bigd-evt-id").text(a);
-    var b = this.eventVehicle.time.match(/.{1,2}/g);
-    $("#bigd-evt-time").text(b[0] + ":" + b[1] + "." + b[2]), $("#bigd-evt-speed").text(this.eventVehicle.speed), 
+    var b = this.eventVehicle.time.match(/.{1,2}/g), c = new Date(), d = c.getTimezoneOffset();
+    console.log("##########" + d);
+    var e = parseInt(b[0]) - 1 - Math.floor(d / 60);
+    $("#bigd-evt-time").text(e + ":" + b[1] + "." + b[2]), $("#bigd-evt-speed").text(this.eventVehicle.speed), 
     updateMap(this.eventVehicle.lat, this.eventVehicle.lng, !1);
 }, BDFleet.prototype.requestBDEvent = function(a) {
     console.log("Requesting Event Information"), sockSendMessage(GLB.SOCKETBIGDEVREQ_S + a + GLB.SOCKETBIGDEVREQ_E);

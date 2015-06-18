@@ -80,8 +80,26 @@ ALLFleet.prototype.updateNavMenu = function(){
 		// Update Nav Menu Text with Last Communication (seconds)
 		updateText(navID,this.vehicles[i].lastSocketSec);
 
+		// Change selector to full box
+		navID = navID + "parent";
+		
+		// Update the markers colour status icon (i.e. online/offline)
+		// If not online status
+		if(!this.vehicles[i].onlineStatus)
+			$(navID).attr('background-color', "Red");
+		// Otherwise, look at colour of status
+		else if(this.vehicles[i].onlineStatus == "Red")
+			$(navID).css('background-color', "Red");
+		else if(this.vehicles[i].onlineStatus == "Amber")
+			$(navID).css('background-color', "Orange");
+		else if(this.vehicles[i].onlineStatus == "Green")
+			$(navID).css('background-color', "Green");
+		else
+			$(navID).css('background-color', "Red");
+
+
 		// Update Nav Menu Text colour with status
-		$(navID).attr('colour', this.vehicles[i].onlineStatus);
+		
 	}
 }
 

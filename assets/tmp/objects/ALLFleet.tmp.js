@@ -19,7 +19,7 @@ inherit(ALLFleet, Fleet), ALLFleet.prototype.updateDriverText = function(a) {
 }, ALLFleet.prototype.updateNavMenu = function() {
     for (var a = 0; a < GLB.MaxVeh; a++) {
         var b = String.fromCharCode(65 + a), c = "#nav" + b;
-        updateText(c, this.vehicles[a].lastSocketSec), $(c).attr("colour", this.vehicles[a].onlineStatus);
+        updateText(c, this.vehicles[a].lastSocketSec), c += "parent", this.vehicles[a].onlineStatus ? "Red" == this.vehicles[a].onlineStatus ? $(c).css("background-color", "Red") : "Amber" == this.vehicles[a].onlineStatus ? $(c).css("background-color", "Orange") : "Green" == this.vehicles[a].onlineStatus ? $(c).css("background-color", "Green") : $(c).css("background-color", "Red") : $(c).attr("background-color", "Red");
     }
 }, ALLFleet.prototype.setFleetStatus = function(a) {
     for (var b = 0; b < GLB.MaxVeh; b++) this.vehicles[b].setStatus(a.vehicle[b].vStatus, a.vehicle[b].lastMsgTime);

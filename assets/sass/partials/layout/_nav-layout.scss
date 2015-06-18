@@ -5,7 +5,8 @@
 /*******************************************/
 /* The container for the parent nav menu   */
 /*******************************************/
-.navBar, .headBar{
+// .navBar, .headBar{
+.headBar{	
 	float: left;
 	// Psudeo element to provide dynamic height, based on width & w/h ratio
 	&::before{
@@ -29,6 +30,9 @@
 
 }
 
+.navBar{
+	float:left;
+}
 
 .headBar h1{
 	// Offset left margin
@@ -128,7 +132,7 @@ ul.navigation li ul li {
 	margin: 0px auto;
 	margin-right:10%;
 
-	width: 100%;
+	width: 50%;
 	height: auto;
 }
 

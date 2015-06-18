@@ -13,8 +13,10 @@ $font-normal: 500;
 $font-size-h1: 10vw;			// Header for tiles
 
 $font-size-head-h1: 5vw;	// Header H1
+$font-margin-head-h1: 0.5vw;	// Header H1
 
 $font-size-nav-h1: 5vw;		// Nav H1
+$font-margin-nav-h1: 0.5vw;		// Nav Margin H1
 $font-size-nav-h2: 5vw;		// Nav H2
 
 $font-size-data-h1: 15vw;	// Data H1
@@ -54,6 +56,7 @@ $font-dyn-med-break6: $font-dyn-med * ($container-width-dynamic-break6 / $contai
 /* Mixins to apply dynamic scaling to different	  */
 /* font styles									  */
 /**************************************************/
+
 @mixin setDynFont($size){
 	
 	@media #{$sml-screen}{
@@ -84,3 +87,36 @@ $font-dyn-med-break6: $font-dyn-med * ($container-width-dynamic-break6 / $contai
 		font-size: $font-dyn-med-break6 * $size;
 	}
 }
+
+/*
+@mixin setDynFont($param,$size){
+	
+	@media #{$sml-screen}{
+		$param: $font-dyn-sml * $size;
+	}
+
+	@media #{$large-screen}{
+		$param: $font-dyn-lrg * $size;
+	}
+
+	@media #{$med-break1-screen}{
+		$param: $font-dyn-med * $size;
+	}
+
+	@media #{$med-break2-screen}{
+		$param: $font-dyn-med-break2 * $size;
+	}
+	@media #{$med-break3-screen}{
+		$param: $font-dyn-med-break3 * $size;
+	}
+	@media #{$med-break4-screen}{
+		$param: $font-dyn-med-break4 * $size;
+	}
+	@media #{$med-break5-screen}{
+		$param: $font-dyn-med-break5 * $size;
+	}
+	@media #{$med-break6-screen}{
+		$param: $font-dyn-med-break6 * $size;
+	}
+}
+*/

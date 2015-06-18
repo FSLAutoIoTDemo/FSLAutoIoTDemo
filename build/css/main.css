@@ -8,6 +8,38 @@
 /* Mixins to apply dynamic scaling to different	  */
 /* font styles									  */
 /**************************************************/
+/*
+@mixin setDynFont($param,$size){
+	
+	@media only screen and (max-width: 600px){
+		$param: $font-dyn-sml * $size;
+	}
+
+	@media only screen and (min-width: 1190px){
+		$param: $font-dyn-lrg * $size;
+	}
+
+	@media only screen and (min-width: 600px) and (max-width:699px){
+		$param: $font-dyn-med * $size;
+	}
+
+	@media only screen and (min-width: 700px) and (max-width:799px){
+		$param: $font-dyn-med-break2 * $size;
+	}
+	@media only screen and (min-width: 800px) and (max-width:899px){
+		$param: $font-dyn-med-break3 * $size;
+	}
+	@media only screen and (min-width: 900px) and (max-width:999px){
+		$param: $font-dyn-med-break4 * $size;
+	}
+	@media only screen and (min-width: 1000px) and (max-width:1099px){
+		$param: $font-dyn-med-break5 * $size;
+	}
+	@media only screen and (min-width: 1100px) and (max-width:1189px){
+		$param: $font-dyn-med-break6 * $size;
+	}
+}
+*/
 .noselect, .navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2, .navMenuItem h2 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

@@ -25,7 +25,7 @@ body{
 	color: $fsl-white;
 	text-decoration:none;
 	cursor:default;
-	
+
 	// Do not allow the user to 'select' the text
 	@extend .noselect;
 }
@@ -37,6 +37,7 @@ body{
 // Set font size and spacing for Nav h1
 .navBar h1{
 	@include setDynFont($font-size-nav-h1);
+
 }
 
 // Set font size and spacing for Nav h2
@@ -58,6 +59,7 @@ body{
 // Set font size and spacing for Header h1
 .headBar h1{
 	@include setDynFont($font-size-head-h1);
+
 }
 
 // Set font size and spacing for Nav header 1

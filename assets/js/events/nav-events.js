@@ -5,6 +5,8 @@ function navSetup(){
 	// bind hovers over 'Select' button, pass in with either hide/unhide depending on hoverIn/hoverOut
 	$("#navSelectBut").hover(function(){GLB.navMenuStatus=false; navMenuExpose();},function(){GLB.navMenuStatus=true; navMenuExpose();}); 
 
+	$("#navRecentre").click(function(){if(GLB.fleet) GLB.fleet.recentreMap();});
+
 	// Update which vehicle is currently in use on the Nav bar
 	navMenuStatusSetVeh();
 }

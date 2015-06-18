@@ -36,8 +36,15 @@ ALLFleet.prototype.updateMapMarker = function(vid){
 	// Get vehicle letter
 	var vehicleLetter = String.fromCharCode(65+vid);
 
-	// Update the marker to the green icon (i.e. active)
-	this.vehicles[vid].marker.updateIcon("Green",vehicleLetter);	
+	// Update the markers colour status icon (i.e. online/offline)
+	if(this.vehicles[vid].onlineStatus == "Red")
+		this.vehicles[vid].marker.updateIcon("Red",vehicleLetter);	
+	else if(this.vehicles[vid].onlineStatus == "Amber")
+		this.vehicles[vid].marker.updateIcon("Orange",vehicleLetter);	
+	else if(this.vehicles[vid].onlineStatus == "Green")
+		this.vehicles[vid].marker.updateIcon("Green",vehicleLetter);	
+	else
+		this.vehicles[vid].marker.updateIcon("Red",vehicleLetter);	
 
 	// Update the marker on the map
 	mapsUpdateFleetMarkers(this.vehicles[vid].marker,vid);
@@ -60,6 +67,65 @@ ALLFleet.prototype.loadNewVehicle = function(vid){
 
 	// Push changes into the HTML
 	this.updateRoadImg(GLB.currVID);
+}
+
+// Add last update time to nav menu
+ALLFleet.prototype.updateNavMenu = function(){
+
+	for(var i=0; i<GLB.MaxVeh; i++){
+		// Get Nav Menu ID
+		var vehicleLetter = String.fromCharCode(65+i);
+		var navID = "#nav" + vehicleLetter;
+
+		// Update Nav Menu Text with Last Communication (seconds)
+		updateText(navID,this.vehicles[i].lastSocketSec);
+
+		// Update Nav Menu Text colour with status
+		$(navID).attr('colour', this.vehicles[i].onlineStatus);
+	}
+}
+
+// Add last update time to nav menu
+ALLFleet.prototype.setFleetStatus = function(_dIn){
+
+	for(var i=0; i<GLB.MaxVeh; i++){
+		// Set status for each vehicle
+		this.vehicles[i].setStatus(_dIn.vehicle[i].vStatus,_dIn.vehicle[i].lastMsgTime)
+	}
+}
+
+// Recenters map to middle of all positions
+ALLFleet.prototype.recentreMap = function(){
+	var locations = [];
+
+	// For each vehicle store locations into local array
+	for(var i=0; i<GLB.MaxVeh; i++){
+		// If a location exists, use it
+		if(this.vehicles[i].lat)
+			var _latlng = new google.maps.LatLng(this.vehicles[i].lat, this.vehicles[i].lng);
+		// Otherwise use default location
+		else
+			var _latlng = new google.maps.LatLng(GLB.DEFAULTLAT, GLB.DEFAULTLNG);
+		
+		// Add to location array
+		locations.push(_latlng);
+	}
+
+	// Fit to boundaries of map
+	findMapBounds(locations);
+}
+
+
+// Update debug information that arrives from /ws/debug
+ALLFleet.prototype.processSocketFLEETdebug = function(dIn){
+	// Set status information
+	this.setFleetStatus(dIn);
+
+	// Push to nav menu
+	this.updateNavMenu();
+
+	// Push to map
+
 }
 
 

@@ -135,8 +135,7 @@ function multiSockOnMessage(dataRawSOCK){
 			GLB.fleet.processSocketFLEETvehicle(dataJsonSOCK);		
 		else if(dataRawSOCK.currentTarget.url == (GLB.SOCKROOT + GLB.SOCKETDEBUG))
 			// If from the debug feed, process fleet data
-			//GLB.fleet.processSocketFLEET(dataJsonSOCK);		
-			console.log("Debug Message Ready for processing");
+			GLB.fleet.processSocketFLEETdebug(dataJsonSOCK);		
 		else
 			// If from the individual vehicle feed, process vehicle data
 			GLB.fleet.processSocketFLEETvehicle(dataJsonSOCK);		

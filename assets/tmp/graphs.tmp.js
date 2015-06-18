@@ -58,7 +58,7 @@ function updateSpeedData(a) {
 }
 
 function drawInitAccelChart(a) {
-    GLB.accelLinedata = google.visualization.arrayToDataTable([ [ "Time", "X-Axis", "Y-Axis" ], [ 0, .003, -.185 ], [ 1, -.026, .971 ], [ 2, -.085, .095 ], [ 3, .655, -.077 ], [ 4, .048, .015 ], [ 5, .095, -.213 ], [ 6, -.426, .609 ], [ 7, .19, .032 ], [ 8, .04, .001 ] ]), 
+    GLB.accelLinedata = google.visualization.arrayToDataTable([ [ "Time", "X-Axis", "Y-Axis" ], [ 0, 0, 0 ], [ 1, 0, 0 ], [ 2, 0, 0 ], [ 3, 0, 0 ], [ 4, 0, 0 ], [ 5, 0, 0 ], [ 6, 0, 0 ], [ 7, 0, 0 ], [ 8, 0, 0 ] ]), 
     GLB.accelLineoptions = {
         title: "G-Forces",
         titleTextStyle: {

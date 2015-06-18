@@ -8,7 +8,7 @@
 /* Mixins to apply dynamic scaling to different	  */
 /* font styles									  */
 /**************************************************/
-.noselect, .navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2 {
+.noselect, .navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2, .navMenuItem h2 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -552,10 +552,11 @@ body {
   font-weight: 300;
 }
 
-.navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2 {
+.navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2, .navMenuItem h2 {
   font-weight: 300;
   color: #ffffff;
   text-decoration: none;
+  cursor: default;
 }
 
 .navMenuStatus h1 {

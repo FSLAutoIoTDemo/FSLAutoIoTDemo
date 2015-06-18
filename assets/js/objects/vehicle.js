@@ -6,6 +6,7 @@ function Vehicle(){
 	var time = null;
 	var vehicle = 0;
 	var onlineStatus = "Red";		// Vehicle is offline by default
+	var lastSocketSec = 0;
 
 	// Default all display text to "--"
 	var speed = "--";		// Speed
@@ -66,6 +67,12 @@ Vehicle.prototype.updateDriverImg = function(img_src){
 // Prototype function to update source of front facing image
 Vehicle.prototype.updateRoadImg = function(img_src){
 	this.roadimg = GLB.IMGROOT + img_src + GLB.IMGAPPEND;
+}
+
+// Update vehicle status
+Vehicle.prototype.setStatus = function(status,last){
+	this.onlineStatus = status;
+	this.lastSocketSec = last;
 }
 
 // Returns ID value

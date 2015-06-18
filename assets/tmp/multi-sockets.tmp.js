@@ -43,7 +43,7 @@ function multiSockOnMessage(a) {
     var b = JSON.parse(a.data);
     console.log("Sock OnMessage - Object Data follows..."), console.log(b), GLB.pgID == GLB.PGVD && GLB.vehicle.processSocketVD(b), 
     GLB.pgID == GLB.PGCONS && GLB.vehicle.processSocketCONS(b), GLB.pgID == GLB.PGSTRESS && GLB.fleet.processSocketStress(b), 
-    GLB.pgID == GLB.PGBIGD && GLB.fleet.processSocketBIGD(b), GLB.pgID == GLB.PGFLEET && (a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETVEHALL ? GLB.fleet.processSocketFLEETvehicle(b) : a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETDEBUG ? console.log("Debug Message Ready for processing") : GLB.fleet.processSocketFLEETvehicle(b));
+    GLB.pgID == GLB.PGBIGD && GLB.fleet.processSocketBIGD(b), GLB.pgID == GLB.PGFLEET && (a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETVEHALL ? GLB.fleet.processSocketFLEETvehicle(b) : a.currentTarget.url == GLB.SOCKROOT + GLB.SOCKETDEBUG ? GLB.fleet.processSocketFLEETdebug(b) : GLB.fleet.processSocketFLEETvehicle(b));
 }
 
 function multiSockSendMessage(a) {

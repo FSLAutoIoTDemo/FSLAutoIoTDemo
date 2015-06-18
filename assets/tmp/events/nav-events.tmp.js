@@ -3,6 +3,8 @@ function navSetup() {
         GLB.navMenuStatus = !1, navMenuExpose();
     }, function() {
         GLB.navMenuStatus = !0, navMenuExpose();
+    }), $("#navRecentre").click(function() {
+        GLB.fleet && GLB.fleet.recentreMap();
     }), navMenuStatusSetVeh();
 }
 

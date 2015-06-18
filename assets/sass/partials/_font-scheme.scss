@@ -20,11 +20,12 @@ body{
 }
 
 // Set colour and weight for header / nav / Tile titles
-.navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2{
+.navBar h1, .headBar h1, .tileTitle, .navSelect ul li a, .navSelect ul li h2, .navMenuItem h2{
 	font-weight: $font-light;
 	color: $fsl-white;
 	text-decoration:none;
-
+	cursor:default;
+	
 	// Do not allow the user to 'select' the text
 	@extend .noselect;
 }

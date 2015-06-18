@@ -14,7 +14,8 @@
 		float:left;
 
 		// Scale height. Small/Med screens default to wide screen ratio
-		padding-top: $nav-height; 	
+		//padding-top: $nav-height; 	
+		@include setDynamicHeight('navHead', 0, $nav-height)
 	}
 
 	// This horizontally centres the content
@@ -112,16 +113,16 @@ ul.navigation li ul li {
 
 	@media #{$sml-screen}{
 		width:$nav-width-sml/6.6;
-		margin-top:3%;
+		margin-top:1%;
 	}
 
 	@media #{$med-screen}{
 		width:$nav-width-med/14;
-		margin-top:1%;	
+		margin-top:0.6%;	
 	}
 	@media #{$large-screen}{
 		width:$nav-width-large/24;
-		margin-top:0.25%;
+		margin-top:0.1%;
 	}	
 }
 

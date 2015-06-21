@@ -30,6 +30,14 @@ body{
 	@extend .noselect;
 }
 
+.navBar h1{
+	@include setDynFontMarg($font-margin-nav-h1);
+}
+
+.headBar h1{
+	@include setDynFontMarg($font-margin-head-h1);
+}
+
 .navMenuStatus h1{
 	font-weight: $font-normal;
 }
@@ -59,6 +67,11 @@ body{
 // Set font size and spacing for Header h1
 .headBar h1{
 	@include setDynFont($font-size-head-h1);
+	
+	// CUSTOMIZED
+	@media #{$sml-screen}{
+		font-size: 6vw;
+	}
 
 }
 

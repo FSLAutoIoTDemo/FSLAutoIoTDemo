@@ -12,7 +12,7 @@ $font-normal: 500;
 
 $font-size-h1: 10vw;			// Header for tiles
 
-$font-size-head-h1: 5vw;	// Header H1
+$font-size-head-h1: 9vw;	// Header H1
 $font-margin-head-h1: 0.5vw;	// Header H1
 
 $font-size-nav-h1: 5vw;		// Nav H1
@@ -85,6 +85,45 @@ $font-dyn-med-break6: $font-dyn-med * ($container-width-dynamic-break6 / $contai
 	}
 	@media #{$med-break6-screen}{
 		font-size: $font-dyn-med-break6 * $size;
+	}
+}
+
+@mixin setDynFontMarg($size){
+	
+	@media #{$sml-screen}{
+		margin-top: $font-dyn-sml * $size;
+		margin-bottom: $font-dyn-sml * $size;		
+	}
+
+	@media #{$large-screen}{
+		margin-top: $font-dyn-lrg * $size;
+		margin-bottom: $font-dyn-lrg * $size;
+	}
+
+	@media #{$med-break1-screen}{ 
+		margin-top: $font-dyn-med * $size;
+		margin-bottom: $font-dyn-med * $size;
+	}
+
+	@media #{$med-break2-screen}{ 
+		margin-top: $font-dyn-med-break2 * $size;
+		margin-bottom: $font-dyn-med-break2 * $size;
+	}
+	@media #{$med-break3-screen}{ 
+		margin-top: $font-dyn-med-break3 * $size;
+		margin-bottom: $font-dyn-med-break3 * $size;
+	}
+	@media #{$med-break4-screen}{ 
+		margin-top: $font-dyn-med-break4 * $size;
+		margin-bottom: $font-dyn-med-break4 * $size;
+	}
+	@media #{$med-break5-screen}{ 
+		margin-top: $font-dyn-med-break5 * $size;
+		margin-bottom: $font-dyn-med-break5 * $size;
+	}
+	@media #{$med-break6-screen}{
+		margin-top: $font-dyn-med-break6 * $size;
+		margin-bottom: $font-dyn-med-break6 * $size;
 	}
 }
 

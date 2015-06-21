@@ -44,7 +44,31 @@
 			// --> Margin-top % = margin var (%, i.e. top is same as left)
 			padding-top: $height/100 * $double-tile-height-sml-pc * ($width/100);
 		}
-	} @else {	
+	} 
+	// For double tiles...
+	@if $format == 'navHead' {
+
+		// For the different screen configurations determine the correct height (padding-top)
+		// For "X" screen:
+		// --> Height % (padding-top) = width var (%) * double tile height % (as aspect ratio)
+		
+		@media #{$large-screen}{	
+			// Standard, large screens	
+			padding-top: $height * 1%;
+		}
+		@media #{$med-screen}{
+			// Med screens (uses wide screen aspect ratio)
+			padding-top: $height/2 * 1%;
+		}
+		@media #{$sml-screen}{
+			// Small screens
+			// --> Height % (padding-top) = Percentage of width var to single tile width.
+			// --> Margin-top % = margin var (%, i.e. top is same as left)
+			padding-top: $height/4 * 1%;
+		}
+	}
+
+	@else {	
 		// For Single Tiles....
 
 		@media #{$std-screen}{	

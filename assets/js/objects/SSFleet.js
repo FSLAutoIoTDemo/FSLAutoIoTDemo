@@ -7,12 +7,15 @@ inherit(SSFleet, Fleet);
 // Update the SS Map element on page
 SSFleet.prototype.modifyStressMap = function(){
 	
-	//Update heat map
-	updateHeatMapData(this.locations);
+	if (this.locations.length > 0)
+	{
+		//Update heat map
+		updateHeatMapData(this.locations);
 
 
-	// Calculate new bounds for the map (determine new sw / ne corners)
-	findMapBounds(this.locations);
+		// Calculate new bounds for the map (determine new sw / ne corners)
+		findMapBounds(this.locations);
+	}
 
 }
 

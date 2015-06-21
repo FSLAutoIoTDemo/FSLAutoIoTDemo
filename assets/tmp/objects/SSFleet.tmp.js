@@ -1,7 +1,7 @@
 function SSFleet() {}
 
 inherit(SSFleet, Fleet), SSFleet.prototype.modifyStressMap = function() {
-    updateHeatMapData(this.locations), findMapBounds(this.locations);
+    this.locations.length > 0 && (updateHeatMapData(this.locations), findMapBounds(this.locations));
 }, SSFleet.prototype.modifyStressCams = function() {
     for (var a = 0; 3 > a; a++) {
         if (null === this.mostStressful[a].camPic) $("#stress-RoadCam-img" + a).attr("src", "imgs/fill.svg"); else {

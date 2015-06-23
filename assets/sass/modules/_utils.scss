@@ -45,8 +45,8 @@
 			padding-top: $height/100 * $double-tile-height-sml-pc * ($width/100);
 		}
 	} 
-	// For double tiles...
-	@if $format == 'navHead' {
+	// For nav head tiles...
+	@else if $format == 'navHead' {
 
 		// For the different screen configurations determine the correct height (padding-top)
 		// For "X" screen:

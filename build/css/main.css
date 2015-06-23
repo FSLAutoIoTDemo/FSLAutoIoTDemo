@@ -1302,26 +1302,6 @@ img.resizeImgDouble {
     padding-top: 100%;
   }
 }
-@media only screen and (max-aspect-ratio: 16000 / 9001) and (min-width: 1190px) {
-  .double-Map-obj::before {
-    padding-top: 120%;
-  }
-}
-@media only screen and (min-aspect-ratio: 16 / 9) and (min-width: 1190px) {
-  .double-Map-obj::before {
-    padding-top: 100%;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 1189px) {
-  .double-Map-obj::before {
-    padding-top: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .double-Map-obj::before {
-    padding-top: 100%;
-  }
-}
 
 .singleMapWithTitle {
   position: absolute;

@@ -3,4 +3,5 @@ applications:
 - name: TourdesColsAutoIoT
   memory: 64M
   buildpack: https://github.com/cloudfoundry-community/staticfile-buildpack.git
+  stack: cflinuxfs2
 

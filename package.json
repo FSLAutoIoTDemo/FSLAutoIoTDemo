@@ -18,6 +18,8 @@
     "load-grunt-config" : "*",
     "load-grunt-tasks" : "*",
     "glob" : "*",
-    "grunt-contrib-clean" : "*"
+    "grunt-contrib-clean" : "*",
+    "grunt-haml" : "*",
+    "grunt-htmlbuild" : "*"
   }
 }

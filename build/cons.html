@@ -1,120 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Freescale Automotive IoT Demo</title>
-		
-		<!-- Initalises the viewport for responsive layout -->
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		
-		<!-- Master style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Roboto fonts -->
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
-	</head>
+<head>
+    <title>Freescale Automotive IoT Demo</title>
 
+    <!-- Initalises the viewport for responsive layout -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<body id="cons-page">
-		<!-- JQuery -->
-		<script src="js/jquery-1.11.2.min.js"></script>
+    <!-- Master style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Google Charts -->
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-		<!-- Google Maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		
+    <!-- Roboto fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+</head>
 
 
+<body id="cons-page">
+    <!-- JQuery -->
+    <script src="js/jquery-1.11.2.min.js"></script>
 
-		<!-- Master site javascript file -->
-		<script src="js/base.min.js"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-		<!--- Contains all of the content + nav to be shown -->	
-		<div class="container clearfix">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-			<header class="headBar"><h1>Consumer Use Case: Staying Connected with your Kids</h1></header>
 
-			<!-- Navigation bar (top or left) -->
-			<nav class="navBar">
-				<ul class="navigation">
-					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Select Vehicle</h1>
-						<ul id="navSubMenu" class="subNav">
-							<li class="navMenuItem" id="navDemo"><a href="cons.html?vid=100"><h2>Demo</h2></a></li>
-							<li class="navMenuItem" id="navA"><a href="cons.html?vid=1"><h2>Live A</h2></a></li>
-							<li class="navMenuItem" id="navB"><a href="cons.html?vid=2"><h2>Live B</h2></a></li>
-							<li class="navMenuItem" id="navC"><a href="cons.html?vid=3"><h2>Live C</h2></a></li>
-							<li class="navMenuItem" id="navD"><a href="cons.html?vid=4"><h2>Live D</h2></a></li>
-							<li class="navMenuItem" id="navE"><a href="cons.html?vid=5"><h2>Live E</h2></a></li>
-							<li class="navMenuItem" id="navF"><a href="cons.html?vid=6"><h2>Live F</h2></a></li>
-							<li class="navMenuItem" id="navG"><a href="cons.html?vid=7"><h2>Live G</h2></a></li>
-							<li class="navMenuItem" id="navH"><a href="cons.html?vid=8"><h2>Live H</h2></a></li>
-						</ul>
-					</li>
-					<div class="navMenuStatus"><h1 id="navMenuStatusText"></h1></div>
-					<li id="navHome">
-						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
-					</li>
-				</ul>
-			</nav>
 
-			<!-- Main content (tiles) -->
-			<main role="main">
 
-				<!-- Collection of all the tile sections -->
-				<article class="content">
+    <!-- Master site javascript file -->
+    <script src="js/base.min.js"></script>
 
-					<!-- Tiles begin here... -->
-					<section class="singleTile" id="cons-info">
-						<h1 class="tileTitle">Info</h1>  
-						<p class="dataH4light infobox"> Teenage drivers are a concern for parents. 
-							<br><br>Are they safe? Are they driving responsibly?
-							<br><br>The Auto IoT will connect parents with their children &amp; reward responsible drivers with better insurance deals.</p>
-					</section>
+    <!--- Contains all of the content + nav to be shown -->
+    <div class="container clearfix">
 
-					<section class="singleTile stackParent" id="cons-twit">
-						<h1 class="tileTitle">@teenage_son</h1>  
-						<p class="dataH4light" id="cons-twit-tweet">tweeted</p>
-						<p class="dataH4light" id="cons-twit-post">"Out for a drive with my buddies #speed"</p>
-						<p class="dataH5" id="cons-twit-reply">reply</p>
-						<div id="cons-twit-repmes-box">
-							<p class="dataH4light" id="cons-twit-repmes">Remember I've got an eye on you!</p>
-						</div>
-						<p class="dataH5" id="cons-twit-send">Send</p>
+        <header class="headBar">
+            <h1>Consumer Use Case: Staying Connected with your Kids</h1>
+            <img src="imgs/AutoIoTLogos.png">
+        </header>
 
-					</section>
+        <!-- Navigation bar (top or left) -->
+        <nav class="navBar">
+            <ul class="navigation">
+                <li id="navSelectBut" class="navSelect">
+                    <h1 id="navVehStatus">Select Vehicle</h1>
+                    <ul id="navSubMenu" class="subNav">
+                        <li class="navMenuItem" id="navA"><a href="cons.html?vid=6"><h2>Live</h2></a></li>
+                        <li class="navMenuItem" id="navDemo"><a href="cons.html?vid=100"><h2>Demo</h2></a></li>
 
-					<section class="singleTile stackParent" id="cons-Map">
-						<h1 class="tileTitle">Where are they?</h1>  
-						<div class="singleMapWithTitle" id="cons-Map-obj">
-					</section>
 
-					<section class="singleTile" id="cons-DriverCam">
-						<h1 class="tileTitle">Who's driving?</h1>
-						<img id="cons-DriverCam-img" class="resizeImgSingle" src="imgs/fill.svg">
-					</section>
-										
-					<section class="singleTile stackParent" id="cons-metric">
-						<h1 class="tileTitle">Insurance Metrics</h1>
-						<p class="dataH3light" id="cons-Metric-speed">Speed:</p><p class="dataH3" id="cons-Metric-speedtext">--</p><p class="dataH3light" id="cons-Metric-mph">mph</p>
-						<p class="dataH3light" id="cons-Metric-accel">Accel:</p><p class="dataH3" id="cons-Metric-acceltext">--</p>
-						<p class="dataH3light" id="cons-Music">Music:</p><p class="dataH3" id="cons-Music-data">Rock</p>
-					</section>
+                    </ul>
+                </li>
+                <div class="navMenuStatus">
+                    <h1 id="navMenuStatusText"></h1></div>
+                <li id="navHome">
+                    <a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
+                </li>
+            </ul>
+        </nav>
 
-					<section class="doubleTile stackParent" id="cons-insur">
-						<h1 class="tileTitle">Live Insurance Quote</h1>
-						<div id="cons-Insur-obj">Graph Here</div>
-					</section>
+        <!-- Main content (tiles) -->
+        <main role="main">
 
-					<section class="singleTile stackParent" id="cons-speed">
-						<h1 class="tileTitle">Speed</h1>
-						<div class="stackBottom" id="cons-Speed-obj">Dial here</div>
-						<p class="stackTop dataH1center" id="cons-Speed-speedtext">--</p>
-						<p class="stackTop dataH2center" id="cons-Speed-mphtext">mph</p>
-					</section>					
-				</article>
-			</main>
-		</div>
-	</body>
+            <!-- Collection of all the tile sections -->
+            <article class="content">
+
+                <!-- Tiles begin here... -->
+                <section class="singleTile" id="cons-info">
+                    <h1 class="tileTitle">Info</h1>
+                    <p class="dataH4light infobox"> Teenage drivers are a concern for parents.
+                        <br>
+                        <br>Are they safe? Are they driving responsibly?
+                        <br>
+                        <br>The Auto IoT will connect parents with their children &amp; reward responsible drivers with better insurance deals.</p>
+                </section>
+
+                <section class="singleTile stackParent" id="cons-twit">
+                    <h1 class="tileTitle">@teenage_son</h1>
+                    <p class="dataH4light" id="cons-twit-tweet">tweeted</p>
+                    <p class="dataH4light" id="cons-twit-post">"Out for a drive with my buddies #speed"</p>
+                    <p class="dataH5" id="cons-twit-reply">reply</p>
+                    <div id="cons-twit-repmes-box">
+                        <p class="dataH4light" id="cons-twit-repmes">Remember I've got an eye on you!</p>
+                    </div>
+                    <p class="dataH5" id="cons-twit-send">Send</p>
+
+                </section>
+
+                <section class="singleTile stackParent" id="cons-Map">
+                    <h1 class="tileTitle">Where are they?</h1>
+                    <div class="singleMapWithTitle" id="cons-Map-obj">
+                </section>
+
+                <section class="singleTile" id="cons-DriverCam">
+                    <h1 class="tileTitle">Who's driving?</h1>
+                    <img id="cons-DriverCam-img" class="resizeImgSingle" src="imgs/fill.svg">
+                </section>
+
+                <section class="singleTile stackParent" id="cons-metric">
+                    <h1 class="tileTitle">Insurance Metrics</h1>
+                    <p class="dataH3light" id="cons-Metric-speed">Speed:</p>
+                    <p class="dataH3" id="cons-Metric-speedtext">--</p>
+                    <p class="dataH3light" id="cons-Metric-mph">mph</p>
+                    <p class="dataH3light" id="cons-Metric-accel">Accel:</p>
+                    <p class="dataH3" id="cons-Metric-acceltext">--</p>
+                    <p class="dataH3light" id="cons-Music">Music:</p>
+                    <p class="dataH3" id="cons-Music-data">Rock</p>
+                </section>
+
+                <section class="doubleTile stackParent" id="cons-insur">
+                    <h1 class="tileTitle">Live Insurance Quote</h1>
+                    <div id="cons-Insur-obj">Graph Here</div>
+                </section>
+
+                <section class="singleTile stackParent" id="cons-speed">
+                    <h1 class="tileTitle">Speed</h1>
+                    <div class="stackBottom" id="cons-Speed-obj">Dial here</div>
+                    <p class="stackTop dataH1center" id="cons-Speed-speedtext">--</p>
+                    <p class="stackTop dataH2center" id="cons-Speed-mphtext">mph</p>
+                </section>
+            </article>
+        </main>
+    </div>
+</body>
 
 </html>

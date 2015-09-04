@@ -1,105 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Freescale Automotive IoT Demo</title>
-		
-		<!-- Initalises the viewport for responsive layout -->
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		
-		<!-- Master style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Roboto fonts -->
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
-	</head>
+<head>
+    <title>Freescale Automotive IoT Demo</title>
 
+    <!-- Initalises the viewport for responsive layout -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<body id="stress-page">
-		<!-- JQuery -->
-		<script src="js/jquery-1.11.2.min.js"></script>
+    <!-- Master style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Google Charts -->
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-		<!-- Google Maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
-		
+    <!-- Roboto fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+</head>
 
 
+<body id="stress-page">
+    <!-- JQuery -->
+    <script src="js/jquery-1.11.2.min.js"></script>
 
-		<!-- Master site javascript file -->
-		<script src="js/base.min.js"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-		<!--- Contains all of the content + nav to be shown -->	
-		<div class="container clearfix">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 
-			<header class="headBar"><h1>Smart City Use Case: Stressful Street</h1></header>
 
-			<!-- Navigation bar (top or left) -->
-			<nav class="navBar">
-				<ul class="navigation">
-					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Select Mode</h1>
-						<ul id="navSubMenu" class="subNav">
-							<li class="navMenuItem" id="navDemo"><a href="stress.html?vid=100"><h2>Demo</h2></a></li>
-							<li class="navMenuItem" id="navLive"><a href="stress.html?vid=50"><h2>Live</h2></a></li>
-						</ul>
-					</li>
-					<div class="navMenuStatus"><h1 id="navMenuStatusText"></h1></div>
-					<li id="navHome">
-						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
-					</li>
-				</ul>
-			</nav>
 
-			<!-- Main content (tiles) -->
-			<main role="main">
 
-				<!-- First Half of Tiles -->
-				<article class="contentHalf">
+    <!-- Master site javascript file -->
+    <script src="js/base.min.js"></script>
 
-					<section class="singleTile singleTileHalfLayout stress-info" id="stress-info-text">
-						<h1 class="tileTitle">Information</h1>  
-						<p class="dataH4light infobox">Smart Cities can use data from the Auto IoT to identify issues in &amp; around the city.
-							<br>
-							<br>The Auto IoT will enable new data sources that are traditionally difficult to gather, such as driver stress level.</p>
-					</section>
+    <!--- Contains all of the content + nav to be shown -->
+    <div class="container clearfix">
 
-					<!-- Tiles begin here... -->
-					<section class="singleTile singleTileHalfLayout stackParent stress-cam">
-						<h1 class="tileTitle">#1 Stress Street</h1>  
-						<img id="stress-RoadCam-img0" class="stressImg" src="imgs/fill.svg">
-						<p class="dataH4light stressStreet-title">Street:</p><p class="dataH4 stressStreet" id="stressStreet0">--</p>
-						<p class="dataH4light stressHeart-title">HR Change:</p><p class="dataH4 stressHeart" id="stressHeart0">--</p>
-					</section>
+        <header class="headBar">
+            <h1>Smart City Use Case: Stressful Street</h1>
+            <img src="imgs/AutoIoTLogos.png">
+        </header>
 
-					<section class="singleTile singleTileHalfLayout stackParent stress-cam">
-						<h1 class="tileTitle">#2 Stress Street</h1>  
-						<img id="stress-RoadCam-img1" class="stressImg" src="imgs/fill.svg">
-						<p class="dataH4light stressStreet-title">Street:</p><p class="dataH4 stressStreet" id="stressStreet1">--</p>
-						<p class="dataH4light stressHeart-title">HR Change:</p><p class="dataH4 stressHeart" id="stressHeart1">--</p>
-					</section>
+        <!-- Navigation bar (top or left) -->
+        <nav class="navBar">
+            <ul class="navigation">
+                <li id="navSelectBut" class="navSelect">
+                    <h1 id="navVehStatus">Select Mode</h1>
+                    <ul id="navSubMenu" class="subNav">
+                        <li class="navMenuItem" id="navDemo"><a href="stress.html?vid=100"><h2>Demo</h2></a></li>
+                        <li class="navMenuItem" id="navLive"><a href="stress.html?vid=50"><h2>Live</h2></a></li>
+                    </ul>
+                </li>
+                <div class="navMenuStatus">
+                    <h1 id="navMenuStatusText"></h1></div>
+                <li id="navHome">
+                    <a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
+                </li>
+            </ul>
+        </nav>
 
-					<section class="singleTile singleTileHalfLayout stackParent stress-cam">
-						<h1 class="tileTitle">#3 Stress Street</h1>  
-						<img id="stress-RoadCam-img2" class="stressImg" src="imgs/fill.svg">
-						<p class="dataH4light stressStreet-title">Street:</p><p class="dataH4 stressStreet" id="stressStreet2">--</p>
-						<p class="dataH4light stressHeart-title">HR Change:</p><p class="dataH4 stressHeart" id="stressHeart2">--</p>
-					</section>
+        <!-- Main content (tiles) -->
+        <main role="main">
 
-				</article>
+            <!-- First Half of Tiles -->
+            <article class="contentHalf">
 
-				<!-- Second Half of Tiles -->
-				<article class="contentHalf">
+                <section class="singleTile singleTileHalfLayout stress-info" id="stress-info-text">
+                    <h1 class="tileTitle">Information</h1>
+                    <p class="dataH4light infobox">Smart Cities can use data from the Auto IoT to identify issues in &amp; around the city.
+                        <br>
+                        <br>The Auto IoT will enable new data sources that are traditionally difficult to gather, such as driver stress level.</p>
+                </section>
 
-					<!-- Tiles begin here... -->
-					<section class="quadTile" id="stress-Map">
-						<h1 class="tileTitle">Stress Map</h1>  
-						<div class="single-Map-obj" id="stress-Map-obj">Map here</div>
-					</section>
-				</article>
+                <!-- Tiles begin here... -->
+                <section class="singleTile singleTileHalfLayout stackParent stress-cam">
+                    <h1 class="tileTitle">#1 Stress Street</h1>
+                    <img id="stress-RoadCam-img0" class="stressImg" src="imgs/fill.svg">
+                    <p class="dataH4light stressStreet-title">Street:</p>
+                    <p class="dataH4 stressStreet" id="stressStreet0">--</p>
+                    <p class="dataH4light stressHeart-title">HR Change:</p>
+                    <p class="dataH4 stressHeart" id="stressHeart0">--</p>
+                </section>
 
-			</main>
-		</div>
-	</body>
+                <section class="singleTile singleTileHalfLayout stackParent stress-cam">
+                    <h1 class="tileTitle">#2 Stress Street</h1>
+                    <img id="stress-RoadCam-img1" class="stressImg" src="imgs/fill.svg">
+                    <p class="dataH4light stressStreet-title">Street:</p>
+                    <p class="dataH4 stressStreet" id="stressStreet1">--</p>
+                    <p class="dataH4light stressHeart-title">HR Change:</p>
+                    <p class="dataH4 stressHeart" id="stressHeart1">--</p>
+                </section>
+
+                <section class="singleTile singleTileHalfLayout stackParent stress-cam">
+                    <h1 class="tileTitle">#3 Stress Street</h1>
+                    <img id="stress-RoadCam-img2" class="stressImg" src="imgs/fill.svg">
+                    <p class="dataH4light stressStreet-title">Street:</p>
+                    <p class="dataH4 stressStreet" id="stressStreet2">--</p>
+                    <p class="dataH4light stressHeart-title">HR Change:</p>
+                    <p class="dataH4 stressHeart" id="stressHeart2">--</p>
+                </section>
+
+            </article>
+
+            <!-- Second Half of Tiles -->
+            <article class="contentHalf">
+
+                <!-- Tiles begin here... -->
+                <section class="quadTile" id="stress-Map">
+                    <h1 class="tileTitle">Stress Map</h1>
+                    <div class="single-Map-obj" id="stress-Map-obj">Map here</div>
+                </section>
+            </article>
+
+        </main>
+    </div>
+</body>
 
 </html>

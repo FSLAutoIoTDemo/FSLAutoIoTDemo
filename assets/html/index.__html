@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			<!-- build:section indexTitle --><!-- /build -->
+		</title>
+		
+		<!-- Initalises the viewport for responsive layout -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Master style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+		<!-- Roboto fonts -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300" />
+	</head>
+
+
+	<body id="index-page">
+		<!-- JQuery -->
+		<script src="js/jquery-1.11.2.min.js"></script>
+
+		<!-- Google Charts -->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<!-- Google Maps API -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		
+
+
+
+		<!-- Master site javascript file -->
+		<script src="js/base.min.js"></script>
+
+		<!--- Contains all of the content + nav to be shown -->	
+		<div class="container clearfix">
+
+			<header class="headBar">
+				<h1>
+				<!-- build:section indexTitle --><!-- /build -->
+				</h1>
+				<img src="imgs/AutoIoTLogos.png" />
+			</header>
+			
+
+			<!-- Navigation bar (top or left) -->
+			<nav class="navBar">
+				<ul class="navigation">
+					<li id="navSelectBut" class="navSelect"> <h1>Select Mode</h1>
+						<ul id="navSubMenu" class="subNav">
+							<!-- build:section indexNav --><!-- /build -->
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main content (tiles) -->
+			<main role="main">
+				<!-- build:section indexMessage --><!-- /build -->
+			</main>
+
+		</div>
+	</body>
+
+</html>

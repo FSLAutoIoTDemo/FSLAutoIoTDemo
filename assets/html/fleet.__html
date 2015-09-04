@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Freescale Automotive IoT Demo</title>
+		
+		<!-- Initalises the viewport for responsive layout -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Master style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+		<!-- Roboto fonts -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300" />
+	</head>
+
+
+	<body id="fleet-page">
+		<!-- JQuery -->
+		<script src="js/jquery-1.11.2.min.js"></script>
+
+		<!-- Google Charts -->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+		<!-- Google Maps API -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+		
+
+
+
+		<!-- Master site javascript file -->
+		<script src="js/base.min.js"></script>
+
+		<!--- Contains all of the content + nav to be shown -->	
+		<div class="container clearfix">
+
+			<header class="headBar">
+				<h1>Fleet View</h1>
+				<img src="imgs/AutoIoTLogos.png" />
+			</header>
+
+			<!-- Navigation bar (top or left) -->
+			<nav class="navBar">
+				<ul class="navigation">
+					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Options</h1>
+						<ul id="navSubMenu" class="subNav">
+<!-- build:section vehicleNavFleet --><!-- /build -->						
+						</ul>
+					</li>
+					<li id="navHome">
+						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main content (tiles) -->
+			<main role="main">
+
+				<!-- First Half of Tiles -->
+				<article class="contentHalf">
+
+					<section class="quadTile stackParent fleet-road" id="fleet-road-view">
+						<h1 class="tileTitle">Vehicle <span id="fleet-vehicleId-data">--</span></h1>
+						<img id="fleet-RoadCam-img" class="resizeImgSingle" src="imgs/fill.svg">
+						<p class="dataH2light" id="fleet-speed-text">Speed </p><p class="dataH2" id="fleet-speed-data">--</p><p class="dataH2light" id="fleet-speed-mph">mph</p>
+						
+					</section>
+
+				</article>
+
+				<!-- Second Half of Tiles -->
+				<article class="contentHalf">
+
+					<!-- Tiles begin here... -->
+					<section class="quadTile" id="fleet-Map">
+						<h1 class="tileTitle">Fleet Map</h1>  
+						<div class="single-Map-obj" id="fleet-Map-obj">Map here</div>
+					</section>
+				</article>
+
+			</main>
+		</div>
+	</body>
+
+</html>

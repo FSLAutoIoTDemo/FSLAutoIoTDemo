@@ -1,105 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Freescale Automotive IoT Demo</title>
-		
-		<!-- Initalises the viewport for responsive layout -->
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		
-		<!-- Master style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Roboto fonts -->
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
-	</head>
+<head>
+    <title>Freescale Automotive IoT Demo</title>
 
+    <!-- Initalises the viewport for responsive layout -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<body id="bigd-page">
-		<!-- JQuery -->
-		<script src="js/jquery-1.11.2.min.js"></script>
+    <!-- Master style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Google Charts -->
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-		<!-- Google Maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		
+    <!-- Roboto fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+</head>
 
 
+<body id="bigd-page">
+    <!-- JQuery -->
+    <script src="js/jquery-1.11.2.min.js"></script>
 
-		<!-- Master site javascript file -->
-		<script src="js/base.min.js"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-		<!--- Contains all of the content + nav to be shown -->	
-		<div class="container clearfix">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-			<header class="headBar"><h1>OEM Use Case: Harnessing Big Data in the Auto IoT</h1></header>
 
-			<!-- Navigation bar (top or left) -->
-			<nav class="navBar">
-				<ul class="navigation">
-					<li id="navSelectBut" class="navSelect"> <h1 id="navVehStatus">Select Mode</h1>
-						<ul id="navSubMenu" class="subNav">
-							<li class="navMenuItem" id="navDemo"><a href="bigd.html?vid=100"><h2>Demo</h2></a></li>
-							<li class="navMenuItem" id="navLive"><a href="bigd.html?vid=50"><h2>Live</h2></a></li>
-						</ul>
-					</li>
-					<div class="navMenuStatus"><h1 id="navMenuStatusText"></h1></div>
-					<li id="navHome">
-						<a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
-					</li>
-				</ul>
-			</nav>
 
-			<!-- Main content (tiles) -->
-			<main role="main">
 
-				<!-- First Half of Tiles -->
-				<article class="contentHalf">
+    <!-- Master site javascript file -->
+    <script src="js/base.min.js"></script>
 
-					<!-- Tiles begin here... -->
-					<section class="singleTile singleTileHalfLayout bigd-info" id="bigd-info-text">
-						<h1 class="tileTitle">Information</h1>  
-						<p class="dataH4light infobox">Vehicle manufacturers can make design decisions based upon feedback from real-world vehicle conditions.
-						<br><br>
-						Cloud analytic platforms will open up new insights into this real world data, that will influence vehicle design &amp; reliability.</p>
-					</section>
+    <!--- Contains all of the content + nav to be shown -->
+    <div class="container clearfix">
 
-					<section class="singleTile singleTileHalfLayout bigd-info stackParent">
-						<h1 class="tileTitle">Analytics<br>Options</h1>  
-						<img class="stackTop" id="bigd-analy-Cog1" src="imgs/cog.svg">
-						<img class="stackTop" id="bigd-analy-Cog2" src="imgs/cog.svg">
-						<p class="stackTop dataH4light" id="bigd-analy-Cog1-text">Correlate<br>Against<br>Speed</p>
-						<p class="stackTop dataH4light" id="bigd-analy-Cog2-text">Correlate<br>Against<br>RPM</p>
+        <header class="headBar">
+            <h1>OEM Use Case: Harnessing Big Data in the Auto IoT</h1>
+            <img src="imgs/AutoIoTLogos.png">
+        </header>
 
-					</section>
+        <!-- Navigation bar (top or left) -->
+        <nav class="navBar">
+            <ul class="navigation">
+                <li id="navSelectBut" class="navSelect">
+                    <h1 id="navVehStatus">Select Mode</h1>
+                    <ul id="navSubMenu" class="subNav">
+                        <li class="navMenuItem" id="navDemo"><a href="bigd.html?vid=100"><h2>Demo</h2></a></li>
+                        <li class="navMenuItem" id="navLive"><a href="bigd.html?vid=50"><h2>Live</h2></a></li>
+                    </ul>
+                </li>
+                <div class="navMenuStatus">
+                    <h1 id="navMenuStatusText"></h1></div>
+                <li id="navHome">
+                    <a href="index.html"><img class="navHomeImg" src="imgs/home.svg"></a>
+                </li>
+            </ul>
+        </nav>
 
-					<section class="singleTile singleTileHalfLayout bigd-event stackParent">
-						<h1 class="tileTitle">Event Details</h1>  
-						<p class="dataH3" id="bigd-evt-id-title">Vehicle ID</p><p class="dataH3light" id="bigd-evt-id">--</p>
-						<p class="dataH3" id="bigd-evt-time-title">Time</p><p class="dataH3light" id="bigd-evt-time">--</p>
-						<p class="dataH3" id="bigd-evt-speed-title">Speed</p><p class="dataH3light" id="bigd-evt-speed">--</p><p class="dataH3light" id="bigd-evt-speed-unit">mph</p>
-					</section>
+        <!-- Main content (tiles) -->
+        <main role="main">
 
-					<section class="singleTile singleTileHalfLayout bigd-event stackParent" id="bigd-Map">
-						<h1 class="tileTitle">Event Location</h1>  
-						<div class="singleMapWithTitle" id="bigd-Map-obj">Map here</div>
-					</section>
-					
-					
+            <!-- First Half of Tiles -->
+            <article class="contentHalf">
 
-				</article>
-				
-				<!-- Second Half of Tiles -->
-				<article class="contentHalf">
-					<!-- Tiles begin here... -->
-					<section class="quadTile stackParent" id="bigd-graph">
-						<h1 class="tileTitle">Vehicle Fleet G-Forces</h1>  
-						<div id="bigd-graph-obj">Graph Here</div>
-					</section>
-				</article>
-			</main>
-		</div>
-	</body>
+                <!-- Tiles begin here... -->
+                <section class="singleTile singleTileHalfLayout bigd-info" id="bigd-info-text">
+                    <h1 class="tileTitle">Information</h1>
+                    <p class="dataH4light infobox">Vehicle manufacturers can make design decisions based upon feedback from real-world vehicle conditions.
+                        <br>
+                        <br> Cloud analytic platforms will open up new insights into this real world data, that will influence vehicle design &amp; reliability.</p>
+                </section>
+
+                <section class="singleTile singleTileHalfLayout bigd-info stackParent">
+                    <h1 class="tileTitle">Analytics<br>Options</h1>
+                    <img class="stackTop" id="bigd-analy-Cog1" src="imgs/cog.svg">
+                    <img class="stackTop" id="bigd-analy-Cog2" src="imgs/cog.svg">
+                    <p class="stackTop dataH4light" id="bigd-analy-Cog1-text">Correlate
+                        <br>Against
+                        <br>Speed</p>
+                    <p class="stackTop dataH4light" id="bigd-analy-Cog2-text">Correlate
+                        <br>Against
+                        <br>RPM</p>
+
+                </section>
+
+                <section class="singleTile singleTileHalfLayout bigd-event stackParent">
+                    <h1 class="tileTitle">Event Details</h1>
+                    <p class="dataH3" id="bigd-evt-id-title">Vehicle ID</p>
+                    <p class="dataH3light" id="bigd-evt-id">--</p>
+                    <p class="dataH3" id="bigd-evt-time-title">Time</p>
+                    <p class="dataH3light" id="bigd-evt-time">--</p>
+                    <p class="dataH3" id="bigd-evt-speed-title">Speed</p>
+                    <p class="dataH3light" id="bigd-evt-speed">--</p>
+                    <p class="dataH3light" id="bigd-evt-speed-unit">mph</p>
+                </section>
+
+                <section class="singleTile singleTileHalfLayout bigd-event stackParent" id="bigd-Map">
+                    <h1 class="tileTitle">Event Location</h1>
+                    <div class="singleMapWithTitle" id="bigd-Map-obj">Map here</div>
+                </section>
+
+
+
+            </article>
+
+            <!-- Second Half of Tiles -->
+            <article class="contentHalf">
+                <!-- Tiles begin here... -->
+                <section class="quadTile stackParent" id="bigd-graph">
+                    <h1 class="tileTitle">Vehicle Fleet G-Forces</h1>
+                    <div id="bigd-graph-obj">Graph Here</div>
+                </section>
+            </article>
+        </main>
+    </div>
+</body>
 
 </html>

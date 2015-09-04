@@ -31,17 +31,35 @@
 
 }
 
-.navBar{
-	float:left;
-}
-
 .headBar h1{
+	float:left;
 	// Offset left margin
 	margin-left: 2%;
 	
 }
 
+.headBar img{
+	float:right;
 
+	@media #{$sml-screen}{
+		display:none;
+	}
+
+	@media #{$med-screen}{
+		width: 40%;
+		margin-right: 2%;
+	}
+	@media #{$large-screen}{
+		width: 30%;
+		margin-left: 18%;
+		margin-right: 2%;
+	}	
+}
+
+
+.navBar{
+	float:left;
+}
 
 // Parent ul for nav bar
 ul.navigation{

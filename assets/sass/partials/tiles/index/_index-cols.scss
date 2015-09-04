@@ -1,0 +1,27 @@
+
+
+.indexCols-descSect img{
+	width:70%;
+	margin: 2.5% 15% 2.5% 15%;
+}
+
+.indexCols-descSect p{
+	@extend .dataH4light;
+
+	margin:2.5%;
+
+}
+
+.indexCols-descSect b{
+	@extend .dataH4;
+
+}
+
+.indexCols-descSect p a{
+	color: lightblue;
+}
+
+.indexCols-techSect img{
+	margin-top: 7%;
+	margin-bottom: 7%;
+}

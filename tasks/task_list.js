@@ -3,16 +3,21 @@ module.exports = function(grunt) {
 //    grunt.log.writeln("Hello world!");
 //  });
 
-	grunt.registerTask('buildhtml-dist',  ['htmlhint', 'htmlmin:dist' ]);
-	grunt.registerTask('buildhtml-dev',  ['htmlhint', 'htmlmin:dev']);
+	grunt.registerTask('buildhtmlFSLfull-dist',  ['htmlbuild:FSLfull', 'htmlhint', 'htmlmin:dist' ]);
+	grunt.registerTask('buildhtmlFSLfull-dev',  ['htmlbuild:FSLfull', 'htmlhint', 'htmlmin:dev']);
 	
+	grunt.registerTask('buildhtmlIBMcols-dist',  ['htmlbuild:IBMcols', 'htmlhint', 'htmlmin:dist' ]);
+	grunt.registerTask('buildhtmlIBMcols-dev',  ['htmlbuild:IBMcols', 'htmlhint', 'htmlmin:dev']);
+
 	grunt.registerTask('buildjs-dist',  ['clean', 'uglify:dist', 'concat' ]);
     grunt.registerTask('buildjs-dev',  ['clean', 'uglify:dev', 'concat' ]);
     
-    grunt.registerTask('buildcss-dist',  ['sass:dist', 'cssc', 'cssmin']);
+    grunt.registerTask('buildcss-dist',  ['sass:dist', 'cssmin']);
     grunt.registerTask('buildcss-dev',  ['sass:dev']);
 
-    grunt.registerTask('build-dev',  ['buildhtml-dev','buildjs-dev', 'buildcss-dev']);
-    grunt.registerTask('build-dist', ['buildhtml-dist','buildjs-dist', 'buildcss-dist']);
+    grunt.registerTask('buildFSLfull-dev',  ['buildhtmlFSLfull-dev','buildjs-dev', 'buildcss-dev']);
+    grunt.registerTask('buildFSLfull-dist', ['buildhtmlFSLfull-dist','buildjs-dist', 'buildcss-dist']);
 
+    grunt.registerTask('buildIBMcols-dev',  ['buildhtmlIBMcols-dev','buildjs-dev', 'buildcss-dev']);
+    grunt.registerTask('buildIBMcols-dist', ['buildhtmlIBMcols-dist','buildjs-dist', 'buildcss-dist']);
 };

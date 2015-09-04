@@ -1,55 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Freescale Automotive IoT Demo</title>
-		
-		<!-- Initalises the viewport for responsive layout -->
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		
-		<!-- Master style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Roboto fonts -->
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
-	</head>
+<head>
+    <title>
+        Tour Des Cols 2015 - Automotive IoT Demo
 
+    </title>
 
-	<body id="index-page">
-		<!-- JQuery -->
-		<script src="js/jquery-1.11.2.min.js"></script>
+    <!-- Initalises the viewport for responsive layout -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<!-- Google Charts -->
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Master style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-		<!-- Google Maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		
+    <!-- Roboto fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:500,300">
+</head>
 
 
+<body id="index-page">
+    <!-- JQuery -->
+    <script src="js/jquery-1.11.2.min.js"></script>
 
-		<!-- Master site javascript file -->
-		<script src="js/base.min.js"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-		<!--- Contains all of the content + nav to be shown -->	
-		<div class="container clearfix">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-			<header class="headBar"><h1>Use Case Options</h1></header>
 
-			<!-- Navigation bar (top or left) -->
-			<nav class="navBar">
-				<ul class="navigation">
-					<li id="navSelectBut" class="navSelect"> <h1>Select Mode</h1>
-						<ul id="navSubMenu" class="subNav">
-							<li id="navVD"><a href="vd.html?vid=100"><h2>Vehicle Dashboard</h2></a></li>
-							<li id="navFLEET"><a href="fleet.html?vid=100"><h2>Fleet View</h2></a></li>
-							<li id="navCONS"><a href="cons.html?vid=100"><h2>Consumer</h2></a></li>
-							<li id="navBIGD"><a href="bigd.html?vid=100"><h2>Big Data</h2></a></li>
-							<li id="navSTRESS"><a href="stress.html?vid=100"><h2>Stress Street</h2></a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</body>
+
+
+    <!-- Master site javascript file -->
+    <script src="js/base.min.js"></script>
+
+    <!--- Contains all of the content + nav to be shown -->
+    <div class="container clearfix">
+
+        <header class="headBar">
+            <h1>
+Tour Des Cols 2015 - Automotive IoT Demo
+
+				</h1>
+            <img src="imgs/AutoIoTLogos.png">
+        </header>
+
+
+        <!-- Navigation bar (top or left) -->
+        <nav class="navBar">
+            <ul class="navigation">
+                <li id="navSelectBut" class="navSelect">
+                    <h1>Select Mode</h1>
+                    <ul id="navSubMenu" class="subNav">
+                        <li id="navVD"><a href="vd.html?vid=6"><h2>Vehicle Dashboard</h2></a></li>
+                        <li id="navCONS"><a href="cons.html?vid=6"><h2>Consumer</h2></a></li>
+                        <li id="navSTRESS"><a href="stress.html?vid=50"><h2>Stress Street</h2></a></li>
+                        <li id="navBIGD"><a href="bigd.html?vid=50"><h2>Big Data</h2></a></li>
+
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content (tiles) -->
+        <main role="main">
+            <!-- First Half of Tiles -->
+            <article class="contentHalf">
+
+                <section class="quadTile indexCols-descSect">
+                    <img class="resizeImgSingle" src="imgs/tourlogo-new.jpg">
+                    <p>Tour des Cols is a group of like minded folks driving all manner of wild machines. We're tracking IMBer Mark Barnard in his 1930's vintage Riley sports car, equipped with Freescale's Automotive IoT kit &amp; IBM's IoT messaging software,
+                        on a 10 day journey through the Pyrenees. The route takes in a number of peaks in the Pyrenees, from as far North as San Sebastien right down to Andorra, moving between the French and Spanish border as they go. They should be covering
+                        some 300 km per day, so quite a trek with many challenges, technically and mechanically!</p>
+
+                    <p>In this site, using Freescale's Automotive Microcontrollers, Arkessa's Connectivity, and IBM's Messaging &amp; Bluemix Ecosystem, we demonstrate some live examples of how data generated from from Mark's 1930's 'IoT equipped' Riley
+                        could be used in the IoT. <b>Choose a mode above to explore further.</b></p>
+
+                    <p>Read more about Mark's adventure in his blog (<a href="http://v8skid.blogspot.co.uk/">here</a>), and stay up to date with his on social media (<a href="https://twitter.com/v8skid?cm_mc_uid=55351317852214116624024&cm_mc_sid_50200000=1441318621">@v8skid</a>)</p>
+                </section>
+
+            </article>
+
+            <!-- Second Half of Tiles -->
+            <article class="contentHalf">
+
+                <!-- Tiles begin here... -->
+                <section class="quadTile indexCols-techSect">
+                    <img class="resizeImgSingle" src="imgs/AutoIoTLogos.png">
+                    <img class="resizeImgSingle" src="imgs/architecture.jpg">
+                </section>
+            </article>
+
+        </main>
+
+    </div>
+</body>
 
 </html>

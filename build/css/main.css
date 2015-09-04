@@ -362,12 +362,35 @@ body {
   }
 }
 
-.navBar {
+.headBar h1 {
   float: left;
+  margin-left: 2%;
 }
 
-.headBar h1 {
-  margin-left: 2%;
+.headBar img {
+  float: right;
+}
+@media only screen and (max-width: 600px) {
+  .headBar img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1189px) {
+  .headBar img {
+    width: 40%;
+    margin-right: 2%;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  .headBar img {
+    width: 30%;
+    margin-left: 18%;
+    margin-right: 2%;
+  }
+}
+
+.navBar {
+  float: left;
 }
 
 ul.navigation {
@@ -1064,52 +1087,52 @@ body {
   text-align: center;
 }
 
-.dataH4, .dataH4light, .dataH4center {
+.dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
   font-weight: 500;
   color: #ffffff;
 }
 @media only screen and (max-width: 600px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 6vw;
   }
 }
 @media only screen and (min-width: 1190px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 1.5vw;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 3vw;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 799px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 2.57143vw;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 899px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 2.25vw;
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 999px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 2vw;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1099px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 1.8vw;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1189px) {
-  .dataH4, .dataH4light, .dataH4center {
+  .dataH4, .dataH4light, .indexCols-descSect p, .dataH4center, .indexCols-descSect b {
     font-size: 1.63636vw;
   }
 }
 
-.dataH4light {
+.dataH4light, .indexCols-descSect p {
   font-weight: 300;
 }
 
@@ -1949,6 +1972,24 @@ img.resizeImgDouble {
   display: none;
   margin: 0;
   padding: 0;
+}
+
+.indexCols-descSect img {
+  width: 70%;
+  margin: 2.5% 15% 2.5% 15%;
+}
+
+.indexCols-descSect p {
+  margin: 2.5%;
+}
+
+.indexCols-descSect p a {
+  color: lightblue;
+}
+
+.indexCols-techSect img {
+  margin-top: 7%;
+  margin-bottom: 7%;
 }
 
 /*# sourceMappingURL=main.css.map */

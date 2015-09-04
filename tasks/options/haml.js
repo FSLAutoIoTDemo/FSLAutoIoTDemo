@@ -3,29 +3,28 @@
 // - Dev: Keep comments & whitespace
 module.exports = {
 	dist: {
-		options:{
-			'removeComments': true,
-			'collapseWhitespace': true
-		},
+		options:[{
+			context: {
+				'greet': 'Morgan Freeman'
+			}
+		}],
 		files: [{
 			expand: true,
-			cwd: 'assets/tmp/',
-			src:['**/*.html'],
-			dest: 'build/',
+			cwd: 'assets/haml/',
+			src:['**/*.haml'],
+			dest: 'buildHaml/',
 			ext: '.html'
 		}]
 	},
 
 	dev: {
 		options:{
-			'removeComments': false,
-			'collapseWhitespace': false
 		},
 		files: [{
 			expand: true,
-			cwd: 'assets/tmp/',
-			src:['**/*.html'],
-			dest: 'build/',
+			cwd: 'assets/haml/',
+			src:['**/*.haml'],
+			dest: 'buildHaml/',
 			ext: '.html'
 		}]
 	}

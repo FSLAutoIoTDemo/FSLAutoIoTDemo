@@ -1,16 +1,16 @@
 function VDvehicle() {}
 
-inherit(VDvehicle, Vehicle), Vehicle.prototype.modifyHtmlText = function() {
+inherit(VDvehicle, Vehicle), VDvehicle.prototype.modifyHtmlText = function() {
     $("#vd-Speed-speedtext").text(this.speed), $("#vd-xAccel-acceltext").text(this.fGax), 
     $("#vd-yAccel-acceltext").text(this.fGay), $("#vd-HR-hrtext").text(this.heart), 
     updateSpeedData(this.speed), updateAccelData(this.fGax, this.fGay);
-}, Vehicle.prototype.modifyMap = function() {
+}, VDvehicle.prototype.modifyMap = function() {
     updateMap(this.lat, this.lng, !0);
-}, Vehicle.prototype.modifyDriverImg = function() {
+}, VDvehicle.prototype.modifyDriverImg = function() {
     $("#vd-DriverCam-img").attr("src", this.driverimg);
-}, Vehicle.prototype.modifyRoadImg = function() {
+}, VDvehicle.prototype.modifyRoadImg = function() {
     $("#vd-RoadCam-img").attr("src", this.roadimg);
-}, Vehicle.prototype.processSocketVD = function(a) {
+}, VDvehicle.prototype.processSocketVD = function(a) {
     a.vehicle != this.vehicle ? (console.log("### WARNING ####"), console.log("Data received for Vehicle: " + a.vehicle), 
     console.log("Page is expecting data from Vehicle: " + this.vehicle)) : "data" == a.info ? (this.updateData(a._id, a.vehicle, a.speed, "", a.heart, a.fGax, a.fGay, a.fGaz, a.lat, a.lng, a.insurance), 
     this.modifyHtmlText(), this.modifyMap(a.lng, a.lat), console.log("Data Received for VD Page")) : "image_road" == a.info ? (this.updateRoadImg(a.image), 

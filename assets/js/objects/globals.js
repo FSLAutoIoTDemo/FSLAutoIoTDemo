@@ -57,7 +57,7 @@ GLB.insurBarOptions = null;		// Insurance Graph Options
 GLB.insurBarGraph = null;		// Insurance Graph Object
 
 // Speed Pie Chart variables
-GLB.maxSpeed=120; //set the maximum speed for the speedometer
+GLB.maxSpeed=200; //set the maximum speed for the speedometer
 GLB.cssSppedPieSemiTransparent='#004461';
 GLB.cssSppedPieFill='#ffffff';
 

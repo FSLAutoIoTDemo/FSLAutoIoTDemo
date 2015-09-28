@@ -103,7 +103,10 @@ function updateSpeedData(speed) {		//###need to pass in new val from websocket
 		if(newSpeedValue>GLB.maxSpeed) {
 			newSpeedValue = GLB.maxSpeed;
 		}
-		newSpeedValue *= 2.25; 								//change to degrees
+
+		
+		newSpeedValue = (newSpeedValue / GLB.maxSpeed) * 270;	// Ratio of speed in 270deg segment
+		//newSpeedValue *= 2.25; 								//change to degrees
 	
 		// Check that chart exists on page		
 		if(GLB.speedPieData){

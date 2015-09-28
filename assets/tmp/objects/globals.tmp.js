@@ -10,7 +10,7 @@ GLB.stressDemoIdx = 0, GLB.bigdDemoData = null, GLB.bigdDemoIdx = 0, GLB.speedPi
 GLB.speedPieOptions = null, GLB.speedPiechart = null, GLB.accelLinedata = null, 
 GLB.accelLineoptions = null, GLB.accelLinegraph = null, GLB.gforceGraphData = null, 
 GLB.gforceGraphOptions = null, GLB.gforceGraph = null, GLB.insurBarData = null, 
-GLB.insurBarOptions = null, GLB.insurBarGraph = null, GLB.maxSpeed = 120, GLB.cssSppedPieSemiTransparent = "#004461", 
+GLB.insurBarOptions = null, GLB.insurBarGraph = null, GLB.maxSpeed = 200, GLB.cssSppedPieSemiTransparent = "#004461", 
 GLB.cssSppedPieFill = "#ffffff", GLB.dataPoints = 9, GLB.loopCount = GLB.dataPoints, 
 GLB.socket = null, GLB.currSOCK = null, GLB.sockAddr = null, GLB.multiSocket = [], 
 GLB.SOCKROOT = "wss://fslautoiotdemobackend.mybluemix.net", GLB.SOCKETVEH = [ "/ws/vehicleA", "/ws/vehicleB", "/ws/vehicleC", "/ws/vehicleD", "/ws/vehicleE", "/ws/vehicleF", "/ws/vehicleG", "/ws/vehicleH", "/ws/vehicleI", "/ws/vehicleJ" ], 

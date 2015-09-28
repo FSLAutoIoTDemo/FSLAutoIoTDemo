@@ -5,7 +5,7 @@ function VDvehicle(){}
 inherit(VDvehicle, Vehicle);
 
 // Update the VD Page HMTL text with Vehicle object data
-Vehicle.prototype.modifyHtmlText = function(){
+VDvehicle.prototype.modifyHtmlText = function(){
 	
 	$('#vd-Speed-speedtext').text(this.speed);		// Speed
 	$('#vd-xAccel-acceltext').text(this.fGax);		// X-Accel + Y-Accel
@@ -17,22 +17,22 @@ Vehicle.prototype.modifyHtmlText = function(){
 }
 
 // Update the VD Page Map with Vehicle object data
-Vehicle.prototype.modifyMap = function(){
+VDvehicle.prototype.modifyMap = function(){
 	updateMap(this.lat, this.lng, true);
 }
 
 // Update the VD Page Driver Image with Vehicle object data
-Vehicle.prototype.modifyDriverImg = function(){
+VDvehicle.prototype.modifyDriverImg = function(){
 	$('#vd-DriverCam-img').attr('src', this.driverimg);
 }
 
 // Update the VD Page Road Image with Vehicle object data
-Vehicle.prototype.modifyRoadImg = function(){
+VDvehicle.prototype.modifyRoadImg = function(){
 	$('#vd-RoadCam-img').attr('src', this.roadimg);
 }
 
 
-Vehicle.prototype.processSocketVD = function(dIn){
+VDvehicle.prototype.processSocketVD = function(dIn){
 	
 	// First - test that data received is for current vehicle
 	if(dIn.vehicle != this.vehicle){

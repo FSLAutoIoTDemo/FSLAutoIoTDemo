@@ -53,7 +53,7 @@ function drawInitSpeedPieChart(a) {
 
 function updateSpeedData(a) {
     newSpeedValue = a, newSpeedValue > GLB.maxSpeed && (newSpeedValue = GLB.maxSpeed), 
-    newSpeedValue *= 2.25, GLB.speedPieData && (GLB.speedPieData.setValue(1, 1, newSpeedValue), 
+    newSpeedValue = newSpeedValue / GLB.maxSpeed * 270, GLB.speedPieData && (GLB.speedPieData.setValue(1, 1, newSpeedValue), 
     GLB.speedPieData.setValue(2, 1, 270 - newSpeedValue), GLB.speedPiechart.draw(GLB.speedPieData, GLB.speedPieOptions));
 }
 

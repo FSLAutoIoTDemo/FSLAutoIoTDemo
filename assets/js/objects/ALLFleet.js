@@ -177,6 +177,17 @@ ALLFleet.prototype.processSocketFLEETvehicle = function(dIn){
 		// Update Map
 		this.updateMapMarker(dIn.vehicle);
 
+		// Provide initial image for Driver/Road (from last captured image)
+		if(GLB.initDataFlg == true){
+			// Update VDvehicle object with Road Img src
+			this.vehicles[dIn.vehicle].updateRoadImg(dIn.imageRoad);
+			// Push changes into the HTML
+			this.vehicles[dIn.vehicle].modifyRoadImg();
+			
+			// Clear flag to indicate inital data has been received
+			GLB.initDataFlg = false;
+		}
+
 		console.log('Data Received for Fleet Page');
 	}
 	else if (dIn.info == 'image_road')

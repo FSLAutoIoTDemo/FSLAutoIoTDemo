@@ -36,7 +36,8 @@ inherit(ALLFleet, Fleet), ALLFleet.prototype.updateDriverText = function(a) {
     console.log("Page is expecting data from Vehicle: " + this.vehicle)) : "data" == a.info ? (this.vehicles[a.vehicle].updateData(a._id, a.vehicle, a.speed, "", a.heart, a.fGax, a.fGay, a.fGaz, a.lat, a.lng, a.insurance), 
     this.vehicles[a.vehicle].vehicle == GLB.currVID && this.updateDriverText(GLB.currVID), 
     this.vehicles[a.vehicle].marker.updateMarkerPos(a.lat, a.lng), this.updateMapMarker(a.vehicle), 
-    console.log("Data Received for Fleet Page")) : "image_road" == a.info ? (this.vehicles[a.vehicle].updateRoadImg(a.image), 
+    1 == GLB.initDataFlg && (this.vehicles[a.vehicle].updateRoadImg(a.imageRoad), this.vehicles[a.vehicle].modifyRoadImg(), 
+    GLB.initDataFlg = !1), console.log("Data Received for Fleet Page")) : "image_road" == a.info ? (this.vehicles[a.vehicle].updateRoadImg(a.image), 
     this.vehicles[a.vehicle].vehicle == GLB.currVID && this.updateRoadImg(GLB.currVID), 
     console.log("Road Image Received for Fleet Page")) : "image_driver" == a.info ? (this.vehicles[a.vehicle].updateDriverImg(a.image), 
     console.log("Driver Image Received for Fleet Page")) : console.log("Unknown Packet received for VD Page");

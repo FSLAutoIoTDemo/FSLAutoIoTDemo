@@ -43,8 +43,8 @@ function fitBound(a, b, c, d) {
 }
 
 function findMapBounds(a) {
-    for (var b = a[0].lat(), c = a[0].lng(), d = a[0].lat(), e = a[0].lng(), f = 0; f < a.length; f++) a[f].G > b && (b = a[f].lat()), 
-    a[f].K > c && (c = a[f].lng()), a[f].G < d && (d = a[f].lat()), a[f].K < e && (e = a[f].lng());
+    for (var b = a[0].lat(), c = a[0].lng(), d = a[0].lat(), e = a[0].lng(), f = 0; f < a.length; f++) a[f].lat() > b && (b = a[f].lat()), 
+    a[f].lng() > c && (c = a[f].lng()), a[f].lat() < d && (d = a[f].lat()), a[f].lng() < e && (e = a[f].lng());
     fitBound(b, c, d, e);
 }
 

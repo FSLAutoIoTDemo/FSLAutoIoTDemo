@@ -122,6 +122,9 @@ function findMapBounds(locations){
 //	var minLat = locations[0].G;
 //	var minLng = locations[0].K;
 
+//	console.log(locations[0].lat());
+//	console.log(locations[0].lng());
+
 	var maxLat = locations[0].lat();
 	var maxLng = locations[0].lng();
 
@@ -131,16 +134,16 @@ function findMapBounds(locations){
 
 	for(var i=0; i<locations.length; i++){
 	
-		if (locations[i].G > maxLat)
+		if (locations[i].lat() > maxLat)
 				maxLat = locations[i].lat();
 
-		if (locations[i].K > maxLng)
+		if (locations[i].lng() > maxLng)
 				maxLng = locations[i].lng();
 
-		if (locations[i].G < minLat)
+		if (locations[i].lat() < minLat)
 				minLat = locations[i].lat();
 
-		if (locations[i].K < minLng)
+		if (locations[i].lng() < minLng)
 				minLng = locations[i].lng();
 	}
 	// Fit map to new bounds

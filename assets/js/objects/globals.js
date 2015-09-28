@@ -30,6 +30,7 @@ GLB.heatmap = null;					// Heat Map overlay
 GLB.vehile = null;			// Vehicle Object
 GLB.fleet = null;			// Fleet Object
 
+GLB.initDataFlg = true;		// Flag to indicate initial data being received
 
 GLB.vdDemoData = null;		// Vehicle Dashboard Demo Data
 GLB.vdDemoIdx = 0;			// Index for current VD Demo Data entry being used

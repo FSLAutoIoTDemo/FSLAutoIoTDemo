@@ -14,6 +14,7 @@ inherit(CONSvehicle, Vehicle), CONSvehicle.prototype.modifyHtmlText = function()
     a.vehicle != this.vehicle ? (console.log("### WARNING ####"), console.log("Data received for Vehicle: " + a.vehicle), 
     console.log("Page is expecting data from Vehicle: " + this.vehicle)) : "data" == a.info ? (this.calcAccelProf(a.insurance), 
     this.updateData(a._id, a.vehicle, a.speed, "", a.heart, a.fGax, a.fGay, a.fGaz, a.lat, a.lng, a.insurance), 
-    this.modifyHtmlText(), this.modifyMap(a.lng, a.lat), console.log("Data Received for CONS Page")) : "image_road" == a.info ? console.log("Road Image Received. Do Nothing") : "image_driver" == a.info ? (this.updateDriverImg(a.image), 
+    this.modifyHtmlText(), this.modifyMap(a.lng, a.lat), 1 == GLB.initDataFlg && (this.updateDriverImg(a.imageDriver), 
+    this.modifyDriverImg(), GLB.initDataFlg = !1), console.log("Data Received for CONS Page")) : "image_road" == a.info ? console.log("Road Image Received. Do Nothing") : "image_driver" == a.info ? (this.updateDriverImg(a.image), 
     this.modifyDriverImg(), console.log("Driver Image Received for CONS Page")) : console.log("Unknown Packet received for CONS Page");
 };

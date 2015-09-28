@@ -62,6 +62,18 @@ CONSvehicle.prototype.processSocketCONS = function(dIn){
 
 		// Update Map
 		this.modifyMap(dIn.lng,dIn.lat);
+
+		// Provide initial image for Driver/Road (from last captured image)
+		if(GLB.initDataFlg == true){
+			// Update VDvehicle object with Driver Img src
+			this.updateDriverImg(dIn.imageDriver);
+			// Push changes into the HTML
+			this.modifyDriverImg();
+			
+			// Clear flag to indicate inital data has been received
+			GLB.initDataFlg = false;
+		}
+
 		console.log('Data Received for CONS Page');
 	}
 	else if (dIn.info == 'image_road')
@@ -70,7 +82,7 @@ CONSvehicle.prototype.processSocketCONS = function(dIn){
 	}
 	else if (dIn.info == 'image_driver')
 	{
-		// Update VDvehicle object with Road Img src
+		// Update VDvehicle object with Driver Img src
 		this.updateDriverImg(dIn.image);
 
 		// Push changes into the HTML

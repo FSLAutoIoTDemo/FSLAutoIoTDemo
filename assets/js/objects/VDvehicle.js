@@ -51,6 +51,23 @@ VDvehicle.prototype.processSocketVD = function(dIn){
 
 		// Update Map
 		this.modifyMap(dIn.lng,dIn.lat);
+
+		// Provide initial image for Driver/Road (from last captured image)
+		if(GLB.initDataFlg == true){
+			// Update VDvehicle object with Road Img src
+			this.updateRoadImg(dIn.imageRoad);
+			// Push changes into the HTML
+			this.modifyRoadImg();
+			// Update VDvehicle object with Driver Img src
+			this.updateDriverImg(dIn.imageDriver);
+			// Push changes into the HTML
+			this.modifyDriverImg();
+			
+			// Clear flag to indicate inital data has been received
+			GLB.initDataFlg = false;
+		}
+
+
 		console.log('Data Received for VD Page');
 	}
 	else if (dIn.info == 'image_road')
@@ -64,7 +81,7 @@ VDvehicle.prototype.processSocketVD = function(dIn){
 	}
 	else if (dIn.info == 'image_driver')
 	{
-		// Update VDvehicle object with Road Img src
+		// Update VDvehicle object with Driver Img src
 		this.updateDriverImg(dIn.image);
 
 		// Push changes into the HTML

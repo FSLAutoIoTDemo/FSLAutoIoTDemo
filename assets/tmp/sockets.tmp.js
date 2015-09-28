@@ -2,12 +2,12 @@ function init_websocket(a, b) {
     GLB.sock = new WebSocket(b), GLB.currSOCK = a, console.log("Sock Init - Websocket Initialising:" + GLB.currSOCK), 
     console.log("Sock Init - Socket Address:" + b), GLB.sock.onopen = function(a) {
         sockOnOpen(a);
-    }, GLB.sock.onclose = function(a) {
-        sockOnClose(a);
+    }, GLB.sock.onclose = function(c) {
+        sockOnClose(c, a, b);
     }, GLB.sock.onmessage = function(a) {
         sockOnMessage(a);
-    }, GLB.sock.onerror = function(a) {
-        sockOnError(a);
+    }, GLB.sock.onerror = function(c) {
+        sockOnError(c, a, b);
     };
 }
 
@@ -15,12 +15,13 @@ function sockOnOpen(a) {
     console.log("Sock Open - Connected to websocket: " + GLB.currSOCK), GLB.currSOCK == GLB.SOCKETSTRESS ? GLB.sock.send(GLB.SOCKETSTRESSREQ) : GLB.currSOCK == GLB.SOCKETBIGD && GLB.sock.send(GLB.SOCKETBIGDFLEETREQ);
 }
 
-function sockOnClose(a) {
-    console.log("Sock Close - Websocket Connection closed: " + GLB.currSOCK), GLB.sock = null;
+function sockOnClose(a, b, c) {
+    console.log("Sock Close - Websocket Connection closed: " + GLB.currSOCK), GLB.sock = null, 
+    init_websocket(b, c);
 }
 
 function sockOnError(a) {
-    console.log("Sock Error - Websocket error detected: " + GLB.currSOCK);
+    console.log("Sock Error - Websocket error detected: " + GLB.currSOCK), init_websocket(socketID, address);
 }
 
 function sockOnMessage(a) {

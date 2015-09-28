@@ -116,25 +116,32 @@ function fitBound(latn,lnge,lats,lngw){
 // Finds ne/sw corners of map, then updates map to fit to these bounds
 function findMapBounds(locations){
 
-	var maxLat = locations[0].G;
-	var maxLng = locations[0].K;
+//	var maxLat = locations[0].G;
+//	var maxLng = locations[0].K;
 
-	var minLat = locations[0].G;
-	var minLng = locations[0].K;
+//	var minLat = locations[0].G;
+//	var minLng = locations[0].K;
+
+	var maxLat = locations[0].lat();
+	var maxLng = locations[0].lng();
+
+	var minLat = locations[0].lat();
+	var minLng = locations[0].lng();
+
 
 	for(var i=0; i<locations.length; i++){
 	
 		if (locations[i].G > maxLat)
-				maxLat = locations[i].G;
+				maxLat = locations[i].lat();
 
 		if (locations[i].K > maxLng)
-				maxLng = locations[i].K;
+				maxLng = locations[i].lng();
 
 		if (locations[i].G < minLat)
-				minLat = locations[i].G;
+				minLat = locations[i].lat();
 
 		if (locations[i].K < minLng)
-				minLng = locations[i].K;
+				minLng = locations[i].lng();
 	}
 	// Fit map to new bounds
 	fitBound(maxLat,maxLng,minLat,minLng);

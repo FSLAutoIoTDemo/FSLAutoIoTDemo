@@ -16,9 +16,9 @@ function init_websocket(socketID, address){
 
 	// Bind socket events to functions
 	GLB.sock.onopen = function(evt) { sockOnOpen(evt) }; 
-	GLB.sock.onclose = function(evt) { sockOnClose(evt) }; 
+	GLB.sock.onclose = function(evt) { sockOnClose(evt, socketID, address) }; 
 	GLB.sock.onmessage = function(evt) { sockOnMessage(evt) };
-	GLB.sock.onerror = function(evt) { sockOnError(evt) };
+	GLB.sock.onerror = function(evt) { sockOnError(evt, socketID, address) };
 
 }
 
@@ -41,13 +41,19 @@ function sockOnOpen(evt){
 	// Other sockets are push only (i.e. don't need requests)
 };
 
-function sockOnClose(evt) {
+function sockOnClose(evt, socketID, address) {
 	console.log("Sock Close - Websocket Connection closed: " + GLB.currSOCK);
 	GLB.sock = null;		// Terminate object
+
+	// Attempt to create new socket connection (i.e. persistant socket)
+	init_websocket(socketID, address);
 };
 
 function sockOnError(evt){
 	console.log("Sock Error - Websocket error detected: " + GLB.currSOCK);
+
+	// Attempt to create new socket connection (i.e. persistant socket)
+	init_websocket(socketID, address);
 };
 
 
